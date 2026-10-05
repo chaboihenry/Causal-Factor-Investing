@@ -11,10 +11,10 @@ rng = np.random.default_rng(0)
 n = 5000
 
 # Z is a hidden confounder, e.g. a macro/market regime.
-z = rng.normal(size=n)
+f = rng.normal(size=n)
 
 # Candidate factor F is driven by Z, but has NO direct effect on returns.
-f = 0.8 * z + rng.normal(size=n)
+z = 0.8 * f + rng.normal(size=n)
 
 # True returns depend ONLY on Z; the causal effect of F is exactly zero.
 r = 1.0 * z + rng.normal(size=n)
