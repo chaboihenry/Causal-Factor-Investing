@@ -1,4 +1,5 @@
-"""Collider bias: controlling for a common effect can flip a true factor's sign.
+"""
+Collider bias: controlling for a common effect can flip a true factor's sign.
 
 Simulates the second mechanism behind de Prado's 'factor mirage':
 adding a control caused by both the factor and returns raises adjusted R²

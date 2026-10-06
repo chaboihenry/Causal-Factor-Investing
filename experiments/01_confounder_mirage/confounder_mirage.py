@@ -1,4 +1,5 @@
-"""Confounder bias: a factor with zero causal effect looks significant.
+"""
+Confounder bias: a factor with zero causal effect looks significant.
 
 Reproduces the core mechanism behind de Prado's 'factor mirage':
 an associational regression reports a premium that does not causally exist.
