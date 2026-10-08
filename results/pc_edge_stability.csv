@@ -1,0 +1,28 @@
+pair_key,n_decades,keep,directions,majority,tie
+CMA - LT_Rev,6,True,"{'CMA->LT_Rev': 5, 'LT_Rev->CMA': 1}",CMA->LT_Rev,False
+RMW - SMB,6,True,"{'RMW->SMB': 4, 'SMB->RMW': 2}",RMW->SMB,False
+Mkt-RF - ST_Rev,6,True,"{'Mkt-RF->ST_Rev': 4, 'ST_Rev->Mkt-RF': 2}",Mkt-RF->ST_Rev,False
+Mkt-RF - SMB,6,True,"{'SMB->Mkt-RF': 5, 'Mkt-RF->SMB': 1}",SMB->Mkt-RF,False
+HML - Mkt-RF,5,True,"{'HML->Mkt-RF': 4, 'HML - Mkt-RF': 1}",HML->Mkt-RF,False
+CMA - HML,5,True,"{'HML->CMA': 2, 'CMA->HML': 2, 'CMA - HML': 1}",HML->CMA,True
+CMA - RMW,5,True,"{'RMW->CMA': 2, 'CMA - RMW': 2, 'CMA->RMW': 1}",RMW->CMA,True
+HML - LT_Rev,5,True,"{'HML->LT_Rev': 4, 'LT_Rev->HML': 1}",HML->LT_Rev,False
+CMA - Mkt-RF,4,True,{'CMA->Mkt-RF': 4},CMA->Mkt-RF,False
+HML - RMW,4,True,"{'HML->RMW': 2, 'HML - RMW': 1, 'RMW->HML': 1}",HML->RMW,False
+CMA - ST_Rev,3,True,"{'CMA->ST_Rev': 2, 'CMA - ST_Rev': 1}",CMA->ST_Rev,False
+Mom - ST_Rev,3,True,"{'Mom->ST_Rev': 2, 'ST_Rev->Mom': 1}",Mom->ST_Rev,False
+Mkt-RF - RMW,3,True,"{'Mkt-RF->RMW': 2, 'RMW->Mkt-RF': 1}",Mkt-RF->RMW,False
+HML - Mom,3,True,"{'HML->Mom': 2, 'Mom->HML': 1}",HML->Mom,False
+LT_Rev - Mom,3,True,{'Mom->LT_Rev': 3},Mom->LT_Rev,False
+Mkt-RF - Mom,3,True,"{'Mom->Mkt-RF': 2, 'Mkt-RF->Mom': 1}",Mom->Mkt-RF,False
+LT_Rev - SMB,3,True,"{'SMB->LT_Rev': 2, 'LT_Rev->SMB': 1}",SMB->LT_Rev,False
+SMB - ST_Rev,2,True,"{'ST_Rev->SMB': 1, 'SMB->ST_Rev': 1}",ST_Rev->SMB,True
+CMA - Mom,2,True,{'CMA->Mom': 2},CMA->Mom,False
+LT_Rev - RMW,2,True,"{'RMW->LT_Rev': 1, 'LT_Rev->RMW': 1}",RMW->LT_Rev,True
+Mom - SMB,2,True,"{'SMB->Mom': 1, 'Mom->SMB': 1}",SMB->Mom,True
+LT_Rev - Mkt-RF,2,True,"{'Mkt-RF->LT_Rev': 1, 'LT_Rev->Mkt-RF': 1}",Mkt-RF->LT_Rev,True
+CMA - SMB,1,False,{'CMA->SMB': 1},CMA->SMB,False
+LT_Rev - ST_Rev,1,False,{'ST_Rev->LT_Rev': 1},ST_Rev->LT_Rev,False
+HML - SMB,1,False,{'HML->SMB': 1},HML->SMB,False
+Mom - RMW,1,False,{'Mom->RMW': 1},Mom->RMW,False
+RMW - ST_Rev,1,False,{'ST_Rev->RMW': 1},ST_Rev->RMW,False
