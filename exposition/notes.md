@@ -281,6 +281,7 @@ That would be a mechanical link, not a hidden cause. Not tested.
 - [X] 3. Replicate Exhibit 5.
 - [X] 4a. Confounder-proxy test U1 (10y Treasury), full sample and two regimes.
 - [X] 4b. Confounder-proxy test U4 (credit spread, VIX), 1990–2026 and two regimes.
+- [X] 5. Write up: where PC's assumptions failed; how conclusions depend on the graph.
 
 **Untested confounders:** U2 (macro news) and U3 (style rotation) have no clean
 proxy. Possible indirect tests: announcement-day correlations for U2; FCI
