@@ -3,3 +3,11 @@ __pycache__/
 *.pyc
 .venv/
 .vscode/
+# Exp 04
+data/adia/*
+data/synthetic/*
+models/*
+!data/adia/.gitkeep
+!data/synthetic/.gitkeep
+!models/.gitkeep
+.env
