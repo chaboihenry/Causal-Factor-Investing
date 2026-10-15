@@ -25,6 +25,7 @@ So I don't pick one setting. I build true graphs that agree with the literature 
 4. The main test follows ADIA's rules: X → Y is always present and there are no hidden causes. Breaking either rule is a separate stress test.
 5. Each method must reproduce its own paper's results before it is used here.
 6. Predictions are committed before any run.
+7. LLM prompts come from Sokolov et al., not written for this experiment.
 
 ## 3. Methods
 
@@ -36,7 +37,18 @@ So I don't pick one setting. I build true graphs that agree with the literature 
 | **C1 PC**               | Classic algorithm, as a reference (links to Exp 03)                                                | No         | Yes       |
 | **Random guessing**     | The floor: 12.5%                                                                                   | No         | No        |
 
-A2 can only *remove* edges. It can't add a missing edge or flip a wrong direction. The LLM runs on two current models from two different providers.
+A2 can only *remove* edges. It can't add a missing edge or flip a wrong direction.
+
+**LLMs (budget: $0 beyond an existing subscription)**
+
+A1 and A2 each run on two models:
+
+- **Frontier:** Claude, run by hand in a claude.ai chat (Pro plan).
+  - One fresh chat per run: no project, memory off, personal preferences off, web search off. Nothing from my other chats should leak into the answers.
+  - Record the model name, date and settings for every run.
+- **Free:** a mid-size open-weight model, run locally on the RTX 5080 through Ollama. This answers: *can this be done for free?*
+
+This is cheap because the LLM never sees the data. It answers once per set of variable names, not once per dataset.
 
 ## 4. Task and scoring (from ADIA)
 
@@ -79,11 +91,11 @@ A2 can only *remove* edges. It can't add a missing edge or flip a wrong directio
 
 **Phase 0 — Setup**
 
-- [ ] Finalize and commit this file
-- [ ] Folders and `.gitignore`
-- [ ] Environment, including a GPU check
-- [ ] API keys in `.env`, with spending caps
-- [ ] Add new sources to the bibliography
+- [X] Finalize and commit this file
+- [X] Folders and `.gitignore`
+- [X] Environment, including a GPU check
+- [ ] Install Ollama; pick the local model
+- [X] Add new sources to the bibliography
 
 **Phase 1 — Reproduce B1**
 
@@ -132,7 +144,7 @@ results/exp04/
 3. **Institutional ownership change.** Measure it after the return year, or drop it?
 4. **Value index membership.** Cite an index methodology document, or drop it?
 5. **Industry return and fiscal year-end month.** They need sources, or replacements.
-6. **LLM choice:** which two models, and the budget.
+6. **LLM Choice:** Claude (claude.ai Pro, by hand) and a local open-weight model (Ollama). The exact local model is picked in Phase 0.
 
 ## 10. Limitations
 
@@ -140,12 +152,15 @@ results/exp04/
 - ADIA's rules (always X → Y, no hidden causes) don't hold in real markets.
 - The LLM may have read the Primer.
 - LLM results depend on the model, the date and the prompts.
+- Claude is run through the chat window, so settings like temperature can't be controlled.
 - B1 is 3rd place, not the winner.
 - Static synthetic data: no regime changes.
 
 ## Change log
 
-| Date       | Change                                                                 | Why                                                   |
-| ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------- |
-| 2026-10-13 | Replaced World A/B with the agreement dial; ADIA data recipe; added B1 | Fair comparison                                       |
-| 2026-10-14 | Dropped the hidden-names LLM arm; shortened the file                   | Without names or data it only repeats random guessing |
+| Date       | Change                                                                                         | Why                                                             |
+| ---------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| 2026-10-13 | Replaced World A/B with the agreement dial; ADIA data recipe; added B1                         | Fair comparison                                                 |
+| 2026-10-14 | Dropped the hidden-names LLM arm; shortened the file                                           | Without names or data it only repeats random guessing           |
+| 2026-10-14 | LLMs: Claude by hand (Pro plan) and a local model through Ollama; no paid API                  | $0 budget; the local model tests whether a free model is enough |
+| 2026-10-14 | Hardware recorded: RTX 5080 Laptop (16 GB, CUDA 13.4), Core Ultra 9 285H (16 cores), 31 GB RAM | Reproducibility                                                 |
