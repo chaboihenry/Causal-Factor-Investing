@@ -11,3 +11,8 @@ models/*
 !data/synthetic/.gitkeep
 !models/.gitkeep
 .env
+# Exp 04 external code (no license; never commit)
+external/
+
+# Source papers (copyrighted; never commit)
+papers/

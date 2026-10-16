@@ -94,12 +94,12 @@ This is cheap because the LLM never sees the data. It answers once per set of va
 - [X] Finalize and commit this file
 - [X] Folders and `.gitignore`
 - [X] Environment, including a GPU check
-- [ ] Install Ollama; pick the local model
+- [X] Install Ollama; pick the local model
 - [X] Add new sources to the bibliography
 
 **Phase 1 — Reproduce B1**
 
-- [ ] Download the ADIA data
+- [X] Download the ADIA data
 - [ ] Run the PC baseline (~40%)
 - [ ] Run the 3rd-place solution (~74%, within 3 points)
 - [ ] **Gate:** don't continue until it does
@@ -127,14 +127,22 @@ This is cheap because the LLM never sees the data. It answers once per set of va
 
 ## 8. Folders
 
+One folder per roadmap phase; shared code in `common/`.
+
 ```
 experiments/04_llm_vs_supervised/
-  design.md
-  llm/prompts/  llm/responses/
+  design.md  predictions.md  requirements_b1.txt
+  common/          paths.py, scoring.py (shared by every phase)
+  phase1_adia/     data check, baselines, 3rd-place reproduction
+  phase2_llm/      Modelfile, prompts/, responses/, LLM pipeline
+  phase3_worlds/   literature graph, dial, data generator
+  phase5_runs/     run every arm on the 500 datasets
+  phase6_analysis/ scoring tables, plots
   figures/
 data/adia/  data/synthetic/      (gitignored)
+external/                        (gitignored; 3rd-place code, pinned commit)
 models/                          (gitignored)
-results/exp04/
+results/exp04/phase1/ ... phase6/
 ```
 
 ## 9. Open decisions (settle before Phase 3)
@@ -144,7 +152,7 @@ results/exp04/
 3. **Institutional ownership change.** Measure it after the return year, or drop it?
 4. **Value index membership.** Cite an index methodology document, or drop it?
 5. **Industry return and fiscal year-end month.** They need sources, or replacements.
-6. **LLM Choice:** Claude (claude.ai Pro, by hand) and a local open-weight model (Ollama). The exact local model is picked in Phase 0.
+6. ~~LLM choice~~ **Settled:** Claude (claude.ai Pro, by hand) and a local open-weight model (Ollama). The exact local model is picked in Phase 0.
 
 ## 10. Limitations
 
@@ -158,9 +166,13 @@ results/exp04/
 
 ## Change log
 
-| Date       | Change                                                                                         | Why                                                             |
-| ---------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| 2026-10-13 | Replaced World A/B with the agreement dial; ADIA data recipe; added B1                         | Fair comparison                                                 |
-| 2026-10-14 | Dropped the hidden-names LLM arm; shortened the file                                           | Without names or data it only repeats random guessing           |
-| 2026-10-14 | LLMs: Claude by hand (Pro plan) and a local model through Ollama; no paid API                  | $0 budget; the local model tests whether a free model is enough |
-| 2026-10-14 | Hardware recorded: RTX 5080 Laptop (16 GB, CUDA 13.4), Core Ultra 9 285H (16 cores), 31 GB RAM | Reproducibility                                                 |
+| Date       | Change                                                                                                                                                                                            | Why                                                                                                                                       |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-10-13 | Replaced World A/B with the agreement dial; ADIA data recipe; added B1                                                                                                                            | Fair comparison                                                                                                                           |
+| 2026-10-14 | Dropped the hidden-names LLM arm; shortened the file                                                                                                                                              | Without names or data it only repeats random guessing                                                                                     |
+| 2026-10-14 | LLMs: Claude by hand (Pro plan) and a local model through Ollama; no paid API                                                                                                                     | $0 budget; the local model tests whether a free model is enough                                                                           |
+| 2026-10-14 | Hardware recorded: RTX 5080 Laptop (16 GB, CUDA 13.4), Core Ultra 9 285H (16 cores), 31 GB RAM                                                                                                    | Reproducibility                                                                                                                           |
+| 2026-10-14 | Local model fixed before any results: `gpt-oss:20b` via Ollama 0.40.4, saved as `gpt-oss-exp04` (`phase2_llm/Modelfile`: num_ctx 16384, default temperature). Runs 100% on GPU at ~82–96 tokens/s | Strongest general model that fits in 16 GB; 16K context so long Sokolov prompts aren't cut off. Switching is allowed only if it can't run |
+| 2026-10-14 | B1 environment: separate conda env `adia-b1`; xgboost 3.4.1 with CUDA confirmed                                                                                                                 | Keeps B1's package versions away from the Exp 03 env                                                                                      |
+| 2026-10-15 | ADIA data checked: 23,500 train + 1,880 reduced-test datasets; 1,000 rows, 3–10 variables, values in [−0.999, 0.999]; X → Y in every graph, all acyclic, 0 failures | Matches the paper. The private test set behind the official 74.06% was never released, so B1 is reproduced on the public reduced test set (5th place: 70.69% public vs. 70.37% private) |
+| 2026-10-15 | Folders reorganized by phase; shared paths in `common/paths.py`; Modelfile moved to `phase2_llm/` | Easier to navigate; one place for paths |
