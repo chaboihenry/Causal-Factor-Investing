@@ -12,6 +12,8 @@ Carhart, Mark M. "On Persistence in Mutual Fund Performance." _Journal of Financ
 
 Chicago Board Options Exchange. "CBOE Volatility Index: VIX [VIXCLS]." Retrieved from FRED, Federal Reserve Bank of St. Louis. Accessed October 8, 2026. https://fred.stlouisfed.org/series/VIXCLS.
 
+CrunchDAO. "Causality Discovery Competition Quickstarters." GitHub repository, 2024. Accessed October 13, 2026. https://github.com/crunchdao/competitions/tree/master/competitions/causality-discovery/quickstarters.
+
 De Bondt, Werner F. M., and Richard Thaler. "Does the Stock Market Overreact?" _Journal of Finance_ 40, no. 3 (1985): 793–805. https://doi.org/10.1111/j.1540-6261.1985.tb05004.x.
 
 Fama, Eugene F., and Kenneth R. French. "The Cross-Section of Expected Stock Returns." _Journal of Finance_ 47, no. 2 (1992): 427–65. https://doi.org/10.1111/j.1540-6261.1992.tb04398.x.
@@ -24,6 +26,8 @@ Federal Reserve Bank of St. Louis. "Moody's Seasoned Baa Corporate Bond Yield Re
 
 French, Kenneth R. "Data Library." Tuck School of Business at Dartmouth. Accessed October 5, 2026. https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html.
 
+Hong, Mutian, and Guoqin Gu. "ADIA Lab Causal Discovery Challenge: Rank 3 Solution." GitHub repository, n.d. Accessed October 13, 2026. https://github.com/Ori-Replication/ADIA-Lab-Causal-Discovery.
+
 Jegadeesh, Narasimhan. "Evidence of Predictable Behavior of Security Returns." _Journal of Finance_ 45, no. 3 (1990): 881–98.
 
 Jegadeesh, Narasimhan, and Sheridan Titman. "Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency." _Journal of Finance_ 48, no. 1 (1993): 65–91. https://doi.org/10.1111/j.1540-6261.1993.tb04702.x.
@@ -33,6 +37,14 @@ La Porta, Rafael, Josef Lakonishok, Andrei Shleifer, and Robert Vishny. "Good Ne
 López de Prado, Marcos. _Causal Factor Investing: Can Factor Investing Become Scientific?_ Cambridge: Cambridge University Press, 2023. https://doi.org/10.1017/9781009397315.
 
 López de Prado, Marcos, and Vincent Zoonekynd. _Causality and Factor Investing: A Primer_. Charlottesville, VA: CFA Institute Research Foundation, 2025. https://doi.org/10.56227/25.1.30.
+
+Olivetti, Emanuele, Vincent Zoonekynd, Patrick Yam, Marcos López de Prado, Guido W. Imbens, and Miguel A. Hernán. "Can AI Learn Causal Structure? Evidence from ADIA Lab's Causal Discovery Challenge." Working paper, January 24, 2026. SSRN. https://doi.org/10.2139/ssrn.6125566.
+
+Reisach, Alexander, Christof Seiler, and Sebastian Weichwald. "Beware of the Simulated DAG! Causal Discovery Benchmarks May Be Easy to Game." In _Advances in Neural Information Processing Systems 34_, 27772–84. Red Hook, NY: Curran Associates, 2021.
+
+Sharma, Amit, and Emre Kiciman. "DoWhy: An End-to-End Library for Causal Inference." Preprint, arXiv, 2020. https://arxiv.org/abs/2011.04216.
+
+Sokolov, Alik, Fabrizzio Sabelli, Behzad Azadie Faraz, Wuding Li, and Luis Seco. "Toward Automating Causal Discovery in Financial Markets and Beyond." In _Transactions of ADIA Lab: Interdisciplinary Advances in Data and Computational Science_, edited by Horst Simon, 359–92. Singapore: World Scientific, 2025. https://doi.org/10.1142/9789819813049_0014.
 
 Spirtes, Peter, Clark Glymour, and Richard Scheines. _Causation, Prediction, and Search_. 2nd ed. Cambridge, MA: MIT Press, 2000.
 
