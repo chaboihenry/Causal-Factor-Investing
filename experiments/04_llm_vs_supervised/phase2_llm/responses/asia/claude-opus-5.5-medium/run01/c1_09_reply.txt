@@ -1,0 +1,10 @@
+{"edges": [
+{"source": "VisitAsia", "target": "Tuberculosis", "justification": "Recent travel to Asia, where tuberculosis is more prevalent, raises the chance of exposure and infection. The visit comes before the disease."},
+{"source": "Smoking", "target": "LungCancer", "justification": "Smoking is a well-established cause of lung cancer. Exposure to carcinogens comes before the tumor develops."},
+{"source": "Smoking", "target": "Bronchitis", "justification": "Smoking irritates and inflames the airways, which causes chronic bronchitis."},
+{"source": "Tuberculosis", "target": "TubOrCancer", "justification": "TubOrCancer is defined as the logical OR of Tuberculosis and LungCancer, so Tuberculosis directly determines its value."},
+{"source": "LungCancer", "target": "TubOrCancer", "justification": "TubOrCancer is defined as the logical OR of Tuberculosis and LungCancer, so LungCancer directly determines its value."},
+{"source": "TubOrCancer", "target": "XRay", "justification": "Either tuberculosis or lung cancer produces lung lesions that show up as an abnormal chest X-ray. The disease state causes the test result."},
+{"source": "TubOrCancer", "target": "Dyspnoea", "justification": "Lung damage from tuberculosis or lung cancer impairs breathing and causes shortness of breath."},
+{"source": "Bronchitis", "target": "Dyspnoea", "justification": "Inflamed and obstructed bronchial airways reduce airflow, which causes shortness of breath."}
+]}

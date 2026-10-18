@@ -1,0 +1,21 @@
+You are an expert financial analyst that determines the causality relationships between finance, accounting and market features in a dataset.
+
+Given a dataset with various features for a machine learning model, your task as an AI is to identify causal relationships among these features. Represent these causal connections in the form of a directed acyclic graph (DAG), with features as nodes and causal relationships as edges. A causal relationship between two features means that a change in one feature causes a change in the other feature.An edge from node A to B signifies that changes in A cause changes in B. Consider all feature pairs, ensuring the DAG is acyclic - do not create cycles. Base your analysis on feature definitions, acknowledging engineered relationships (e.g., A is derived/constructed from B), but excluding scaling relationships (e.g. A and B scaled by the same element is not a sufficient condition for causal existence if A and B are unrelated). Utilize expert domain knowledge in finance, accounting and economics to determine the direction of causal relationships. The definitions of each feature describe how each feature is constructed and describes the relationship between the features. Indeed, some features will be constructed from other features and this will be described in the definitions. This information can sometimes be found in the feature definitions in between parenthesis following the abbreviation i.e. for that is. If a pair of feature have a causal relationship, pay attention to chronological ordering of the features detailed in their definitions in order to determine the direction of the edge.Indeed, causality can only flow from the past due to the present/future due to the nature of time progression. An element from the period of 12 to 15 years ago could not be affected by an element happening after it such as an element during the period 9 to 12 years ago.Aim for high recall in identifying causal relationships, avoiding false positives. Return a list of edges in the graph, each with a justification. You must consider the examples below for thought processes and justifications behind the direction of causal relationshipsThese examples contain domain knowledge with respect to valid causal relationship. Here are the examples:
+
+1. If Feature B represents the 30-day average closing price of a stock and Feature A represents the 90-day average closing price, the causal relationship likely flows from A to B. The 90-day average would encompass the 30-day period, influencing its values.
+
+The features to consider are:VisitAsia, Smoking, Tuberculosis, LungCancer, Bronchitis, TubOrCancer, XRay, Dyspnoea
+
+Do not introduce new feature names in the DAG, and exclude elements from feature definitions in the returned edge list.
+
+Each feature's definition follows the format: Feature Name: the feature's name, Feature Definition: the feature's definition.
+Feature Name: VisitAsia, Feature Definition: Whether the patient recently visited Asia.
+Feature Name: Smoking, Feature Definition: Whether the patient is a smoker.
+Feature Name: Tuberculosis, Feature Definition: Whether the patient has tuberculosis.
+Feature Name: LungCancer, Feature Definition: Whether the patient has lung cancer.
+Feature Name: Bronchitis, Feature Definition: Whether the patient has bronchitis.
+Feature Name: TubOrCancer, Feature Definition: Whether the patient has either tuberculosis or lung cancer (i.e. true if at least one of the two is present).
+Feature Name: XRay, Feature Definition: Whether the patient's chest X-ray shows an abnormal result.
+Feature Name: Dyspnoea, Feature Definition: Whether the patient has shortness of breath.
+
+Return your answer as JSON only, inside a ```json code block, with exactly this structure: {"edges": [{"source": "feature name", "target": "feature name", "justification": "text"}]}. An edge from source to target means changes in source cause changes in target.

@@ -1,0 +1,61 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Recent travel to Asia is a known risk factor for acquiring tuberculosis; exposure precedes diagnosis."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking introduces carcinogens that directly cause mutations leading to lung cancer."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Irritation and inflammation of the airways caused by smoke exposure lead to bronchitis."
+    },
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs mucociliary clearance and immune defenses, increasing susceptibility to tuberculosis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Tuberculous lesions produce infiltrates or cavitation visible as abnormalities on chest X‑ray."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Lung tumors create masses or nodules that appear as abnormal findings on chest X‑ray."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Bronchial inflammation can cause peribronchial thickening and airway wall changes detectable on X‑ray."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "TB damage to lung parenchyma reduces gas exchange, causing shortness of breath."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Tumor growth obstructs airways or invades lung tissue, leading to dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Inflamed bronchi narrow the airway lumen, producing breathlessness."
+    },
+    {
+      "source": "Smoking",
+      "target": "Dyspnoea",
+      "justification": "Chronic smoke exposure irritates airways and impairs lung function, directly causing dyspnoea."
+    }
+  ]
+}
+```

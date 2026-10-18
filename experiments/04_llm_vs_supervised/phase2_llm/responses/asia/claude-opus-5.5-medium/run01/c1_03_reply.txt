@@ -1,0 +1,44 @@
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "A recent visit to Asia, where tuberculosis is more prevalent, raises the risk of exposure to and infection with tuberculosis. The visit comes before the infection, so the edge runs from the visit to the disease."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking is a well-established cause of lung cancer. Exposure to carcinogens in tobacco smoke comes first and raises the probability of the disease developing."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Smoking irritates and inflames the bronchial airways and is a primary risk factor for bronchitis, especially the chronic form. The habit comes before the condition."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is built directly from Tuberculosis as a logical OR. Having tuberculosis makes TubOrCancer true."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is built directly from LungCancer as a logical OR. Having lung cancer makes TubOrCancer true."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "XRay",
+      "justification": "Both tuberculosis and lung cancer produce lesions visible on a chest X-ray. Presence of either disease, captured by TubOrCancer, causes an abnormal X-ray result, which is a downstream diagnostic observation."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis and lung cancer both damage lung tissue and impair breathing. Presence of either disease, captured by TubOrCancer, causes shortness of breath as a symptom."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Bronchitis inflames and narrows the airways and increases mucus production, which causes shortness of breath. The disease comes before and produces the symptom."
+    }
+  ]
+}

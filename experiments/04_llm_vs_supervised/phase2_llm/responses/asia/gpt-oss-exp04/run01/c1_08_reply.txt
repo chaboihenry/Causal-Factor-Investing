@@ -1,0 +1,51 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Recent visit to Asia increases exposure to TB-causing bacteria, as the disease is endemic in Asia; visits occur before TB infection."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking introduces carcinogens that cause lung cancer over time; smoking status precedes cancer diagnosis."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Smoking irritates and inflames airways, leading to chronic bronchitis; smoking status precedes bronchitis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "TB infection produces lung pathology that is visible as an abnormal chest X-ray; disease is present before the abnormal X-ray result."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Lung cancer generates masses or lesions detectable as abnormal X-ray; cancer is present before the abnormal X-ray result."
+    },
+    {
+      "source": "XRay",
+      "target": "Dyspnoea",
+      "justification": "An abnormal X-ray indicates lung pathology that impairs breathing, leading to shortness of breath; the abnormality precedes the symptom."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "TB causes pulmonary inflammation and fibrosis, producing dyspnoea; the disease occurs before the symptom."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Lung cancer can obstruct airways and damage lung tissue, resulting in dyspnoea; cancer precedes the symptom."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Chronic bronchitis inflames bronchial walls, reducing airflow and causing dyspnoea; bronchitis precedes the symptom."
+    }
+  ]
+}
+```

@@ -1,0 +1,35 @@
+Evaluate the causal Directed Acyclic Graph (DAG) generated from the provided undirected graph. Examine each edge against guiding principles, feature definitions, thought process examples, and user-provided justifications.
+
+Types of errors to scrutinize:
+
+1. **Overlooking Valid Causal Relationships:**
+- Confirm all plausible causal relationships between features. Refer to feature definitions and provided examples for comprehensive coverage.
+2. **Directional Errors in Causal Relationships:**
+- Review the directionality of each causal relationship (e.g., edge) in the DAG. Align justifications with examples and reasoning in the user's prompt. Verify consistency with feature definitions, excluding scaling relationships.
+- Apply finance and accounting domain knowledge to determine causal direction. - Confirm and verify the direction of the edge is coherent with the chronological ordering in feature definitions. - Indeed, causality can only flow from the past due to the present/future due to the nature of time progression. An element constructed using values from the period starting 15 years ago and ending 12 years ago could not be affected by an element happening after it such as an element constructed using values from the period starting 12 years ago and ending 9 years ago.- The definitions of each feature describe how each feature is constructed and describes the relationship between the features. Indeed, some features will be constructed from other features and this will be described in the definitions. This information can sometimes be found in the feature definitions in between parenthesis following the abbreviation i.e. for that is.
+3. **Inclusion of Nonexistent Causal Relationships:**
+- Verify each edge for genuine causal connections. Cross-reference with prompts, feature definitions, and examples to ensure accuracy.
+Consider the following examples for thought processes and justifications:
+1. Consider Feature A as the average returns of a stock over the previous year (as1y) and Feature B as the average returns over the previous 2 years (as2y). Both features are constructed using the return values from the previous year, suggesting a potential causal relationship. Applying domain knowledge about finance and stock returns, we recognize that past stock returns can influence future returns.
+Missing Causal Relationship: the edge was missed in the initial generation of the DAG.
+Nonexistent Causal Relationship: the edge included represents a causal relationship that doesn't exist.
+Directional Errors in Causal Relationships: the direction of the edge is incorrect. The causal relationship flows in the opposite direction than the current direction of the edge.
+
+The current DAG is (Feature Name A, Feature Name B, Justification for causal relationship flowing from feature A to feature B):
+(Smoking, Bronchitis, Chronic smoking is a well‑known risk factor that directly induces chronic bronchitis. The causal direction flows from exposure (Smoking) to disease (Bronchitis).)
+(Smoking, LungCancer, Epidemiological evidence consistently shows that smoking causes lung cancer. Thus the causal arrow points from Smoking to LungCancer.)
+(Smoking, Dyspnoea, Smoking irritates and damages the airways, leading to shortness of breath (dyspnoea). The effect is from Smoking to Dyspnoea.)
+(Smoking, Tuberculosis, Smoking impairs mucociliary clearance and immune defenses, increasing susceptibility to tuberculosis. Hence the causal flow is Smoking → Tuberculosis.)
+(VisitAsia, Tuberculosis, Recent travel to Asia raises exposure to Mycobacterium tuberculosis due to higher prevalence in that region, making VisitAsia a causal risk factor for Tuberculosis.)
+(Tuberculosis, Dyspnoea, Pulmonary TB produces lung infiltrates and cavitation, causing shortness of breath. Therefore Tuberculosis causes Dyspnoea.)
+(Tuberculosis, XRay, TB lesions are visible as abnormal findings on chest X‑ray, so the disease directly leads to an abnormal XRay result.)
+(Tuberculosis, TubOrCancer, The engineered feature TubOrCancer is defined as true when either TB or lung cancer is present; thus TB is a direct contributor to TubOrCancer.)
+(LungCancer, Dyspnoea, Tumor growth in the lung can obstruct airways or compress structures, causing dyspnoea. Hence LungCancer → Dyspnoea.)
+(LungCancer, XRay, Lung cancer typically manifests as an abnormal mass or opacity on chest X‑ray, so the disease causes the abnormal XRay.)
+(LungCancer, TubOrCancer, TubOrCancer includes lung cancer as one of its two possible causes, making LungCancer a direct source for TubOrCancer.)
+(Bronchitis, Dyspnoea, Chronic bronchitis produces airflow limitation and inflammation, resulting in shortness of breath. Therefore Bronchitis → Dyspnoea.)
+(Bronchitis, XRay, Bronchial inflammation and hyper‑aeration can be detected as abnormal markings on chest X‑ray, so Bronchitis causes an abnormal XRay.)
+(Dyspnoea, XRay, In clinical practice, patients presenting with dyspnoea are usually ordered a chest X‑ray to investigate the cause. Thus the symptom triggers the imaging test.)
+(XRay, TubOrCancer, An abnormal X‑ray is often the basis for diagnosing either tuberculosis or lung cancer; hence the test result causally leads to the engineered feature TubOrCancer.)
+
+Return your answer as JSON only, inside a ```json code block, with exactly this structure: {"valid": true or false, "corrections": [{"type": "missing" or "nonexistent" or "direction", "source": "feature name", "target": "feature name", "justification": "text"}]}. For "missing", give the edge to add. For "nonexistent" and "direction", give the edge exactly as it currently appears in the DAG. If the DAG is valid, return {"valid": true, "corrections": []}.

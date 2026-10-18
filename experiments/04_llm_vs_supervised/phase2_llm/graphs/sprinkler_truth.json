@@ -1,0 +1,9 @@
+{
+  "graph": "sprinkler",
+  "edges": [
+    ["Cloudy", "Sprinkler"],
+    ["Cloudy", "Rain"],
+    ["Sprinkler", "WetGrass"],
+    ["Rain", "WetGrass"]
+  ]
+}

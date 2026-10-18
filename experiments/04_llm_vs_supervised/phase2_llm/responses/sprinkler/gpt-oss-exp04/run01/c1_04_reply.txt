@@ -1,0 +1,21 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloudiness increases the likelihood of precipitation; the presence of clouds precedes the onset of rain in the same morning, so changes in Cloudy causally influence Rain."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "The sprinkler, when switched on in the morning, directly wets the grass by noon. The sprinkler’s state precedes the wetness observed at noon, establishing a causal link."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rain falling during the morning directly wets the grass by noon. Since rain occurs before the wetness measurement, it causally affects WetGrass."
+    }
+  ]
+}
+```

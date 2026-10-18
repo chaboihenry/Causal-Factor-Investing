@@ -1,0 +1,43 @@
+We need to produce causal edges among features: Cloudy, Sprinkler, Rain, WetGrass. We need to examine definitions. Cloudy: whether sky is cloudy. Sprinkler: whether sprinkler is switched on that morning. Rain: whether it rains that morning. WetGrass: whether grass is wet at noon same day.
+
+We need to identify causal relationships. The example: 90-day avg to 30-day avg. So we need to consider natural causality.
+
+Potential relationships:
+
+- Cloudy -> Rain? Cloudy skies can increase probability of rain. But "whether it rains that morning" is dependent on weather; cloudy can cause rain. So we can argue Cloudy causes Rain.
+
+- Cloudy -> WetGrass? Cloudy may indirectly cause WetGrass via rain. But direct effect? Cloudy itself doesn't wet grass; effect is via rain. But might have direct effect? Typically, if it's cloudy, it may still be dry; so Cloudy does not cause WetGrass directly. So no direct edge.
+
+- Sprinkler -> WetGrass: Sprinkler turning on wet grass. So direct causal edge.
+
+- Rain -> WetGrass: Rain causes grass wetness.
+
+- Sprinkler -> Rain? Sprinkler can't cause rain. So no.
+
+- Rain -> Sprinkler? Rain might affect sprinkler? Not cause.
+
+- Cloudy -> Sprinkler? Cloudy may cause sprinkler to be off? Not necessarily. But we don't have defined relation.
+
+- Sprinkler -> Cloudy? no.
+
+- Cloudy -> WetGrass indirectly, but we consider direct edges only; maybe include but if we consider transitive? The instruction: Identify causal relationships between features. Could be indirect, but edges are direct cause. Usually we don't add edges for transitive. Should only add edges where direct cause.
+
+Thus edges: Cloudy -> Rain, Sprinkler -> WetGrass, Rain -> WetGrass. Also maybe Cloudy -> WetGrass? but only via rain; not direct.
+
+Check "WetGrass" defined as wet at noon same day; if rain occurred earlier in morning, it's wet. So Rain directly causes WetGrass. Sprinkler also.
+
+Could Cloudy -> Sprinkler? If it's cloudy, sprinkler may be off? Not defined. So no.
+
+Thus 3 edges.
+
+Justifications: use domain knowledge: weather conditions cause rain; sprinkler causes wet grass; rain causes wet grass. Provide text.
+
+Edge list:
+
+{"source":"Cloudy","target":"Rain","justification":"Cloudy skies increase likelihood of precipitation; weather forecast shows cloudy conditions often lead to rain."}
+
+{"source":"Sprinkler","target":"WetGrass","justification":"Turning on sprinkler directly waters the grass, making it wet."}
+
+{"source":"Rain","target":"WetGrass","justification":"Rainfall directly wets the grass, so wetness at noon is caused by rain that occurred that morning."}
+
+Need JSON with array. Provide code block.

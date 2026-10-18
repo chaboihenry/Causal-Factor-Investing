@@ -1,0 +1,6 @@
+{"edges": [
+{"source": "Cloudy", "target": "Sprinkler", "justification": "Whether the morning sky is cloudy influences whether the sprinkler is switched on that morning; on cloudy mornings the sprinkler is less likely to be turned on because rain is expected and evaporation is lower. Cloudiness is a prior atmospheric condition that informs the watering decision, so the direction runs from Cloudy to Sprinkler."},
+{"source": "Cloudy", "target": "Rain", "justification": "Rain requires cloud cover; a cloudy morning sky raises the probability that it rains that morning. Clouds are the physical precondition for precipitation, so causality flows from Cloudy to Rain and not the reverse."},
+{"source": "Sprinkler", "target": "WetGrass", "justification": "Running the sprinkler in the morning directly deposits water on the grass, so it causes the grass to be wet at noon the same day. The morning event precedes the noon observation, so the direction runs from Sprinkler to WetGrass."},
+{"source": "Rain", "target": "WetGrass", "justification": "Morning rain directly wets the grass, so it causes the grass to be wet at noon. The morning event precedes the noon outcome, so the direction runs from Rain to WetGrass."}
+]}

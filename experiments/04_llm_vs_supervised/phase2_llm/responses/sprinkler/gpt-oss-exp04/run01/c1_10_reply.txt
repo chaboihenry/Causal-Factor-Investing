@@ -1,0 +1,21 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloudiness precedes precipitation within the same morning, making the presence of clouds a necessary condition that causes rain to occur."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rain directly wets the grass by noon the same day, so a change in the rain status causes a change in the wetness of the grass."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "Activation of the sprinkler directly waters the grass, causing it to be wet by noon; thus sprinkler operation causes wetness."
+    }
+  ]
+}
+```

@@ -1,0 +1,26 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloud cover is a primary indicator and precursor of rainfall; when the sky is cloudy, the probability of rain increases."
+    },
+    {
+      "source": "Cloudy",
+      "target": "Sprinkler",
+      "justification": "The decision to operate the garden sprinkler often depends on weather forecasts; if the sky is cloudy, the sprinkler is likely turned off to avoid unnecessary watering."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rainfall directly wets the grass; when it rains, the grass becomes wet."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "When the sprinkler is switched on, water is sprayed onto the grass, causing it to become wet."
+    }
+  ]
+}
+```

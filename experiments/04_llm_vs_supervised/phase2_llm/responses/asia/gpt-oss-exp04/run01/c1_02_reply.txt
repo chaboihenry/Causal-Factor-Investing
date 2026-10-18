@@ -1,0 +1,61 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Traveling to Asia increases exposure to Mycobacterium tuberculosis, a known risk factor for developing tuberculosis."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Cigarette smoking is a primary causal factor for lung cancer, providing carcinogenic compounds that induce malignant transformation."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Long‑term smoking irritates and inflames the bronchial mucosa, leading to chronic bronchitis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Pulmonary tuberculosis produces characteristic lesions (e.g., cavities, infiltrates) that are visible as abnormalities on chest X‑ray."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Primary lung tumors or metastatic lesions alter chest radiography, yielding abnormal findings."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Severe or chronic bronchitis can cause bronchial wall thickening and other radiographic changes."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Tuberculous infection of the lungs impairs gas exchange, leading to shortness of breath."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Tumor growth within lung parenchyma or airways reduces pulmonary function, causing dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Inflammation and mucus hypersecretion in bronchitis restrict airflow, producing shortness of breath."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "The derived feature TubOrCancer is true when tuberculosis is present; thus TB causally determines TubOrCancer."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "Similarly, TubOrCancer is true when lung cancer is present, establishing a causal link."
+    }
+  ]
+}
+```

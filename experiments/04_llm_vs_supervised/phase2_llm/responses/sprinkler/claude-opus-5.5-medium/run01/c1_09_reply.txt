@@ -1,0 +1,24 @@
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Rain needs clouds. A cloudy morning makes rain that morning much more likely, so Cloudy influences Rain, not the other way around."
+    },
+    {
+      "source": "Cloudy",
+      "target": "Sprinkler",
+      "justification": "Whether the sprinkler gets switched on depends on the sky. On a cloudy morning people expect rain, so they are less likely to turn the sprinkler on. The sprinkler has no effect on cloud cover, so the edge runs from Cloudy to Sprinkler."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "A sprinkler switched on in the morning puts water on the grass, so the grass is wet at noon. The morning comes before noon, so the effect can only run from Sprinkler to WetGrass."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rain in the morning wets the grass, so it is still wet at noon the same day. The morning comes before noon, so the effect can only run from Rain to WetGrass."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{"edges": [
+{"source": "VisitAsia", "target": "Tuberculosis", "justification": "A recent visit to Asia, where tuberculosis is more prevalent, exposes the patient to the disease and raises the probability of infection. The visit precedes the infection."},
+{"source": "Smoking", "target": "LungCancer", "justification": "Smoking is a well-established causal risk factor for lung cancer, and the exposure comes before the disease develops."},
+{"source": "Smoking", "target": "Bronchitis", "justification": "Smoking irritates and inflames the airways, so it causally increases the risk of bronchitis."},
+{"source": "Tuberculosis", "target": "TubOrCancer", "justification": "TubOrCancer is constructed as a logical OR of Tuberculosis and LungCancer, so Tuberculosis directly determines its value."},
+{"source": "LungCancer", "target": "TubOrCancer", "justification": "TubOrCancer is constructed as a logical OR of Tuberculosis and LungCancer, so LungCancer directly determines its value."},
+{"source": "TubOrCancer", "target": "XRay", "justification": "Having tuberculosis or lung cancer produces lung lesions or masses that make a chest X-ray abnormal. The disease state causes the diagnostic finding."},
+{"source": "TubOrCancer", "target": "Dyspnoea", "justification": "Tuberculosis or lung cancer impairs lung function, which causes shortness of breath."},
+{"source": "Bronchitis", "target": "Dyspnoea", "justification": "Bronchitis inflames and narrows the airways, which causes shortness of breath."}
+]}

@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "A recent visit to Asia increases exposure to tuberculosis, making it a plausible cause of developing the disease."
+    },
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs pulmonary defenses, which is a known risk factor that can cause tuberculosis infection."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Cigarette smoke contains carcinogens that directly induce mutations leading to lung cancer."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Chronic smoking irritates the bronchial mucosa, causing chronic bronchitis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "The feature TubOrCancer is defined as true when at least one of Tuberculosis or LungCancer is present; thus Tuberculosis directly causes TubOrCancer to be true."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "Similarly, LungCancer presence directly causes TubOrCancer to be true."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Tuberculosis lesions produce abnormal findings on a chest X‑ray, making the disease a causal factor for an abnormal X‑ray result."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Lung cancer lesions are visible as abnormal opacities on X‑ray, so the disease causes abnormal X‑ray outcomes."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Chronic bronchitis can lead to hyperinflation and bronchial thickening, often detected as abnormalities on a chest X‑ray."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis infection causes inflammation and cavitation in lung tissue, leading to shortness of breath."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Tumor growth in lung parenchyma or airways restricts airflow, resulting in dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Bronchial inflammation and mucus hypersecretion cause airflow limitation, producing shortness of breath."
+    },
+    {
+      "source": "Dyspnoea",
+      "target": "XRay",
+      "justification": "The presence of dyspnoea often prompts clinicians to order a chest X‑ray, making dyspnoea a causal trigger for obtaining the X‑ray result."
+    }
+  ]
+}
+```

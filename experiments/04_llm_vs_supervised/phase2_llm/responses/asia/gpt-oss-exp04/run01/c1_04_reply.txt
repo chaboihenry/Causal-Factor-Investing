@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Travel to Asia increases exposure to tuberculosis bacteria, leading to infection."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Cigarette smoke contains carcinogens that cause cellular mutations leading to lung cancer."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Long‑term smoking irritates and inflames the bronchial lining, resulting in chronic bronchitis."
+    },
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs pulmonary immune defenses, increasing susceptibility to tuberculosis infection."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "The TubOrCancer flag is true if tuberculosis is present, so tuberculosis directly determines this feature."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "The TubOrCancer flag is true if lung cancer is present, so lung cancer directly determines this feature."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis lesions in the lung cause impaired oxygen exchange, resulting in shortness of breath."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Tumor growth in lung tissue compresses airways and reduces airflow, leading to dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Inflammation and mucus production in bronchitis obstruct airflow, producing shortness of breath."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "XRay",
+      "justification": "Both tuberculosis and lung cancer produce characteristic radiographic abnormalities, so their presence causes an abnormal chest X‑ray."
+    }
+  ]
+}
+```

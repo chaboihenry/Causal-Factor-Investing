@@ -1,0 +1,14 @@
+We need to produce a DAG edges for features: Cloudy, Sprinkler, Rain, WetGrass.
+
+We must identify causal relationships. Use domain knowledge: Cloudy may influence Rain; Rain may influence WetGrass; Sprinkler may influence WetGrass; Cloudy may influence Sprinkler? Possibly not, but sometimes people decide to use sprinkler if sunny. But we consider typical causal: Cloudy -> Rain (cloudiness increases chance of rain). Sprinkler -> WetGrass (sprinkler wetness). Rain -> WetGrass (rain wet grass). Also maybe Cloudy -> Sprinkler? Maybe if it's sunny you might not turn on sprinkler. But unclear; but we might not include because not certain. The instruction: high recall avoid false positives. So we may include plausible relationships. The example says causal flows from past to present. Cloudy on morning can affect Rain on morning; Sprinkler on morning can affect WetGrass at noon; Rain on morning can affect WetGrass at noon.
+
+Thus edges: Cloudy -> Rain; Cloudy -> Sprinkler? Not strongly. Maybe we include if we consider that if it's cloudy, you might not water? But it's not causal by nature; decision by human. Could be causal: Cloudy influences decision of sprinkler, but uncertain. The risk of false positive; better to avoid uncertain edges.
+
+Thus edges: Cloudy->Rain, Sprinkler->WetGrass, Rain->WetGrass. Also maybe Rain->Sprinkler? No. So final edges 3.
+
+Justification for each.
+
+Return JSON with edges array.
+
+Let's craft.
+

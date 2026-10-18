@@ -1,0 +1,10 @@
+{"edges": [
+{"source": "VisitAsia", "target": "Tuberculosis", "justification": "Recent travel to Asia means possible exposure to regions where tuberculosis is more common, so it raises the chance of having tuberculosis. The visit comes before the infection in time."},
+{"source": "Smoking", "target": "LungCancer", "justification": "Smoking is a well-established cause of lung cancer. The exposure comes before the disease develops."},
+{"source": "Smoking", "target": "Bronchitis", "justification": "Smoking irritates and inflames the airways, which raises the chance of bronchitis. The exposure comes before the condition."},
+{"source": "Tuberculosis", "target": "TubOrCancer", "justification": "TubOrCancer is built from Tuberculosis by a logical OR. It is true whenever tuberculosis is present, so changes in Tuberculosis directly change TubOrCancer."},
+{"source": "LungCancer", "target": "TubOrCancer", "justification": "TubOrCancer is built from LungCancer by a logical OR. It is true whenever lung cancer is present, so changes in LungCancer directly change TubOrCancer."},
+{"source": "TubOrCancer", "target": "XRay", "justification": "Either tuberculosis or lung cancer produces lung lesions that show up as an abnormal chest X-ray. The combined disease indicator drives the X-ray result, which is observed after the disease is present."},
+{"source": "TubOrCancer", "target": "Dyspnoea", "justification": "Tuberculosis and lung cancer both damage lung tissue and reduce lung function, which causes shortness of breath. The symptom follows the disease."},
+{"source": "Bronchitis", "target": "Dyspnoea", "justification": "Bronchitis inflames and narrows the airways, which causes shortness of breath. The symptom follows the condition."}
+]}

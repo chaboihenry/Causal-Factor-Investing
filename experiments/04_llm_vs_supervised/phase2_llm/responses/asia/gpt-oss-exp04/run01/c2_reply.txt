@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Chronic smoking is a well‑known risk factor that directly induces chronic bronchitis. The causal direction flows from exposure (Smoking) to disease (Bronchitis)."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Epidemiological evidence consistently shows that smoking causes lung cancer. Thus the causal arrow points from Smoking to LungCancer."
+    },
+    {
+      "source": "Smoking",
+      "target": "Dyspnoea",
+      "justification": "Smoking irritates and damages the airways, leading to shortness of breath (dyspnoea). The effect is from Smoking to Dyspnoea."
+    },
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs mucociliary clearance and immune defenses, increasing susceptibility to tuberculosis. Hence the causal flow is Smoking → Tuberculosis."
+    },
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Recent travel to Asia raises exposure to Mycobacterium tuberculosis due to higher prevalence in that region, making VisitAsia a causal risk factor for Tuberculosis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Pulmonary TB produces lung infiltrates and cavitation, causing shortness of breath. Therefore Tuberculosis causes Dyspnoea."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "TB lesions are visible as abnormal findings on chest X‑ray, so the disease directly leads to an abnormal XRay result."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "The engineered feature TubOrCancer is defined as true when either TB or lung cancer is present; thus TB is a direct contributor to TubOrCancer."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Tumor growth in the lung can obstruct airways or compress structures, causing dyspnoea. Hence LungCancer → Dyspnoea."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Lung cancer typically manifests as an abnormal mass or opacity on chest X‑ray, so the disease causes the abnormal XRay."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer includes lung cancer as one of its two possible causes, making LungCancer a direct source for TubOrCancer."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Chronic bronchitis produces airflow limitation and inflammation, resulting in shortness of breath. Therefore Bronchitis → Dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Bronchial inflammation and hyper‑aeration can be detected as abnormal markings on chest X‑ray, so Bronchitis causes an abnormal XRay."
+    },
+    {
+      "source": "Dyspnoea",
+      "target": "XRay",
+      "justification": "In clinical practice, patients presenting with dyspnoea are usually ordered a chest X‑ray to investigate the cause. Thus the symptom triggers the imaging test."
+    },
+    {
+      "source": "XRay",
+      "target": "TubOrCancer",
+      "justification": "An abnormal X‑ray is often the basis for diagnosing either tuberculosis or lung cancer; hence the test result causally leads to the engineered feature TubOrCancer."
+    }
+  ]
+}
+```

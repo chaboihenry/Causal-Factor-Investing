@@ -1,0 +1,21 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloudy skies are a weather precursor to precipitation; a change from clear to cloudy typically raises the probability of rain."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "When the garden sprinkler is switched on, it directly waters the grass, causing it to be wet."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rainfall during the morning directly wets the grass, so a change in the rain status causes a change in the wetness of the grass."
+    }
+  ]
+}
+```

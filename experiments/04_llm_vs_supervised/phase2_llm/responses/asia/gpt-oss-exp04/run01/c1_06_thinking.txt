@@ -1,0 +1,13 @@
+We need to infer causal DAG among these medical features: VisitAsia, Smoking, Tuberculosis, LungCancer, Bronchitis, TubOrCancer, XRay, Dyspnoea.
+
+Given definitions: visit Asia influences TB; smoking influences lung cancer, TB, bronchitis; TB causes abnormal X-ray, dyspnoea; lung cancer causes abnormal X-ray, dyspnoea; bronchitis causes dyspnoea; XRay abnormal may be caused by TB, lung cancer, bronchitis. TubOrCancer is derived from TB or LungCancer. It is not a cause but a derived. So edges: VisitAsia -> Tuberculosis. Smoking -> Tuberculosis. Smoking -> LungCancer. Smoking -> Bronchitis. TB -> XRay. LungCancer -> XRay. Bronchitis -> XRay. TB -> Dyspnoea. LungCancer -> Dyspnoea. Bronchitis -> Dyspnoea. TubOrCancer has no outgoing edges? It may cause XRay? But it's derived; but "whether the patient has either tuberculosis or lung cancer" is outcome; doesn't cause XRay; XRay is more direct. So we don't include TubOrCancer -> XRay. Similarly TubOrCancer may cause Dyspnoea but derived; but we might consider that presence of either disease causes dyspnoea; but we already have edges from TB and LungCancer. For clarity, edges from TB, LungCancer, Bronchitis to Dyspnoea; no edges from TubOrCancer.
+
+Also we may consider smoking influences dyspnoea indirectly via bronchitis. But not direct.
+
+Edge list with justifications.
+
+Also note that VisitAsia might also cause bronchitis? Not necessarily. Only TB.
+
+We must ensure DAG acyclic: edges as described.
+
+Return JSON.

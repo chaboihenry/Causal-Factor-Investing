@@ -1,0 +1,21 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloudy skies increase the likelihood of precipitation; clouds contain condensed water that can fall as rain."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "Activation of the sprinkler directly delivers water onto the grass, wetting it by noon."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rainfall occurring on the morning wets the grass during the day."
+    }
+  ]
+}
+```

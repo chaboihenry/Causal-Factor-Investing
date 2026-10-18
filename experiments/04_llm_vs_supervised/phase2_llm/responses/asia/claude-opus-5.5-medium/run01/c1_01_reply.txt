@@ -1,0 +1,44 @@
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "A recent visit to Asia raises exposure to regions with higher tuberculosis prevalence, which raises the probability of infection. The visit comes before the disease."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking is a well-established primary cause of lung cancer. The exposure comes before the disease develops."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Smoking irritates and inflames the airways, so it is a major cause of bronchitis, especially the chronic form."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is built from Tuberculosis: it is true whenever tuberculosis is present. That makes Tuberculosis a component that determines its value."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is built from LungCancer: it is true whenever lung cancer is present. That makes LungCancer a component that determines its value."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "XRay",
+      "justification": "Both tuberculosis and lung cancer cause visible lung abnormalities. Their combined presence therefore drives an abnormal chest X-ray result."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis and lung cancer both damage lung tissue and reduce respiratory capacity. Having either one causes shortness of breath."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Bronchitis inflames the airways and narrows them, which directly causes shortness of breath."
+    }
+  ]
+}

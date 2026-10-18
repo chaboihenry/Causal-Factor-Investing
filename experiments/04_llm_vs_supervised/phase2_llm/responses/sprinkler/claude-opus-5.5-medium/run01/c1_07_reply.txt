@@ -1,0 +1,6 @@
+{"edges": [
+{"source": "Cloudy", "target": "Sprinkler", "justification": "Whether the morning sky is cloudy shapes the decision to turn on the sprinkler that morning. Overcast conditions signal likely rain and less evaporation, so the sprinkler is less likely to be switched on. Cloud cover comes first, and the sprinkler decision responds to it."},
+{"source": "Cloudy", "target": "Rain", "justification": "Clouds are a physical precondition for rain. A cloudy morning makes rain that morning much more likely, while rain does not cause the sky to be cloudy."},
+{"source": "Sprinkler", "target": "WetGrass", "justification": "Running the sprinkler in the morning puts water directly on the grass, so the grass is more likely to be wet at noon. The morning sprinkler activity comes before the noon observation, so causality runs from Sprinkler to WetGrass."},
+{"source": "Rain", "target": "WetGrass", "justification": "Rain in the morning wets the grass, raising the chance it is still wet at noon. Morning rain comes before the noon state of the grass, so the edge runs from Rain to WetGrass."}
+]}

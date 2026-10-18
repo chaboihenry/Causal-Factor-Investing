@@ -1,0 +1,6 @@
+{"edges": [
+  {"source": "Cloudy", "target": "Sprinkler", "justification": "Whether the morning sky is cloudy shapes the decision to switch on the sprinkler. People are less likely to water when clouds suggest rain is coming, so cloudiness comes first and influences sprinkler use."},
+  {"source": "Cloudy", "target": "Rain", "justification": "Cloud cover is a meteorological precondition for rain. A cloudy morning raises the probability of rain that same morning, so causality runs from Cloudy to Rain."},
+  {"source": "Sprinkler", "target": "WetGrass", "justification": "A sprinkler switched on in the morning wets the grass directly. The morning watering comes before the noon observation, so the edge runs from Sprinkler to WetGrass."},
+  {"source": "Rain", "target": "WetGrass", "justification": "Morning rain wets the grass directly, and it happens before the grass's state is observed at noon, so the edge runs from Rain to WetGrass."}
+]}

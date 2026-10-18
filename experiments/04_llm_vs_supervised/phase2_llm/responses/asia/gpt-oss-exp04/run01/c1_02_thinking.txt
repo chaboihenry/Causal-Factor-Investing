@@ -1,0 +1,46 @@
+We need to identify causal relationships among features: VisitAsia, Smoking, Tuberculosis, LungCancer, Bronchitis, TubOrCancer, XRay, Dyspnoea.
+
+We must think about domain knowledge: visit to Asia can cause TB exposure, smoking causes lung cancer and bronchitis, TB causes X-ray abnormality and dyspnoea, lung cancer causes X-ray abnormality and dyspnoea, bronchitis causes dyspnoea maybe, X-ray abnormal results may result from TB, cancer, bronchitis etc. TubOrCancer is derived from Tuberculosis or LungCancer; so causality flows from Tuberculosis and LungCancer to TubOrCancer (as it's a function of them). Also perhaps smoking causes lung cancer, smoking causes bronchitis, smoking may increase TB risk? maybe.
+
+Also VisitAsia can cause TB but not directly lung cancer? Possibly, but not given. We'll avoid uncertain.
+
+We must produce edges as list. Let's produce edges:
+
+- VisitAsia -> Tuberculosis (since visiting Asia increases TB risk). Justification: travel to Asia increases exposure to TB-causing bacteria.
+
+- Smoking -> LungCancer (smoking causes lung cancer). Justification: epidemiological evidence that smoking causes lung cancer.
+
+- Smoking -> Bronchitis (smoking causes chronic bronchitis). Justification.
+
+- Smoking -> Tuberculosis? maybe but not enough. Might not include.
+
+- Tuberculosis -> XRay (TB causes abnormal chest X-ray). Justification.
+
+- LungCancer -> XRay (cancer causes abnormal X-ray). Justification.
+
+- Bronchitis -> XRay? maybe, but not strong; but chronic bronchitis may show abnormal findings. Might include: Bronchitis -> XRay. Justification.
+
+- Tuberculosis -> Dyspnoea (TB causes shortness of breath). Justification.
+
+- LungCancer -> Dyspnoea. Justification.
+
+- Bronchitis -> Dyspnoea. Justification.
+
+- Tuberculosis -> TubOrCancer (derived). Justification: TubOrCancer is true if either TB or cancer present.
+
+- LungCancer -> TubOrCancer.
+
+Additionally, maybe TubOrCancer -> XRay? But XRay is derived from underlying diseases; the causal path is from TB or cancer to XRay. Since TubOrCancer is not causing XRay but is just a derived boolean. So no edge from TubOrCancer to XRay.
+
+Also, VisitAsia could cause Bronchitis? not necessary.
+
+We also might consider that smoking may cause TB through immunosuppression. But maybe we don't include uncertain.
+
+Edge list: produce as JSON array.
+
+Let's write justification for each. We'll keep simple.
+
+Edge list order not important. Provide justification sentences.
+
+Let's create JSON.
+

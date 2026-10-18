@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Travel to Asia is a known exposure risk for tuberculosis; the presence of tuberculosis is thus causally downstream of visiting Asia."
+    },
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs pulmonary immunity and increases susceptibility to tuberculosis infection."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Tobacco smoke contains carcinogens that directly cause lung cancer; smoking is a primary causal factor."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Chronic exposure to smoke irritates the bronchial mucosa, leading to chronic bronchitis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Pulmonary tuberculosis typically produces characteristic abnormalities on chest X‑ray."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Malignant lung lesions often manifest as abnormal findings on chest X‑ray imaging."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Bronchial inflammation and mucus hypersecretion can lead to X‑ray abnormalities such as increased bronchial markings."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Pulmonary TB commonly causes shortness of breath due to lung infiltrates and impaired gas exchange."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Lung tumors obstruct airflow or damage lung parenchyma, resulting in dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Inflammation and mucus plugging in the bronchi cause breathing difficulty."
+    }
+  ]
+}
+```

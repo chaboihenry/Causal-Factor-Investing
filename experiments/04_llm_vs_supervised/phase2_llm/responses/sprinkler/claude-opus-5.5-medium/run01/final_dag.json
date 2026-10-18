@@ -1,0 +1,33 @@
+{
+ "graph": "sprinkler",
+ "backend": "claude-opus-5.5-medium",
+ "run": 1,
+ "date": "2026-10-17T23:15:30",
+ "n_undirected_c1": 4,
+ "validation_rounds": 1,
+ "validated": true,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "Cloudy",
+   "target": "Rain",
+   "justification": "Cloudy skies are a physical precondition for rain. Rain falls from clouds, so whether the sky is cloudy that morning influences whether it rains. Rain cannot make the sky cloudy."
+  },
+  {
+   "source": "Cloudy",
+   "target": "Sprinkler",
+   "justification": "Whether the sprinkler is switched on is a decision made in response to the weather. On a cloudy morning, when rain is likely, people tend not to switch the sprinkler on. The sprinkler's state cannot affect cloud cover."
+  },
+  {
+   "source": "Rain",
+   "target": "WetGrass",
+   "justification": "Rain in the morning directly wets the grass, so it affects whether the grass is wet at noon. The morning rain comes before the noon observation, so causality runs from Rain to WetGrass."
+  },
+  {
+   "source": "Sprinkler",
+   "target": "WetGrass",
+   "justification": "A sprinkler running in the morning puts water on the grass, so it affects whether the grass is wet at noon. The sprinkler state comes before the noon observation, so causality runs from Sprinkler to WetGrass."
+  }
+ ]
+}

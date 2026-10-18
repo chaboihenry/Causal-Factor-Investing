@@ -1,0 +1,30 @@
+{
+ "graph": "sprinkler",
+ "backend": "gpt-oss-exp04",
+ "run": 1,
+ "rule": "p<0.05 and refute_p>=0.05",
+ "n_before": 5,
+ "n_after": 4,
+ "edges": [
+  {
+   "source": "Cloudy",
+   "target": "Rain",
+   "justification": "A cloudy sky is a precursor to rainfall; cloud formation precedes rain, so cloudiness causes rain."
+  },
+  {
+   "source": "Cloudy",
+   "target": "Sprinkler",
+   "justification": "When it is cloudy, people tend to turn off or avoid turning on sprinklers to prevent unnecessary watering, so cloudiness influences the sprinkler state."
+  },
+  {
+   "source": "Rain",
+   "target": "WetGrass",
+   "justification": "Rain directly wets the grass on the same day, so rainfall causes wet grass."
+  },
+  {
+   "source": "Sprinkler",
+   "target": "WetGrass",
+   "justification": "Water from the sprinkler moistens the grass during the same day, making the sprinkler a direct cause of wet grass."
+  }
+ ]
+}

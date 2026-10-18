@@ -1,0 +1,26 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloudy skies increase the probability of rainfall; thus cloud cover tends to cause rain."
+    },
+    {
+      "source": "Rain",
+      "target": "Sprinkler",
+      "justification": "When it rains, the need to activate the sprinkler is reduced; rain influences the sprinkler's state (typically causing it to be off)."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "Operation of the sprinkler directly wets the grass during the day."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rain directly wets the grass, causing it to be wet at noon."
+    }
+  ]
+}
+```

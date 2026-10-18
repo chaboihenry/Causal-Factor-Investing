@@ -1,0 +1,10 @@
+{"edges": [
+{"source": "VisitAsia", "target": "Tuberculosis", "justification": "Recent travel to Asia increases exposure to tuberculosis, which is more common in some Asian regions, so the visit raises the likelihood of infection."},
+{"source": "Smoking", "target": "LungCancer", "justification": "Smoking is a well-established primary cause of lung cancer."},
+{"source": "Smoking", "target": "Bronchitis", "justification": "Smoking irritates and inflames the bronchial airways and is a major cause of chronic bronchitis."},
+{"source": "Tuberculosis", "target": "TubOrCancer", "justification": "TubOrCancer is defined as a logical OR that includes tuberculosis. A change in tuberculosis status directly determines its value."},
+{"source": "LungCancer", "target": "TubOrCancer", "justification": "TubOrCancer is defined as a logical OR that includes lung cancer. A change in lung cancer status directly determines its value."},
+{"source": "TubOrCancer", "target": "XRay", "justification": "Tuberculosis and lung cancer both cause visible lung abnormalities. Having either condition, captured by TubOrCancer, causes an abnormal chest X-ray."},
+{"source": "TubOrCancer", "target": "Dyspnoea", "justification": "Lung damage from either tuberculosis or lung cancer, captured by TubOrCancer, impairs breathing and causes shortness of breath."},
+{"source": "Bronchitis", "target": "Dyspnoea", "justification": "Bronchitis inflames and narrows the airways, which causes shortness of breath."}
+]}

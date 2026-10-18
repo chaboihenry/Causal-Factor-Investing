@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking increases the risk of contracting tuberculosis by impairing lung immunity."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking is a primary etiological factor for lung cancer."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Chronic smoking causes airway inflammation leading to bronchitis."
+    },
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Recent travel to Asia is a risk factor for exposure to tuberculosis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Pulmonary tuberculosis produces characteristic abnormalities detectable on chest X‑ray."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Lung cancer lesions are usually visible as abnormal findings on chest X‑ray."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Bronchial inflammation can manifest as abnormal radiographic patterns."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis infection impairs gas exchange, causing shortness of breath."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Lung cancer obstructs airflow or damages lung tissue, leading to dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Bronchitis reduces airway diameter, producing shortness of breath."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is defined as true if either tuberculosis or lung cancer is present."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is defined as true if either tuberculosis or lung cancer is present."
+    },
+    {
+      "source": "Smoking",
+      "target": "Dyspnoea",
+      "justification": "Smoking irritates the airways and can directly cause shortness of breath."
+    }
+  ]
+}
+```

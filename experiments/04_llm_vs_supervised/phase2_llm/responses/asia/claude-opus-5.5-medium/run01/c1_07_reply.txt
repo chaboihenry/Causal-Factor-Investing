@@ -1,0 +1,44 @@
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "A recent visit to Asia exposes the patient to regions with higher tuberculosis prevalence, which raises the probability of infection. The visit comes before the disease, so causality runs from VisitAsia to Tuberculosis."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking is a well-established primary cause of lung cancer. The exposure comes before the disease develops."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Smoking irritates and inflames the airways and is a major cause of chronic bronchitis. The exposure comes before the condition."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is defined as a logical OR of Tuberculosis and LungCancer, so it is derived directly from Tuberculosis."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is defined as a logical OR of Tuberculosis and LungCancer, so it is derived directly from LungCancer."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "XRay",
+      "justification": "Either tuberculosis or lung cancer produces lung lesions or opacities that appear as an abnormal chest X-ray. The test result reflects the disease state that precedes it."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis or lung cancer damages lung tissue and impairs breathing, which causes shortness of breath as a symptom."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Bronchitis inflames the airways and obstructs airflow, which directly causes shortness of breath."
+    }
+  ]
+}

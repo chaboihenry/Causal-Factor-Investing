@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs lung defenses and increases susceptibility to tuberculosis infection."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Carcinogenic substances in tobacco smoke are a major causal factor for lung cancer."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Repeated exposure to cigarette smoke damages the airway epithelium, leading to chronic bronchitis."
+    },
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Travel to Asia exposes patients to TB‑endemic regions, raising the risk of acquiring tuberculosis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "The feature ‘TubOrCancer’ is defined as true whenever tuberculosis is present."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "The feature ‘TubOrCancer’ is defined as true whenever lung cancer is present."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Tuberculosis produces infiltrates and cavitations that appear as abnormal findings on a chest X‑ray."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Lung cancer lesions or masses are detected as abnormalities on chest X‑ray images."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Chronic bronchitis causes airway inflammation and mucus hypersecretion, which can be visualized as abnormal X‑ray changes."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis can cause lung cavitation and infiltrates that impair gas exchange, leading to shortness of breath."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Lung cancer obstructs airways or reduces lung capacity, producing dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Inflammation and mucus production in bronchitis increase airway resistance, causing shortness of breath."
+    }
+  ]
+}
+```

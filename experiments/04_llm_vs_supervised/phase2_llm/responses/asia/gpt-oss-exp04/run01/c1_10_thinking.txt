@@ -1,0 +1,109 @@
+We need to identify causal relationships among features: VisitAsia, Smoking, Tuberculosis, LungCancer, Bronchitis, TubOrCancer, XRay, Dyspnoea. We need edges from causes to effects. Use domain knowledge. Let's think.
+
+Definitions:
+
+- VisitAsia: patient visited Asia recently. Could influence risk of tuberculosis (if Asia endemic). So VisitAsia -> Tuberculosis. Also could influence risk of bronchitis? Maybe travel related exposures? Usually TB risk higher. So VisitAsia -> Tuberculosis.
+
+- Smoking: risk factor for lung cancer, bronchitis, TB? Smoking increases TB risk? Probably yes, but direct causal? Might influence TB as risk factor, but TB more due to exposure. For simplicity, Smoking -> LungCancer, Smoking -> Bronchitis. Smoking -> Tuberculosis maybe, but uncertain. In typical medical literature, smoking is a risk factor for TB, but not primary. Might include.
+
+- Tuberculosis -> TubOrCancer? Actually TubOrCancer defined as either TB or lung cancer. So Tuberculosis directly causes TubOrCancer (since presence). Similarly LungCancer -> TubOrCancer. So edges: Tuberculosis -> TubOrCancer, LungCancer -> TubOrCancer.
+
+- XRay: chest X-ray abnormal result may be caused by underlying TB, lung cancer, bronchitis. So edges: Tuberculosis -> XRay, LungCancer -> XRay, Bronchitis -> XRay.
+
+- Dyspnoea (shortness of breath): symptoms caused by TB, lung cancer, bronchitis, maybe XRay abnormal? Actually Dyspnoea arises from lung disease. So edges: Tuberculosis -> Dyspnoea, LungCancer -> Dyspnoea, Bronchitis -> Dyspnoea. Also XRay abnormal may indicate disease causing Dyspnoea. But XRay result may be influenced by disease and could cause Dyspnoea? Actually abnormal XRay indicates disease but may not directly cause Dyspnoea; it's a diagnostic marker. But we can consider disease -> Dyspnoea; XRay is a diagnostic test result derived from underlying condition. So direction: disease -> XRay. So we already have that.
+
+- Smoking also can cause Dyspnoea via bronchitis; also can cause lung cancer that causes dyspnoea. But we have disease->Dyspnoea.
+
+- VisitAsia may cause TB, which causes Dyspnoea. So indirect.
+
+- TubOrCancer maybe used as a diagnostic variable; but does it cause anything? It is derived from TB or LungCancer. So we shouldn't have edges from it to others.
+
+- Also Smoking might cause bronchitis, which may cause dyspnoea, also cause XRay. So Smoking -> Bronchitis. Already included.
+
+- Smoking might directly cause Dyspnoea? Smoking irritates airways causing breathlessness. But domain: smoking increases risk of COPD. But we can include: Smoking -> Dyspnoea? Might be too indirect. But we can include to maximize recall but avoid false positives. We can include but risk of false positive. But high recall requirement; maybe include.
+
+- VisitAsia -> Tuberculosis, maybe also -> XRay? Through TB. But direct? Maybe not.
+
+- VisitAsia -> Dyspnoea? Indirect through TB. But no direct causal.
+
+- TubOrCancer -> XRay? Since XRay is abnormal if TB or lung cancer present. So yes: TubOrCancer -> XRay? Actually XRay abnormal result is derived from underlying conditions; but we could model as both TB and LungCancer cause XRay abnormal. TubOrCancer is a derived variable; it might not directly cause XRay but is redundant. But we can exclude due to being derived. The instruction says: consider engineered relationships; if A derived from B, then B causes A. So if TubOrCancer is derived from TB or LungCancer, then TB->TubOrCancer, LungCancer->TubOrCancer. Not reverse.
+
+- Similarly, XRay abnormal may be derived from underlying diseases, so edges as above.
+
+- Dyspnoea may be derived from diseases, so edges disease -> Dyspnoea.
+
+- Smoking -> LungCancer and Bronchitis. Also Smoking -> Dyspnoea? Might include.
+
+- VisitAsia -> Tuberculosis.
+
+- Smoking -> Tuberculosis? Could include but maybe optional. For recall we include.
+
+- Smoking -> LungCancer (obvious).
+
+- Smoking -> Bronchitis (obvious).
+
+- Tuberculosis -> Bronchitis? TB may cause bronchitis? Possibly, but not typical. But we can include because TB infection can lead to bronchitis? Might be plausible.
+
+- Bronchitis -> XRay? yes.
+
+- Bronchitis -> Dyspnoea? yes.
+
+- Also maybe Tuberculosis -> Bronchitis? Not typical; but we can ignore.
+
+- TB -> Dyspnoea yes.
+
+- LungCancer -> Dyspnoea yes.
+
+- TB -> XRay yes.
+
+- LungCancer -> XRay yes.
+
+- Bronchitis -> XRay yes.
+
+- Smoking -> Dyspnoea? maybe.
+
+- VisitAsia -> Dyspnoea? not direct.
+
+- VisitAsia -> XRay? maybe through TB; but not direct.
+
+- TubOrCancer -> Dyspnoea? Not directly derived.
+
+Thus edges list.
+
+Let's produce JSON with edges list.
+
+Number edges: Let's list each pair.
+
+Edges:
+
+1. VisitAsia -> Tuberculosis ("Recent visit to Asia increases exposure risk for TB, a causal risk factor").
+
+2. Smoking -> LungCancer ("Smoking introduces carcinogens that cause lung cancer").
+
+3. Smoking -> Bronchitis ("Smoking irritates airways leading to bronchitis").
+
+4. Smoking -> Tuberculosis (optional but plausible). (We may include but might be false. But for recall, include: "Smoking weakens immunity increasing TB susceptibility").
+
+5. Tuberculosis -> XRay ("TB causes pulmonary infiltrates detectable by abnormal chest X-ray").
+
+6. LungCancer -> XRay ("Lung cancer manifests as masses or nodules on chest X-ray").
+
+7. Bronchitis -> XRay ("Bronchial inflammation produces changes on chest X-ray").
+
+8. Tuberculosis -> Dyspnoea ("TB infection damages lung tissue causing shortness of breath").
+
+9. LungCancer -> Dyspnoea ("Tumors obstruct airways leading to dyspnoea").
+
+10. Bronchitis -> Dyspnoea ("Inflamed bronchi reduce airflow causing dyspnoea").
+
+11. TubOrCancer -> XRay? maybe but derived. We skip.
+
+12. TubOrCancer -> Dyspnoea? skip.
+
+13. Smoking -> Dyspnoea? maybe include: "Smoking irritates airways leading to dyspnoea".
+
+Also maybe TubOrCancer -> ??? Not needed.
+
+Add justifications.
+
+Let's produce JSON edges array.

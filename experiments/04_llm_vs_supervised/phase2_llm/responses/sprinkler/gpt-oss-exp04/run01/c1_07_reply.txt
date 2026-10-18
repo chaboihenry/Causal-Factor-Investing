@@ -1,0 +1,21 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "A cloudy sky increases the likelihood of rainfall during the same morning; cloud cover precedes and causes rain."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rain that falls in the morning directly wets the grass by noon, so changes in Rain cause changes in WetGrass."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "When the sprinkler is switched on in the morning, it waters the grass, making it wet by noon; thus Sprinkler causes WetGrass."
+    }
+  ]
+}
+```

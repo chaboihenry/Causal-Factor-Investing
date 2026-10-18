@@ -1,0 +1,24 @@
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "A cloudy morning sky is a precondition for rain that morning. Cloud cover comes first in time and physically causes precipitation, so cloudiness raises the probability of rain."
+    },
+    {
+      "source": "Cloudy",
+      "target": "Sprinkler",
+      "justification": "Whether the sky is cloudy influences whether the sprinkler is switched on. When it is cloudy, people (or automated systems) are less likely to water the garden because rain is expected and evaporation is lower. The causal direction runs from the observed weather to the watering decision."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "The sprinkler running in the morning puts water on the grass, which directly causes it to be wet at noon. The morning event comes before the noon outcome, so the direction is from Sprinkler to WetGrass."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rain falling in the morning wets the grass, which directly causes it to be wet at noon the same day. The morning precipitation comes before the noon state, so causality flows from Rain to WetGrass."
+    }
+  ]
+}

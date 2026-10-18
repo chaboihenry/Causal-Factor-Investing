@@ -1,0 +1,13 @@
+```json
+{
+  "valid": true,
+  "corrections": [
+    {
+      "type": "missing",
+      "source": "TubOrCancer",
+      "target": "XRay",
+      "justification": "The engineered feature TubOrCancer signifies the presence of either tuberculosis or lung cancer. Both conditions directly cause abnormal findings on a chest X‑ray, so a causal edge from TubOrCancer to XRay is required to represent that the disease state leads to an abnormal imaging result."
+    }
+  ]
+}
+```

@@ -1,0 +1,13 @@
+{
+  "graph": "asia",
+  "edges": [
+    ["VisitAsia", "Tuberculosis"],
+    ["Smoking", "LungCancer"],
+    ["Smoking", "Bronchitis"],
+    ["Tuberculosis", "TubOrCancer"],
+    ["LungCancer", "TubOrCancer"],
+    ["TubOrCancer", "XRay"],
+    ["TubOrCancer", "Dyspnoea"],
+    ["Bronchitis", "Dyspnoea"]
+  ]
+}

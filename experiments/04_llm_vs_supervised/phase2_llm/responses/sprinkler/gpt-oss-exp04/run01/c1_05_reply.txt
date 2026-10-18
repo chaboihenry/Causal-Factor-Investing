@@ -1,0 +1,21 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloudy skies typically lead to rainfall due to condensation of water vapor into precipitation, so the presence of clouds in the morning causally influences whether it rains that same morning."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "When the sprinkler is switched on, water is dispersed onto the grass, directly causing the grass to become wet by noon."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rainfall falls on the grass and wets it, so the occurrence of rain in the morning causally determines the wetness of the grass at noon."
+    }
+  ]
+}
+```

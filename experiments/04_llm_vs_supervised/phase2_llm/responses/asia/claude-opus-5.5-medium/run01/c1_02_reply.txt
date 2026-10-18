@@ -1,0 +1,44 @@
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "A recent visit to Asia raises exposure to regions with higher tuberculosis prevalence, so it raises the likelihood that the patient has tuberculosis. The visit comes before the infection."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking is a well-established cause of lung cancer. The exposure comes before the disease develops."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Smoking irritates and inflames the bronchial airways, so it raises the likelihood of bronchitis. The exposure comes before the condition."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is defined as true if at least one of tuberculosis or lung cancer is present, so it is built directly from Tuberculosis."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "TubOrCancer is defined as true if at least one of tuberculosis or lung cancer is present, so it is built directly from LungCancer."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "XRay",
+      "justification": "Either tuberculosis or lung cancer produces lung abnormalities visible on a chest X-ray. The disease state comes before the diagnostic test result."
+    },
+    {
+      "source": "TubOrCancer",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis or lung cancer damages lung function and causes shortness of breath. The disease comes before the symptom."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Bronchitis inflames and narrows the airways, which causes shortness of breath. The condition comes before the symptom."
+    }
+  ]
+}

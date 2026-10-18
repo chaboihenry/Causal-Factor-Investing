@@ -1,0 +1,8 @@
+name: causal-factor
+channels:
+  - defaults
+dependencies:
+  - statsmodels
+  - numpy
+  - python=3.12
+prefix: C:\Users\henry\miniconda3\envs\causal-factor

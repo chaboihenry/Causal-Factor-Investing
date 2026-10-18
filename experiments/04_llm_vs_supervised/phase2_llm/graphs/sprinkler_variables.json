@@ -1,0 +1,10 @@
+{
+  "graph": "sprinkler",
+  "source": "Pearl (1988), Probabilistic Reasoning in Intelligent Systems; standard textbook example",
+  "variables": [
+    {"name": "Cloudy", "definition": "Whether the sky is cloudy on a given morning."},
+    {"name": "Sprinkler", "definition": "Whether the garden sprinkler is switched on that morning."},
+    {"name": "Rain", "definition": "Whether it rains that morning."},
+    {"name": "WetGrass", "definition": "Whether the grass is wet at noon the same day."}
+  ]
+}

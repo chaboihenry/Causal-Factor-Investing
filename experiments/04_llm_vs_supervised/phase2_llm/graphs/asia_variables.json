@@ -1,0 +1,14 @@
+{
+  "graph": "asia",
+  "source": "Lauritzen & Spiegelhalter (1988), 'Local computations with probabilities on graphical structures', JRSS-B 50(2): 157-224; bnlearn 'asia'",
+  "variables": [
+    {"name": "VisitAsia", "definition": "Whether the patient recently visited Asia."},
+    {"name": "Smoking", "definition": "Whether the patient is a smoker."},
+    {"name": "Tuberculosis", "definition": "Whether the patient has tuberculosis."},
+    {"name": "LungCancer", "definition": "Whether the patient has lung cancer."},
+    {"name": "Bronchitis", "definition": "Whether the patient has bronchitis."},
+    {"name": "TubOrCancer", "definition": "Whether the patient has either tuberculosis or lung cancer (i.e. true if at least one of the two is present)."},
+    {"name": "XRay", "definition": "Whether the patient's chest X-ray shows an abnormal result."},
+    {"name": "Dyspnoea", "definition": "Whether the patient has shortness of breath."}
+  ]
+}

@@ -1,0 +1,21 @@
+```json
+{
+  "edges": [
+    {
+      "source": "Cloudy",
+      "target": "Rain",
+      "justification": "Cloudiness on a morning typically indicates the presence of atmospheric conditions that can lead to precipitation; thus, a change in cloud cover causally influences whether it rains that day."
+    },
+    {
+      "source": "Rain",
+      "target": "WetGrass",
+      "justification": "Rain falling during the day directly wets the grass by noon, making the occurrence of wet grass a direct causal effect of rainfall."
+    },
+    {
+      "source": "Sprinkler",
+      "target": "WetGrass",
+      "justification": "When the garden sprinkler is switched on in the morning, water is applied to the grass, causing it to be wet by noon; hence sprinkler activation causally affects the wetness of the grass."
+    }
+  ]
+}
+```

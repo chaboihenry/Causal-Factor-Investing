@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Visit to Asia is a known risk factor that can expose a patient to Mycobacterium tuberculosis, so past exposure can cause a later diagnosis of tuberculosis."
+    },
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs lung immunity and mucociliary clearance, increasing susceptibility to tuberculosis infection over time."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Cigarette smoke contains carcinogens that directly contribute to the development of lung cancer over a prolonged period."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "Long‑term smoking causes chronic irritation and inflammation of the bronchial mucosa, leading to chronic bronchitis."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "The derived feature TubOrCancer is true whenever tuberculosis is present; thus tuberculosis causes TubOrCancer to be true."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "Similarly, presence of lung cancer triggers TubOrCancer to be true."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Tuberculosis often produces radiographic abnormalities (e.g., infiltrates, cavitations) that can be detected by a chest X‑ray."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Primary lung tumors and metastatic lesions frequently appear as abnormal opacities on chest X‑ray."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "XRay",
+      "justification": "Chronic bronchitis can lead to hyperinflation or mucus plugging visible on X‑ray imaging."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "Tuberculosis can cause lung parenchymal damage and airway obstruction, producing shortness of breath."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Tumor growth can obstruct airways or compromise lung function, leading to dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Chronic inflammation and mucus production in bronchitis reduce airflow, causing shortness of breath."
+    }
+  ]
+}
+```

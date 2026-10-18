@@ -1,0 +1,50 @@
+{
+ "graph": "asia",
+ "backend": "claude-opus-5.5-medium",
+ "run": 1,
+ "rule": "p<0.05 and refute_p>=0.05",
+ "n_before": 8,
+ "n_after": 8,
+ "edges": [
+  {
+   "source": "VisitAsia",
+   "target": "Tuberculosis",
+   "justification": "A recent visit to Asia is an exposure that comes before infection and raises the chance of contracting tuberculosis. Having tuberculosis cannot cause a past trip, so the direction runs from VisitAsia to Tuberculosis."
+  },
+  {
+   "source": "Smoking",
+   "target": "LungCancer",
+   "justification": "Smoking is a well-established risk factor that comes before and causes lung cancer. Lung cancer does not cause someone to become a smoker."
+  },
+  {
+   "source": "Smoking",
+   "target": "Bronchitis",
+   "justification": "Smoking irritates and inflames the airways, which increases the risk of bronchitis. Smoking behavior is the upstream exposure, and bronchitis is the resulting condition."
+  },
+  {
+   "source": "Tuberculosis",
+   "target": "TubOrCancer",
+   "justification": "TubOrCancer is an engineered feature built from Tuberculosis: it is true if at least one of tuberculosis or lung cancer is present. Because it is derived from Tuberculosis, causality runs from Tuberculosis to TubOrCancer."
+  },
+  {
+   "source": "LungCancer",
+   "target": "TubOrCancer",
+   "justification": "TubOrCancer is an engineered feature built from LungCancer through a logical OR with Tuberculosis. Because it is derived from LungCancer, causality runs from LungCancer to TubOrCancer."
+  },
+  {
+   "source": "TubOrCancer",
+   "target": "XRay",
+   "justification": "An abnormal chest X-ray is a diagnostic result that reflects underlying lung disease such as tuberculosis or lung cancer. The disease state comes first and determines the test outcome."
+  },
+  {
+   "source": "TubOrCancer",
+   "target": "Dyspnoea",
+   "justification": "Shortness of breath is a symptom caused by lung diseases such as tuberculosis or lung cancer. The disease comes before and produces the symptom."
+  },
+  {
+   "source": "Bronchitis",
+   "target": "Dyspnoea",
+   "justification": "Bronchitis inflames and narrows the airways, which causes shortness of breath. The condition causes the symptom, not the reverse."
+  }
+ ]
+}

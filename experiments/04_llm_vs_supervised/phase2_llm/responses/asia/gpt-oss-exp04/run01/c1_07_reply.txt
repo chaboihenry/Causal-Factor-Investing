@@ -1,0 +1,61 @@
+```json
+{
+  "edges": [
+    {
+      "source": "VisitAsia",
+      "target": "Tuberculosis",
+      "justification": "Visiting Asia exposes patients to Mycobacterium tuberculosis, increasing the likelihood of developing tuberculosis."
+    },
+    {
+      "source": "Smoking",
+      "target": "LungCancer",
+      "justification": "Smoking introduces carcinogens that directly damage lung tissue, establishing a causal link to lung cancer."
+    },
+    {
+      "source": "Smoking",
+      "target": "Bronchitis",
+      "justification": "The inhalation of smoke irritates the airways, leading to chronic bronchial inflammation and bronchitis."
+    },
+    {
+      "source": "Smoking",
+      "target": "Tuberculosis",
+      "justification": "Smoking impairs pulmonary immunity and mucociliary clearance, making individuals more susceptible to tuberculosis infection."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "XRay",
+      "justification": "Active tuberculosis produces pulmonary lesions that are detectable as abnormalities on chest X‑ray imaging."
+    },
+    {
+      "source": "LungCancer",
+      "target": "XRay",
+      "justification": "Lung cancer generates tumorous masses or nodules, which appear as abnormal findings on a chest X‑ray."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "Dyspnoea",
+      "justification": "TB involvement of lung tissue impairs gas exchange, causing shortness of breath (dyspnoea)."
+    },
+    {
+      "source": "LungCancer",
+      "target": "Dyspnoea",
+      "justification": "Tumor growth can obstruct airways or reduce lung compliance, leading to dyspnoea."
+    },
+    {
+      "source": "Bronchitis",
+      "target": "Dyspnoea",
+      "justification": "Inflammation and mucus production in bronchitis narrow the airways, resulting in shortness of breath."
+    },
+    {
+      "source": "Tuberculosis",
+      "target": "TubOrCancer",
+      "justification": "The composite feature TubOrCancer is true when tuberculosis is present; thus tuberculosis causes this feature."
+    },
+    {
+      "source": "LungCancer",
+      "target": "TubOrCancer",
+      "justification": "The composite feature TubOrCancer is true when lung cancer is present; thus lung cancer causes this feature."
+    }
+  ]
+}
+```
