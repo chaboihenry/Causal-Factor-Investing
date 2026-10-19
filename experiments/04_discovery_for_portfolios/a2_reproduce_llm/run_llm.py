@@ -2,7 +2,7 @@
 Run the Sokolov et al. LLM pipeline on one graph: C1 x10 (fresh chats, edges unioned), C2 (directions),
 then C3 repeated in the same chat until the LLM says the DAG is valid (max 5 rounds).
 Backends: ollama (automatic, local gpt-oss) or manual (Claude via clipboard, pasted into claude.ai).
-Saves every prompt, reply and the final DAG under phase2_llm/responses/<graph>/<label>/run<NN>/; resumable.
+Saves every prompt, reply and the final DAG under responses/<graph>/<label>/run<NN>/; resumable.
 """
 
 import argparse
@@ -19,9 +19,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE / 'prompts'))
 import sokolov_prompts as P
+from common.paths import GRAPHS, RESPONSES
 
-GRAPHS = HERE / 'graphs'
-RESPONSES = HERE / 'responses'
 N_EXPLORE = 10
 MAX_VALIDATE = 5
 

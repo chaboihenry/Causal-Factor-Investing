@@ -7,7 +7,7 @@ changing one line instead of every file.
 
 from pathlib import Path
 
-EXP = Path(__file__).resolve().parents[1]      # experiments/04_llm_vs_supervised
+EXP = Path(__file__).resolve().parents[1]      # experiments/04_discovery_for_portfolios
 ROOT = EXP.parents[1]                          # repo root
 
 ADIA = ROOT / 'data' / 'adia'
@@ -16,3 +16,5 @@ MODELS = ROOT / 'models'
 EXTERNAL = ROOT / 'external'
 RESULTS = ROOT / 'results' / 'exp04'
 FIGURES = EXP / 'figures'
+GRAPHS = EXP / 'graphs'
+RESPONSES = EXP / 'responses'

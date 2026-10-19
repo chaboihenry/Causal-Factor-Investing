@@ -2,7 +2,7 @@
 
 Replicates the Primer's approach (PC on factor returns) on public Ken French
 data, and tests stability: which edges and directions survive across periods.
-Saves every period's edges to results/pc_by_period.csv.
+Saves every period's edges to results/exp03/pc_by_period.csv.
 """
 
 import pandas as pd
@@ -12,7 +12,7 @@ from causallearn.search.ConstraintBased.PC import pc
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 DATA = ROOT / 'data' / 'processed' / 'factors_daily.csv'
-OUT = ROOT / 'results' / 'pc_by_period.csv'
+OUT = ROOT / 'results' / 'exp03' / 'pc_by_period.csv'
 
 ALPHA = 0.05
 TEST = 'fisherz'

@@ -1,0 +1,40 @@
+{
+  "graph": "finance",
+  "x": "BookToMarket",
+  "y": "AnnualReturn",
+  "edges": [
+    ["BookToMarket", "AnnualReturn"],
+    ["Leverage", "BookToMarket"],
+    ["Leverage", "AnnualReturn"],
+    ["BookToMarket", "QualityScore"],
+    ["AnnualReturn", "QualityScore"],
+    ["BookToMarket", "EarningsSurprise"],
+    ["EarningsSurprise", "AnnualReturn"],
+    ["PastFiveYearReturn", "BookToMarket"],
+    ["MarketReturn", "AnnualReturn"],
+    ["BookToMarket", "ValueIndexMember"],
+    ["AnnualReturn", "InstOwnershipChange"],
+    ["Leverage", "QualityScore"],
+    ["PastFiveYearReturn", "Leverage"]
+  ],
+  "sources": {
+    "BookToMarket -> AnnualReturn": "Fama & French (1992, 1993): value premium",
+    "Leverage -> BookToMarket": "Primer p. 4 (confounder example); Fama & French (1992), abstract",
+    "Leverage -> AnnualReturn": "Primer p. 4; Bhandari (1988)",
+    "BookToMarket -> QualityScore": "Primer p. 4 (collider example); Fama & French (1995), p. 132",
+    "AnnualReturn -> QualityScore": "Primer p. 4; Asness, Frazzini & Pedersen (2019), sec. 3.2: safety uses beta from returns",
+    "BookToMarket -> EarningsSurprise": "La Porta, Lakonishok, Shleifer & Vishny (1997), abstract",
+    "EarningsSurprise -> AnnualReturn": "La Porta, Lakonishok, Shleifer & Vishny (1997), abstract",
+    "PastFiveYearReturn -> BookToMarket": "Fama & French (1996), abstract: long-term reversal absorbed by book-to-market",
+    "MarketReturn -> AnnualReturn": "Sharpe (1964), CAPM",
+    "BookToMarket -> ValueIndexMember": "FTSE Russell US indexes methodology: style set by book-to-price",
+    "AnnualReturn -> InstOwnershipChange": "Nofsinger & Sias (1999), abstract: herding follows lagged returns",
+    "Leverage -> QualityScore": "Asness, Frazzini & Pedersen (2019), sec. 3.2: safety includes low leverage",
+    "PastFiveYearReturn -> Leverage": "Welch (2004), abstract: stock returns explain ~40% of debt-ratio dynamics"
+  },
+  "roles": {
+    "Leverage": "Confounder", "QualityScore": "Collider", "EarningsSurprise": "Mediator",
+    "PastFiveYearReturn": "Cause of X", "MarketReturn": "Cause of Y", "ValueIndexMember": "Consequence of X",
+    "InstOwnershipChange": "Consequence of Y", "FiscalYearEndMonth": "Independent"
+  }
+}

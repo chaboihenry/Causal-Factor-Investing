@@ -1,7 +1,7 @@
 """
 Reproduce the official ADIA PC baseline on the 1,880 reduced-test datasets.
 gCastle PC (Fisher-z, alpha 0.05), then the notebook's fix_DAG with a seeded RNG per dataset.
-Saves roles and score to results/exp04/phase1/. Target: ~38% (5th-place report).
+Saves roles and score to results/exp04/a1_reproduce_adia/. Target: ~38% (5th-place report).
 """
 
 import sys
@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.paths import ADIA, RESULTS
 from common.scoring import role_table, score
 
-OUT = RESULTS / 'phase1'
+OUT = RESULTS / 'a1_reproduce_adia'
 SEED = 0
 
 

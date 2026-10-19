@@ -1,0 +1,15 @@
+{
+  "graph": "finance",
+  "variables": [
+    {"name": "BookToMarket", "definition": "The firm's book value of equity divided by its market value of equity, measured at the start of the year."},
+    {"name": "AnnualReturn", "definition": "The stock's total return over the twelve months following the start of the year."},
+    {"name": "Leverage", "definition": "The firm's total debt divided by its market value of equity, measured at the start of the year."},
+    {"name": "EarningsSurprise", "definition": "How far the firm's reported earnings during the year differ from analysts' forecasts."},
+    {"name": "QualityScore", "definition": "A composite score of the firm's profitability, growth and safety (low leverage, low stock beta estimated from the stock's returns, and stable profitability), measured at the end of the year."},
+    {"name": "PastFiveYearReturn", "definition": "The stock's total return over the five years before the start of the year."},
+    {"name": "ValueIndexMember", "definition": "Whether the stock is assigned to a value style index at the start of the year."},
+    {"name": "MarketReturn", "definition": "The value-weighted average return of all other US stocks, excluding this firm, over the same twelve months as AnnualReturn."},
+    {"name": "InstOwnershipChange", "definition": "The change in the share of the firm's stock held by institutional investors over the twelve months after the end of the year."},
+    {"name": "FiscalYearEndMonth", "definition": "The calendar month in which the firm's fiscal year ends."}
+  ]
+}

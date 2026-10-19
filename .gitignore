@@ -17,4 +17,7 @@ external/
 # Source papers (copyrighted; never commit)
 papers/
 
+# Personal scratch files
+scratchbook/
+
 CLAUDE.md

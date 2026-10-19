@@ -1,10 +1,10 @@
 """
 Summarize how stable PC's edges are across decades.
 
-Reads results/pc_by_period.csv, ignores the full-sample run, and counts how many
+Reads results/exp03/pc_by_period.csv, ignores the full-sample run, and counts how many
 decades each pair of factors is linked in, plus its most common direction.
 Primer-style aggregation: they voted across 85 Barra models (markets); this
-votes across 6 decades of US data. Saves results/pc_edge_stability.csv.
+votes across 6 decades of US data. Saves results/exp03/pc_edge_stability.csv.
 """
 
 import pandas as pd
@@ -13,8 +13,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-DATA = ROOT / 'results' / 'pc_by_period.csv'
-OUT = ROOT / 'results' / 'pc_edge_stability.csv'
+DATA = ROOT / 'results' / 'exp03' / 'pc_by_period.csv'
+OUT = ROOT / 'results' / 'exp03' / 'pc_edge_stability.csv'
 
 pc_df = pd.read_csv(DATA)
 pc_df = pc_df[pc_df['period'] != '1963-2026'].copy()

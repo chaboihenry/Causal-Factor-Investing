@@ -3,7 +3,7 @@ Reproduce the ADIA 3rd-place model (Hong & Gu, 74.06%) on the 1,880 reduced-test
 Their pipeline: edge-relabel augmentation, 25 feature sets, 3 XGBoost models, soft vote.
 Features are cached in chunks under models/third_place/<mode>/ so a crash resumes.
 Modes: pilot (1,000 train, no augmentation), full (23,500 train, augment 3), smoke (tiny, CPU).
-Saves roles and score to results/exp04/phase1/third_place_<mode>_*.csv. Target: ~74%.
+Saves roles and score to results/exp04/a1_reproduce_adia/third_place_<mode>_*.csv. Target: ~74%.
 """
 
 import argparse
@@ -140,7 +140,7 @@ if __name__ == '__main__':
         sys.exit(f"{roles_df['pred'].isna().sum()} test variables have no prediction")
     overall, per_role = score(roles_df)
 
-    out = RESULTS / 'phase1'
+    out = RESULTS / 'a1_reproduce_adia'
     out.mkdir(parents=True, exist_ok=True)
     roles_df.to_csv(out / f"third_place_{args.mode}_roles.csv", index=False)
     per_role.loc['ALL (balanced accuracy)'] = [overall, len(roles_df)]

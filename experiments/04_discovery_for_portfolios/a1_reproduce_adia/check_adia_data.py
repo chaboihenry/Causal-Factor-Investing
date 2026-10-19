@@ -7,7 +7,7 @@ X and Y present, X -> Y present, no cycles, and the same variable names in the
 data and the adjacency matrix (rows = parents). A split whose graph file is not
 a dict of adjacency matrices is reported and skipped, not guessed at.
 Prints one summary per split and saves the per-dataset checks to
-results/exp04/phase1/adia_data_check.csv.
+results/exp04/a1_reproduce_adia/adia_data_check.csv.
 """
 
 import sys
@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.paths import ADIA, RESULTS
 
-OUT = RESULTS / 'phase1' / 'adia_data_check.csv'
+OUT = RESULTS / 'a1_reproduce_adia' / 'adia_data_check.csv'
 
 SPLITS = [
     # (split name, data file, graph file)

@@ -6,7 +6,7 @@ U4 (liquidity) on ST_Rev–SMB: proxies = daily credit-spread and VIX changes,
 with Mkt-RF as an extra control. Each test adds controls step by step and
 runs on its full sample and two regimes. Reports the beta of interest, its
 95% CI, adjusted R², % change versus model 1, and each proxy's correlation
-with both factors. Saves results/confounder_proxy.csv.
+with both factors. Saves results/exp03/confounder_proxy.csv.
 """
 
 import pandas as pd
@@ -16,7 +16,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 PROC = ROOT / 'data' / 'processed'
-OUT = ROOT / 'results' / 'confounder_proxy.csv'
+OUT = ROOT / 'results' / 'exp03' / 'confounder_proxy.csv'
 
 TESTS = [
     {

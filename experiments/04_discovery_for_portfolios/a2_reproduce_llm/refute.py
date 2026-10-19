@@ -1,8 +1,8 @@
 """
 Sokolov et al. refutation step (arm A2): test every edge of an LLM's final DAG on data with DoWhy.
-Per edge: DoWhy finds the backdoor adjustment set; OLS gives the effect and p-value; a data-subset refuter
+Per edge: smallest valid adjustment set, ties alphabetical (DoWhy); OLS gives effect and p-value; a data-subset refuter
 (50 x 80% subsamples) checks stability. Kept if p < 0.05 and refuter p >= 0.05. Total effect, as in the paper.
-Saves results/exp04/phase2/refute/<graph>_<label>_runNN.csv and refuted_dag.json beside final_dag.json.
+Saves results/exp04/a2_reproduce_llm/refute/<graph>_<label>_runNN.csv and refuted_dag.json beside final_dag.json.
 """
 
 import argparse
@@ -21,11 +21,9 @@ from scipy import stats
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
-from common.paths import RESULTS, SYNTHETIC
+from common.paths import GRAPHS, RESPONSES, RESULTS, SYNTHETIC
 
-GRAPHS = HERE / 'graphs'
-RESPONSES = HERE / 'responses'
-OUT = RESULTS / 'phase2' / 'refute'
+OUT = RESULTS / 'a2_reproduce_llm' / 'refute'
 ALPHA = 0.05
 N_REFUTE, SUBSET = 50, 0.8
 N_ROWS, SEED = 1000, 0
@@ -50,9 +48,13 @@ def simulate_textbook(graph):
 
 
 def adjustment_set(data, dag, source, target):
-    """DoWhy's backdoor adjustment set for source -> target under the LLM's graph (the do-calculus step)."""
+    """Backdoor adjustment set for source -> target under the LLM's graph (the do-calculus step).
+    DoWhy's exhaustive search lists every valid set; we take the smallest valid adjustment set, ties
+    alphabetical, because DoWhy's own pick among equally valid sets depends on Python's hash seed."""
     model = CausalModel(data=data, treatment=source, outcome=target, graph=nx.DiGraph(dag))
-    return list(model.identify_effect(proceed_when_unidentifiable=True).get_backdoor_variables())
+    estimand = model.identify_effect(method_name='exhaustive-search', proceed_when_unidentifiable=True)
+    valid = {tuple(sorted(s)) for key, s in estimand.backdoor_variables.items() if key != 'backdoor' and s is not None}
+    return list(min(valid, key=lambda s: (len(s), s))) if valid else []
 
 
 def ols_effect(data, source, target, adjust):
@@ -125,7 +127,7 @@ if __name__ == '__main__':
     if args.data:
         data = pd.read_csv(args.data)
     else:
-        path = SYNTHETIC / 'phase2' / f"{args.graph}.csv"
+        path = SYNTHETIC / 'a2_reproduce_llm' / f"{args.graph}.csv"
         if not path.exists():
             path.parent.mkdir(parents=True, exist_ok=True)
             simulate_textbook(args.graph).to_csv(path, index=False)

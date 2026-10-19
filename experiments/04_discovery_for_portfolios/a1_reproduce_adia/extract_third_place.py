@@ -32,6 +32,6 @@ source = '\n\n'.join(f"# ---- notebook code cell {i}\n" + '\n'.join(filter(keep,
                      for i in CELLS)
 
 header = (f'"""Auto-generated from Hong & Gu, ADIA Lab Causal Discovery 3rd place, commit {COMMIT}.\n'
-          'Do not edit or commit. Rebuild with phase1_adia/extract_third_place.py."""\n\n')
+          'Do not edit or commit. Rebuild with a1_reproduce_adia/extract_third_place.py."""\n\n')
 OUT.write_text(header + source, encoding='utf-8')
 print(f"wrote {OUT} ({len(source.splitlines())} lines from {len(CELLS)} cells, unpatched)")

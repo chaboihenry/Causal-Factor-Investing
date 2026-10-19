@@ -4,7 +4,7 @@ Replicate the Primer's Exhibit 5 on public Fama-French factors.
 Finds collider triples (X -> Y and X -> C <- Y) in the aggregated PC graph,
 then regresses Y on X with and without the collider C. Reports X's beta,
 p-value and adjusted R² in both models, and flags sign flips.
-Saves results/exhibit5_replication.csv.
+Saves results/exp03/exhibit5_replication.csv.
 """
 
 import pandas as pd
@@ -14,9 +14,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-DATA = ROOT / 'results' / 'pc_edge_stability.csv'
+DATA = ROOT / 'results' / 'exp03' / 'pc_edge_stability.csv'
 FACTORS = ROOT / 'data' / 'processed' / 'factors_daily.csv'
-OUT = ROOT / 'results' / 'exhibit5_replication.csv'
+OUT = ROOT / 'results' / 'exp03' / 'exhibit5_replication.csv'
 
 df = pd.read_csv(DATA)
 df = df[(df['keep'] == True) & (df['tie'] == False) & (df['majority'].str.contains('->'))]
@@ -29,7 +29,7 @@ nodes = sorted({n for e in edges for n in e})
 print(f"{len(edges)} directed edges, {len(nodes)} nodes")
 
 triples = []
-for x, y in edges:
+for x, y in sorted(edges):
     for c in nodes:
         if c in (x, y):
             continue
