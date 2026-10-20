@@ -1,8 +1,8 @@
 """
-Predict roles with the trained 3rd-place ensemble (models/third_place/full/xgb_*.json): no retraining (env adia-3rd).
-Usage: predict_third_place.py <name> <data.pkl> [--graphs graphs.pkl] [--out b3_worlds]. Features are cached in
-models/third_place/predict/<name>/. Saves every variable's predicted role and the 8 role probabilities (for the
-hybrid arm) to results/exp04/<out>/third_place_<name>_roles.csv; with --graphs, also scores them (_score.csv).
+Predict roles with the trained 3rd-place ensemble (models/third_place/full/xgb_*.json), no retraining (env adia-3rd).
+Usage: predict_third_place.py <name> <data.pkl> [--graphs g.pkl] [--out b3_worlds] [--rank]; --rank first turns raw
+data (S3) into B1's [-1, 1] rank format. Features cached in models/third_place/predict/<name>/. Saves predicted roles
+and the 8 role probabilities to results/exp04/<out>/third_place_<name>_roles.csv; with --graphs, also _score.csv.
 """
 
 import argparse
@@ -32,6 +32,11 @@ def load_models():
         model.load_model(TRAINED / f"xgb_{seed}.json")
         models.append(model)
     return models
+
+
+def rank_uniform(frame):
+    """Each column replaced by its ranks spread evenly over [-1, 1], ADIA's format (1,000 rows: -0.999 ... 0.999)."""
+    return (frame.rank(method='first') - 0.5) / len(frame) * 2 - 1
 
 
 def fingerprint(data):
@@ -64,12 +69,15 @@ if __name__ == '__main__':
     parser.add_argument('data', type=Path)
     parser.add_argument('--graphs', type=Path)
     parser.add_argument('--out', default='b3_worlds')
+    parser.add_argument('--rank', action='store_true')
     args = parser.parse_args()
     warnings.filterwarnings('ignore')
     random.seed(SEED)
     np.random.seed(SEED)
 
     data = datasets.load(args.data)
+    if args.rank:
+        data = {k: rank_uniform(f) for k, f in data.items()}
     preds = predict(args.name, data, load_models())
     out = RESULTS / args.out
     out.mkdir(parents=True, exist_ok=True)

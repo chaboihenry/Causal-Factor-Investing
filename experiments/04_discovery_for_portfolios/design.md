@@ -22,7 +22,7 @@ Every claim in the write-up must point to one row of this table. A reader can ch
 | - | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | --------------------- |
 | 1 | A factor regression without a causal graph gives a wrong beta, and a hedge built on it leaks risk                   | Beta and hedge error of the naive regressions vs. the true effect | Phase 6, figure 1     |
 | 2 | Which discovery method gets closest to the true graph and beta, and how that depends on how right the literature is | Role accuracy and beta error per method across the agreement dial | Phase 6, figure 2     |
-| 3 | Whether the answer survives realistic data (short, fat-tailed, with a regime break) and hidden causes               | Stress tests S1–S3                                               | Phase 6, figure 3     |
+| 3 | Whether the answer survives realistic data (fat-tailed, with a regime break) and hidden causes                      | Stress tests S1–S3                                               | Phase 6, figure 3     |
 | 4 | Whether combining LLM and data beats either alone                                                                   | Hybrid arm A3 vs. A1 and B1                                       | Phase 6, figures 2–3 |
 | 5 | What each method costs                                                                                              | Time, hardware, dollars, manual work                              | Phase 6, cost table   |
 
@@ -119,19 +119,20 @@ The LLM never sees data, so it answers once per set of variable names, not once 
 
 ## 7. Worlds and data
 
-- **The dial:** at lower agreement, a share of the literature edges (never X → Y) is randomly removed, reversed or swapped for a new edge. The graph never has cycles.
+- **The dial (`dial.py` → `graphs/finance_dial.json`):** agreement = share of the 12 literature edges (all but X → Y) left untouched: 75% breaks 3, 50% breaks 6, 25% breaks 9, 0% breaks all 12. Each broken edge is removed, reversed or swapped for a new edge with equal odds. Reversals and new edges must respect timing (an edge points forward in time or within one period) and keep the graph acyclic; a reversal that isn't allowed becomes a swap, so reversals are rare (~0.5 per graph). 20 graphs per level, because which edges break matters as much as how many: at 75%, 1 to 4 of the 8 roles change.
 - **Data recipe (ADIA Appendix C, pp. 20–24):** each variable is a random nonlinear function of its causes: a one-hidden-layer ReLU net (hidden size 5 × parents), a heteroskedastic "Bayesian" net, or a Gaussian process (Matérn 3/2). Gaussian noise with sd drawn from [0, 1]; 1,000 rows; every column rank-uniformized to [−0.999, 0.999], which closes the "sort by variance" loophole (Reisach et al. 2021).
 - **Choices Appendix C leaves open** (checked by the generator check): root variables are standard normal before uniformizing; the three function types are equally likely; every node is uniformized before its children use it; columns saved in alphabetical order, so their order reveals nothing about causal order.
 - **Calibration (`calibrate_generator.py`):** three knobs Appendix C leaves open (Gaussian-process smoothness, noise level, how kinked the nets are) were set by matching properties of the *data*, not any method's score, on 300 ADIA *training* graphs. ADIA's data: signal R² 0.87, linear share 0.965, |corr| on edges 0.49. Chosen: smoothness 4–16, noise × 0.6, net biases × 1 → 0.87, 0.95, 0.62. R² and linear share were weighted first, because they decide whether arrow directions are detectable; |corr| on edges stays too high (0.62 vs 0.49), a known gap.
-- **Size:** 100% agreement: one graph × 100 data draws. Each other level: 20 graphs × 5 draws. Total: **500 datasets**, each saved with its true graph, true beta and seed.
+- **Size (`make_datasets.py`):** 100% agreement: one graph × 100 data draws. Each other level: 20 graphs × 5 draws. Total: **500 datasets**, each saved with its true graph, true beta and seed (`results/exp04/b3_worlds/datasets_meta.csv`). Columns are renamed the ADIA way (X, Y, 0–7), so no method sees the finance names except through the LLM's variable file.
+- **The true beta's sign is random across worlds** (mean ≈ 0): the generator draws random functions, so it doesn't build in a positive value premium. That doesn't matter here, because every score compares a method's estimate with each world's own truth.
 - **Generator check (the gate):** take all 1,880 of ADIA's test graphs (B1 never trained on them) and regenerate their data with my generator. B1 and PC then score both versions: same graphs, only the data recipe differs. **Pass:** B1 on my data within 3 points of B1 on ADIA's data. Scores are also reported by edge count. These datasets are only for the check, never part of the test. B1 on ADIA's own version must also reproduce 71.64%, which validates the predict-only tool.
 - **The LLM's graph is the same at every level**; only the true graph it is scored against changes.
 
 **Stress tests (reported separately):**
 
-- **S1 hidden confounder:** leverage generates the data, then is removed from it.
-- **S2 no effect:** no X → Y edge.
-- **S3 realistic data:** 240 rows (20 years of monthly data), fat-tailed noise, and a regime break halfway through where some edge functions change. 100% and 50% levels, 50 datasets each. B1 never saw data like this in training.
+- **S1 hidden confounder:** exactly the 100 literature datasets with the leverage column deleted, so S1 vs. the main test is a paired comparison: same worlds, only visibility differs.
+- **S2 no direct effect:** the literature graph without X → Y (100 datasets). X still reaches Y through earnings surprise, so the true beta isn't zero; S2 tests whether methods wrongly insist on a direct edge.
+- **S3 realistic data:** the main test's 500 datasets again (same worlds, same seeds, so every S3 dataset has a twin), made the way firm data really looks: (1) **fat tails:** Student-t noise with 3 degrees of freedom, same variance as before; (2) **raw values:** variables pass standardized raw values to each other, not ranks, so an extreme value really propagates; (3) **a regime break:** halfway through the rows, about a third of the variables switch to a new random function (like the value premium fading after 2007). True beta is reported per regime and pooled. Every method gets the same raw data and does its own standard preparation: B1 rank-transforms it first (`predict_third_place.py --rank`), as any user of B1 would; PC and the regressions use it raw. Rows stay 1,000: a row is a firm-year, and a real cross-section has thousands of firms, so a short sample isn't the realistic problem here. The full dial is kept, because a portfolio manager never knows how well the literature fits their portfolio.
 
 ## 8. Predictions (numbers finalized in Phase 4)
 
@@ -168,9 +169,10 @@ The LLM never sees data, so it answers once per set of variable names, not once 
 
 - [X] Literature graph: 10 variables, 13 sourced edges, `finance_variables.json` and `finance_truth.json`
 - [X] Data generator, `b3_worlds/generator.py` (ADIA Appendix C; rank-uniformized; true beta from a randomized experiment)
-- [X] **Gate:** generator check: `make_check_data.py` → `predict_third_place.py` (B1, no retraining) → `generator_check.py`
-- [ ] Dial graphs: 20 per level at 75 / 50 / 25 / 0%
-- [ ] Generate the 500 datasets, plus S1, S2 and S3
+- [X] **Gate:** generator check on all 1,880 test graphs: **B1 71.97% on ADIA's data vs. 71.99% on ours (+0.02 pts), PASS**; PC 38.30% vs. 39.49% (+1.2). B1 on ADIA's data is 71.97%, not 71.64%: features recomputed from scratch differ slightly (the 3rd-place feature code has unseeded randomness), so B1 varies by ~0.3 pts run to run
+- [X] Dial graphs: 20 per level at 75 / 50 / 25 / 0% (`dial.py`)
+- [X] Generate the 500 datasets, plus S1 and S2 (`make_datasets.py`)
+- [X] S3 realistic data: 500 datasets paired with the main test (`generator.py realistic=True`; main, S1 and S2 unchanged byte for byte)
 
 **Phase 4 — Commit predictions**
 
@@ -207,9 +209,9 @@ experiments/04_discovery_for_portfolios/
   design.md  predictions.md
   common/              paths.py, scoring.py
   graphs/              sprinkler, asia, finance (_variables.json = what the LLM sees, _truth.json = answer key)
+  responses/           every LLM prompt and reply, by graph / model / run
   a1_reproduce_adia/   data check, PC baseline, 3rd-place reproduction, requirements_third_place.txt
-  a2_reproduce_llm/    Modelfile, prompts/, run_llm.py, refute.py,
-                       responses/ (every LLM prompt and reply, by graph / model / run)
+  a2_reproduce_llm/    Modelfile, prompts/, run_llm.py, refute.py
   b3_worlds/           data generator, dial, stress-test data
   b5_runs/             run every arm
   b6_analysis/         scoring, figures, cost table
@@ -229,6 +231,7 @@ results/exp04/<phase folder>/                same names as the code folders
 - Hedge leak is measured in a synthetic world, in relative terms, not in dollars of a real portfolio.
 - LLM results depend on the model, the date and the prompts; claude.ai doesn't let me set temperature.
 - B1 is 3rd place, not the winner, and was reproduced on the public test set (the private one was never released).
+- S3 ranks B1's input over all rows at once; practitioners rank within each period, so S3's two regimes are mixed in B1's ranks.
 
 ## Change log (methodology only)
 
@@ -246,5 +249,6 @@ results/exp04/<phase folder>/                same names as the code folders
 | 2026-10-19 | Refutation picks the smallest valid adjustment set (ties alphabetical)                                                                                                                                                                                                      | DoWhy's choice among equally valid sets depended on Python's hash seed, so effect sizes changed between runs                                                                                                                            |
 | 2026-10-19 | True beta defined by a randomized experiment in each world (not a small nudge of X); generator choices Appendix C leaves open written down (Section 7)                                                                                                                      | A regression slope is a weighted average over X, so it must be compared with a slope; on 8 test worlds the nudge definition disagreed with a correctly adjusted regression by up to 0.3                                                 |
 | 2026-10-19 | Generator calibrated to ADIA's data (smoothness 4–16, noise × 0.6); gate rerun on all 1,880 test graphs                                                                                                                                                                   | First gate (300 graphs, uncalibrated): B1 69.1% on ADIA's data vs. 73.5% on ours, FAIL. Our links were too curved, giving B1 direction clues ADIA's near-linear data doesn't have; 300 graphs also left ±2–3 points of sampling noise |
+| 2026-10-20 | S3 redesigned: full dial (500, paired with main) instead of two levels; 1,000 rows instead of 240; Student-t (3 df) noise, raw values between variables, regime break at mid-sample (a third of functions redrawn); raw data to every method                                | A row is a firm-year, so 240 rows mixed in a time-series problem; ranks between variables would erase the fat tails; the dial stands for not knowing how well the literature fits a real portfolio                                      |
 
 **Implementation notes.** Hardware: RTX 5080 Laptop (16 GB), Core Ultra 9 285H, 31 GB RAM. Envs: `adia-3rd` (Python 3.11, Oct-2024 package versions so the 3rd-place code runs unpatched; xgboost 3.2.0 for GPU) and `causal-factor` (everything else). Local LLM: `gpt-oss-exp04` (gpt-oss:20b, 16K context, Ollama 0.40.4). Run logs and package issues are in the commit history.
