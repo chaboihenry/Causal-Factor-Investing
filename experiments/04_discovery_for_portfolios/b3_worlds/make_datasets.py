@@ -1,8 +1,8 @@
 """
-Test datasets: literature graph x 100 draws + 80 dial graphs x 5 draws (= 500, 'main'); S1 (main's literature data
-with leverage hidden; 100); S2 (no direct X -> Y; 100); S3 (main's 500 again, same seeds, made realistic: fat tails,
-raw values, regime break). Columns renamed the ADIA way (X, Y, 0-7). Saves data/synthetic/b3_worlds/<set>/{X,graphs}.pkl
-and results/exp04/b3_worlds/datasets_meta.csv (id, world, agreement, seed, true beta, column names, regime betas).
+Test datasets: literature graph x 100 + 80 dial graphs x 5 (= 500, 'main'); S1 (main's literature data, leverage hidden;
+100); S2 (no direct X -> Y; 100); S2b (X has no effect on Y at all, true beta exactly 0; 100); S3 (main's 500, same seeds,
+made realistic). Columns renamed the ADIA way (X, Y, 0-7). Saves data/synthetic/b3_worlds/<set>/{X,graphs}.pkl and
+results/exp04/b3_worlds/datasets_meta.csv (id, world, agreement, seed, true beta, column names, regime betas).
 """
 
 import json
@@ -19,7 +19,7 @@ from generator import generate
 
 OUT = SYNTHETIC / 'b3_worlds'
 META = RESULTS / 'b3_worlds' / 'datasets_meta.csv'
-DRAWS = {'lit': 100, 'dial': 5, 's1': 100, 's2': 100}            # S3 mirrors main
+DRAWS = {'lit': 100, 'dial': 5, 's1': 100, 's2': 100, 's2b': 100}  # S3 mirrors main
 HIDDEN = 'Leverage'                 # S1: the confounder that is generated, then removed
 
 
@@ -41,6 +41,7 @@ def build(world, edges, nodes, x, y, draws, seed0, hide=None, realistic=False, p
     for d in range(draws):
         seed, key = seed0 + d, f"{prefix}{world['id']}_{d:03d}"
         data, beta, info = generate(graph, x, y, seed, realistic=realistic)
+        beta = beta if nx.has_path(graph, x, y) else 0.0                 # no path: the true effect is exactly zero
         frames[key] = data[kept].rename(columns=names)[order]
         graphs[key] = adj.loc[order, order]
         meta.append({'id': key, 'world': world['id'], 'agreement': world['agreement'], 'seed': seed,
@@ -62,6 +63,8 @@ if __name__ == '__main__':
         'main': main,
         's1': [({**lit, 'id': 's1'}, lit['edges'], DRAWS['s1'], 0, HIDDEN)],      # same seeds: S1 = lit data minus leverage
         's2': [({**lit, 'id': 's2'}, [e for e in lit['edges'] if e != [x, y]], DRAWS['s2'], 0, None)],
+        's2b': [({**lit, 'id': 's2b'}, [e for e in lit['edges'] if e not in ([x, y], [x, 'EarningsSurprise'])],
+                 DRAWS['s2b'], 0, None)],                            # leverage still drives X and Y: the mirage
         's3': [job + (True, 's3_') for job in main],                 # same worlds and seeds as main: paired
     }
     all_meta = []
