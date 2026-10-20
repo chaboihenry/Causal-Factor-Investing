@@ -116,7 +116,7 @@ def check(graph, before, after):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('graph')
-    parser.add_argument('--label', required=True, help="model folder name under responses/<graph>/")
+    parser.add_argument('--label', required=True, help="model folder name under a2_reproduce_llm/responses/<graph>/")
     parser.add_argument('--run', type=int, default=1)
     parser.add_argument('--data', help="CSV to test on; default: simulate from the textbook graph")
     parser.add_argument('--check', action='store_true')

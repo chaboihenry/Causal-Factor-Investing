@@ -1,0 +1,9551 @@
+{
+ "graph": "finance",
+ "x": "BookToMarket",
+ "y": "AnnualReturn",
+ "seed": 0,
+ "worlds": [
+  {
+   "id": "lit",
+   "agreement": 100,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": []
+  },
+  {
+   "id": "a75_01",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_02",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a75_03",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_04",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a75_05",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_06",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_07",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_08",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_09",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a75_10",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_11",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a75_12",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_13",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a75_14",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a75_15",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_16",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a75_17",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a75_18",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a75_19",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a75_20",
+   "agreement": 75,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_01",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_02",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_03",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "MarketReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a50_04",
+   "agreement": 50,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a50_05",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a50_06",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a50_07",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_08",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_09",
+   "agreement": 50,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_10",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_11",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "InstOwnershipChange"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_12",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a50_13",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a50_14",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_15",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_16",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a50_17",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a50_18",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a50_19",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a50_20",
+   "agreement": 50,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_01",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a25_02",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a25_03",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_04",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_05",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "Leverage"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_06",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a25_07",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "Leverage"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_08",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "MarketReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a25_09",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a25_10",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_11",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "QualityScore"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a25_12",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "EarningsSurprise",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_13",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "QualityScore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_14",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_15",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "QualityScore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_16",
+   "agreement": 25,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "QualityScore"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "Leverage",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "QualityScore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_17",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_18",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "AnnualReturn",
+     "QualityScore"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "Leverage"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a25_19",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "ValueIndexMember"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a25_20",
+   "agreement": 25,
+   "edges": [
+    [
+     "AnnualReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "QualityScore"
+    ],
+    [
+     "MarketReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "BookToMarket"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_01",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_02",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_03",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a00_04",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_05",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "MarketReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "MarketReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_06",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_07",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_08",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "InstOwnershipChange"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_09",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_10",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "Leverage",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "MarketReturn"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_11",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "QualityScore"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_12",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_13",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "QualityScore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_14",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "QualityScore",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "MarketReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "QualityScore",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_15",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "Leverage"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "AnnualReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ],
+    [
+     "ValueIndexMember",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "Leverage"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_16",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "BookToMarket"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "PastFiveYearReturn"
+    ],
+    [
+     "Leverage",
+     "EarningsSurprise"
+    ],
+    [
+     "Leverage",
+     "ValueIndexMember"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "ValueIndexMember",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "QualityScore"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "BookToMarket"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "PastFiveYearReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "QualityScore"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_17",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "AnnualReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "PastFiveYearReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ],
+    [
+     "ValueIndexMember",
+     "BookToMarket"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "AnnualReturn"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a00_18",
+   "agreement": 0,
+   "edges": [
+    [
+     "AnnualReturn",
+     "MarketReturn"
+    ],
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "EarningsSurprise",
+     "MarketReturn"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "InstOwnershipChange"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "AnnualReturn",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    }
+   ]
+  },
+  {
+   "id": "a00_19",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "MarketReturn"
+    ],
+    [
+     "EarningsSurprise",
+     "InstOwnershipChange"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "ValueIndexMember"
+    ],
+    [
+     "MarketReturn",
+     "InstOwnershipChange"
+    ],
+    [
+     "PastFiveYearReturn",
+     "QualityScore"
+    ],
+    [
+     "PastFiveYearReturn",
+     "ValueIndexMember"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "EarningsSurprise",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "QualityScore"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "PastFiveYearReturn",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "ValueIndexMember"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    }
+   ]
+  },
+  {
+   "id": "a00_20",
+   "agreement": 0,
+   "edges": [
+    [
+     "BookToMarket",
+     "AnnualReturn"
+    ],
+    [
+     "BookToMarket",
+     "InstOwnershipChange"
+    ],
+    [
+     "BookToMarket",
+     "Leverage"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "EarningsSurprise"
+    ],
+    [
+     "FiscalYearEndMonth",
+     "MarketReturn"
+    ],
+    [
+     "Leverage",
+     "MarketReturn"
+    ],
+    [
+     "MarketReturn",
+     "EarningsSurprise"
+    ],
+    [
+     "ValueIndexMember",
+     "AnnualReturn"
+    ],
+    [
+     "ValueIndexMember",
+     "InstOwnershipChange"
+    ]
+   ],
+   "changes": [
+    {
+     "edge": [
+      "EarningsSurprise",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "AnnualReturn"
+     ]
+    },
+    {
+     "edge": [
+      "MarketReturn",
+      "AnnualReturn"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "EarningsSurprise"
+     ]
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "BookToMarket"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "EarningsSurprise"
+     ],
+     "action": "swap",
+     "new": [
+      "FiscalYearEndMonth",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "AnnualReturn"
+     ],
+     "action": "swap",
+     "new": [
+      "BookToMarket",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "Leverage",
+      "BookToMarket"
+     ],
+     "action": "reverse"
+    },
+    {
+     "edge": [
+      "Leverage",
+      "QualityScore"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "PastFiveYearReturn",
+      "Leverage"
+     ],
+     "action": "remove"
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "ValueIndexMember"
+     ],
+     "action": "swap",
+     "new": [
+      "ValueIndexMember",
+      "InstOwnershipChange"
+     ]
+    },
+    {
+     "edge": [
+      "BookToMarket",
+      "QualityScore"
+     ],
+     "action": "swap",
+     "new": [
+      "Leverage",
+      "MarketReturn"
+     ]
+    },
+    {
+     "edge": [
+      "AnnualReturn",
+      "InstOwnershipChange"
+     ],
+     "action": "swap",
+     "new": [
+      "MarketReturn",
+      "EarningsSurprise"
+     ]
+    }
+   ]
+  }
+ ]
+}

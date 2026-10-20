@@ -20,7 +20,9 @@ N_ROWS = 1000
 FUNCTIONS = ('nn', 'bayes', 'gp')    # Appendix C.4; equal odds (our choice, not stated in the paper)
 HIDDEN_PER_INPUT = 5                 # C.4.1: hidden layer = 5 x number of parents
 N_FOURIER = 200                      # size of the Gaussian-process approximation
-LENGTHSCALE = (0.5, 2.0)             # GP smoothness range (our choice, not stated in the paper)
+LENGTHSCALE = (4.0, 16.0)            # GP smoothness range: not in the paper, calibrated to ADIA's data
+NOISE_SCALE = 0.6                    # multiplies the noise sd drawn from [0, 1]: calibrated to ADIA's data
+NN_BIAS_SCALE = 1.0                  # spread of the nets' hidden biases; larger = fewer kinks (calibrated: 1.0)
 N_TRUTH = 20_000                     # rows in the randomized experiment that defines the true beta
 
 
@@ -32,7 +34,7 @@ def rank_grid(n):
 def random_net(rng, k):
     """C.4.1: x -> B relu(Ax + a) + b with random weights, hidden size 5k."""
     h = HIDDEN_PER_INPUT * k
-    A, a, B, b = rng.normal(size=(h, k)), rng.normal(size=h), rng.normal(size=h), rng.normal()
+    A, a, B, b = rng.normal(size=(h, k)), rng.normal(scale=NN_BIAS_SCALE, size=h), rng.normal(size=h), rng.normal()
     return lambda x: np.maximum(x @ A.T + a, 0) @ B + b
 
 
@@ -48,7 +50,7 @@ def random_gp(rng, k):
 def random_node(rng, parents):
     """Draw one node's function type, function and noise size (C.5: noise sd uniform in [0, 1])."""
     kind = 'root' if not parents else FUNCTIONS[rng.integers(len(FUNCTIONS))]
-    node = {'parents': parents, 'kind': kind, 'noise_sd': rng.uniform(0, 1)}
+    node = {'parents': parents, 'kind': kind, 'noise_sd': NOISE_SCALE * rng.uniform(0, 1)}
     if kind != 'root':
         node['f'] = (random_gp if kind == 'gp' else random_net)(rng, len(parents))
     if kind == 'bayes':
