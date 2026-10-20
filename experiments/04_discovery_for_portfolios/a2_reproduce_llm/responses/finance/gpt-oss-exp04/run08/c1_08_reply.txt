@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio at the start of the year is a classic value signal; firms with higher BTM typically generate higher annual equity returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and generally dampens future equity returns; the leverage level measured at the start of the year causally influences the subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index implies lower price relative to fundamentals, which historically boosts the stock’s annual return; membership is determined at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Prior five‑year performance can create momentum or expectation effects that drive the current year’s return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market’s overall performance directly influences individual stock returns; the firm’s annual return is correlated with the contemporaneous market return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise during the year typically raises the stock price, contributing to the firm’s total annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the firm reports earnings determines the timing of the earnings release and can affect the magnitude of the surprise."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Surprise earnings influence profitability and growth, which are components of the quality score; thus earnings surprise causally affects the end‑of‑year quality composite."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score penalizes high leverage; the leverage measured at the start directly informs the safety component of the quality score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A strong annual return attracts institutional investors; the change in institutional ownership over the following year is influenced by the prior year’s return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score signals stronger fundamentals, encouraging institutional investors to increase holdings; therefore quality influences ownership change."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A positive earnings surprise signals better performance, prompting institutions to adjust their holdings; hence earnings surprise affects ownership change."
+    }
+  ]
+}
+```

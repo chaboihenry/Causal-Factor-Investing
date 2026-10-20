@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book-to-market ratio measured at the start of the year is a well‑known value factor that predicts the stock’s return over the following twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is determined by exceeding a book‑to‑market threshold at the start of the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock influences the expected return during the subsequent twelve‑month period."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt levels at the start of the year increase the firm’s risk profile, which in turn affects its return over the next year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the composite quality score penalizes high leverage; therefore, the leverage measured at the start of the year causally shapes the quality score at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A surprise in earnings during the year changes the firm’s market value, thereby influencing the stock’s return in the twelve‑month period that follows."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises by adjusting their holdings in the twelve months after the year‑end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The stock’s realized performance over the year informs institutional investors’ portfolio decisions in the subsequent twelve‑month period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of other U.S. stocks during the same period provides a market‑wide influence on the firm’s individual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Overall market performance affects institutional portfolio rebalancing, which takes place after the fiscal year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical five‑year return is a strong predictor of the firm’s return over the next twelve months."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Consistent past performance reflects the firm’s profitability, growth and safety, all of which contribute to the quality score at year‑end."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings releases, which in turn affects the likelihood and magnitude of earnings surprises."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The fiscal year‑end month dictates when institutional investors must adjust their portfolios, influencing ownership changes in the twelve months thereafter."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score signals a more attractive firm, leading institutional investors to increase or maintain their holdings in the period following the year‑end."
+    }
+  ]
+}
+```

@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market is measured at the start of the year and influences investor expectations of a firm’s value; historically, higher Book‑to‑Market ratios are associated with higher subsequent returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices are constructed based on a firm’s Book‑to‑Market ratio; a higher ratio increases the likelihood that the firm is assigned to a value index at the start of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year affects a firm’s risk profile and earnings amplification; higher leverage can lead to higher returns (or losses) over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The QualityScore definition explicitly penalises high leverage; thus a higher leverage ratio at the start of the year directly reduces the quality score computed at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises during the year influence investor sentiment and share price, driving the stock’s total return over the twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "A significant earnings surprise affects profitability stability, one of the components of the QualityScore, thereby altering the score measured at year‑end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Firms with higher quality scores—indicating stronger profitability, growth, and safety—tend to deliver higher returns over the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide, value‑weighted return drives systematic risk; a firm’s return is partly a function of the overall market performance during the same period."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "A firm’s past five‑year return raises its market value relative to book value, lowering its Book‑to‑Market ratio measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "High past performance increases market equity, reducing the leverage ratio (total debt divided by market value) calculated at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical returns are strong predictors of future performance; firms with higher past five‑year returns typically achieve higher returns in the subsequent twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings in response to a firm’s performance; a better annual return often leads to increased institutional ownership over the twelve months after year‑end."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The month in which a firm’s fiscal year ends determines the timing of earnings releases and portfolio rebalancing; this timing influences institutional ownership changes in the following twelve months."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Membership in a value style index is associated with higher expected returns; firms assigned to the index tend to outperform the market over the same twelve‑month period."
+    }
+  ]
+}
+```

@@ -1,0 +1,141 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑Market ratio is measured at the start of the year and predicts expected equity returns over the following 12 months; a higher BTM typically leads to higher annual stock returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "High book‑to‑market firms often engage in earnings management to meet analyst expectations, leading to larger earnings surprises."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "The book‑to‑market ratio is calculated at the start of the year, a timing that depends on the firm’s fiscal year end month; thus the month influences the ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Strong long‑term performance is associated with lower book‑to‑market positions, so past five‑year return informs the BTM ratio at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is defined by book‑to‑market thresholds; the BTM ratio directly determines membership status."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The stock’s return over the year is driven in part by overall market performance; higher market return raises individual stock return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that firms with strong past five‑year returns tend to experience higher current year returns."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Superior stock performance attracts institutional investors, leading to changes in institutional ownership over the next 12 months."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock influences future return patterns, thus membership affects subsequent annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "High leverage increases earnings management pressure, resulting in larger earnings surprises relative to analyst forecasts."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings releases signal firm performance changes, prompting institutional investors to adjust holdings."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprises contribute to the profitability component of the quality score; larger positive surprises raise the score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The timing of earnings releases relative to fiscal year end can amplify earnings surprises due to seasonality."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The date of fiscal year end determines when institutional ownership is re‑balanced; firms ending earlier may see ownership shifts."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is calculated using debt balances reported at fiscal year end, so the month of fiscal year end directly affects the leverage figure."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "The composition of the market over a period is influenced by the distribution of fiscal year ends across firms, affecting the market return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "Quality score is computed at the end of the fiscal year; thus the fiscal year end month determines when the score is realized."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the year, which aligns with the fiscal year end month, so the month influences membership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Widespread market performance informs institutional allocation decisions, leading to changes in ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms are more attractive to institutional investors, prompting changes in institutional ownership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value index membership signals a firm’s valuation status, influencing investors in value funds to adjust holdings."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Strong long‑term performance can allow firms to maintain lower leverage ratios or pay down debt."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is a criterion in the quality score; higher leverage reduces the score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Long‑term performance contributes to profitability, a component of the quality score."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "QualityScore",
+      "justification": "Value firms often display characteristics associated with higher quality scores, so membership can improve the score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Positive earnings surprises raise stock prices during the year, increasing the total annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Strong yearly performance enhances profitability, which feeds into the quality score composite."
+    }
+  ]
+}
+```

@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Prior five‑year performance influences the firm's book value and market value at the start of the year, thereby affecting the book‑to‑market ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Cumulative returns influence debt financing decisions and market valuation, thereby affecting leverage at year start."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is assigned based on book‑to‑market ratio measured at year start."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is a component of the quality score, so leverage at year start drives the score at year end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Unexpected earnings affect profitability assessment, a key element of the quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can influence the stock's return over the following year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises during the year alter investor expectations and can impact the stock’s total return over the next 12 months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The overall market return exerts a systematic influence on an individual stock’s return during the same period."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Firms with higher quality scores tend to achieve stronger returns over the following year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The stock’s performance during the year influences institutional investors’ buying and selling decisions over the following 12 months."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings releases, affecting the magnitude of earnings surprises."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Long‑term performance patterns influence expectations and can affect the firm’s return over the next year."
+    }
+  ]
+}
+```

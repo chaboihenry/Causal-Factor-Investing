@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is measured at the start of the year and reflects the firm’s valuation; historically, higher book‑to‑market (a 90‑day average) influences the subsequent 30‑day average. Similarly, the start‑of‑year valuation metric is expected to affect the firm’s return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, defined as total debt divided by market value of equity at the start of the year, shapes the firm’s capital structure and risk profile, thereby influencing its total return over the next twelve months."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Membership in a value style index is determined at the start of the year and captures market expectations that typically drive the firm’s subsequent performance; being a value index member is therefore expected to affect the annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of all other U.S. stocks over the same twelve months is an exogenous market factor that directly influences the firm’s own return during that period."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical return over the five years before the start of the year provides momentum or mean‑reversion information that is commonly found to predict the firm’s future return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises during the year affect the firm’s profitability and investor sentiment, which in turn influence the stock’s total return over the twelve months following the start of the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "The composite quality score, measured at the end of the year, incorporates profitability, growth, and safety; firms with higher quality scores are empirically linked to better future stock performance."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is constructed at the start of the year based on the firm’s book‑to‑market ratio; therefore, the ratio causally determines index membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the quality score is defined as low leverage; thus, a firm’s leverage level directly influences its overall quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "The growth part of the quality score is informed by historical performance, making past five‑year return a causal factor in determining the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Unexpected earnings impact the profitability component of the quality score; therefore, earnings surprise directly influences the quality assessment."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings in response to earnings surprises; the change in institutional ownership over the twelve months after the end of the year is therefore causally driven by the earnings surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The fiscal year end month determines the exact timing of the measurement window for institutional ownership change, making the month a causal factor for the observed ownership shift."
+    }
+  ]
+}
+```

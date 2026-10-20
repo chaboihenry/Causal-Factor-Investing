@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market ratio measured at the start of the year reflects firm valuation; value stocks (high B/TM) historically generate higher subsequent returns, so B/TM causally influences the 12‑month return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is defined by the firm’s book-to-market ranking; thus the B/TM ratio determines whether a firm is assigned to the index."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks typically attract institutional investors; a higher B/TM ratio signals a value position that tends to increase institutional ownership over the subsequent period."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage raises financial risk and the cost of capital, which can depress profitability and thereby affect the firm’s stock return; thus leverage causally impacts the 12‑month return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The QualityScore composite includes a low-leverage component; higher leverage directly reduces the score, so leverage causally influences quality."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical return over the five years preceding the current year captures momentum and persistence; past performance is a known predictor of future returns, so it causally influences the 12‑month return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past five‑year performance reflects a firm’s growth trajectory, which feeds into the growth component of the QualityScore; thus past returns causally affect the score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide value‑weighted return drives individual stock movements; a higher market return tends to lift the firm’s 12‑month return, so the market return causally influences the firm return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A stronger 12‑month return attracts institutional investors, encouraging them to increase holdings; hence the return causally impacts institutional ownership change."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises affect stock prices at the announcement, contributing to the total 12‑month return; thus the surprise causally influences the return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Positive earnings surprises signal improved fundamentals, prompting institutional investors to buy; therefore the surprise causally drives ownership change."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month the fiscal year ends determines when earnings are reported; this timing influences the calculation of the surprise relative to the return window, so the fiscal year end month causally determines the surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The timing of the earnings announcement, governed by the fiscal year end month, can affect the magnitude of the 12‑month return; thus the fiscal end month causally impacts the return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is measured over 12 months after the fiscal year end; the end month sets the observation window, so it causally influences the ownership change."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value index is associated with a value premium; index membership therefore causally increases the expected 12‑month return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score signals stronger profitability, growth and safety, making the stock more attractive to institutional investors; thus the score causally influences ownership change."
+    }
+  ]
+}
+```

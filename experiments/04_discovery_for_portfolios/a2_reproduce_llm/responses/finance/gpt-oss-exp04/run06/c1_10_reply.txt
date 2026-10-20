@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn is calculated over the twelve months following the start of the fiscal year, so the month in which the fiscal year ends determines the period over which the return is measured."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "EarningsSurprise refers to the difference between reported earnings during the fiscal year and analysts' forecasts; the timing of earnings reports is governed by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "QualityScore is measured at the end of the fiscal year, so the fiscal year end month directly determines the observation point of this composite score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is calculated over the twelve months after the fiscal year end, making the fiscal year end month the defining point for the ownership‑change period."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market value measured at the start of the year influences expected stock performance; higher book‑to‑market is historically associated with higher subsequent annual returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a safety component that penalizes high leverage; therefore, the firm's leverage ratio measured at year start directly affects the calculated QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can influence a firm's return over the following year, making leverage at year start a causal factor for AnnualReturn."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value style index member at the start of the year affects investor expectations and capital allocation, which in turn influence the firm's subsequent annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn reflects the firm's performance relative to the overall market; the market’s value‑weighted return during the same period is a driving factor for the firm's return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Surprises in earnings during the fiscal year alter investor perception of the firm’s profitability and risk, thereby affecting the stock’s return over that period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings in response to earnings surprises; a larger surprise leads to a larger change in institutional ownership after year end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The level of return achieved during the year influences investor confidence and thereby drives the subsequent change in institutional ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher QualityScore at year end signals stronger profitability, growth, and safety, encouraging institutional investors to increase their holdings after the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Past five‑year performance is a key criterion for inclusion in value style indices; therefore, a firm’s historical return influences its membership status."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance shapes market expectations and investor behavior, which in turn affect the firm’s return in the following year."
+    }
+  ]
+}
+```

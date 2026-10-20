@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book‑to‑market ratio at the start of the year captures valuation; empirically a higher ratio is associated with higher subsequent returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is determined by the book‑to‑market ratio at the beginning of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "BookToMarket",
+      "justification": "Higher leverage increases perceived risk, tends to depress market value relative to book value, thereby raising the book‑to‑market ratio."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage amplifies both risk and potential return; highly leveraged firms often deliver higher returns due to debt‑related earnings boosts."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A surprise earnings announcement during the year moves the stock price and thus contributes directly to the 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Significant earnings surprises influence institutional investors’ post‑year holdings, prompting adjustments in ownership."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise reflects profitability, one of the core components of the quality composite score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality—profitability, growth, and safety—generally correlates with higher expected returns."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Quality firms attract institutional investors, leading to increased ownership over the following year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum or mean‑reversion effects mean that a firm’s past five‑year performance influences its next‑year return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Individual stock returns are driven in part by the overall market movement through beta exposure."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A strong market return encourages institutional buying across portfolios, altering ownership patterns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock often leads to higher expected returns relative to the market."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The timing of a firm’s fiscal year end affects the release schedule of earnings and thus influences institutional trading decisions after the year."
+    }
+  ]
+}
+```

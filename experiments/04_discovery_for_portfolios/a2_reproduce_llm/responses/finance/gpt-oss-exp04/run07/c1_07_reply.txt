@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical performance influences current market valuation; past returns affect stock price, a component of market value in the Book-to-Market ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Strong past performance can lead firms to alter their capital structure, potentially taking on more leverage measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past profitability and growth contribute to the profitability and growth components of the quality score evaluated at year‑end."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the year based on the firm’s book‑to‑market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "High book‑to‑market (value) stocks tend to exhibit higher future returns over the next twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can reduce returns over the following year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Leverage is part of the safety component in the quality score; lower leverage improves the safety metric measured at year‑end."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a value index member signals an expected value premium that affects the firm’s annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The firm’s return is correlated with the value‑weighted market return over the same twelve‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Positive earnings surprise during the year lifts the stock price, contributing to a higher total return over the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Stock performance influences institutional investors’ decisions; after observing the year’s return, institutions adjust holdings over the next twelve months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores attract institutional investors, leading to ownership changes in the following year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings releases, which can affect forecast accuracy and the magnitude of earnings surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Fiscal year‑end timing influences institutional trading patterns and the timing of ownership adjustments after the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Earnings surprises alter investor sentiment, prompting institutional investors to adjust holdings over the next twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong market performance leads institutions to increase holdings, affecting ownership changes in the following year."
+    }
+  ]
+}
+```

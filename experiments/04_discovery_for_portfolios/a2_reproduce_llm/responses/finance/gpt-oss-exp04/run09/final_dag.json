@@ -1,0 +1,168 @@
+{
+ "graph": "finance",
+ "backend": "gpt-oss-exp04",
+ "run": 9,
+ "date": "2026-10-20T19:01:30",
+ "n_undirected_c1": 29,
+ "validation_rounds": 5,
+ "validated": false,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "Book\u2011to\u2011Market ratio is measured at the start of the year and predicts expected equity returns over the following 12 months; a higher BTM typically leads to higher annual stock returns."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "EarningsSurprise",
+   "justification": "High book\u2011to\u2011market firms often engage in earnings management to meet analyst expectations, leading to larger earnings surprises."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "BookToMarket",
+   "justification": "The book\u2011to\u2011market ratio is calculated at the start of the year, a timing that depends on the firm\u2019s fiscal year end month; thus the month influences the ratio."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "Strong long\u2011term performance is associated with lower book\u2011to\u2011market positions, so past five\u2011year return informs the BTM ratio at the start of the year."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "Value index membership is defined by book\u2011to\u2011market thresholds; the BTM ratio directly determines membership status."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "The stock\u2019s return over the year is driven in part by overall market performance; higher market return raises individual stock return."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "Momentum effects imply that firms with strong past five\u2011year returns tend to experience higher current year returns."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Superior stock performance attracts institutional investors, leading to changes in institutional ownership over the next 12 months."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "AnnualReturn",
+   "justification": "Being classified as a value stock influences future return patterns, thus membership affects subsequent annual return."
+  },
+  {
+   "source": "Leverage",
+   "target": "EarningsSurprise",
+   "justification": "High leverage increases earnings management pressure, resulting in larger earnings surprises relative to analyst forecasts."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "Unexpected earnings releases signal firm performance changes, prompting institutional investors to adjust holdings."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "Earnings surprises contribute to the profitability component of the quality score; larger positive surprises raise the score."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "EarningsSurprise",
+   "justification": "The timing of earnings releases relative to fiscal year end can amplify earnings surprises due to seasonality."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "InstOwnershipChange",
+   "justification": "The date of fiscal year end determines when institutional ownership is re\u2011balanced; firms ending earlier may see ownership shifts."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "Leverage",
+   "justification": "Leverage is calculated using debt balances reported at fiscal year end, so the month of fiscal year end directly affects the leverage figure."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "MarketReturn",
+   "justification": "The composition of the market over a period is influenced by the distribution of fiscal year ends across firms, affecting the market return."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "QualityScore",
+   "justification": "Quality score is computed at the end of the fiscal year; thus the fiscal year end month determines when the score is realized."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "ValueIndexMember",
+   "justification": "Value index membership is assigned at the start of the year, which aligns with the fiscal year end month, so the month influences membership."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Widespread market performance informs institutional allocation decisions, leading to changes in ownership."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "Higher quality firms are more attractive to institutional investors, prompting changes in institutional ownership."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "InstOwnershipChange",
+   "justification": "Value index membership signals a firm\u2019s valuation status, influencing investors in value funds to adjust holdings."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "Leverage",
+   "justification": "Strong long\u2011term performance can allow firms to maintain lower leverage ratios or pay down debt."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "Low leverage is a criterion in the quality score; higher leverage reduces the score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "QualityScore",
+   "justification": "Long\u2011term performance contributes to profitability, a component of the quality score."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "Positive earnings surprises raise stock prices during the year, increasing the total annual return."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "AnnualReturn",
+   "justification": "The fiscal year end month determines the calendar period over which the 12\u2011month AnnualReturn is computed. Hence the month causally influences the subsequent annual return."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Leverage measured at the start of the year directly affects the firm\u2019s risk profile and expected stock performance over the following 12 months, thereby causally influencing the AnnualReturn."
+  },
+  {
+   "source": "QualityScore",
+   "target": "AnnualReturn",
+   "justification": "QualityScore is calculated at the end of the year from profitability, growth and safety metrics that are used to predict future returns, not the other way around. Therefore the causal direction should be QualityScore \u2192 AnnualReturn, not AnnualReturn \u2192 QualityScore."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Institutional investors use a firm\u2019s 5\u2011year performance to decide whether to increase or decrease holdings. Thus past five\u2011year return causally influences institutional ownership changes."
+  },
+  {
+   "source": "Leverage",
+   "target": "InstOwnershipChange",
+   "justification": "Leverage reflects a firm\u2019s financial risk; high leverage can deter institutional investors or prompt portfolio rebalancing, so leverage causally affects institutional ownership changes."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "InstOwnershipChange",
+   "justification": "The book\u2011to\u2011market ratio signals firm valuation; value investors (many of whom are institutional) are attracted to high\u2011BTM stocks, so BTM causally influences institutional ownership changes."
+  }
+ ]
+}

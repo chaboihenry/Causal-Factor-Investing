@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical return influences investor expectations of firm value, affecting the market valuation relative to book at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past performance is a strong predictor of future return; investors’ expectations based on five‑year returns shape the stock’s subsequent annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the year based on the book‑to‑market ratio; a higher ratio typically results in membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value effect shows that stocks with higher book‑to‑market ratios tend to earn higher future returns; the ratio measured at the start of the year influences the following annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value‑oriented stocks are more attractive to institutional investors; the book‑to‑market ratio at year start influences the change in institutional ownership after year end."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and typically reduces expected returns; leverage measured at the start of the year affects the subsequent annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors monitor leverage; higher leverage can deter them, influencing the change in institutional ownership after year end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A positive earnings surprise attracts institutional investors; the surprise during the year triggers ownership adjustments after the year end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted market return over the same twelve months provides a benchmark; individual stock returns are influenced by overall market performance."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Market conditions affect investor behavior; a higher market return can drive institutional ownership changes."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Quality score reflects profitability, growth, and safety; higher quality attracts institutional investors, influencing the post‑year ownership change."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Being classified as a value style index member increases visibility and demand from institutional investors, leading to ownership changes after year end."
+    }
+  ]
+}
+```

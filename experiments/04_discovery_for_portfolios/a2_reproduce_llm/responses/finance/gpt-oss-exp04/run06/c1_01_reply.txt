@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is measured at the start of the year and has long been shown to predict the 12‑month stock return; the valuation level reflected in BTM influences price dynamics over the following year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is determined by the firm's BTM at the start of the year; firms with higher BTM are selected for the value index."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year signals financial risk; higher leverage can affect both the magnitude and volatility of the subsequent 12‑month return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component explicitly penalizes high leverage, so a higher leverage ratio directly lowers the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that differ from analyst forecasts cause immediate price reactions during the year, which are part of the total return calculated over that 12‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A significant earnings surprise can attract or repel institutional investors; the 12‑month ownership change after year end reflects this reaction."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The surprise can alter profitability or growth metrics used in the end‑of‑year quality assessment, thus affecting the quality score."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Value index members historically exhibit higher future returns; being a member is a predictor of the 12‑month return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Return persistence implies that past five‑year performance can influence the subsequent 12‑month return, providing a causal effect from earlier performance."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market return, as the value‑weighted average of other US stocks, drives the systematic component of an individual stock’s return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms are more attractive to institutional investors, so a higher quality score tends to lead to an increase in institutional ownership over the following year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The calendar month in which the fiscal year ends determines when the 12‑month return period starts, so the end‑month causally influences the computed annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "The fiscal year end month determines the reporting period for profitability, growth, and safety metrics that compose the quality score; seasonal effects tied to the month can affect these metrics."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The 12‑month period used to calculate institutional ownership change is anchored to the fiscal year end; the month therefore causally determines the timing of the measurement window."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "Earnings announcements are scheduled around the fiscal year end, so the month in which the fiscal year ends directly affects when and potentially the magnitude of the earnings surprise."
+    }
+  ]
+}
+```

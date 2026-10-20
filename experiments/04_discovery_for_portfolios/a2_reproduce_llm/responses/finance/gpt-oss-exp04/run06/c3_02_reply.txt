@@ -1,0 +1,13 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "QualityScore is calculated at the end of the year from profitability, growth, safety, low leverage and low beta estimated from the stock's returns. Hence the annual return over the year influences the components that feed into the QualityScore, not the other way around. The correct causal direction is AnnualReturn → QualityScore; the edge as currently directed from QualityScore to AnnualReturn is therefore incorrect."
+    }
+  ]
+}
+```

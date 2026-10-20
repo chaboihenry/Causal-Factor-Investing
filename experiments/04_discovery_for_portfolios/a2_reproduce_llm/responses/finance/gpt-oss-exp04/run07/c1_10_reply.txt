@@ -1,0 +1,101 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is measured at the start of the year and reflects a firm’s value status; the value effect is a well‑known predictor of higher future stock returns, so past book‑to‑market influences the subsequent annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "High book‑to‑market firms often have lower analyst expectations; when actual earnings diverge from forecasts, the magnitude of the surprise can be partly driven by the book‑to‑market status."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks (high book‑to‑market) are attractive to institutional investors; a higher book‑to‑market ratio can lead to larger changes in institutional ownership during the following year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "A firm’s inclusion in a value style index is determined by its book‑to‑market ratio; thus book‑to‑market causally determines value‑index membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year affects a firm’s risk profile and expected return; higher leverage generally reduces future stock returns, establishing a causal link."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Leveraged firms often experience higher earnings volatility, which can lead to larger deviations from analyst forecasts, so leverage causally influences earnings surprise."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "High leverage may discourage institutional investors, leading to changes in institutional ownership; thus leverage drives ownership change."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component rewards low leverage; therefore the level of leverage directly affects the quality score."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Historical data show that stocks classified as value (value‑index members) tend to achieve higher returns, so membership causally influences the subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value‑index membership signals undervaluation, attracting institutional investors; thus membership leads to ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market return reflects broad economic conditions; it exerts a direct influence on an individual stock’s performance, making it a causal driver of the annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "EarningsSurprise",
+      "justification": "Market conditions affect both analyst forecasts and actual earnings; a stronger market can alter the expected earnings baseline, so market return influences earnings surprise."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Positive market performance can encourage institutional investors to buy or hold stocks, thereby causing changes in institutional ownership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past performance exhibits momentum or persistence effects; thus a firm’s return over the previous five years influences its current annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors often consider a firm’s historical performance; past five‑year return therefore causally affects subsequent ownership changes."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The realized return over the year informs investors’ future holding decisions, leading to changes in institutional ownership."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise during the year can shift the stock price, directly affecting the total return measured over the same period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprises in earnings alter investor confidence; institutional investors respond by adjusting their holdings, causing ownership changes."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score signals stronger fundamentals and attracts institutional investors, thereby driving changes in ownership."
+    }
+  ]
+}
+```

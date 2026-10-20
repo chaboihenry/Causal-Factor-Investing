@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "BookToMarket",
+      "target": "MarketReturn",
+      "justification": "MarketReturn is defined as the value‑weighted return of all other US stocks, excluding this firm, over the same twelve months as AnnualReturn. The firm’s book‑to‑market ratio does not influence the return of other firms, so there is no causal relationship from BookToMarket to MarketReturn."
+    },
+    {
+      "type": "nonexistent",
+      "source": "PastFiveYearReturn",
+      "target": "MarketReturn",
+      "justification": "PastFiveYearReturn reflects this firm’s own historical performance over the five years preceding the current year. Since MarketReturn is computed from all other stocks (excluding this firm), the firm’s past returns cannot causally affect the aggregate market return."
+    }
+  ]
+}
+```

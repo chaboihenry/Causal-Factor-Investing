@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical performance influences current valuation metrics; firms with strong past returns attract higher market valuations relative to book, raising book‑to‑market ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Strong past performance often allows firms to reduce debt load or negotiate better terms, influencing leverage levels measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is based on long‑term performance and valuation; a firm’s past five‑year return is a key indicator that can determine its inclusion in a value index at year‑start."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Prior performance is a predictor of future performance; firms that performed well over the preceding five years tend to exhibit similar return patterns over the coming twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value indexes select stocks with low book‑to‑market ratios; therefore the book‑to‑market value measured at year‑start determines index membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Stocks with higher book‑to‑market ratios are often under‑priced and thus expected to deliver higher future returns; the ratio at year‑start influences the upcoming annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore rewards low leverage; higher leverage directly reduces the score, as it is a component of the quality measurement."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can depress returns over the next year; thus leverage levels at year‑start impact the following annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "A positive earnings surprise signals stronger profitability and growth, improving the composite quality score evaluated at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises influence investor expectations and price movements, which are reflected in the stock’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings after significant earnings surprises, leading to changes in ownership over the twelve months after year‑end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Firms with higher quality scores tend to generate superior returns, so the end‑of‑year quality assessment influences the next twelve‑month return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors favor high‑quality firms, causing ownership shares to increase following a favorable quality assessment."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Individual stock returns are correlated with overall market performance; the market return over the same period drives the firm’s annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value index typically correlates with a specific return pattern; membership status at year‑start influences the upcoming annual return."
+    }
+  ]
+}
+```

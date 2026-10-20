@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past performance of the stock over the five years before the start of the year is known before the new year begins and can influence future returns through momentum effects and investment decisions."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "High past returns raise the market value of equity relative to book value, thereby reducing the book-to-market ratio measured at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "A stock is assigned to a value style index at the start of the year largely based on its book-to-market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book-to-market ratio reflects valuation; lower ratios (higher value) are associated with higher expected returns, so the ratio measured at the start of the year influences the stock’s return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "The firm's debt-to-equity level measured at the start of the year affects risk and expected return over the next year."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "High leverage increases operating leverage, making actual earnings more sensitive to performance changes and thus influencing the deviation between reported earnings and analysts’ forecasts."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes low leverage as one of its components; therefore the firm’s leverage measured at the start of the year directly influences the composite quality score calculated at year‑end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of all other US stocks over the same twelve months serves as the systematic market factor that drives an individual stock’s return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise during the year affects the firm’s stock price, which in turn determines the total return over the twelve months following the start of the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors often adjust their holdings in response to earnings surprises, leading to a change in ownership over the twelve months after year‑end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The stock’s performance over the twelve months following the start of the year influences institutional investor trading activity, thereby causing ownership changes in the period after year‑end."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock at the start of the year tends to be associated with a higher expected return over the following twelve months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to favor high‑quality firms; therefore the composite quality score measured at year‑end influences changes in institutional ownership in the period after year‑end."
+    }
+  ]
+}
+```

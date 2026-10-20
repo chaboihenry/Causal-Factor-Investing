@@ -1,0 +1,46 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year reflects a firm’s valuation; firms with higher ratios historically tend to generate higher subsequent annual returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (total debt / market equity) measured at the start of the year influences the firm’s risk profile and expected return over the following 12 months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures the magnitude of earnings exceeding forecasts during the year; such surprises directly affect the firm’s stock price and thus its total return over the same period."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "The five‑year return preceding the start of the year contains momentum information that can predict the firm’s subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being assigned to a value style index at the start of the year is associated with a distinct expected return pattern for the firm over the following year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of the market over the same 12‑month period drives individual stock returns through systematic market exposure."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s total return over the 12 months following the start of the year influences the subsequent 12‑month change in institutional ownership after year‑end."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a low‑leverage component; higher leverage directly reduces the quality component of the composite score."
+    }
+  ]
+}
+```

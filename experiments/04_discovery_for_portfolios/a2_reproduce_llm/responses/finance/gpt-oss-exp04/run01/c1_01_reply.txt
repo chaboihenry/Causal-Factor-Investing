@@ -1,0 +1,96 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year reflects a firm’s value orientation, which historically influences its expected future stock return over the 12‑month period."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is defined at the start of the year based on the book‑to‑market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "Value firms often have different earnings expectations; book‑to‑market can therefore affect the gap between forecasted and reported earnings."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage amplifies both risk and return, affecting the firm’s performance during the 12‑month period."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the quality score requires low leverage; thus leverage directly influences the score."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "High leverage signals higher financial risk, influencing institutional investors’ decisions to buy or sell the stock."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance is a well‑established predictor of future performance over the next year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "The stable‑profitability element of the quality score relies on past return trends."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Long‑term performance history informs institutional investors’ expectations and ownership adjustments."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The overall market performance drives individual stock returns during the 12‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings announcements change the stock price and thus the total return over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprises in earnings affect investor sentiment, leading to institutional ownership adjustments."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong annual performance attracts institutional investors, increasing their ownership stake."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Annual return is used to estimate the stock’s beta, a component of the quality score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings releases within the 12‑month period, influencing the observed return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Reporting schedules linked to the fiscal year end affect institutional buying and selling decisions."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality signals lower risk and more stable earnings, attracting institutional ownership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value index is associated with particular return characteristics that influence the firm’s annual return."
+    }
+  ]
+}
+```

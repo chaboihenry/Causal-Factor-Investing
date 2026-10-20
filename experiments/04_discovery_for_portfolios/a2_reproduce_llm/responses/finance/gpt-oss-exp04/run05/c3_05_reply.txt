@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The QualityScore is computed at the end of the year from profitability, growth, and safety metrics; it does not arise from the stock’s return. Therefore the causal direction should be QualityScore → AnnualReturn, not AnnualReturn → QualityScore."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "The month in which the fiscal year ends only determines when the quality score is calculated; it does not cause the score itself. Hence this edge does not represent a genuine causal relationship."
+    }
+  ]
+}
+```

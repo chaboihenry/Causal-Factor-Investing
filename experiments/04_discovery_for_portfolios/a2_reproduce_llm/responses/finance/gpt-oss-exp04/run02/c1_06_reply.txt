@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book-to-market ratio is measured at the start of the year and informs investor perception and valuation, which in turn influences the firm’s stock price and total return over the following twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned based on the book-to-market ratio; thus the ratio directly determines whether the firm is a member of a value style index."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, affects the firm’s risk profile and expected return; higher debt can lower or otherwise alter the firm’s performance over the next twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score’s construction explicitly includes a low‑leverage component, making leverage a direct determinant of the composite quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that diverge from analyst forecasts typically influence the firm’s stock price in the period that follows, affecting the total return over the twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "An unexpected earnings announcement alters institutional investors’ expectations and can prompt them to adjust their holdings during the twelve months after year‑end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality score, reflecting stronger profitability, growth, and safety, is associated with better future performance, driving higher total returns over the next year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High‑quality firms are more attractive to institutional investors, leading them to increase ownership during the twelve months following year‑end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements influence the firm’s stock performance; the market return of other U.S. stocks directly affects the firm’s own return over the same twelve‑month period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Widespread market performance can drive institutional investors to rebalance portfolios, impacting their holdings of the firm after year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance often informs investor expectations and momentum effects, influencing the firm’s return over the following twelve months."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value index member can alter investor demand and pricing dynamics, which in turn affect the firm’s subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Index membership often triggers institutional buying or selling as portfolio managers adjust holdings to maintain index alignment, influencing ownership changes after year‑end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s performance over the twelve‑month period informs institutional investors’ decisions on whether to buy or sell shares in the following year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which a firm’s fiscal year ends determines when earnings are reported; this timing directly influences the calculation of earnings surprise relative to analyst forecasts."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The timing of year‑end affects when institutional investors can react to earnings and other information, thereby shaping ownership changes over the subsequent twelve months."
+    }
+  ]
+}
+```

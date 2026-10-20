@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is typically assigned based on the firm’s book-to-market ratio; higher BookToMarket makes a firm more likely to be classified as a value stock."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market ratio reflects a firm’s valuation relative to its market price. Value stocks (higher BookToMarket) tend to exhibit lower future returns, so the ratio influences the stock’s subsequent AnnualReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical performance affects the current market price. Past five‑year returns influence the market value component of the BookToMarket ratio, causing changes in that ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past returns shape investor expectations and momentum; positive past performance tends to boost expectations for the next year, thereby influencing the stock’s AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide return drives individual stock returns through market exposure; a higher MarketReturn generally lifts a firm’s AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and potential for higher returns. Leverage measured at the start of the year thus causally affects the stock’s return over the following year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly penalizes high leverage as part of its safety component; therefore an increase in Leverage reduces the QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprise earnings announcements alter institutional investor sentiment and trigger portfolio adjustments, directly influencing changes in institutional ownership over the subsequent year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A firm’s performance over the year informs institutional investors about its prospects; higher or lower AnnualReturn influences the likelihood that institutions will buy or sell shares in the following 12 months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions prefer high‑quality firms; a higher QualityScore attracts institutional investors, causing their ownership stake to increase."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their portfolios in response to overall market movements; a higher MarketReturn generally leads to changes in institutional holdings."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Historical performance signals long‑term reliability; institutions use past returns to gauge confidence, affecting ownership changes in the subsequent year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Being part of a value style index attracts value investors, often institutional. Membership thus tends to increase institutional ownership during the following 12 months."
+    }
+  ]
+}
+```

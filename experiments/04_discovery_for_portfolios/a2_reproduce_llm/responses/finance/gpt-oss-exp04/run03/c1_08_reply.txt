@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book‑to‑market ratio measured at the start of the year reflects the firm’s valuation position; a higher ratio generally signals undervaluation and is known to forecast a higher 12‑month total return, establishing a causal influence."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Assignment to a value style index is typically based on book‑to‑market ratios; thus the ratio at year‑start determines membership, creating a causal link."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, affects the firm’s risk and capital structure; higher leverage limits the capacity for positive returns, so it causally influences the subsequent annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is a component of the quality score; the leverage ratio at year‑start directly contributes to the calculation of the end‑of‑year quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "The magnitude of earnings surprise during the year impacts investor expectations and stock price movements, thereby causally determining the firm’s 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise informs the profitability component of the composite quality score calculated at year‑end, establishing a causal effect."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A significant earnings surprise alters institutional investors’ assessment of the firm, prompting changes in their holdings during the following 12‑month period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide return during the same 12‑month window directly influences individual firm performance, creating a causal relationship."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Market return is used to estimate the firm’s beta, a safety component of the quality score; thus market conditions causally affect the quality assessment."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical five‑year performance is predictive of future returns; the past return measured at year‑start causally informs the 12‑month return that follows."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Growth expectations, derived from past performance, contribute to the growth portion of the quality score, establishing a causal link."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock correlates with higher future returns; membership at year‑start causally affects the firm’s subsequent 12‑month return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings reports relative to analyst forecasts, thereby influencing the magnitude of earnings surprise."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s 12‑month performance shapes institutional investors’ perceptions, prompting adjustments in their holdings during the following 12‑month period."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A high quality score signals firm attractiveness and stability, encouraging institutional investors to modify their holdings in the year following the end of the reporting period."
+    }
+  ]
+}
+```

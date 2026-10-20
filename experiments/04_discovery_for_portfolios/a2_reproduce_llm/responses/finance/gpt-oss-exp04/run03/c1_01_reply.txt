@@ -1,0 +1,96 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership at the start of the year is determined by book‑to‑market ratio; higher book‑to‑market indicates value stock membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Higher book‑to‑market ratios historically predict higher future returns; the ratio at the start of the year influences the stock’s 12‑month return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes low leverage as a component; a firm’s leverage at the start of the year directly affects the composite quality score calculated at year end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn spans the same 12‑month period as MarketReturn; the market‑wide average return drives the firm’s individual return during that period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise reflects the difference between reported earnings and analyst forecasts during the year; a positive surprise boosts the firm’s return over the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "QualityScore measures profitability, growth, and safety at year end; higher quality is associated with stronger future performance, influencing the 12‑month return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical five‑year cumulative return at the start of the year influences investor expectations and risk appetite, thereby affecting the firm’s forthcoming annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The calendar month of fiscal year end affects the timing of earnings releases and dividend payouts, which can impact the firm’s 12‑month return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The change in institutional ownership occurs over the 12 months after year end; a strong annual return attracts or retains institutional investors, driving the ownership change."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High quality firms at year end are more attractive to institutional investors; thus QualityScore influences post‑year institutional ownership changes."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Being a member of a value style index signals to institutional investors that the firm is a value pick; membership at year start influences subsequent institutional ownership change."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Higher leverage signals higher financial risk, which discourages institutional investors; therefore Leverage at year start affects post‑year ownership change."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The fiscal year end month can affect institutional rebalancing schedules and tax planning, influencing post‑year institutional ownership changes."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A firm’s five‑year historical return informs institutional investment decisions; stronger past performance tends to increase institutional ownership post‑year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks (high book‑to‑market) are favored by institutional investors; BookToMarket at year start directly influences institutional ownership change."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Overall market performance during the 12‑month period after year end can affect institutional rebalancing; higher market return tends to increase institutional ownership changes."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A positive earnings surprise during the year signals better performance, attracting institutional investors and affecting the ownership change after year end."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Membership in a value style index signals that the firm is a value stock, which historically is associated with higher subsequent returns; thus ValueIndexMember influences AnnualReturn."
+    }
+  ]
+}
+```

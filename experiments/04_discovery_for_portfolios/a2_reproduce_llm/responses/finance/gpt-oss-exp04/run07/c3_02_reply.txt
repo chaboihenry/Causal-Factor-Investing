@@ -1,0 +1,25 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "missing",
+      "source": "BookToMarket",
+      "target": "Leverage",
+      "justification": "Book‑to‑market is measured at the start of the year and reflects the firm’s valuation relative to its book value. A low BM ratio often signals a higher perceived risk and can influence the firm’s capital structure decisions, thereby affecting its leverage (debt to market value). This causal direction aligns with the temporal ordering: BM is known before leverage is calculated."
+    },
+    {
+      "type": "missing",
+      "source": "BookToMarket",
+      "target": "MarketReturn",
+      "justification": "The firm’s book‑to‑market ratio at the beginning of the year affects expectations about its future performance. This, in turn, influences the firm’s contribution to the aggregate market return over the subsequent twelve months. Hence, the BM ratio is a plausible causal antecedent of the market return that excludes the firm."
+    },
+    {
+      "type": "missing",
+      "source": "PastFiveYearReturn",
+      "target": "MarketReturn",
+      "justification": "A firm’s historical total return over the five years preceding the current year shapes investor expectations and the firm’s future earnings prospects. These expectations affect the firm’s performance over the current year, which contributes to the overall market return. Therefore, past five‑year return can causally influence the market return for the period that defines the current AnnualReturn."
+    }
+  ]
+}
+```

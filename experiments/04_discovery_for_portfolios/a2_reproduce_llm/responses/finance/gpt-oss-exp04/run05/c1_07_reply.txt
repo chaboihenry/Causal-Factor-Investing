@@ -1,0 +1,61 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year and represents the firm’s valuation relative to its equity. High book‑to‑market firms are historically associated with different return expectations, so the valuation at the beginning of the year causally influences the 12‑month stock return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (total debt / market equity) is recorded at the start of the year. Firms with higher leverage face greater financial risk and typically experience altered return dynamics over the following year, establishing a causal influence."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "ValueIndexMember is assigned at the start of the year based on the firm’s value characteristics. Value‑style stocks often have distinct return patterns, so membership causally affects the 12‑month return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "PastFiveYearReturn captures performance over five years preceding the start of the year. Momentum or mean‑reversion mechanisms allow past performance to influence future returns, giving a causal direction."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn represents the systematic market performance over the same 12‑month period as AnnualReturn. Systematic market movements drive individual stock returns, so market return causally influences the stock’s return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember membership is determined by the firm’s book‑to‑market ranking. Therefore, the BookToMarket value at the start of the year causes the firm’s inclusion in the value index."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component rewards low leverage. Since Leverage is measured at the start of the year and directly affects the safety assessment at the end of the year, it causally influences the final QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "EarningsSurprise reflects earnings performance relative to expectations during the year. Institutional investors react to such surprises by adjusting their holdings in the 12 months following year‑end, making EarningsSurprise a causal factor for InstOwnershipChange."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "FiscalYearEndMonth determines when a firm’s earnings are reported during the year. The timing of the fiscal year‑end influences the occurrence and magnitude of earnings surprises, establishing a causal link."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "EarningsSurprise signals unexpected profitability shifts, which directly affect the profitability component of QualityScore measured at year‑end. Thus the surprise causally influences the quality assessment."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher QualityScore indicates stronger profitability, growth, and safety, attracting institutional investors. Consequently, QualityScore causally drives changes in institutional ownership over the 12‑month period following year‑end."
+    }
+  ]
+}
+```

@@ -1,0 +1,61 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the year based on a firm’s book‑to‑market ratio; thus the ratio causally determines membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market is measured at the start of the year and influences the stock’s future price path; value‑style stocks tend to show systematic differences in their subsequent 12‑month returns, so the ratio causally affects AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The QualityScore composite includes a safety component that penalizes high leverage; therefore the leverage ratio measured at the start of the year causally influences the score calculated at year‑end."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "High debt increases financial risk and can depress future earnings, leading to lower stock performance over the following year; thus Leverage causally impacts AnnualReturn."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often prefer higher quality firms; the end‑of‑year QualityScore influences the attractiveness of the stock, thereby causally affecting the institutional ownership change measured after year‑end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The stock’s 12‑month return over the year signals performance to investors; better returns typically lead to increased institutional ownership, so AnnualReturn causally drives InstOwnershipChange."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Marketwide performance reflects broader investor sentiment; positive market returns can attract institutional buying across stocks, thus MarketReturn causally influences InstOwnershipChange."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A positive earnings surprise signals better-than‑expected fundamentals, encouraging institutional investors to increase holdings; therefore EarningsSurprise causally affects InstOwnershipChange."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Surprises in earnings directly impact the firm’s stock price during the year, thereby causally influencing the overall AnnualReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the five years preceding the start of the year embodies momentum effects that carry into the upcoming 12‑month period; thus PastFiveYearReturn causally affects AnnualReturn."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value index member at the start of the year reflects a firm’s valuation characteristics, which influence its subsequent stock performance; therefore ValueIndexMember causally impacts AnnualReturn."
+    }
+  ]
+}
+```

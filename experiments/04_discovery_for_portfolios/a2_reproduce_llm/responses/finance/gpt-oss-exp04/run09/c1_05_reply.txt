@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market ratio measured at the start of the year reflects valuation. A lower ratio (indicating undervaluation) tends to generate higher subsequent returns, so changes in BookToMarket causally influence the following year's AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, defined as total debt divided by market equity at the start of the year, affects a firm’s risk profile and potential earnings. Higher leverage typically amplifies both upside and downside, thereby causally affecting the magnitude of AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures how actual earnings differ from analysts’ forecasts during the year. A positive surprise boosts investor confidence and stock price, directly causing an increase in AnnualReturn."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value index at the start of the year signals value characteristics that attract investors who seek undervalued stocks. This positioning can influence the stock’s return over the next twelve months, creating a causal link."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other U.S. stocks over the same period. Systematic market movements affect all individual stocks, so changes in MarketReturn causally drive changes in a firm’s AnnualReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past performance over the preceding five years is a well‑documented momentum factor; firms with higher five‑year returns tend to continue outperforming. Thus PastFiveYearReturn causally influences the subsequent AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a safety component defined as low leverage. Higher leverage decreases the safety dimension, lowering the overall QualityScore, so changes in Leverage causally affect QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates profitability. A positive earnings surprise indicates better profitability than expected, raising the profitability component and thus the overall QualityScore."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Historical returns reflect a firm’s past profitability, growth, and stability—all elements of QualityScore. Therefore, PastFiveYearReturn causally influences the current QualityScore."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "QualityScore",
+      "justification": "ValueIndex membership often correlates with lower growth expectations and higher safety. These characteristics directly inform the QualityScore calculation, creating a causal relationship."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher QualityScore, indicating stronger profitability, growth, and safety, typically attracts investors and improves future performance, thereby causally boosting AnnualReturn."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings based on performance. A stronger AnnualReturn attracts additional institutional ownership, so AnnualReturn causally drives InstOwnershipChange."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which a firm ends its fiscal year determines the timing of earnings releases relative to analyst forecasts. Timing differences can widen or narrow the gap between actual earnings and expectations, thus FiscalYearEndMonth causally influences EarningsSurprise."
+    }
+  ]
+}
+```

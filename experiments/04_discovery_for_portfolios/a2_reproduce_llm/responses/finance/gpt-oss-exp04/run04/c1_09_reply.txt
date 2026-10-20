@@ -1,0 +1,106 @@
+```json
+{
+  "edges": [
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "The book-to-market ratio is measured at the start of the fiscal year, and the start date is determined by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is calculated at the start of the fiscal year, which depends on the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the fiscal year, so the fiscal year end month determines the start date of measurement."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn is computed over the 12 months following the start of the year; the start of the year is defined by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "EarningsSurprise is based on earnings reported during the fiscal year, which is bounded by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange measures the change in institutional ownership over the 12 months after fiscal year end, so its period depends on the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "QualityScore is calculated at the end of the fiscal year; the end date is set by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "MarketReturn is the average return of other stocks over the 12 months following the start of the year, which is determined by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "PastFiveYearReturn",
+      "justification": "PastFiveYearReturn covers the five years preceding the start of the year, so its window depends on the fiscal year end month."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is commonly determined by a firm’s book-to-market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value premium indicates that higher book-to-market ratios tend to lead to higher future returns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock can influence a firm’s future return trajectory."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates low leverage as one of its components."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage generally reduces expected returns due to increased risk."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance can be predictive of future returns."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements affect individual stock returns."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Positive stock performance tends to attract institutional investors in the subsequent period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings outcomes can alter institutional ownership decisions."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High quality firms are often more attractive to institutional investors."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks may draw institutional ownership due to their perceived undervaluation."
+    }
+  ]
+}
+```

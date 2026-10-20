@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year and reflects the firm's valuation relative to its book value. A higher book-to-market ratio often signals a more attractive valuation that can lead to stronger price performance over the ensuing twelve months, thereby influencing AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The definition of ValueIndexMember states that it is assigned at the start of the year based on the firm's book-to-market ratio. Thus the book-to-market measurement directly causes the assignment of value index membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, affects the firm’s cost of capital and risk profile. Higher leverage typically increases financial risk and can negatively impact future returns, establishing a causal link to AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a safety component defined as low leverage. Therefore, a firm’s leverage level directly influences its QualityScore at the end of the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures the difference between reported earnings and analysts’ forecasts during the year. A significant surprise often triggers a price reaction within the same twelve‑month period, thereby affecting the firm’s AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The profitability component of QualityScore is derived from the firm’s earnings performance. A large earnings surprise directly alters profitability, which in turn influences QualityScore at year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past five‑year total return provides a momentum indicator. Firms with higher prior returns often continue to generate strong returns in the following twelve months, creating a causal influence on AnnualReturn."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "High QualityScore firms exhibit stronger profitability, growth, and lower risk, characteristics that are empirically linked to superior future stock returns. Hence, QualityScore at year‑end causally affects AnnualReturn."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors preferentially allocate capital to high‑quality firms. Consequently, a higher QualityScore at year‑end tends to drive a change in institutional ownership over the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn represents the systematic, value‑weighted return of all other US stocks during the same twelve‑month period. The firm’s return is exposed to this market factor, making MarketReturn a causal driver of AnnualReturn."
+    }
+  ]
+}
+```

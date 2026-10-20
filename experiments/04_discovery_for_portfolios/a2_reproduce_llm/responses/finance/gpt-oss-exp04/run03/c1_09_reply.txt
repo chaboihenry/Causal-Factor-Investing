@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices classify firms based on their book-to-market ratios, so the ratio directly determines index membership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical returns influence both book and market values (e.g., retained earnings affect book value; past performance drives market valuation), thereby affecting the Book‑to‑Market ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum theory posits that firms with strong recent performance tend to continue outperforming; thus prior five‑year returns help predict the upcoming annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality composite includes a low‑leverage component; higher leverage reduces the score while lower leverage boosts it."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can depress expected equity returns, so leverage causally influences annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "An individual stock’s return is partly driven by the overall market performance during the same period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Quality’s beta component is derived from the stock’s sensitivity to market movements, so the market return drives the beta estimate within the score."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Higher book‑to‑market ratios are associated with value premiums that translate into higher future stock returns."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise during the year signals better-than‑expected profitability and typically boosts the stock’s return over that period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprises reflect unexpected profitability, which feeds directly into the profitability component of the quality composite."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong stock performance attracts institutional investors, leading to an increase in institutional ownership during the period after year‑end."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The timing of earnings announcements—and therefore the occurrence of an earnings surprise—depends on the fiscal year‑end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Ownership adjustments by institutional investors typically happen after the fiscal year‑end, so the month when the year ends drives the ownership‑change interval."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index often correlates with higher future returns due to the value premium, so membership causally influences the annual return."
+    }
+  ]
+}
+```

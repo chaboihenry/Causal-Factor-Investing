@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks based largely on their book‑to‑market ratios; a higher BookToMarket makes a firm more likely to be classified as a value member."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Historical research shows that stocks with higher book‑to‑market ratios (value stocks) tend to deliver higher future returns, so the 90‑day book‑to‑market ratio at the start of the year influences the 12‑month AnnualReturn."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being part of a value style index often leads to different portfolio weighting and market demand, which empirically contributes to higher or lower returns for those stocks during the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted market return of other US stocks represents the overall market environment that drives an individual stock’s performance; a stronger market return typically lifts the AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt relative to equity (Leverage) increases financial risk and can affect a firm’s equity return trajectory during the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Surprises in earnings during the year often trigger immediate stock price adjustments, thereby influencing the overall 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The profitability component of the QualityScore depends on earnings performance; a positive earnings surprise improves profitability and raises the QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the QualityScore explicitly values low leverage; thus a higher Leverage lowers the score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a low stock beta estimate based on the firm’s returns; higher AnnualReturn can alter the calculated beta and thus affect the score."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value‑style stocks, identified by higher BookToMarket ratios, tend to attract institutional investors, leading to greater changes in their institutional ownership over the following year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings in response to a firm’s performance; a strong AnnualReturn usually prompts increased institutional ownership."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings events influence investor sentiment and can trigger institutional buying or selling in the period after the fiscal year end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal strong profitability and stability, which are attractive to institutions and often result in greater ownership changes."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often track value indices; being a member increases the likelihood of institutional investment and subsequent ownership changes."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "High leverage can signal higher financial risk and may deter institutional investors, affecting the magnitude of ownership change after the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Long‑term return history influences market expectations of a firm’s future performance, which in turn affects its market valuation and thus the BookToMarket ratio measured at the start of the year."
+    }
+  ]
+}
+```

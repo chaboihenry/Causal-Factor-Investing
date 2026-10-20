@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical total returns are commonly used as a predictor of future performance; thus past five‑year return tends to influence the subsequent twelve‑month return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past performance affects the market price component of the book‑to‑market ratio; strong past returns can drive up market value relative to book, altering BookToMarket at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Index membership decisions sometimes incorporate recent performance; firms with stronger past returns are more likely to be selected as value members."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value stocks (high BookToMarket) are empirically associated with higher future returns, so the BookToMarket measured at the start of the year causally influences the subsequent AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index assigns membership based on the BookToMarket ratio at the start of the year; thus BookToMarket causally determines ValueIndexMember."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can affect the firm's return over the next twelve months; Leverage measured at the start of the year influences the subsequent AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The QualityScore’s safety component rewards low leverage; therefore Leverage at the start of the year causally influences the end‑of‑year QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A significant earnings surprise during the year directly impacts the firm’s stock price and thus its total return over the same twelve‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises; a positive surprise typically leads to a rise in institutional ownership over the following twelve months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores make a firm more attractive to institutional investors, leading to increased ownership change after the year ends."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock predicts higher subsequent returns; thus ValueIndexMember at the start of the year causally influences AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The overall market return over the twelve‑month period drives firm‑specific returns; MarketReturn measured concurrently with AnnualReturn causally influences the latter."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings releases, which in turn affects the magnitude of the surprise relative to analyst forecasts."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The period over which institutional ownership is measured begins after the fiscal year end; thus the end month causally determines the subsequent InstOwnershipChange."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong market performance attracts institutional investors to increase their holdings, so MarketReturn over the twelve months causally influences InstOwnershipChange."
+    }
+  ]
+}
+```

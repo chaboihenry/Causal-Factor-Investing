@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index membership is assigned at the start of the year based on the firm's book-to-market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "A higher book-to-market ratio at the start of the year is widely observed to influence the firm's future return during the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes low leverage as one of its safety components measured at the end of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "High leverage tends to constrain earnings capacity, thereby affecting the magnitude of earnings surprise relative to forecasts."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of the rest of the market directly influences an individual firm's return over the same twelve‑month period."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical return performance (past five years) informs expectations and can drive current year returns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock often correlates with a distinct return trajectory in the following year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions tend to allocate larger portions of their portfolios to value‑style stocks after the fiscal year ends."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Better-than‑expected stock performance during the year leads institutions to adjust their holdings after year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise typically boosts investor sentiment and raises the stock's return over the following twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprises in earnings attract institutional buying activity after the fiscal year concludes."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings that beat expectations reflect stronger profitability stability, a key component of the quality composite score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High quality scores signal robust profitability and safety, making the firm more attractive to institutional investors after year‑end."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The month in which a firm’s fiscal year ends can influence institutional portfolio rebalancing schedules, affecting ownership change after year‑end."
+    }
+  ]
+}
+```

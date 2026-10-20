@@ -1,0 +1,96 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year captures valuation; higher BTM indicates undervaluation and is known to lead to higher future returns over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can depress returns; firms with higher debt‑to‑equity at year start tend to have lower subsequent annual returns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a value‑index member reflects a low BTM and is associated with the value premium; such stocks typically achieve higher annual returns over the following year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide value‑weighted return during the year is a systematic factor that affects individual stock returns; thus market performance drives the firm’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise (actual earnings relative to forecasts) is released during the year and changes the market’s valuation of the stock, directly affecting the cumulative return over the twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Stocks that deliver higher returns over a year are more attractive to institutional investors, leading to an increase in their shareholding during the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "When the overall market performs well, institutional investors tend to buy more stocks; the market return during the year therefore influences the change in institutional ownership for each firm."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Positive earnings surprises generate buying pressure from institutions; thus a surprise during the year causes a rise in institutional ownership in the period after the year ends."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score, reflecting profitability, growth, and safety, signals a safer investment and attracts institutional ownership in the period following the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Long‑term performance is a key factor in institutional allocation decisions; a firm’s five‑year past return influences how much institutional capital is allocated in the subsequent twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value‑style stocks, identified by high book‑to‑market ratios, are often favored by institutional investors, so the ratio at year start predicts later ownership changes."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "High leverage is perceived as riskier, which can deter institutional investors; thus leverage measured at year start influences the later change in institutional ownership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Membership in a value style index signals a low valuation; institutional investors who follow such indices are likely to increase their holdings in the following period."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance can shape investor expectations and influence the firm’s future returns; thus a higher five‑year return at the start of the year tends to lead to a higher subsequent annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "EarningsSurprise",
+      "justification": "Analysts incorporate a firm’s past earnings growth into their forecasts; therefore the five‑year return prior to the year can affect the magnitude of the earnings surprise during the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which a firm’s fiscal year ends determines when earnings are reported; the timing of the report relative to analyst expectations shapes the earnings surprise."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Higher cumulative returns over the year reflect better profitability and growth, which are components of the quality score calculated at year end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "A positive earnings surprise increases a firm’s profitability, one of the dimensions of the quality score, thus influencing the score measured at year end."
+    }
+  ]
+}
+```

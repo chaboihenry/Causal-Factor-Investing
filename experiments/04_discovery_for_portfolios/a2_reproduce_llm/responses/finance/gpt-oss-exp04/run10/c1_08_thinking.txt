@@ -1,0 +1,260 @@
+We need to determine causal relationships between these features. We must consider definitions, chronological order, engineered relationships.
+
+List of features:
+
+1. BookToMarket: firm's book value of equity / market value of equity measured at start of year.
+2. AnnualReturn: stock's total return over 12 months following start of year.
+3. Leverage: firm's total debt / market value of equity measured at start of year.
+4. EarningsSurprise: how far firm's reported earnings during the year differ from analysts' forecasts. (Earnings are reported during year; forecast likely made prior to reporting; so EarningsSurprise is derived from actual earnings relative to forecast; but the forecast itself may be based on expectations; but the actual surprise is determined after earnings report.)
+5. QualityScore: composite of profitability, growth, safety (low leverage, low stock beta estimated from stock's returns, stable profitability), measured at end of year.
+6. PastFiveYearReturn: total return over five years before start of year.
+7. ValueIndexMember: whether stock assigned to value style index at start of year.
+8. MarketReturn: value-weighted average return of all other US stocks, excluding this firm, over same 12 months as AnnualReturn.
+9. InstOwnershipChange: change in share of firm's stock held by institutional investors over 12 months after end of year.
+10. FiscalYearEndMonth: calendar month in which firm's fiscal year ends.
+
+We need edges where changes in one cause changes in another.
+
+We must not create cycles.
+
+Let's analyze each pair.
+
+Causal relationships often reflect derived from earlier variables.
+
+We know that BookToMarket is computed from book value and market value at start of year. This value can influence annual return? Value stocks (high book-to-market) may have higher expected returns (value premium). But from a causal perspective, the book-to-market ratio influences future returns. So BookToMarket -> AnnualReturn.
+
+Also BookToMarket might influence ValueIndexMember: whether the stock is assigned to a value style index at start of year; presumably the index membership is based on book-to-market. So BookToMarket -> ValueIndexMember.
+
+Leverage measured at start of year might affect AnnualReturn and also QualityScore (since QualityScore includes low leverage). So Leverage -> AnnualReturn and Leverage -> QualityScore.
+
+Also Leverage might affect EarningsSurprise? A high leverage could affect earnings volatility? Maybe not causal but possible; but we need high recall but avoid false positives. But we need to be careful. We can consider that Leverage influences QualityScore.
+
+PastFiveYearReturn measured before start of year; this historical return may influence current AnnualReturn due to momentum or persistent skill. So PastFiveYearReturn -> AnnualReturn.
+
+Also PastFiveYearReturn could influence ValueIndexMember? Index membership may consider historical performance? Not sure.
+
+AnnualReturn (12-month return after start of year) might influence MarketReturn? But MarketReturn is the average of all other US stocks excluding the firm over same period; so AnnualReturn of this firm does not influence MarketReturn; market return influences the firm's return. So MarketReturn -> AnnualReturn. Yes, market environment influences firm return; direction is MarketReturn -> AnnualReturn.
+
+Also AnnualReturn may influence EarningsSurprise? The earnings surprise is difference between reported earnings and forecast; but the stock return may be impacted by earnings surprise. However the earnings surprise may be known only after earnings report. But the return is measured after the start of year, which includes the period where earnings are reported. The earnings surprise could be considered to have causal effect on stock price at earnings announcement; but the AnnualReturn is total over 12 months; earnings surprise could influence part of return. The causal direction could be EarningsSurprise -> AnnualReturn. But the stock return is measured after the earnings announcement; but the earnings surprise is part of what drives the return. So EarningsSurprise -> AnnualReturn.
+
+QualityScore measured at end of year; it includes components like profitability, growth, safety, low leverage, low beta, stable profitability. Some of these components are derived from earlier features: low leverage (Leverage at start), low beta estimated from stock's returns (AnnualReturn? or past returns). So QualityScore is caused by Leverage and beta. Beta may be derived from returns relative to MarketReturn? Beta estimated from stock's returns. Beta is derived from past returns; but we might not have a beta feature explicitly. But the definition says low beta estimated from the stock's returns. So the calculation uses the stock's returns. So QualityScore -> AnnualReturn? Actually beta influences return, but the beta is derived from stock's returns; but the direction might be stock returns -> beta. But the definition says low beta estimated from the stock's returns. That suggests that the beta is computed from past returns; but we don't have a beta variable. So maybe QualityScore depends on beta, but we can't draw edges from QualityScore to something else unless it influences. But we can consider that QualityScore may influence InstOwnershipChange? Because institutional investors might value quality. So QualityScore -> InstOwnershipChange.
+
+Also BookToMarket may influence InstOwnershipChange? Value stocks may attract institutional investors. So BookToMarket -> InstOwnershipChange.
+
+Also QualityScore may influence EarningsSurprise? Because a more profitable, stable company might have less earnings surprises. So QualityScore -> EarningsSurprise. However the causal direction might be EarningsSurprise -> QualityScore? Actually if a company reports better-than-expected earnings, it may improve profitability and thus quality score. But the quality score measured at end of year includes profitability; if earnings surprise is high positive, it could increase profitability; so EarningsSurprise -> QualityScore. But we need to avoid cycles; we already have Leverage -> QualityScore, BookToMarket -> QualityScore? Not yet.
+
+Also FiscalYearEndMonth measured as month the firm's fiscal year ends; that could affect EarningsSurprise because the timing of earnings announcements relative to the 12-month return period might affect the calculation. Also FiscalYearEndMonth may affect AnnualReturn? Not directly; the period of return starts at start of year; but if fiscal year ends later, the earnings announcement may happen later in the year. But we can consider that FiscalYearEndMonth influences EarningsSurprise because earnings are reported during the fiscal year; the end month determines when they are reported relative to the 12-month window.
+
+Also FiscalYearEndMonth could influence InstOwnershipChange because institutional ownership changes are measured over 12 months after the end of the year; the month at which the fiscal year ends will shift the period for ownership change relative to the market. So FiscalYearEndMonth -> InstOwnershipChange.
+
+Also FiscalYearEndMonth may influence ValueIndexMember? If the index membership is determined at start of year, the fiscal year end month may not directly cause membership, but may be used to compute something? Unlikely.
+
+QualityScore is composite of profitability, growth, safety. Profitability may be measured over the fiscal year; earnings surprise influences profitability; so EarningsSurprise -> QualityScore. Growth may be influenced by PastFiveYearReturn? Past five-year return indicates growth performance. So PastFiveYearReturn -> QualityScore? Not sure.
+
+Also PastFiveYearReturn may influence QualityScore because if a firm had high past returns, it may have growth. So PastFiveYearReturn -> QualityScore.
+
+Also BookToMarket may influence Leverage? The ratio of book to market may influence leverage decisions? Companies with high book-to-market may have lower leverage? But not necessarily causal. It's more a property. But we can consider that Leverage may affect BookToMarket: because leverage influences market value of equity (since equity value includes debt). Actually market value of equity includes debt in its valuation; a higher debt may lower market value of equity? In general, the firm's market value of equity might be affected by debt levels; but book-to-market uses book value of equity and market value of equity. Leverage (debt/market equity) could influence market equity value. So Leverage -> BookToMarket. But BookToMarket is measured at start of year. Leverage is measured at start of year; they are contemporaneous. But we might still consider causality: higher leverage might lead to lower market equity value due to higher risk, thereby increasing book-to-market ratio. But both are measured at same time; but we can still assign direction? The rule says "causality can only flow from the past due to the present/future due to the nature of time progression." If both measured at start of year, but one could influence the other within the same period; but still causal direction? Might be ambiguous. Might avoid adding such edges to avoid false positives. So better not include.
+
+Also QualityScore includes low leverage, so Leverage influences QualityScore.
+
+AnnualReturn influences InstOwnershipChange? The return may attract institutional investors, causing ownership change. So AnnualReturn -> InstOwnershipChange.
+
+MarketReturn influences InstOwnershipChange? Maybe not.
+
+Also QualityScore may influence MarketReturn? Not directly.
+
+Also ValueIndexMember influences AnnualReturn? Being a value index member may affect expected returns; but this is a selection; but the index membership is determined at start of year based on book-to-market; then may influence future returns due to value premium. So ValueIndexMember -> AnnualReturn. But we must ensure no cycles: BookToMarket -> ValueIndexMember -> AnnualReturn. BookToMarket -> AnnualReturn directly too.
+
+Also ValueIndexMember may influence MarketReturn? Not directly.
+
+Now, PastFiveYearReturn influences ValueIndexMember? Possibly index membership may be based on past performance; but index membership is determined by book-to-market ratio, not past returns. So maybe not.
+
+Leverage influences AnnualReturn through risk; but we already have.
+
+Also FiscalYearEndMonth influences EarningsSurprise (timing). So FiscalYearEndMonth -> EarningsSurprise.
+
+Also FiscalYearEndMonth may influence AnnualReturn because the earnings announcement timing may affect return. But if earnings are reported after fiscal year end, that may fall within the 12-month return window? The return period is 12 months following start of year; fiscal year end month may determine when earnings are reported; if earnings report occurs after the start of year but before the end of the return window, it will affect the return. So FiscalYearEndMonth -> AnnualReturn.
+
+Also FiscalYearEndMonth influences InstOwnershipChange (definition says change over 12 months after end of year). So FiscalYearEndMonth -> InstOwnershipChange.
+
+Also PastFiveYearReturn may influence AnnualReturn (momentum). So PastFiveYearReturn -> AnnualReturn.
+
+Also AnnualReturn may influence MarketReturn? Not; market return influences stock return.
+
+Also AnnualReturn may influence QualityScore? The end-of-year quality score includes profitability, growth etc. Annual return may reflect profitability but not directly. The quality score includes stable profitability measured at end of year; annual return may not be part of the composite. So maybe no.
+
+Also MarketReturn influences AnnualReturn. So MarketReturn -> AnnualReturn.
+
+Also MarketReturn influences EarningsSurprise? Market conditions may affect expected earnings? Not directly.
+
+Also EarningsSurprise may influence InstOwnershipChange: if earnings surprise is positive, institutional investors may buy more. So EarningsSurprise -> InstOwnershipChange.
+
+Also Leverage influences InstOwnershipChange? High leverage may reduce attractiveness; but we might not include to avoid false positives.
+
+Also QualityScore influences InstOwnershipChange. We have that.
+
+Also QualityScore influences EarningsSurprise (profitability improvement). So QualityScore -> EarningsSurprise? Wait we previously considered EarningsSurprise -> QualityScore. Which direction is more plausible? Let's think: EarningsSurprise is difference between reported earnings and forecast. The company's profitability measured at end-of-year will be affected by the earnings, which is used in QualityScore. So EarningsSurprise influences QualityScore. So arrow from EarningsSurprise to QualityScore, not opposite.
+
+But QualityScore also might influence EarningsSurprise? The expectation of institutional investors may influence forecast? But we don't have that.
+
+Thus edges:
+
+BookToMarket -> AnnualReturn
+BookToMarket -> ValueIndexMember
+Leverage -> AnnualReturn
+Leverage -> QualityScore
+QualityScore -> InstOwnershipChange
+QualityScore -> EarningsSurprise? Actually we said EarningsSurprise -> QualityScore. So no edge.
+
+PastFiveYearReturn -> AnnualReturn
+PastFiveYearReturn -> QualityScore? maybe; but not strongly causal.
+
+MarketReturn -> AnnualReturn
+AnnualReturn -> InstOwnershipChange
+AnnualReturn -> EarningsSurprise? The earnings announcement occurs during the year, but the return includes it; so earnings surprise influences return, not the other way. So no.
+
+EarningsSurprise -> AnnualReturn (we earlier considered). Should we include? Let's evaluate: The earnings surprise is determined after the earnings report. The stock's return includes the price reaction to earnings surprise. So EarningsSurprise causes part of the AnnualReturn. So arrow from EarningsSurprise to AnnualReturn.
+
+But careful: The return is measured over the entire 12 months after start of year; the earnings report may occur anywhere in that period. The earnings surprise occurs at the earnings announcement date. The stock return includes the effect of surprise. So yes, EarningsSurprise -> AnnualReturn. But this may create a cycle with MarketReturn? No.
+
+Also EarningsSurprise -> InstOwnershipChange.
+
+Also FiscalYearEndMonth -> EarningsSurprise (timing).
+FiscalYearEndMonth -> AnnualReturn (since the earnings announcement timing may affect returns).
+FiscalYearEndMonth -> InstOwnershipChange.
+
+Also ValueIndexMember -> AnnualReturn.
+
+Also maybe BookToMarket -> AnnualReturn (we have).
+
+Also BookToMarket -> InstOwnershipChange (value stocks attract institutional investors). So BookToMarket -> InstOwnershipChange.
+
+Also Leverage -> InstOwnershipChange? Possibly but maybe not.
+
+Also Leverage -> AnnualReturn we have.
+
+Also PastFiveYearReturn -> QualityScore? Possibly; but maybe we avoid.
+
+Also PastFiveYearReturn -> InstOwnershipChange? Not.
+
+Also MarketReturn -> EarningsSurprise? Maybe market conditions influence forecast accuracy? Hard.
+
+Also QualityScore -> AnnualReturn? The quality score might reflect fundamentals that influence returns, but the score is computed at end of year after returns. So the return influences the score, not vice versa. So no.
+
+Also QualityScore might influence MarketReturn? Not.
+
+Also FiscalYearEndMonth -> ValueIndexMember? Not.
+
+Now we must ensure DAG has no cycles. Let's list edges:
+
+- BookToMarket -> AnnualReturn
+- BookToMarket -> ValueIndexMember
+- BookToMarket -> InstOwnershipChange
+- Leverage -> AnnualReturn
+- Leverage -> QualityScore
+- PastFiveYearReturn -> AnnualReturn
+- PastFiveYearReturn -> QualityScore (maybe not include)
+- MarketReturn -> AnnualReturn
+- AnnualReturn -> InstOwnershipChange
+- AnnualReturn -> EarningsSurprise? Actually we determined EarningsSurprise -> AnnualReturn, not the other way. So no.
+- EarningsSurprise -> AnnualReturn
+- EarningsSurprise -> InstOwnershipChange
+- FiscalYearEndMonth -> EarningsSurprise
+- FiscalYearEndMonth -> AnnualReturn
+- FiscalYearEndMonth -> InstOwnershipChange
+- ValueIndexMember -> AnnualReturn
+- QualityScore -> InstOwnershipChange
+
+We need to ensure no cycle. Let's check for cycles: Potential cycle could be AnnualReturn -> InstOwnershipChange -> ... any arrow back to AnnualReturn? InstOwnershipChange doesn't lead back to AnnualReturn. So fine.
+
+Could there be cycle between FiscalYearEndMonth -> AnnualReturn and AnnualReturn -> InstOwnershipChange -> ... no.
+
+Check for cycles: BookToMarket -> ValueIndexMember -> AnnualReturn. BookToMarket -> AnnualReturn direct, but no back edge. So okay.
+
+Now we have 12 edges maybe.
+
+Let's count edges: 1 BookToMarket->AnnualReturn, 2 BookToMarket->ValueIndexMember, 3 BookToMarket->InstOwnershipChange, 4 Leverage->AnnualReturn, 5 Leverage->QualityScore, 6 PastFiveYearReturn->AnnualReturn, 7 MarketReturn->AnnualReturn, 8 AnnualReturn->InstOwnershipChange, 9 EarningsSurprise->AnnualReturn, 10 EarningsSurprise->InstOwnershipChange, 11 FiscalYearEndMonth->EarningsSurprise, 12 FiscalYearEndMonth->AnnualReturn, 13 FiscalYearEndMonth->InstOwnershipChange, 14 ValueIndexMember->AnnualReturn, 15 QualityScore->InstOwnershipChange.
+
+That's 15 edges.
+
+Need justifications for each.
+
+Also we might add PastFiveYearReturn -> QualityScore. But is that a causal relationship? PastFiveYearReturn indicates historical returns; QualityScore includes growth. So high past returns may indicate growth, influencing quality. So PastFiveYearReturn -> QualityScore may be plausible. But including could create cycle? PastFiveYearReturn -> QualityScore -> InstOwnershipChange, no cycle.
+
+But do we risk false positives? But recall high. So maybe include.
+
+Also BookToMarket may influence Leverage? Might create cycle BookToMarket->Leverage? No, but we don't have Leverage->BookToMarket.
+
+Potential cycle: Leverage->QualityScore and QualityScore->InstOwnershipChange, no problem.
+
+Check cycles:
+
+- PastFiveYearReturn->AnnualReturn->InstOwnershipChange; no reverse.
+
+- PastFiveYearReturn->QualityScore->InstOwnershipChange.
+
+- FiscalYearEndMonth->EarningsSurprise->AnnualReturn->InstOwnershipChange.
+
+- FiscalYearEndMonth->AnnualReturn directly.
+
+- MarketReturn->AnnualReturn.
+
+- BookToMarket->ValueIndexMember->AnnualReturn.
+
+- BookToMarket->AnnualReturn directly.
+
+All fine.
+
+Edge: ValueIndexMember->AnnualReturn might create cycle if AnnualReturn->... no.
+
+Thus final DAG edges list.
+
+Now produce JSON output. We need each edge with justification text.
+
+Let's craft justification for each.
+
+We'll create a list of edges with source, target, justification.
+
+Edge 1: BookToMarket -> AnnualReturn: Book-to-market ratio at start of year captures valuation; value stocks (high B/TM) historically have higher subsequent returns; thus B/TM influences return.
+
+Edge 2: BookToMarket -> ValueIndexMember: Value index membership is defined by book-to-market ranking; thus B/TM determines membership.
+
+Edge 3: BookToMarket -> InstOwnershipChange: Value stocks attract institutional investors; thus B/TM influences institutional ownership change.
+
+Edge 4: Leverage -> AnnualReturn: Higher leverage increases financial risk and cost of capital, affecting firm profitability and stock return; thus leverage influences return.
+
+Edge 5: Leverage -> QualityScore: Quality score includes low leverage as a component; higher leverage reduces quality score.
+
+Edge 6: PastFiveYearReturn -> AnnualReturn: Historical return reflects momentum/persistence; past performance influences future return.
+
+Edge 7: MarketReturn -> AnnualReturn: Market-wide movements drive individual stock returns; thus market return influences firm return.
+
+Edge 8: AnnualReturn -> InstOwnershipChange: Positive returns attract institutional investors; thus return influences ownership change.
+
+Edge 9: EarningsSurprise -> AnnualReturn: Earnings surprise impacts stock price at announcement; thus surprise causes part of annual return.
+
+Edge 10: EarningsSurprise -> InstOwnershipChange: Positive earnings surprise signals good fundamentals, attracting institutional investors; thus surprise causes ownership change.
+
+Edge 11: FiscalYearEndMonth -> EarningsSurprise: The month when fiscal year ends determines timing of earnings release; earlier releases affect surprise timing relative to return window, thus causing earnings surprise measurement.
+
+Edge 12: FiscalYearEndMonth -> AnnualReturn: Timing of earnings release relative to 12‑month window affects return; fiscal year end month can influence return magnitude, thus causing return.
+
+Edge 13: FiscalYearEndMonth -> InstOwnershipChange: Ownership change is measured over 12 months after fiscal year end; fiscal end month determines the period over which change is observed, thus causing change.
+
+Edge 14: ValueIndexMember -> AnnualReturn: Value index membership reflects valuation and expected premium; being a member increases expected return; thus membership causes return.
+
+Edge 15: QualityScore -> InstOwnershipChange: Higher quality score indicates stronger fundamentals, making the stock more attractive to institutional investors; thus quality score causes ownership change.
+
+Edge 16: PastFiveYearReturn -> QualityScore: Past performance indicates growth trend, part of quality score; thus past returns influence quality.
+
+Add this.
+
+Also maybe BookToMarket -> AnnualReturn again.
+
+Now produce JSON.
+
+We'll order edges perhaps.
+
+Check that no edges involve feature names not listed. All names appear.
+
+Now produce JSON.

@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year, while AnnualReturn is the stock’s total return over the twelve months following that start. Value‑style stocks (high book‑to‑market) tend to exhibit systematic return patterns, indicating a causal influence of BookToMarket on AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, reflects a firm’s debt burden relative to equity. Higher leverage increases financial risk and can influence the firm’s cost of capital, thereby affecting the subsequent annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "PastFiveYearReturn represents the firm’s historical performance over the five years preceding the current year. Investor expectations and momentum effects often cause past returns to influence future returns, establishing a causal link to AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other US stocks over the same period as AnnualReturn. Systemic market movements directly impact individual firm returns, creating a causal relationship."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "ValueIndexMember indicates whether the firm is classified as a value‑style stock at the start of the year. Value‑style stocks historically display distinct return dynamics, providing a causal influence on AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures how actual earnings differ from analyst forecasts during the year. A significant surprise can move the stock price and thus alter the total return over the twelve‑month period."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore is measured at the end of the year and incorporates a low stock beta estimated from the firm’s own stock returns. Since the beta calculation relies on AnnualReturn, there is a causal direction from AnnualReturn to QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component is defined by low leverage. Therefore, the leverage level directly influences the QualityScore calculation."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange measures the change in institutional holdings over the twelve months following the end of the year. Institutional investors adjust their portfolios in response to the firm’s recent performance, making AnnualReturn a causal driver."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions track overall market performance; a higher or lower MarketReturn influences their aggregate buying or selling activity, thus affecting InstOwnershipChange."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings results prompt institutional investors to reassess a firm’s valuation and adjust holdings, creating a causal link from EarningsSurprise to InstOwnershipChange."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal stronger profitability, growth, and safety, attracting institutional investors. Consequently, QualityScore influences the subsequent change in institutional ownership."
+    }
+  ]
+}
+```

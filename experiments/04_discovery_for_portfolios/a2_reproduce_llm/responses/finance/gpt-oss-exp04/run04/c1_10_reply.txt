@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year reflects valuation quality; value stocks (high BookToMarket) historically generate higher subsequent annual returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Assignment to a value style index is determined directly from the Book‑to‑Market ratio at the start of the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock predicts higher expected returns over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt relative to equity increases risk and expected return, thereby influencing the stock’s annual performance."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is explicitly incorporated into the composite QualityScore measured at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Surprise earnings (positive or negative) directly affect the firm’s stock price during the year, shaping total return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A significant earnings surprise often attracts institutional investors, altering their ownership levels after the fiscal year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Higher annual performance tends to draw additional institutional capital in the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The overall market movement influences individual stock returns, so the market’s average return exerts causal pressure on a firm’s annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the preceding five years often predicts future returns through momentum effects, providing a causal pathway to the next year’s return."
+    }
+  ]
+}
+```

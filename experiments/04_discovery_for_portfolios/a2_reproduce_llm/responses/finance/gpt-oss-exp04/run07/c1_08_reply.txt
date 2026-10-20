@@ -1,0 +1,106 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past five-year return reflects the firm's historical performance, influencing its market value relative to book value measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "The value style index membership is often assigned based on prior returns; thus past five-year return can determine value index membership at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that a firm's past returns can causally influence its future 12‑month return measured after the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book-to-market ratio measured at the start of the year captures firm valuation, which can directly affect the stock’s subsequent 12‑month return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "Low leverage, a component of the quality score, is closely related to book-to-market; hence a higher book-to-market ratio influences the quality score measured at year end."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year affects the firm's risk profile, thereby influencing its 12‑month return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Leverage is explicitly a component of the quality score, so the starting-year leverage directly shapes the end‑of‑year quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprise during the year affects stock price movements, thereby influencing the 12‑month return measured after the start of the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "A significant earnings surprise can improve profitability stability, one of the quality score components, thus affecting the end‑of‑year quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises; thus the surprise during the year can cause a change in institutional ownership over the following 12 months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality scores, reflecting profitability, growth and safety, tend to lead to better stock performance over the next 12 months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Stocks with higher quality attract institutional investors, causing a change in ownership after the fiscal year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Value index membership at the start of the year predicts a distinct return trajectory over the following 12 months."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks tend to experience shifts in institutional ownership after the year, making membership a cause of ownership change."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market’s 12‑month return drives firm‑specific returns; a higher market return tends to lift the firm’s annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to market performance; thus the market return over the same period can influence post‑year institutional ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s 12‑month performance signals future prospects, prompting institutional investors to adjust holdings over the following 12 months."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "The month when the fiscal year ends determines when profitability and safety metrics are finalized, directly affecting the end‑of‑year quality score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional ownership changes are measured after the fiscal year end; thus the timing of the fiscal year end drives the period over which ownership changes are observed."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Higher leverage at the start of the year signals greater risk, prompting institutional investors to adjust holdings after the year."
+    }
+  ]
+}
+```

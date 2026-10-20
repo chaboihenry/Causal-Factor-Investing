@@ -1,0 +1,41 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned based on a firm's book‑to‑market ratio at the start of the year; therefore changes in BTM directly determine whether a stock becomes a member of the value index."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The fiscal year end month dictates when a firm reports its earnings relative to analyst forecasts; earlier or later reporting can alter the calculated earnings surprise, making the month a causal driver of the surprise metric."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive or negative earnings surprise during the year moves the firm’s stock price, thereby influencing the total return measured over the following twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Earnings surprises often trigger portfolio adjustments by institutional investors; the change in institutional ownership recorded in the twelve months after year‑end is affected by the magnitude of the surprise."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score composite explicitly penalizes high leverage; therefore the firm’s leverage ratio at the start of the year directly impacts its quality score computed at year‑end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors use the end‑of‑year quality score as a signal of firm health; higher quality scores tend to encourage increased institutional ownership in the following year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market return over the twelve‑month period is a primary driver of a firm’s individual return; a higher market return provides a favorable backdrop that raises the firm’s annual return."
+    }
+  ]
+}
+```

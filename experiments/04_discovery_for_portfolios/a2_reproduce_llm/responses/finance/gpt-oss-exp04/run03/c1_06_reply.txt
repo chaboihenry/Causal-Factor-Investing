@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is typically determined at the start of the year based on a firm’s book‑to‑market ratio, making BookToMarket an engineered determinant of ValueIndexMember."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Higher book‑to‑market ratios (value characteristics) are empirically linked to superior stock performance over the subsequent twelve months, so the 90‑day average (BookToMarket) causally influences the 12‑month return (AnnualReturn)."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock at the start of the year leads to a value premium in the following year’s returns, establishing a causal link from ValueIndexMember to AnnualReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that past multi‑year returns predict future yearly performance; thus PastFiveYearReturn causally influences AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market’s aggregate 12‑month return drives the firm‑specific return through the market factor, making MarketReturn a cause of AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt levels increase risk and cost of capital, which typically suppress a firm’s stock return; therefore Leverage causally affects AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Positive or negative earnings surprises during the year push the stock price up or down, directly influencing the firm’s total return over the next twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore is measured at year‑end and incorporates profitability and growth derived from the firm’s performance over the year; thus the actual 12‑month return drives the composite score."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore explicitly values low leverage; consequently, Leverage causally informs the QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Profitability—central to QualityScore—is affected by the magnitude of earnings surprises, establishing a causal influence."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Growth is part of QualityScore and past long‑term returns reflect historical growth trends, so PastFiveYearReturn causally affects the growth component of QualityScore."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings based on a firm’s recent performance; a higher AnnualReturn typically leads to increased institutional ownership over the following year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A significant earnings surprise attracts institutional attention and can trigger ownership adjustments, making EarningsSurprise a causal factor for InstOwnershipChange."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality signals encourage institutional investors to hold or increase positions, creating a causal link from QualityScore to InstOwnershipChange."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Broad market trends influence institutional buying and selling behavior; thus MarketReturn causally affects the change in institutional ownership."
+    }
+  ]
+}
+```

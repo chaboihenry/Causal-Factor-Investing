@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned based on the book‑to‑market ratio; a higher ratio makes a firm eligible for the value style index."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Empirical evidence shows value stocks (high book‑to‑market) tend to deliver higher future returns, so the ratio directly influences the 12‑month return."
+    },
+    {
+      "source": "Leverage",
+      "target": "BookToMarket",
+      "justification": "Leverage (debt/market equity) reduces book equity, increasing the book‑to‑market ratio; therefore changes in leverage cause changes in book‑to‑market."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and potential return, directly affecting the firm’s total return over the next year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates beta derived from the firm’s returns; a higher return alters the beta component and thus the overall quality score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings based on recent performance; a superior annual return typically leads to increased institutional ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality score—indicating stronger profitability, safety, and growth—signals better fundamentals, which are associated with higher expected returns."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions favor high‑quality firms; thus a better quality score tends to attract more institutional ownership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that a firm’s recent multi‑year performance predicts its short‑term return; past five‑year return causally influences the next year’s return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "The growth component of QualityScore reflects historical performance; a higher five‑year return boosts the growth metric, raising the overall score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that differ from analysts’ forecasts impact the firm’s stock price, driving the 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react strongly to earnings surprises, adjusting their holdings accordingly."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The systematic market return influences individual stock returns; the firm’s return is affected by the overall market performance."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock (ValueIndexMember) is associated with higher expected returns over the next year."
+    }
+  ]
+}
+```

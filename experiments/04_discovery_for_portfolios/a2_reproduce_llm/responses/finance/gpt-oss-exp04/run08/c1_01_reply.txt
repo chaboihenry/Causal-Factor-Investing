@@ -1,0 +1,91 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is determined based on the firm's book‑to‑market ratio at the start of the year; therefore a higher book‑to‑market leads to being assigned to a value style index."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Empirical studies show that firms with higher book‑to‑market ratios tend to earn higher stock returns over the following year, so book‑to‑market influences the annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks, characterized by high book‑to‑market ratios, are often considered attractive by institutional investors; thus a higher book‑to‑market at the start of the year can cause larger changes in institutional ownership after the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (debt/equity) affects the firm's risk profile and expected return; higher leverage at the start of the year can increase the risk‑adjusted return observed over the next twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "High leverage may deter institutional investors, so firms with higher leverage at the start of the year tend to experience different institutional ownership changes after the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value index signals that the firm is valued relative to its fundamentals; value index members historically exhibit higher future returns, so membership influences the annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often invest in value indices; thus value‑index membership can lead to greater institutional ownership changes after the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past long‑term performance is a strong predictor of future returns; therefore the five‑year return before the start of the year influences the return observed over the next year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Firms that have performed well over the past five years tend to attract institutional investors, affecting ownership change after the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The fiscal year end month determines when earnings are reported; the timing of the fiscal year end thus causes the measurement of earnings surprise during the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional ownership change is measured over the twelve months following the fiscal year end; the fiscal year end month therefore causes the period over which ownership change is observed."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise typically lifts the stock price during the year, raising the total return observed over the twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Earnings surprises alter investor sentiment and can trigger changes in institutional holdings after the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide systematic return influences individual stock returns; a higher market return tends to increase the stock's annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Market conditions affect institutional investor behavior; thus the market return can cause changes in institutional ownership after the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong performance over the year attracts institutional investors, leading to changes in institutional ownership after the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score indicates better profitability, growth, and safety, making the firm more attractive to institutional investors; thus quality influences ownership change after the year."
+    }
+  ]
+}
+```

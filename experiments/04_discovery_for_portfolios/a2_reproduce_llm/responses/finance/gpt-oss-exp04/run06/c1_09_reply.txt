@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market is measured at the start of the year and influences investor expectations about future returns, thereby affecting the stock price movements that determine the 12‑month total return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index membership at the start of the year is assigned based on the firm’s book‑to‑market ratio, so the ratio causally determines index membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year affects the firm’s risk profile and expected earnings volatility, which in turn influence the stock’s return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the quality score is defined as low leverage, so the measured leverage at the start of the year directly determines the safety portion of the score reported at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings during the year shift the stock price during that period, and thus the 12‑month total return is causally affected by the earnings surprise."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise reflects the quality of earnings, which is part of the profitability component of the quality score calculated at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Positive earnings surprises attract institutional investors, leading to changes in their ownership stake in the firm during the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of all other U.S. stocks during the same twelve‑month period is a market factor that drives the individual stock’s return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their portfolios in response to market movements, so the market return influences changes in institutional ownership after year‑end."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the firm’s fiscal year ends determines the timing of its earnings report relative to analysts’ forecasts, affecting the magnitude of the earnings surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often rebalance their holdings at or around the firm’s fiscal year end, so the end month causally affects ownership changes during the twelve months after year‑end."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value index is associated with higher expected returns; thus membership at the start of the year causally influences the firm’s subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks tend to attract institutional investors, so membership in a value index causally leads to changes in institutional ownership after year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the five years prior to the start of the year informs investor expectations and can shape future price trajectories, thereby influencing the following 12‑month return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors use past performance as a signal when adjusting their holdings, so the past five‑year return causally affects ownership changes during the twelve months after year‑end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score indicates better profitability, growth, and safety, making the firm more attractive to institutional investors and leading to ownership changes after year‑end."
+    }
+  ]
+}
+```

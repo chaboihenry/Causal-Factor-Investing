@@ -1,0 +1,61 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio, measured at the start of the year, captures a firm’s valuation relative to its book value. Historically, higher BTM values are associated with higher subsequent stock returns, so the start‑of‑year BTM influences the annual return that follows."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index is determined at the start of the year and signals market expectations that often translate into higher returns during the following twelve months."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past performance over the five years preceding the start of the year is a predictor of future returns; investors use this information to forecast the firm’s 12‑month return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of all other US stocks (excluding the firm) over the same twelve months moves the firm’s return through market‐wide effects."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, alters a firm’s risk profile; higher leverage can amplify both gains and losses, thereby influencing the firm’s subsequent annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates a low‑leverage component. The leverage value at the start of the year directly feeds into the quality score calculated at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that differ materially from analyst forecasts occur during the year and can shift investor sentiment, affecting the firm’s stock price and thus its annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The profitability component of QualityScore includes earnings performance; a significant earnings surprise therefore changes the composite quality score measured at year‑end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions adjust their holdings based on recent performance. The firm’s 12‑month return, realized after the year’s end, informs institutional investors’ decisions over the following twelve months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms are generally more attractive to institutional investors, leading to increased ownership levels in the period following the year‑end."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often trade in style indices; membership in a value index can prompt changes in institutional ownership during the twelve months after year‑end."
+    }
+  ]
+}
+```

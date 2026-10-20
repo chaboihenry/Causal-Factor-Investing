@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "BookToMarket is measured at the start of the year; the start date is determined by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is measured at the start of the year; its measurement date follows the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "PastFiveYearReturn",
+      "justification": "PastFiveYearReturn covers the five years before the start of the year, which is defined by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn is the total return over the twelve months following the start of the year; the start is set by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "EarningsSurprise is calculated from earnings reported during the fiscal year, whose timing is governed by the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "QualityScore is measured at the end of the fiscal year; the end month is the fiscal year end month."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember status is assigned at the start of the year, which follows the fiscal year end month."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership often uses book-to-market ratios as a key criterion at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Historical returns are considered when assigning a firm to a value index at the start of the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The firm's return over the year is influenced by the market’s average performance during the same period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A significant earnings surprise can drive the stock price up, contributing directly to the annual total return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings after the year based on the firm’s prior-year performance."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Earnings surprises are used by institutional investors as signals when deciding to buy or sell the firm’s shares after the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score, reflecting profitability, growth, and low leverage, tends to attract institutional ownership changes."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes low leverage as one of its components, so changes in leverage directly affect the score."
+    }
+  ]
+}
+```

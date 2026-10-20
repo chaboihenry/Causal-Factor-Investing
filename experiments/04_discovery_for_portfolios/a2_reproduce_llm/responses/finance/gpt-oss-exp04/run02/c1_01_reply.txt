@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical performance at the start of the year influences investor expectations and market valuation relative to book value, thereby affecting the book‑to‑market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is determined by the firm's book‑to‑market ratio; a high ratio qualifies the stock for the index."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value style (high book‑to‑market) has been shown to predict higher future returns, so the book‑to‑market ratio influences the subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value index is empirically associated with superior returns, thus influencing the firm's annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements affect individual stock performance; the market‑wide return exerts influence on the firm’s own return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and cost of capital, which can impact the stock’s return; thus leverage influences the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score includes a safety component that rewards low leverage; therefore higher leverage reduces the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings relative to forecasts cause price adjustments, directly affecting the firm’s total return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprises influence the profitability component of the quality score, thereby affecting the overall score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises by buying or selling, leading to changes in ownership after the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality (profitability, growth, safety) is associated with better future returns, so the quality score influences the annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A stock’s performance influences institutional investor decisions, resulting in changes in holdings after the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance shapes investor expectations and can directly influence the firm’s current return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings reports and the comparison to forecasts, affecting the magnitude of the earnings surprise."
+    }
+  ]
+}
+```

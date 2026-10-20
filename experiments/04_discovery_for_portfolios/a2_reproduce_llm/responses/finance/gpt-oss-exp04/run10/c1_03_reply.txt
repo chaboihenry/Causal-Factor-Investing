@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is assigned based on the firm’s book-to-market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Asset pricing theory and empirical evidence indicate that higher book-to-market ratios measured at the start of the year are associated with higher future stock returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, influences the firm’s risk profile and expected return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the quality score includes low leverage; therefore, a higher leverage ratio directly reduces the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The profitability component of the quality score incorporates the earnings surprise, so a larger surprise directly affects the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings during the year impact the stock price trajectory and thus the total return over the twelve months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality—reflecting profitability, growth, and safety—tends to drive higher stock returns during the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings based on perceived quality; a higher quality score after year‑end influences post‑year institutional ownership changes."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s performance over the year informs institutional investors’ decisions to buy or sell after the year ends, affecting the ownership change."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the five years preceding the start of the year is a strong predictor of the following year’s return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past performance is correlated with current profitability and risk metrics that compose the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted market return over the same twelve months directly influences the firm’s individual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors respond to overall market conditions; the market return during the year affects their post‑year‑end ownership decisions."
+    }
+  ]
+}
+```

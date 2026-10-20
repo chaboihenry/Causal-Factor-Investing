@@ -1,0 +1,101 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "The firm’s market value, the denominator in the book‑to‑market ratio measured at the start of the year, is influenced by historical price appreciation reflected in the past five‑year return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Index providers use past performance as part of their criteria to classify firms into a value style; thus historical returns can determine index membership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Strong past returns can reduce the need for debt financing or alter the capital structure, thereby affecting the leverage ratio measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Historical profitability and growth, components of the QualityScore, are informed by past returns, providing a basis for the quality assessment."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned based on the book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Stocks with higher book‑to‑market ratios (value stocks) tend to exhibit higher future returns over the twelve months following the start of the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock is associated with higher subsequent annual returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The composite QualityScore explicitly includes low leverage as a safety component."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can influence the expected return over the next year."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings based on perceived risk from a firm’s leverage level."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings relative to forecasts tend to move the stock price and therefore affect the stock’s total return over the following twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprises reflect unexpected profitability and growth, directly influencing the quality assessment."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Firms with higher quality scores tend to deliver better future returns."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors favor higher‑quality firms, which leads to changes in their ownership stakes after the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A firm’s performance over the year attracts institutional buying or selling after the fiscal year’s end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "A firm’s return is partially driven by the overall market performance of other US stocks."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Market gains influence institutional portfolio rebalancing decisions, affecting their holdings of the firm."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often adjust their holdings around the firm’s fiscal year‑end to align with reporting periods."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The timing of fiscal year‑end determines when earnings are reported relative to analysts’ forecasts, thereby influencing the earnings surprise."
+    }
+  ]
+}
+```

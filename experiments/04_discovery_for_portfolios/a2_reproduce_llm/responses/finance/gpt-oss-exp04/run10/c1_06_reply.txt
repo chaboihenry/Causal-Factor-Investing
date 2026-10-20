@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is assigned based on the firm’s book-to-market ratio at the start of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The QualityScore composite includes a safety component that rewards low leverage; higher leverage reduces the score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Growth and profitability components of the QualityScore are inferred from the firm’s performance over the previous five years."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The firm’s total return over the twelve months following the start of the year is influenced by the value‑weighted average return of all other US stocks during the same period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive or negative earnings surprise during the year directly affects the firm’s stock price, thereby influencing its annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprises in earnings are known to attract or repel institutional investors, causing a change in their ownership stake over the following twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The stock’s return during the year informs institutional investors’ future ownership decisions in the subsequent twelve‑month period."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score signals stronger profitability, growth, and safety, which tend to attract institutional ownership over the following year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical five‑year performance is often predictive of future returns, thereby influencing the firm’s annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Stocks assigned to a value index generally exhibit return patterns distinct from non‑value stocks, impacting their annual return."
+    }
+  ]
+}
+```

@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past five‑year total return, measured before the start of the year, influences the firm’s current book‑to‑market valuation as investors base their expectations on historical performance."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Being assigned to a value style index at the start of the year depends on historical valuation and return patterns, so prior five‑year return informs index membership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Investors’ expectations and the firm’s perceived risk profile, shaped by its past performance, affect the stock’s return over the following twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The firm’s book‑to‑market ratio at the start of the year reflects its valuation; a higher ratio (more undervalued) tends to lead to higher future return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage at the start of the year determines financial risk; greater debt magnifies both upside and downside, typically reducing the expected return over the next year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates low leverage as one of its safety components; therefore higher leverage at the start of the year lowers the composite quality score measured at year‑end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of all other US stocks over the same twelve months provides the market benchmark that directly influences the firm’s individual return during that period."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality score—indicating stronger profitability, growth, and safety—generally leads to a better stock performance over the next year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprise during the year reflects actual earnings versus forecasts; a positive surprise typically raises the stock price and thus contributes to higher total return over the twelve‑month horizon."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The change in institutional ownership measured after the year-end is influenced by the firm’s performance during the year; better returns encourage institutional investors to increase or adjust their holdings."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score attracts institutional investors, leading to a greater likelihood of ownership change after the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Being a member of a value style index signals attractiveness to institutional investors focused on value stocks, thus influencing ownership change after the year."
+    }
+  ]
+}
+```

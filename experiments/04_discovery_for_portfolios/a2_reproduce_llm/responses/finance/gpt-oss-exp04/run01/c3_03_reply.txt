@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "BookToMarket",
+      "target": "FiscalYearEndMonth",
+      "justification": "The month in which the fiscal year ends is a reporting‑schedule choice that is independent of a firm’s book‑to‑market ratio; there is no causal influence from book‑to‑market to fiscal year end month."
+    },
+    {
+      "type": "missing",
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The fiscal year end month sets the start of the fiscal year and thus determines the twelve‑month period over which AnnualReturn is measured. Because the return is calculated over that period, the month of fiscal year end causally influences the measured AnnualReturn."
+    }
+  ]
+}
+```

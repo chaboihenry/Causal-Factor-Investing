@@ -1,0 +1,96 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership criteria include book-to-market ratio measured at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value stocks (high book-to-market) historically generate higher subsequent annual returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions tend to favor value stocks, so higher book-to-market ratios influence institutional ownership changes after the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index imparts the value premium, raising expected annual returns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value index membership signals attractiveness to institutional investors, affecting their ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market’s overall movement directly influences the stock’s individual return over the same period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Broader market performance drives institutional portfolio adjustments, reflected in ownership changes."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is a component of the quality score; higher leverage lowers the score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt levels increase financial risk, affecting the firm’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings relative to forecasts move the stock price, altering the annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprise earnings influence institutional investors’ perception, prompting ownership adjustments."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Performance over the year is a key driver of institutional portfolio rebalancing."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Annual return data feeds into the beta calculation that is part of the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Market return is used to estimate beta, which is a component of the quality score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The month the fiscal year ends influences timing of institutional portfolio rebalancing, affecting ownership change."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical momentum suggests that past five‑year performance can influence the next year’s return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Momentum effects may prompt institutional investors to adjust holdings based on recent long‑term performance."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal strong fundamentals, attracting institutional ownership changes."
+    }
+  ]
+}
+```

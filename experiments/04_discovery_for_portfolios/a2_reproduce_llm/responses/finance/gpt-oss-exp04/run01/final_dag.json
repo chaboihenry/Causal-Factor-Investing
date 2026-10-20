@@ -1,0 +1,153 @@
+{
+ "graph": "finance",
+ "backend": "gpt-oss-exp04",
+ "run": 1,
+ "date": "2026-10-20T17:03:04",
+ "n_undirected_c1": 31,
+ "validation_rounds": 4,
+ "validated": true,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "High book\u2011to\u2011market firms are classified as value stocks and historically yield higher returns."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "Earnings surprises affect stock price and thus contribute to the year\u2011long return."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Strong performance attracts institutional investors, who increase their holdings."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Higher leverage can amplify returns (or risk) and thus influences the annual return."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "The overall market performance sets a baseline that drives individual stock returns."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "Historical returns are predictive of future performance and therefore influence the annual return."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "AnnualReturn",
+   "justification": "Firms in a value index historically outperform, raising their annual return."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "EarningsSurprise",
+   "justification": "High book\u2011to\u2011market firms are often under\u2011priced by analysts, leading to larger earnings surprises."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "InstOwnershipChange",
+   "justification": "Institutional investors favor value stocks, so a higher book\u2011to\u2011market leads to greater ownership change."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "Consistent past performance raises a firm\u2019s equity value relative to book value, increasing book\u2011to\u2011market."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "Value index membership is determined by the book\u2011to\u2011market ratio."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "EarningsSurprise",
+   "justification": "The timing of earnings releases relative to analyst expectations affects the surprise magnitude."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "Surprise earnings releases attract institutional buying."
+  },
+  {
+   "source": "Leverage",
+   "target": "EarningsSurprise",
+   "justification": "Higher leverage amplifies earnings volatility relative to forecasts, influencing surprise magnitude."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "A positive earnings surprise signals stronger earnings, raising the quality score."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "InstOwnershipChange",
+   "justification": "Institutions often rebalance holdings around the fiscal year end."
+  },
+  {
+   "source": "Leverage",
+   "target": "InstOwnershipChange",
+   "justification": "Higher leverage may prompt institutional investors to reassess risk and adjust holdings."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Institutional portfolios are rebalanced in response to market performance."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Historical performance informs institutional investment decisions."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "High\u2011quality firms attract institutional ownership."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "InstOwnershipChange",
+   "justification": "Institutions favor value\u2011style stocks, leading to higher ownership change."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "Leverage",
+   "justification": "Strong past returns allow firms to finance operations with less debt, reducing leverage."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "Low leverage is a key component of the quality score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "QualityScore",
+   "justification": "Consistent past performance signals higher firm quality, raising the quality score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "ValueIndexMember",
+   "justification": "Stable past performance increases the likelihood of being selected for a value index."
+  },
+  {
+   "source": "Leverage",
+   "target": "BookToMarket",
+   "justification": "Leverage influences the book\u2011to\u2011market ratio through its effect on book equity; the causal direction should be Leverage \u2192 BookToMarket rather than BookToMarket \u2192 Leverage."
+  },
+  {
+   "source": "QualityScore",
+   "target": "AnnualReturn",
+   "justification": "The annual return is strongly influenced by a firm\u2019s quality characteristics (profitability, growth, safety) that are captured in the QualityScore. This causal link is omitted in the current DAG."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "AnnualReturn",
+   "justification": "The fiscal year end month sets the start of the fiscal year and thus determines the twelve\u2011month period over which AnnualReturn is measured. Because the return is calculated over that period, the month of fiscal year end causally influences the measured AnnualReturn."
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Valuation metrics such as book-to-market influence expected future performance; higher book-to-market often signals higher potential returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index membership is determined primarily by the book-to-market ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical performance informs current valuation; investors often price firms based on prior returns."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects link past performance to future returns over the next year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases risk and typically dampens expected returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component penalizes high leverage, directly incorporating leverage into the score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise raises the stock price during the year, directly affecting the annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Strong earnings surprises attract institutional investors, increasing their ownership stake."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Individual stock returns are correlated with the overall market return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings releases, influencing the magnitude of earnings surprises."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The fiscal year‑end month affects the period over which the annual return is measured, thereby influencing the return calculation."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Timing of the fiscal year end determines when institutional ownership changes are recorded."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality fundamentals (profitability, growth, safety) tend to drive better stock performance."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer high‑quality firms, leading to increased ownership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a value style member is associated with higher expected returns due to mean‑reversion effects."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong returns in the year make the firm attractive to institutional investors, prompting ownership changes."
+    }
+  ]
+}
+```

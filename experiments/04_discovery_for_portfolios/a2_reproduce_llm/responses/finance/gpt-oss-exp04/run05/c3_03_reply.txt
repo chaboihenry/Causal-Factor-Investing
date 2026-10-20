@@ -1,0 +1,13 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore is calculated at the end of the year from profitability, growth and safety metrics, and it predicts future annual returns. Therefore the causal direction should be QualityScore → AnnualReturn, not AnnualReturn → QualityScore."
+    }
+  ]
+}
+```

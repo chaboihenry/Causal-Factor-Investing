@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices use book‑to‑market ratios to classify stocks; therefore the BTM at the start of the year determines whether a firm is a value index member."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Historically, lower book‑to‑market ratios (value stocks) generate higher future returns, so the BTM measured at the start of the year causally influences the 12‑month return that follows."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a value index member is associated with higher expected returns; membership thus causally impacts the firm’s subsequent 12‑month return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can depress future equity returns, so leverage measured at the start of the year causally affects the following year’s return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the quality score penalizes high leverage; therefore the leverage ratio directly influences the composite quality score calculated at year‑end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Individual stock returns are driven by overall market performance; the market‑wide 12‑month return exerts a causal influence on a firm’s own 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings relative to forecasts alter investor expectations and stock prices during the year, causing a causal effect on the firm’s 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises after year‑end, adjusting their holdings; thus the surprise causally drives changes in institutional ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A firm’s performance during the year influences institutional investors’ allocation decisions after year‑end, so the 12‑month return causally affects ownership change."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The quality score’s beta component is estimated from past returns; therefore the 12‑month return measured at year‑end causally contributes to the composite quality score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions use quality metrics when rebalancing portfolios; the end‑of‑year quality score causally influences the change in institutional ownership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership criteria sometimes incorporate past performance; thus the firm’s return over the five years preceding the current year causally influences its value‑index status."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance can shape market expectations and thus affect the firm’s future 12‑month return, providing a causal link from past five‑year return to the upcoming annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which a firm’s fiscal year ends determines the timing of earnings reports relative to market expectations, which in turn influences the magnitude of the earnings surprise."
+    }
+  ]
+}
+```

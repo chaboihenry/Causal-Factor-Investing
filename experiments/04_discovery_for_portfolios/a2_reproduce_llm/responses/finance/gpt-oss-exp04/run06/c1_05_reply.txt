@@ -1,0 +1,91 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the year based on the firm’s book‑to‑market ratio; thus the book‑to‑market ratio determines membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value stocks (high book‑to‑market) historically have higher expected returns, so the book‑to‑market ratio measured at the start of the year influences the subsequent annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to increase holdings of value stocks; the book‑to‑market ratio influences their post‑year ownership decisions."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes low leverage as a component; therefore leverage directly affects the quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage amplifies potential gains and risk, thereby influencing expected annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Debt levels affect earnings outcomes relative to forecasts, so leverage causally influences earnings surprise."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise reflects profitability, which is a component of the quality score; thus earnings surprise impacts quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise can lift the stock price during the year, affecting total return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings after year end in response to earnings surprises."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Firms with higher quality tend to generate better returns; the quality score measured at year end influences subsequent annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer high‑quality firms; thus the quality score drives post‑year ownership change."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Return persistence implies past performance predicts future returns, so past five‑year return influences annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Sustained past returns indicate profitability and stability, which contribute to the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Market return provides the systematic component of a firm’s stock return, influencing the firm’s annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong annual performance attracts institutional capital, leading to higher ownership change after year end."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a value‑index member at the start of the year shapes investor expectations and influences subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value‑index membership signals a value style, attracting institutional investors and leading to ownership change after year end."
+    }
+  ]
+}
+```

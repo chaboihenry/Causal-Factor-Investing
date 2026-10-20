@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book-to-market ratio measured at the start of the year reflects valuation relative to book value. Empirical evidence shows that higher book-to-market (value stocks) tends to generate higher future returns over the next 12 months, making it a causal driver of AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is typically defined by the firm’s book-to-market ratio at the start of the year. Thus the ratio directly causes the assignment to ValueIndexMember."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock affects investor expectations and market demand, influencing the firm’s stock return over the following year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "High debt-to-equity (Leverage) increases financial risk and can constrain operational flexibility, often reducing the firm’s excess return over the next 12 months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes low leverage as a component. Lower leverage directly improves the quality composite score calculated at year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical return patterns (momentum or reversal) influence expectations and price dynamics, making past five‑year performance a causal antecedent of the subsequent year’s return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise during the year alters the stock’s perceived fundamentals, leading to price adjustments that manifest in the 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "EarningsSurprise reflects the firm’s profitability relative to expectations; higher profitability improves the profitability component of the end‑of‑year QualityScore."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality composite score, incorporating profitability, growth and safety, is associated with better risk‑adjusted performance, causally raising the expected AnnualReturn."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors use quality metrics to evaluate holdings; a higher QualityScore tends to increase the likelihood of buying, thereby raising the share of institutional ownership after year‑end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong year‑long performance attracts institutional capital, so the 12‑month return directly drives changes in institutional ownership over the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted market return represents the overall market environment; a higher market return tends to lift most individual stocks’ returns, making it a causal contributor to AnnualReturn."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "Earnings are reported shortly after the fiscal year ends; the month of fiscal year end determines the timing of the earnings announcement, thereby influencing the magnitude of the surprise during that period."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust positions around the firm’s fiscal year‑end reporting; the month of the fiscal year end therefore causally affects the 12‑month institutional ownership change that follows."
+    }
+  ]
+}
+```

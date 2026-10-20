@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "The stock’s cumulative performance over the five years prior to the start of the year influences its accumulated book value, which in turn determines the book‑to‑market ratio measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "A firm’s historical returns affect its ability to raise capital and manage debt, thereby shaping its debt‑to‑equity ratio measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that a firm’s prior performance tends to influence its return in the following twelve‑month period."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices are constructed based on a firm’s book‑to‑market ratio; the ratio at the start of the year determines membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "A higher book‑to‑market ratio often signals undervaluation, which can lead analysts to set lower earnings forecasts and therefore increase the potential for an earnings surprise."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Valuation metrics influence investor expectations and trading activity, thereby affecting the firm’s price appreciation over the next twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "High leverage can amplify earnings volatility and distort earnings, making actual results more likely to differ from analyst expectations."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Debt levels affect a firm’s risk profile and cost of capital, which in turn influence its expected stock return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The composite quality score includes a low‑leverage criterion; thus lower leverage contributes directly to a higher quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average performance of all other US stocks during the same twelve‑month period provides a market‑wide benchmark that directly influences an individual firm’s return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates a low‑beta component estimated from the firm’s own return series; therefore the annual return directly feeds into the score calculation."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Better stock performance attracts institutional investors, leading to a larger change in their ownership stake during the period following the end of the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal lower risk and better fundamentals, which are attractive attributes for institutional investors and tend to increase their ownership over time."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which a firm’s fiscal year ends determines the timing of earnings releases, influencing how those earnings compare to analysts’ forecasts."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is measured over the twelve months after the fiscal year end; thus the end month defines the observation window for ownership changes."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Empirical evidence shows that value‑style stocks exhibit distinct return patterns; membership therefore influences the firm’s expected annual return."
+    }
+  ]
+}
+```

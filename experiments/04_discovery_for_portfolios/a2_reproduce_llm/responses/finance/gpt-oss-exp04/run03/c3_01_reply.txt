@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore is computed at the end of the year from firm‑level metrics (profitability, growth, safety). The return over the year is a consequence of that quality, not a cause. Therefore the correct direction is QualityScore → AnnualReturn."
+    },
+    {
+      "type": "nonexistent",
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "MarketReturn represents the aggregate performance of all other US stocks during the year. The definition of QualityScore depends on firm‑specific fundamentals (profitability, growth, safety, leverage) and does not incorporate macro market performance. Consequently, a causal link MarketReturn → QualityScore is unsupported."
+    }
+  ]
+}
+```

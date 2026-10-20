@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "High book-to-market ratios (value stocks) historically lead to higher future returns; book-to-market measured at start influences annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often prefer value stocks; book-to-market influences institutional ownership changes."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "High leverage increases financial risk and can amplify returns; leverage at start of year affects subsequent return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes low leverage criterion; higher leverage lowers quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Positive earnings surprise often translates into higher subsequent stock returns."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprise earnings influence investor confidence and lead to changes in institutional holdings."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's beta component is estimated from annual returns; thus returns affect quality score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings in response to a firm's year‑to‑year performance."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores attract institutional ownership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is based on past performance; past five‑year return influences membership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Index membership drives institutional flows; being a member often leads to increased institutional ownership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Market movements influence individual stock returns; market return precedes annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions adjust holdings following broad market returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value indices often select stocks based on book‑to‑market; thus book‑to‑market influences index membership."
+    }
+  ]
+}
+```

@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market ratio at the start of the year reflects the value premium; firms with higher book-to-market are expected to deliver higher subsequent annual returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Assignment to a value style index is typically based on book-to-market thresholds, so the ratio directly determines membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage at the start of the year influences a firm’s risk profile and expected return during the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality composite includes a safety component that penalizes high leverage, making leverage a direct contributor to the score."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Value-index membership is associated with higher future returns, so being a member tends to cause an increase in the firm’s annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that past five‑year performance predicts next year’s return, making past performance a causal driver of the upcoming annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The calendar month in which the fiscal year ends can create seasonal performance patterns that affect the annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "Market‑wide returns often exhibit month‑level seasonality; the fiscal year end month can align with broader market movements, influencing the market return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "Earnings releases are scheduled relative to the fiscal year end, so the month in which the year ends determines the timing—and therefore the magnitude—of earnings surprises."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that exceed (or fall short of) analyst expectations drive stock price changes during the year, directly affecting the firm’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Significant earnings surprises attract institutional investors, leading to a change in institutional ownership after the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Firm‑specific returns are partially driven by overall market movements; a higher market return tends to lift the firm’s return during the same period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings in response to market performance; a strong market return can prompt increased buying or selling activity."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal stronger fundamentals, encouraging institutions to raise their ownership stakes after the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Positive annual performance attracts institutional investors, leading to a change in institutional ownership in the following twelve months."
+    }
+  ]
+}
+```

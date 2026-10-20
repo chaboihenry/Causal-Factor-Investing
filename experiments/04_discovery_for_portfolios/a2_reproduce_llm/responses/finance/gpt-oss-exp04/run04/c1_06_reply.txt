@@ -1,0 +1,91 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember is assigned to a value style index at the start of the year based on the firm’s book‑to‑market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book‑to‑market ratio measured at the start of the year influences expected future performance, which is reflected in the 12‑month total return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "Analysts incorporate the book‑to‑market ratio when forecasting earnings; a high ratio can lead to higher expected earnings and thus a larger surprise."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks with a high book‑to‑market ratio often attract institutional investors, affecting the change in institutional ownership."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the QualityScore is defined as low leverage; therefore, higher leverage reduces the safety score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "A higher debt load increases financial risk and can diminish after‑tax returns, impacting the 12‑month total return."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Analysts consider debt levels when forecasting earnings; firms with higher leverage are more likely to experience earnings that differ from forecasts."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise reflects profitability and safety; a positive surprise improves the firm’s overall quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A positive earnings surprise attracts institutional investors, increasing their ownership stake."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality, measured by profitability, growth, and safety, tends to generate higher future returns."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer high‑quality firms, which leads to greater institutional ownership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market return is an exogenous factor that drives the firm’s 12‑month total return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Firms that perform well in the previous year are more likely to attract institutional investment, changing ownership levels."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The timing of the fiscal year end influences forecast windows and earnings announcements, affecting the magnitude of earnings surprises."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical performance influences market valuation relative to book value, thereby altering the book‑to‑market ratio."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Membership in a value style index is based on book‑to‑market characteristics and is associated with specific return patterns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks typically exhibit higher institutional ownership, which affects the change in institutional holdings."
+    }
+  ]
+}
+```

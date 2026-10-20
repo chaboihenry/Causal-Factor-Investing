@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book‑to‑market ratio measured at the start of the year influences how investors price the firm; a higher ratio signals a value stock, which historically leads to higher future stock returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value‑style stocks (high book‑to‑market) tend to attract institutional investors, leading to a greater change in institutional ownership after the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, affects the firm's cost of capital and risk profile, which in turn influences the stock’s total return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component is based on low leverage; thus the firm’s leverage level directly contributes to its overall quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past five‑year return is used as part of the growth and profitability assessment that feeds into the composite QualityScore."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index indicates a higher expected return; membership at the start of the year influences the firm’s performance during the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of all other US stocks over the same period is a contemporaneous market influence that directly affects the firm’s return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings in response to overall market movements, so the market return during the year influences changes in institutional ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s own performance over the year informs institutional investors’ decisions, leading to a change in their ownership stake."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "The earnings surprise during the year causes a price reaction that contributes to the firm’s total return over the twelve‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "An unexpected earnings announcement influences investor sentiment and can trigger a subsequent change in institutional ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality score, reflecting profitability, growth and safety, is associated with stronger performance, thereby raising the firm’s total return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High‑quality firms attract institutional investors, resulting in greater changes in institutional ownership after the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The calendar month when the fiscal year ends determines the timing of earnings releases; this timing affects the magnitude and perception of the earnings surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors often time their trades around earnings release dates; the fiscal year‑end month therefore influences the post‑year change in ownership."
+    }
+  ]
+}
+```

@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical returns influence the market valuation of a firm, which directly affects its book-to-market ratio measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Long‑term performance informs capital structure decisions; firms with strong past returns are more likely to maintain or adjust debt levels, affecting leverage measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Past performance is a key input when an index determines value‑style membership; hence historical returns can cause a firm to be added to or removed from a value index."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum theory posits that past performance tends to persist, so the five‑year return can causally influence the next year's total return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is defined largely by the book‑to‑market ratio, so a change in BookToMarket causes a change in membership status."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value stocks (high BookToMarket) historically exhibit higher future returns; thus the ratio can cause future annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "Book‑to‑market influences the profitability, growth, and safety components that comprise the QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt relative to equity increases financial risk and can lower expected returns; therefore leverage causally affects annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage improves the safety aspect of the composite quality metric, so changes in leverage causally influence QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise changes investor expectations and stock price, directly impacting the stock's annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Surprises affect the profitability component of the QualityScore, so a change in earnings surprise causally influences the quality metric."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Firm returns are correlated with the broader market; the market’s 12‑month return causally drives the firm’s annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong performance attracts or deters institutional investors; thus a firm’s annual return causes changes in institutional ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality signals lower risk and stronger fundamentals, which institutional investors use to adjust holdings; therefore QualityScore causally influences ownership change."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The month in which a firm reports its fiscal year end determines when institutional ownership is re‑evaluated, so the fiscal end month causally affects the 12‑month ownership change period."
+    }
+  ]
+}
+```

@@ -1,0 +1,106 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past performance influences firm valuation and market perception, affecting the book‑to‑market ratio measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Historical returns impact retained earnings and capital structure decisions, so companies with stronger past performance tend to adjust their leverage at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Value indices often incorporate past return metrics when selecting constituents; thus past five‑year return can determine membership at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past returns are indicative of profitability and growth, which are core components of the quality score measured at year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that strong past performance can predict higher future returns over the following twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is largely defined by the book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value stocks (high book‑to‑market) exhibit distinct return patterns, influencing the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is part of the safety component of the quality score evaluated at year‑end."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage affects a firm’s risk and potential return, thereby influencing its annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Higher leverage can deter institutional investors, impacting the change in institutional ownership after the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings beats or misses alter stock prices during the year, directly affecting the annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises, altering their ownership stakes after the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Surprises influence profitability and are reflected in the profitability component of the quality score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Profitability, growth, and safety—all captured in the quality score—drive the firm’s annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High‑quality firms are more attractive to institutional investors, influencing post‑year ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of the market exerts an exogenous influence on the firm’s annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a value‑style constituent affects the firm’s return dynamics over the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks often attract institutional investors, impacting ownership changes after the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines when earnings are reported and compared to forecasts, affecting the surprise calculation."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The timing of the fiscal year end dictates the window over which institutional ownership changes are measured."
+    }
+  ]
+}
+```

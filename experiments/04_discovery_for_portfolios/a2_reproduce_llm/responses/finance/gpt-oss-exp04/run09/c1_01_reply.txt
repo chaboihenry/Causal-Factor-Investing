@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is determined by a firm’s book‑to‑market ratio; a higher ratio increases the likelihood of inclusion."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score incorporates a low‑leverage component; lower leverage directly improves the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements influence a firm’s return; the market return drives the firm’s performance over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise boosts investor expectations and stock price, directly affecting the firm’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Earnings surprises prompt institutional investors to reassess holdings, leading to changes in ownership over the following period."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Stock performance influences institutional ownership levels; better performance attracts institutional investors, causing ownership changes."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal stronger fundamentals, making a firm more attractive to institutional investors and encouraging ownership adjustments."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Firms with higher quality tend to generate superior returns due to stronger profitability, growth, and safety fundamentals."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance influences expectations and momentum, affecting future returns; past five‑year return informs investor sentiment."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being part of a value index attracts demand from value‑oriented investors, potentially increasing the firm’s return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors often rebalance portfolios at fiscal year end; the month of year end affects the timing of ownership changes."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks attract institutional investors; membership in a value index encourages institutional ownership adjustments."
+    }
+  ]
+}
+```

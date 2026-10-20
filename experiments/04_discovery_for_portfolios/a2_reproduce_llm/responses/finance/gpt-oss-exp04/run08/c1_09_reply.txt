@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year, while AnnualReturn captures total return over the following 12 months. Value‑stock characteristics indicated by a high book‑to‑market ratio historically lead to higher future returns, making BookToMarket a causal driver of AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember is defined as the firm's membership in a value style index at the start of the year. The index assignment is based on the firm's book‑to‑market ratio, so the ratio causally determines index membership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "PastFiveYearReturn reflects historical performance before the start of the year. Investors and analysts often use past performance as a predictor of future performance, thereby influencing the stock’s subsequent AnnualReturn."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Membership in a value style index indicates the firm is perceived as a value stock, which historically tends to yield higher future returns. Thus ValueIndexMember causally influences AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage is measured at the start of the year and indicates the firm’s debt burden relative to equity. Higher leverage raises financial risk and cost of capital, directly affecting the firm’s future stock return, so Leverage causes AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes low leverage as one of its criteria and is measured at the end of the year. Because Leverage is known at the start, it directly determines the quality score computed later, making Leverage a causal factor for QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other US stocks over the same 12‑month period. The firm’s stock return is influenced by overall market movements, so MarketReturn causally drives AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise measures the deviation between reported earnings during the year and analyst forecasts. A positive surprise typically pushes the stock price up, directly contributing to the stock’s AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors respond to earnings surprises by buying or selling shares. Therefore, the magnitude of the surprise causally influences the subsequent change in institutional ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is measured over the 12 months after year‑end and reflects investor reactions to the firm’s performance. Past annual return strongly influences institutional buy/sell decisions, making AnnualReturn a causal driver of InstOwnershipChange."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher QualityScore signals stronger fundamentals, attracting institutional investors. Thus QualityScore causally affects the change in institutional ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "QualityScore captures profitability, growth, and safety—all factors that predict higher future returns. Consequently, QualityScore causally influences the firm’s AnnualReturn."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "FiscalYearEndMonth determines the timing of the firm’s earnings report relative to analyst forecast releases. Since EarningsSurprise is calculated from reported earnings during the year, the month in which the fiscal year ends causally affects the surprise metric."
+    }
+  ]
+}
+```

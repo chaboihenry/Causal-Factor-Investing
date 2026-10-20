@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore is calculated at the end of the year from profitability, growth and safety metrics that are used to predict future returns, not the other way around. Therefore the causal direction should be QualityScore → AnnualReturn, not AnnualReturn → QualityScore."
+    },
+    {
+      "type": "nonexistent",
+      "source": "QualityScore",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember is determined solely by the book‑to‑market ratio at the start of the year. The quality score does not influence index membership, so this edge does not represent a real causal relationship."
+    }
+  ]
+}
+```

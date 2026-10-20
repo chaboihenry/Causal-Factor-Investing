@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices are assigned at the start of the year based on a firm’s book-to‑market ratio; a higher BTM makes a stock more likely to be a value index member."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Historical evidence shows that firms with higher book‑to‑market ratios (value stocks) tend to deliver higher annual returns over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (debt/equity) affects a firm’s risk‑return profile; higher debt can amplify both upside and downside returns, thus influencing the annual stock return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The composite QualityScore explicitly includes low leverage as one of its safety components, so leverage directly contributes to the score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Long‑term past returns influence current market valuation relative to book value, thereby affecting the book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "A firm’s performance over the preceding five years can affect its classification in value indices, which consider both valuation and performance factors."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past five‑year return is often predictive of future returns; firms that performed well historically tend to generate higher subsequent annual returns."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Stable profitability over five years is one of the profitability components of the QualityScore, so past five‑year return contributes directly to the score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑weighted average return of all other US stocks is a key driver of individual stock performance, influencing the firm’s own annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Surprises in reported earnings relative to analyst forecasts often trigger price movements during the year, thereby affecting the total annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings can influence institutional investor sentiment, leading to changes in ownership stakes after the fiscal year end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "High quality firms—exhibiting profitability, growth, and safety—tend to deliver better risk‑adjusted returns over the next year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often seek high‑quality stocks, so a superior QualityScore encourages increased institutional ownership after the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Stocks classified as value index members historically show higher annual returns compared to non‑value peers."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Good performance in the preceding year attracts institutional investors, leading to changes in institutional ownership over the following twelve months."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The calendar month in which a firm’s fiscal year ends determines the timing of earnings release; the surprise is measured relative to the forecast at that point."
+    }
+  ]
+}
+```

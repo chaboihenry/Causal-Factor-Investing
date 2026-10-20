@@ -1,0 +1,166 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is calculated at the start of the year; lower BTM values are associated with higher expected future returns, influencing the 12‑month stock return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings during the year lead to price adjustments that directly affect the stock’s total return over the same period."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The month in which a firm’s fiscal year ends determines the timing of earnings releases and market reactions, which can shape the 12‑month return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A firm’s performance over the year influences institutional investors’ decisions to buy or sell shares in the following year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start reflects a firm’s risk profile; higher leverage can impact risk‑adjusted returns."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Market‑wide returns drive individual stock returns through beta exposure."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum from historical performance often predicts future returns, influencing the annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Return contributes to the profitability component of the end‑of‑year quality score."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Value index membership, based on book‑to‑market, is empirically linked to expected return patterns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "Lower BTM suggests undervaluation, which can lead to larger earnings surprises when earnings exceed forecasts."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "Fiscal year end timing influences the book value used to compute BTM at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Lower BTM attracts institutional investors, leading to higher ownership changes."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical returns influence market valuation at the start of the year, affecting BTM."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "BTM reflects valuation risk; lower BTM is often associated with higher quality metrics."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is directly determined by the book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "Fiscal year end month affects the timing of earnings releases and can influence the magnitude of earnings surprises."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Significant earnings surprises prompt institutional investors to adjust their holdings."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "High leverage can constrain earnings growth, making earnings more likely to differ from analysts’ forecasts."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "EarningsSurprise",
+      "justification": "Past performance shapes analysts’ forecasts, affecting the size of the earnings surprise."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Unexpected earnings improve the profitability component of the end‑of‑year quality score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The timing of the fiscal year end influences when institutional investors rebalance, affecting ownership changes."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Fiscal year end month affects debt reporting and therefore the leverage ratio at the start of the next year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "Fiscal year end timing can impact profitability and safety metrics that constitute the quality score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "Fiscal year end month influences the book‑to‑market calculation, affecting index membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Firms with higher leverage are perceived as riskier, prompting institutional investors to reduce holdings."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Market performance influences institutional portfolio allocation decisions, altering ownership levels."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Historical performance attracts institutional investors, leading to higher ownership changes."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms attract institutional ownership in the following year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value index membership signals undervaluation, drawing institutional investors."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Leverage contributes to the safety component of the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Market conditions affect profitability and safety components of the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Historical returns reflect sustainable profitability, influencing the end‑of‑year quality score."
+    }
+  ]
+}
+```

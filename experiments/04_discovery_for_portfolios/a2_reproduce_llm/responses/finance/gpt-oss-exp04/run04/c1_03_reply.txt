@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the year based on a firm’s book-to-market ratio; a higher book-to-market increases the likelihood of being classified as a value stock."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "Leverage",
+      "justification": "Leverage is computed as total debt divided by market value of equity; the book-to-market ratio reflects the relative size of book versus market equity, which directly affects the denominator and thus the leverage value."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "High book-to-market stocks are historically associated with distinct return patterns (the value effect); therefore the book-to-market ratio at year‑start causally influences the stock’s annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index reflects a stock’s book-to-market position and other value characteristics, which are known to affect its return trajectory during the following year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Prior performance over the five years preceding the start of the year shapes investor expectations and can influence the firm’s return over the following year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Historical return performance can be a factor in assigning a firm to a value index at year‑start, making past five‑year return a causal driver of index membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The composite quality score explicitly includes low leverage as a component; higher leverage reduces the quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can affect the firm’s stock return during the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that deviate from analyst forecasts change investor expectations and influence the stock’s price, thereby affecting its total return over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A significant earnings surprise often prompts institutional investors to adjust their holdings, leading to a change in institutional ownership after the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s performance over the year influences institutional investors’ decisions to buy or sell shares, resulting in ownership changes after year end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide value‑weighted return drives individual stock performance; thus the market return causally affects the firm’s annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Quality characteristics such as profitability, growth and low beta influence the firm’s return profile; a higher quality score tends to alter the expected return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High‑quality firms are attractive to institutional investors, so a higher quality score can lead to increased institutional ownership after the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The month in which the fiscal year ends determines the timing of financial reporting and shareholder actions, which directly affects institutional ownership adjustments following the year."
+    }
+  ]
+}
+```

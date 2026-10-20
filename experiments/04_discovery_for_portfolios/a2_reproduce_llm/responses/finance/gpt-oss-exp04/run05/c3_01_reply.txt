@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "The QualityScore is computed at the end of the year and cannot cause the return that occurs during the same period. The correct causal direction is AnnualReturn -> QualityScore."
+    },
+    {
+      "type": "direction",
+      "source": "InstOwnershipChange",
+      "target": "MarketReturn",
+      "justification": "MarketReturn represents the overall market movement during the period and influences institutional ownership decisions. The direction should be MarketReturn -> InstOwnershipChange to preserve acyclicity and reflect that market performance drives institutional trades, not vice versa."
+    }
+  ]
+}
+```

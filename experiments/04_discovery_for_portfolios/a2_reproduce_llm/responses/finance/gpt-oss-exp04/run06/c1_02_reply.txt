@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year is historically predictive of future stock performance, so it causally influences the stock’s total return over the following twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is determined at the start of the year based on the firm’s book‑to‑market ratio; thus the ratio causes index membership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value index member tends to drive higher returns for the firm during the year, implying a causal influence."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise during the year changes investor expectations and the firm’s price, directly affecting its total return for the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions adjust their holdings after the year‑end in response to earnings surprises, so the surprise causally affects ownership change."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the QualityScore penalizes high leverage; therefore the firm’s leverage level directly influences its quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage amplifies both potential gains and losses, impacting the firm’s annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality score, reflecting profitability, growth, and safety, is associated with better future performance, thereby influencing annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Firms with higher quality scores attract institutional investors after the year‑end, causing changes in institutional ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong annual performance typically leads institutions to buy more of the stock in the subsequent period, affecting ownership levels."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the preceding five years is a strong predictor of current‑year returns, implying a causal link."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide return drives overall stock price movements; individual stock returns are thus influenced by the market return."
+    }
+  ]
+}
+```

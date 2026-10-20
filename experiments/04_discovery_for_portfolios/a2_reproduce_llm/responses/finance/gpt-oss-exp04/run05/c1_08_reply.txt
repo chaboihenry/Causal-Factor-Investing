@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is typically determined at the start of the year based on a firm’s book-to-market ratio. Therefore the book-to-market ratio directly influences whether a firm is assigned to a value index."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book-to-market ratio is a classic value factor; firms with higher book-to-market ratios tend to generate higher subsequent returns. The value factor is therefore a causal driver of the firm’s annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "A firm’s leverage at the beginning of the year affects its risk profile and the expected return on equity. Higher leverage typically increases potential returns (and risk), making leverage a causal driver of the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score’s definition explicitly includes low leverage as one of its components. Consequently, the firm’s leverage at year‑start causally determines its quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises during the year are reflected in the firm’s stock price movements and thus directly contribute to the total return over the same twelve‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Positive earnings surprises attract institutional investors; the resulting demand for the stock causes a change in institutional ownership over the following year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum research shows that past long‑term performance predicts future performance; the firm’s five‑year return before the start of the year is therefore a causal precursor of its upcoming annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The firm’s return over a twelve‑month horizon is affected by the overall market performance during the same period, making the market return a causal influence."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores—indicating better profitability, lower leverage, and lower beta—make a firm more attractive to institutional investors, thereby causing a change in institutional ownership after the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock often increases trading activity and liquidity, which in turn can influence the firm’s actual return during the year. Thus index membership causally affects annual return."
+    }
+  ]
+}
+```

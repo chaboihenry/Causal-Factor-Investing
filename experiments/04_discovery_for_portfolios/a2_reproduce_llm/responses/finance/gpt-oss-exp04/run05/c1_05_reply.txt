@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market ratio measured at the start of the year captures a firm’s valuation relative to its equity and historically predicts the stock’s return over the subsequent twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (total debt divided by market value of equity) is measured at the start of the year; higher leverage increases risk and typically influences the firm’s expected return during that year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "The stock’s total return over the five years preceding the start of the year reflects historical performance patterns that help forecast its return for the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other U.S. stocks over the same twelve‑month period; an individual stock’s performance is causally driven by overall market movements."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value style index member at the start of the year signals a valuation premise that typically leads to a higher expected return for that period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures the deviation of actual earnings from analysts’ forecasts during the year; a positive surprise tends to increase the firm’s stock price during that period."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The total return achieved over the twelve months following the start of the year influences institutional investors’ post‑year holdings, as gains or losses affect their buy‑sell decisions."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A significant earnings surprise during the year signals new information that institutional investors react to in their portfolio adjustments after the fiscal year ends."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates low leverage as one of its components; therefore, an increase in leverage directly reduces the composite quality score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores (indicating profitability, growth, and safety) measured at year‑end attract institutional investors’ capital in the period following the year’s close."
+    }
+  ]
+}
+```

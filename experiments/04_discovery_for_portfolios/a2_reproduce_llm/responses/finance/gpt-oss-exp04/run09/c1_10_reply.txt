@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is measured at the start of the year and is a well‑known predictor of future stock return; a higher ratio indicates a value style that typically yields higher returns over the next 12 months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index membership is assigned at the start of the year based largely on the firm’s book‑to‑market ratio; thus Book‑to‑Market causally determines ValueIndexMember."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, affects the firm’s risk profile and capital structure; higher leverage is associated with higher expected return over the ensuing 12 months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a safety component that penalizes high leverage; therefore the start‑of‑year leverage level causally influences the end‑of‑year QualityScore."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the five years preceding the current year provides momentum or reversal signals that influence the firm’s return during the current year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn represents the value‑weighted average return of all other US stocks over the same 12‑month period; systemic market movements causally affect an individual firm’s return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise occurs during the year and can cause immediate price adjustments; thus a larger surprise tends to drive higher total return over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "EarningsSurprise directly reflects profitability during the year, which is a core component of the end‑of‑year QualityScore."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher QualityScore signals stronger fundamentals, attracting institutional investors; thus the end‑of‑year quality assessment causally influences the change in institutional ownership over the following 12 months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings in response to a firm’s performance; a higher annual return encourages a larger increase in institutional ownership in the year after the end of the fiscal year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Wider market movements influence portfolio rebalancing decisions of institutional investors, thereby affecting the change in their ownership stakes."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index at the start of the year positions the firm to benefit from the value premium, leading to higher expected annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The month in which the fiscal year ends determines when earnings releases occur and when institutions may rebalance portfolios; firms that close their fiscal year in months with lower reporting activity often see larger institutional ownership changes in the following year."
+    }
+  ]
+}
+```

@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "BookToMarket",
+      "target": "MarketReturn",
+      "justification": "MarketReturn is defined as the value‑weighted return of all other US stocks, excluding this firm. The firm’s book‑to‑market ratio cannot causally influence the aggregate return of other stocks, so this edge is not justified."
+    },
+    {
+      "type": "nonexistent",
+      "source": "PastFiveYearReturn",
+      "target": "MarketReturn",
+      "justification": "PastFiveYearReturn reflects this firm’s own historical performance over the preceding five years. Since MarketReturn excludes the firm, the firm’s past returns cannot affect the overall market return, making this edge invalid."
+    }
+  ]
+}
+```

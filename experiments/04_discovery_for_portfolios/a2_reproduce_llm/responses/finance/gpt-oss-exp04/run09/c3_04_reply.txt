@@ -1,0 +1,13 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "ValueIndexMember",
+      "target": "QualityScore",
+      "justification": "Value index membership is determined solely by the book‑to‑market ratio at the start of the year and does not influence the composite quality score, which is calculated from profitability, growth and safety metrics at year‑end. Hence this edge does not represent a real causal relationship."
+    }
+  ]
+}
+```

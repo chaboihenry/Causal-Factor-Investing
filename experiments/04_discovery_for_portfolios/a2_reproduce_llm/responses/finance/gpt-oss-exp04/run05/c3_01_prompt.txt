@@ -1,0 +1,49 @@
+Evaluate the causal Directed Acyclic Graph (DAG) generated from the provided undirected graph. Examine each edge against guiding principles, feature definitions, thought process examples, and user-provided justifications.
+
+Types of errors to scrutinize:
+
+1. **Overlooking Valid Causal Relationships:**
+- Confirm all plausible causal relationships between features. Refer to feature definitions and provided examples for comprehensive coverage.
+2. **Directional Errors in Causal Relationships:**
+- Review the directionality of each causal relationship (e.g., edge) in the DAG. Align justifications with examples and reasoning in the user's prompt. Verify consistency with feature definitions, excluding scaling relationships.
+- Apply finance and accounting domain knowledge to determine causal direction. - Confirm and verify the direction of the edge is coherent with the chronological ordering in feature definitions. - Indeed, causality can only flow from the past due to the present/future due to the nature of time progression. An element constructed using values from the period starting 15 years ago and ending 12 years ago could not be affected by an element happening after it such as an element constructed using values from the period starting 12 years ago and ending 9 years ago.- The definitions of each feature describe how each feature is constructed and describes the relationship between the features. Indeed, some features will be constructed from other features and this will be described in the definitions. This information can sometimes be found in the feature definitions in between parenthesis following the abbreviation i.e. for that is.
+3. **Inclusion of Nonexistent Causal Relationships:**
+- Verify each edge for genuine causal connections. Cross-reference with prompts, feature definitions, and examples to ensure accuracy.
+Consider the following examples for thought processes and justifications:
+1. Consider Feature A as the average returns of a stock over the previous year (as1y) and Feature B as the average returns over the previous 2 years (as2y). Both features are constructed using the return values from the previous year, suggesting a potential causal relationship. Applying domain knowledge about finance and stock returns, we recognize that past stock returns can influence future returns.
+Missing Causal Relationship: the edge was missed in the initial generation of the DAG.
+Nonexistent Causal Relationship: the edge included represents a causal relationship that doesn't exist.
+Directional Errors in Causal Relationships: the direction of the edge is incorrect. The causal relationship flows in the opposite direction than the current direction of the edge.
+
+The current DAG is (Feature Name A, Feature Name B, Justification for causal relationship flowing from feature A to feature B):
+(BookToMarket, AnnualReturn, The book‑to‑market ratio is measured at the start of the year and historically predicts higher future returns; therefore the ratio influences the subsequent annual return.)
+(EarningsSurprise, AnnualReturn, An earnings surprise affects the stock price during the year; a positive surprise tends to raise the stock’s return over the following twelve months.)
+(FiscalYearEndMonth, AnnualReturn, The month in which the firm’s fiscal year ends determines the timing of earnings reports and can influence the period over which the annual return is measured.)
+(AnnualReturn, InstOwnershipChange, Institutions adjust their holdings after the year based on the firm’s performance; the annual return directly drives post‑year ownership changes.)
+(Leverage, AnnualReturn, Higher leverage increases financial risk, which can reduce expected future returns; thus leverage measured at the start of the year influences the subsequent annual return.)
+(MarketReturn, AnnualReturn, The market’s aggregate performance provides a systematic component that affects the individual stock’s return during the same period.)
+(PastFiveYearReturn, AnnualReturn, Five‑year past performance is predictive of future returns; it informs expectations and therefore influences the annual return.)
+(QualityScore, AnnualReturn, The composite quality score, measured at year‑end, captures profitability, growth, and safety; high quality firms tend to generate higher future returns.)
+(ValueIndexMember, AnnualReturn, Value‑style index membership is based on low book‑to‑market ratios, which historically correlate with higher returns; thus membership drives expected performance.)
+(FiscalYearEndMonth, BookToMarket, The month of fiscal year end determines the accounting period used for book value calculations, thereby affecting the book‑to‑market ratio.)
+(BookToMarket, InstOwnershipChange, Firms with lower book‑to‑market ratios attract value investors, leading to institutional ownership changes after the year.)
+(PastFiveYearReturn, BookToMarket, Historical performance reflects valuation trends; firms with strong past returns tend to have lower book‑to‑market ratios, so past returns influence the ratio.)
+(BookToMarket, ValueIndexMember, Membership in a value style index is defined by the book‑to‑market ratio; therefore the ratio causes the assignment to the index.)
+(FiscalYearEndMonth, EarningsSurprise, Earnings are announced at the fiscal year end; the month in which this occurs can affect the magnitude and timing of the surprise.)
+(EarningsSurprise, InstOwnershipChange, A positive earnings surprise attracts investors, prompting changes in institutional holdings after the reporting period.)
+(Leverage, EarningsSurprise, High leverage can affect earnings quality and forecast accuracy, thereby influencing the degree of surprise when earnings are reported.)
+(EarningsSurprise, QualityScore, The earnings surprise impacts the profitability component of the quality score; thus it contributes to the composite score.)
+(FiscalYearEndMonth, InstOwnershipChange, The timing of fiscal year end influences when earnings are released and how investors react, thereby affecting institutional ownership changes.)
+(FiscalYearEndMonth, Leverage, Leverage is measured at the end of the fiscal year; the month of the fiscal year end determines the timing of this measurement.)
+(FiscalYearEndMonth, QualityScore, The quality score is computed at year‑end; the fiscal year end month determines the exact timing of this calculation.)
+(Leverage, InstOwnershipChange, High leverage signals higher risk, prompting institutions to adjust holdings after the reporting period.)
+(MarketReturn, InstOwnershipChange, Broad market performance influences investor sentiment and the timing of institutional trades, affecting ownership changes.)
+(PastFiveYearReturn, InstOwnershipChange, Long‑term performance informs institutional expectations and investment decisions, leading to ownership changes after the year.)
+(QualityScore, InstOwnershipChange, Institutions favor high‑quality firms; the quality score therefore drives post‑year ownership changes.)
+(ValueIndexMember, InstOwnershipChange, Value index members attract institutional capital; membership therefore influences institutional ownership adjustments.)
+(PastFiveYearReturn, Leverage, Past performance can influence a firm’s debt policy; high historical returns may encourage taking on more leverage.)
+(Leverage, QualityScore, Low leverage is part of the safety component of the quality score; therefore leverage directly influences the score.)
+(MarketReturn, QualityScore, Beta, derived from market returns, is part of the safety aspect of the quality score; thus market return influences the score.)
+(PastFiveYearReturn, QualityScore, Long‑term performance signals sustainable profitability and growth, contributing to the quality score.)
+
+Return your answer as JSON only, inside a ```json code block, with exactly this structure: {"valid": true or false, "corrections": [{"type": "missing" or "nonexistent" or "direction", "source": "feature name", "target": "feature name", "justification": "text"}]}. For "missing", give the edge to add. For "nonexistent" and "direction", give the edge exactly as it currently appears in the DAG. If the DAG is valid, return {"valid": true, "corrections": []}.

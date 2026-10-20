@@ -1,0 +1,71 @@
+```json
+{
+  "edges": [
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "The fiscal year end month determines the calendar date at which the start‑of‑year book‑to‑market ratio is measured, so changes in the fiscal year end month affect the computed BookToMarket value."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Similarly, the fiscal year end month determines when the start‑of‑year leverage ratio is recorded, making the month a causal factor for the Leverage value."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "A higher book‑to‑market ratio signals a value‑style firm, which historically tends to yield different (often lower) future returns; thus BookToMarket exerts a causal influence on the AnnualReturn over the next twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is defined at the start of the year and is largely based on the book‑to‑market ratio; therefore changes in BookToMarket drive changes in ValueIndexMember status."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage increases financial risk and can affect the firm’s risk‑adjusted return; hence a higher leverage ratio causally influences the upcoming AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score explicitly penalizes high leverage as part of its safety component; therefore leverage directly contributes to the computed QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Higher leverage magnifies the impact of earnings deviations from forecasts, making leverage a causal factor for the magnitude of earnings surprises."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance tends to exhibit persistence; thus a firm’s return over the five years preceding the start of the year causally affects its expected return over the following twelve months."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past five‑year return reflects past profitability and growth, which are components of the composite QualityScore; therefore past returns causally influence the QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average market return is a key driver of an individual stock’s return via the beta relationship; thus MarketReturn causally affects AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "The beta component of the QualityScore is derived from the stock’s returns relative to MarketReturn, so MarketReturn causally contributes to the computed QualityScore."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value index member typically correlates with distinct return patterns, making the membership status a causal driver of the subsequent AnnualReturn."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their holdings in response to a firm’s recent performance; thus the AnnualReturn over the past twelve months causally influences the change in institutional ownership observed after the year‑end."
+    }
+  ]
+}
+```

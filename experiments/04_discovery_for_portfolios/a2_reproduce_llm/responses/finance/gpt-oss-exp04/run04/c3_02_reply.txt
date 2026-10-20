@@ -1,0 +1,13 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "MarketReturn is calculated as the value‑weighted average return of all other U.S. stocks over the same 12‑month period as AnnualReturn. It is independent of the firm’s fiscal year end month and thus does not causally influence or depend on FiscalYearEndMonth."
+    }
+  ]
+}
+```

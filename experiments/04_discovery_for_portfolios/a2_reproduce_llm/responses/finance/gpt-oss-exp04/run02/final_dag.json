@@ -1,0 +1,168 @@
+{
+ "graph": "finance",
+ "backend": "gpt-oss-exp04",
+ "run": 2,
+ "date": "2026-10-20T17:12:51",
+ "n_undirected_c1": 31,
+ "validation_rounds": 1,
+ "validated": true,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "Book\u2011to\u2011market ratio is measured at the start of the year and directly influences expected 12\u2011month stock returns."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "Earnings surprise occurs during the year and directly affects the firm\u2019s total return over that period."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "AnnualReturn",
+   "justification": "The month the fiscal year ends determines the timing of earnings announcements and valuations that drive the following year\u2019s return."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Firm performance over the year influences institutional investors\u2019 decisions to buy or sell shares in the following twelve months."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Leverage measured at the start of the year constrains future return potential over the next twelve months."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "The overall market return during the period directly affects the individual stock\u2019s return."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "Historical performance over the five years before the start of the year provides context for future returns."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "QualityScore",
+   "justification": "The firm\u2019s annual return contributes to the profitability component of the quality score measured at year\u2011end."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "AnnualReturn",
+   "justification": "Value index membership is assigned at the start of the year based on book\u2011to\u2011market and influences expected returns."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "BookToMarket",
+   "justification": "The timing of fiscal year end affects the valuation window used to calculate book\u2011to\u2011market at year\u2011start."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "InstOwnershipChange",
+   "justification": "Value\u2011oriented firms (low book\u2011to\u2011market) attract institutional investors, leading to ownership changes after the year."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "Historical returns shape market perception and valuation, thereby influencing the book\u2011to\u2011market ratio at year\u2011start."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "QualityScore",
+   "justification": "Low book\u2011to\u2011market is a key component of the quality score\u2019s value dimension."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "Value index membership is assigned directly based on the book\u2011to\u2011market ratio."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "EarningsSurprise",
+   "justification": "The fiscal year end month determines when earnings are reported, which in turn defines the earnings surprise."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "Earnings surprise alters investor sentiment, influencing institutional ownership decisions in the following year."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "EarningsSurprise",
+   "justification": "Forecasts incorporate past performance; past returns help determine the magnitude of earnings surprise."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "Earnings surprise feeds into profitability and growth components of the year\u2011end quality score."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "InstOwnershipChange",
+   "justification": "The timing of the fiscal year end can influence post\u2011reporting institutional investor actions."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "Leverage",
+   "justification": "The month of fiscal year end affects the timing of leverage reporting."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "PastFiveYearReturn",
+   "justification": "Fiscal year end month determines the period used to calculate the past\u2011five\u2011year return."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "QualityScore",
+   "justification": "The timing of reporting influences the components of the year\u2011end quality score."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "ValueIndexMember",
+   "justification": "Fiscal year end timing can affect the valuation basis used for assigning value index membership."
+  },
+  {
+   "source": "Leverage",
+   "target": "InstOwnershipChange",
+   "justification": "Higher leverage signals higher risk, prompting institutional investors to adjust holdings."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Market return trends guide institutional portfolio adjustments after the year."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Historical performance informs institutional investment decisions in the following year."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "A higher quality score attracts institutional investors, leading to ownership changes."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "InstOwnershipChange",
+   "justification": "Value index membership influences institutional portfolio construction after the year."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "Lower leverage is a safety component of the quality score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "QualityScore",
+   "justification": "Past performance informs the growth component of the year\u2011end quality score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "ValueIndexMember",
+   "justification": "Historical returns may influence classification into a value index via their impact on book\u2011to\u2011market."
+  }
+ ]
+}

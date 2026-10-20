@@ -1,0 +1,13 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "MarketReturn",
+      "target": "EarningsSurprise",
+      "justification": "Earnings surprise occurs during the year and can influence overall market sentiment, thereby affecting the market return. The market return cannot causally affect a firm’s earnings surprise. The correct direction is EarningsSurprise -> MarketReturn."
+    }
+  ]
+}
+```

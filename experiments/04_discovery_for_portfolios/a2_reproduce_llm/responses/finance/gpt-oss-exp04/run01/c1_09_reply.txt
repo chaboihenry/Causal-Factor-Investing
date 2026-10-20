@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year and represents the firm's book value relative to market value. A higher book-to-market ratio signals a value stock, which empirically leads to higher expected returns over the following twelve months, thus causally influencing AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember is defined as membership in a value style index at the start of the year, which is determined by the firm's book-to-market ratio. Therefore BookToMarket causally determines ValueIndexMember."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (total debt over market equity) is measured at the start of the year and affects the firm's risk profile. Higher leverage generally increases expected returns (and risk) during the year, causally affecting AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a safety component that values low leverage. Thus the measured Leverage directly influences the QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures how reported earnings differ from forecasts during the year. Significant surprises affect investor expectations and stock prices over the same period, causing changes in AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "QualityScore contains a profitability component. EarningsSurprise alters profitability during the year, thus influencing the end‑of‑year QualityScore."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "PastFiveYearReturn reflects long‑term performance before the start of the year. Historical performance often predicts future returns, causally influencing AnnualReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past returns shape the market price component of BookToMarket. Strong past performance raises market equity value, altering the BookToMarket ratio measured at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a growth component that reflects the firm’s historical return trajectory. Therefore PastFiveYearReturn causally influences QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other U.S. stocks over the same twelve months as AnnualReturn. The broader market movement influences the individual firm's return, establishing a causal link."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange measures the change in institutional holdings over the twelve months after the year end. Institutional investors adjust holdings based on the firm’s performance, so AnnualReturn causally drives InstOwnershipChange."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher QualityScore signals stronger profitability, growth, and safety, making the stock more attractive to institutional investors. Thus QualityScore causally influences InstOwnershipChange."
+    }
+  ]
+}
+```

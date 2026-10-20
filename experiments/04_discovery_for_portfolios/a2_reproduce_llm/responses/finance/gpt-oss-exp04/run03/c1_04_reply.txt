@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market ratio reflects valuation quality; value-oriented firms historically deliver higher future returns, thus influencing the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can affect a firm’s risk-adjusted return over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise typically raises the stock price during the reporting period, contributing to the total return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects and investor expectations based on past performance can drive current year returns."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Market-wide movements influence individual stock performance; the market return serves as a key driver of the firm’s return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Inclusion in a value index signals investor expectations and can impact the firm’s subsequent return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value index is typically determined by a firm’s book-to-market ratio."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score explicitly incorporates low leverage as a safety component."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings based on performance; higher annual return attracts greater ownership changes."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "The fiscal year end month sets the measurement date for book and market values, thereby influencing the book-to-market ratio."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is calculated from debt and market equity values measured at fiscal year end; the month determines these values."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The start of the 12‑month return period follows the fiscal year end, so the month influences the return calculation."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "The end‑of‑year quality score is computed based on metrics measured at fiscal year end, making the month a determinant."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assessed at fiscal year start, which is directly linked to the fiscal year end month."
+    }
+  ]
+}
+```

@@ -1,0 +1,51 @@
+```json
+{
+  "edges": [
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other US stocks over the same twelve months as AnnualReturn; changes in market performance causally influence the firm’s return during that period."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year captures the firm’s debt load relative to equity; higher leverage increases financial risk and can affect the firm’s total return over the following year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "PastFiveYearReturn represents the firm’s cumulative return over the five years preceding the start of the year; historical performance influences investor expectations and can affect the return during the following twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year; firms with higher book‑to‑market ratios are classified as value stocks and have historically exhibited higher expected returns, making the valuation a driver of the firm’s subsequent return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise is calculated from earnings reported during the year; a surprise relative to analysts’ forecasts can move the stock price and hence contribute to the firm’s total return over the twelve months."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership at the start of the year is typically determined using the firm’s book‑to‑market ratio, so changes in BookToMarket directly cause changes in the ValueIndexMember flag."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange measures the change in institutional ownership over the twelve months after the year‑end; strong market returns often prompt institutions to adjust their portfolios, thereby causing changes in ownership."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A large earnings surprise during the year can lead institutional investors to buy or sell shares, directly affecting the institution ownership change reported twelve months after the year‑end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "QualityScore is a composite of profitability, growth, and safety measured at the end of the year; higher quality scores signal stronger fundamentals, which institutional investors consider when altering their holdings, causing ownership changes."
+    }
+  ]
+}
+```

@@ -1,0 +1,148 @@
+{
+ "graph": "finance",
+ "backend": "gpt-oss-exp04",
+ "run": 5,
+ "date": "2026-10-20T17:45:23",
+ "n_undirected_c1": 29,
+ "validation_rounds": 5,
+ "validated": false,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "The book\u2011to\u2011market ratio is measured at the start of the year and historically predicts higher future returns; therefore the ratio influences the subsequent annual return."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "An earnings surprise affects the stock price during the year; a positive surprise tends to raise the stock\u2019s return over the following twelve months."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "AnnualReturn",
+   "justification": "The month in which the firm\u2019s fiscal year ends determines the timing of earnings reports and can influence the period over which the annual return is measured."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Institutions adjust their holdings after the year based on the firm\u2019s performance; the annual return directly drives post\u2011year ownership changes."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Higher leverage increases financial risk, which can reduce expected future returns; thus leverage measured at the start of the year influences the subsequent annual return."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "The market\u2019s aggregate performance provides a systematic component that affects the individual stock\u2019s return during the same period."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "Five\u2011year past performance is predictive of future returns; it informs expectations and therefore influences the annual return."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "AnnualReturn",
+   "justification": "Value\u2011style index membership is based on low book\u2011to\u2011market ratios, which historically correlate with higher returns; thus membership drives expected performance."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "BookToMarket",
+   "justification": "The month of fiscal year end determines the accounting period used for book value calculations, thereby affecting the book\u2011to\u2011market ratio."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "InstOwnershipChange",
+   "justification": "Firms with lower book\u2011to\u2011market ratios attract value investors, leading to institutional ownership changes after the year."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "Historical performance reflects valuation trends; firms with strong past returns tend to have lower book\u2011to\u2011market ratios, so past returns influence the ratio."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "Membership in a value style index is defined by the book\u2011to\u2011market ratio; therefore the ratio causes the assignment to the index."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "EarningsSurprise",
+   "justification": "Earnings are announced at the fiscal year end; the month in which this occurs can affect the magnitude and timing of the surprise."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "A positive earnings surprise attracts investors, prompting changes in institutional holdings after the reporting period."
+  },
+  {
+   "source": "Leverage",
+   "target": "EarningsSurprise",
+   "justification": "High leverage can affect earnings quality and forecast accuracy, thereby influencing the degree of surprise when earnings are reported."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "The earnings surprise impacts the profitability component of the quality score; thus it contributes to the composite score."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "InstOwnershipChange",
+   "justification": "The timing of fiscal year end influences when earnings are released and how investors react, thereby affecting institutional ownership changes."
+  },
+  {
+   "source": "Leverage",
+   "target": "InstOwnershipChange",
+   "justification": "High leverage signals higher risk, prompting institutions to adjust holdings after the reporting period."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Broad market performance influences investor sentiment and the timing of institutional trades, affecting ownership changes."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Long\u2011term performance informs institutional expectations and investment decisions, leading to ownership changes after the year."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "Institutions favor high\u2011quality firms; the quality score therefore drives post\u2011year ownership changes."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "InstOwnershipChange",
+   "justification": "Value index members attract institutional capital; membership therefore influences institutional ownership adjustments."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "Leverage",
+   "justification": "Past performance can influence a firm\u2019s debt policy; high historical returns may encourage taking on more leverage."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "Low leverage is part of the safety component of the quality score; therefore leverage directly influences the score."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "QualityScore",
+   "justification": "Beta, derived from market returns, is part of the safety aspect of the quality score; thus market return influences the score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "QualityScore",
+   "justification": "Long\u2011term performance signals sustainable profitability and growth, contributing to the quality score."
+  },
+  {
+   "source": "QualityScore",
+   "target": "AnnualReturn",
+   "justification": "The QualityScore is calculated at the end of the year using profitability, growth, and safety metrics, not the stock\u2019s return. Therefore the correct causal direction is QualityScore \u2192 AnnualReturn, not AnnualReturn \u2192 QualityScore."
+  }
+ ]
+}

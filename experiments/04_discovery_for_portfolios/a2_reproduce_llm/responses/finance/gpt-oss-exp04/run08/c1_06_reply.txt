@@ -1,0 +1,101 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year reflects valuation quality and influences the firm’s return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (total debt divided by market value of equity) is measured at the start of the year and affects risk and potential earnings, thereby influencing the annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is assigned at the start of the year based on the book‑to‑market ratio; a higher ratio increases the likelihood of being a value stock."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past five‑year total return influences the market’s perception of the firm’s value relative to its book, thereby affecting the book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Historical performance is considered when assigning a firm to a value index; a higher past return can lead to inclusion."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of all other US stocks drives the firm’s performance over the same twelve‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A larger deviation between reported earnings and analyst forecasts during the year tends to affect the firm’s return over that period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings are a component of the profitability element of the quality score, which is measured at the end of the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Investors adjust their holdings in response to earnings surprises over the twelve months following the end of the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score measured at the end of the year signals a healthier firm, influencing institutional ownership changes thereafter."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s performance during the year informs institutional investors’ decisions to buy or sell the stock in the subsequent twelve‑month period."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month the fiscal year ends determines when earnings are reported, setting the timing for calculating the earnings surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "Quality score is computed at the end of the fiscal year; the month of the fiscal year end determines when this calculation occurs."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional ownership change is measured over the twelve months following the fiscal year end; thus the end month sets the start of that measurement window."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Being a member of a value index can attract institutional investors, leading to changes in ownership after the fiscal year."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects suggest that a firm’s recent historical return can influence its current year’s return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Past performance informs institutional investors’ expectations, affecting their subsequent ownership adjustments."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "High leverage may signal greater risk, prompting institutional investors to adjust their holdings over the next year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "A high book‑to‑market ratio signals a value characteristic that attracts institutional investors, leading to ownership changes after the fiscal year."
+    }
+  ]
+}
+```

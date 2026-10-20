@@ -1,0 +1,61 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past five‑year cumulative return often predicts future performance through momentum effects; therefore the past return causally influences the subsequent annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book‑to‑market ratio measured at the start of the year reflects valuation; value stocks (higher BTM) typically generate higher future returns, so BookToMarket causes AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and may depress expected returns, so leverage at year start causally influences the annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index signals lower valuation and potential for higher future returns; thus ValueIndexMember causes AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Positive earnings surprise during the year raises the stock price, directly affecting the return over that period; therefore earnings surprise causes AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted average return of other US stocks captures systematic market movements that influence the firm’s return; thus MarketReturn causes AnnualReturn."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Higher annual return attracts institutional investors who increase holdings; thus AnnualReturn causes the change in institutional ownership."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The fiscal year end month determines when earnings are reported, setting the timing for the earnings surprise; therefore FiscalYearEndMonth causes EarningsSurprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is measured over the twelve months after the fiscal year end; the fiscal year end month defines that period, so it causes the measurement of InstOwnershipChange."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is assigned based on the firm’s book‑to‑market ratio at year start; therefore BookToMarket causes ValueIndexMember."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore requires low leverage; thus leverage at year start causally influences the composite quality score."
+    }
+  ]
+}
+```

@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "missing",
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The fiscal year end month determines the calendar period over which the 12‑month AnnualReturn is calculated, so the month causally influences the subsequent annual return."
+    },
+    {
+      "type": "missing",
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year directly affects the firm’s risk profile and expected equity performance over the following 12 months, thereby causally influencing the AnnualReturn."
+    }
+  ]
+}
+```

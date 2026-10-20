@@ -1,0 +1,161 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "High book‑to‑market firms are classified as value stocks and historically yield higher returns."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises affect stock price and thus contribute to the year‑long return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The month in which the fiscal year ends determines the calculation window for the annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong performance attracts institutional investors, who increase their holdings."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage can amplify returns (or risk) and thus influences the annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The overall market performance sets a baseline that drives individual stock returns."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical returns are predictive of future performance and therefore influence the annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Higher returns indicate stronger profitability, one component of the quality score."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Firms in a value index historically outperform, raising their annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "High book‑to‑market firms are often under‑priced by analysts, leading to larger earnings surprises."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "FiscalYearEndMonth",
+      "justification": "Some firms schedule their fiscal year end to align with valuation cycles influenced by book‑to‑market."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors favor value stocks, so a higher book‑to‑market leads to greater ownership change."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "Leverage",
+      "justification": "Value firms tend to carry lower debt, so book‑to‑market influences leverage."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Consistent past performance raises a firm’s equity value relative to book value, increasing book‑to‑market."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is determined by the book‑to‑market ratio."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The timing of earnings releases relative to analyst expectations affects the surprise magnitude."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprise earnings releases attract institutional buying."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Higher leverage amplifies earnings volatility relative to forecasts, influencing surprise magnitude."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "A positive earnings surprise signals stronger earnings, raising the quality score."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often rebalance holdings around the fiscal year end."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "The reporting schedule affects how debt is measured relative to market value, influencing leverage."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "Quality score is computed at year end, so the fiscal year end month determines when the score is realized."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Higher leverage may prompt institutional investors to reassess risk and adjust holdings."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional portfolios are rebalanced in response to market performance."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Historical performance informs institutional investment decisions."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High‑quality firms attract institutional ownership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions favor value‑style stocks, leading to higher ownership change."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Strong past returns allow firms to finance operations with less debt, reducing leverage."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is a key component of the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Consistent past performance signals higher firm quality, raising the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Stable past performance increases the likelihood of being selected for a value index."
+    }
+  ]
+}
+```

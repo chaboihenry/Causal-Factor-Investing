@@ -1,0 +1,91 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year captures a firm’s value characteristics; historically high book‑to‑market stocks tend to generate higher subsequent annual returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is determined primarily by book‑to‑market ratio; therefore the ratio at the start of the year directly causes membership status."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt‑to‑equity (leverage) increases financial risk, which is known to negatively affect stock performance over the following year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a low‑leverage component; therefore the firm’s leverage level at the start of the year directly influences the quality score measured at year‑end."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors consider a firm’s leverage when adjusting holdings; thus leverage at the start of the year causes changes in institutional ownership observed after the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprise occurs during the year and typically drives stock price movements; therefore it directly causes the realized annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise signals profitability performance; QualityScore incorporates profitability, so a surprise influences the end‑of‑year quality assessment."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Five‑year historical return reflects momentum; such past performance is known to influence future annual returns."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Past return performance is used in determining value index membership; thus the five‑year return at the start of the year causes membership status."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors weigh a firm’s long‑term performance; therefore past five‑year return at the start of the year causally influences ownership changes observed after the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock is associated with the value premium; membership status at the start of the year causes higher annual returns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors track index membership; a value classification at the start of the year causally affects post‑year ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn represents the average return of peers; contemporaneous market movements directly drive the firm’s annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings in response to overall market performance; therefore market return causes changes in institutional ownership after the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores attract institutional investors; the end‑of‑year quality assessment causally influences post‑year ownership adjustments."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Observed annual performance influences institutional investment decisions; thus the realized return causally leads to ownership changes after the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which a firm’s fiscal year ends determines the timing of earnings reports; consequently the fiscal year end month causally influences the earnings surprise observed during the year."
+    }
+  ]
+}
+```

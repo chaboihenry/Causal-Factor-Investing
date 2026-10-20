@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month when a firm’s fiscal year ends determines when earnings are reported. The timing of earnings release relative to analysts’ forecasts influences the magnitude of the earnings surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors often rebalance portfolios around the fiscal year‑end of the firms they hold, leading to systematic changes in ownership following the reporting period."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "The timing of earnings release affects the profitability component of the quality score, which is evaluated at the end of the fiscal year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratios are a key value indicator; historically, firms with higher book‑to‑market ratios tend to earn higher future returns, so the initial book‑to‑market ratio causes higher subsequent annual returns."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value style index member signals a higher expected return due to the value premium, so membership causes higher annual returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt increases firm risk, which is typically associated with a higher expected return, so leverage causes higher annual returns."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The firm’s return is driven in part by the broader market performance; a higher market return raises the firm’s own return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that a firm’s past five‑year return predicts its future return; thus past performance causes higher annual returns."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Surprise earnings alter the firm’s valuation and subsequently its stock price, which is a component of the total annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Positive or negative annual returns influence institutional investor decisions, leading to changes in institutional ownership after the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Earnings news prompts institutional investors to buy or sell, resulting in ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional portfolio managers adjust holdings in response to overall market performance, so market return causes ownership changes."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms are more attractive to institutional investors, leading to increased ownership after the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Leverage is part of the safety component of the quality score; lower leverage improves the score, so leverage causes changes in the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The earnings surprise influences the profitability component of the quality score, thus causing changes in the score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The beta component of the quality score is estimated using the firm’s return; therefore the annual return contributes to the quality score."
+    }
+  ]
+}
+```

@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The QualityScore is calculated at the end of the year using profitability, growth, and safety metrics, not the stock’s return. Therefore the correct causal direction is QualityScore → AnnualReturn, not AnnualReturn → QualityScore."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is defined as total debt divided by market value of equity measured at the start of the fiscal year, independent of the month in which the fiscal year ends. Hence there is no causal influence from FiscalYearEndMonth to Leverage, making this edge spurious."
+    }
+  ]
+}
+```

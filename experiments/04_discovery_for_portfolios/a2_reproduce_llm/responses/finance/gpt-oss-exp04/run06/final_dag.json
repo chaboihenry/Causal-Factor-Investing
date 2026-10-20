@@ -1,0 +1,153 @@
+{
+ "graph": "finance",
+ "backend": "gpt-oss-exp04",
+ "run": 6,
+ "date": "2026-10-20T17:55:04",
+ "n_undirected_c1": 28,
+ "validation_rounds": 3,
+ "validated": true,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "Book-to-market ratio is measured at the start of the year and is widely used as a leading indicator of future stock performance. As such, the ratio measured at the start can influence the annual return over the following twelve months."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "Earnings surprise is calculated during the year based on the difference between actual earnings and analysts' forecasts. A significant surprise can move the stock price and thus the return over the period, so the surprise causally affects the annual return."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "AnnualReturn",
+   "justification": "The month in which a firm\u2019s fiscal year ends determines the timing of earnings releases and market expectations. Knowing the fiscal year end month before the year begins can shape investor sentiment and hence influence the return over that year."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "The stock\u2019s return over the year influences subsequent institutional ownership decisions, as higher returns typically attract more institutional investors, so the return drives ownership change measured over the following twelve months."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Leverage (debt-to-equity) is measured at the start of the year and affects a firm\u2019s risk profile. Higher leverage is associated with lower expected future returns, so the initial leverage influences the annual return."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "Market return represents the value-weighted average return of all other U.S. stocks over the same twelve months. The market\u2019s movement exerts a direct influence on an individual firm\u2019s return, making market return a causal driver of annual return."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "Five-year historical returns provide information on a firm\u2019s performance trend and can predict its future performance. Thus the past five-year return, measured before the start of the year, can influence the subsequent annual return."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "AnnualReturn",
+   "justification": "ValueIndexMember is assigned at the start of the year based on book-to-market. Value stocks historically earn higher future returns, so membership at the start influences the subsequent annual return."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "InstOwnershipChange",
+   "justification": "Book-to-market ratio, measured at the start, signals value and influences investor perception. Institutional investors may adjust holdings after the year in response to a firm\u2019s BTM ratio, so BTM causally affects ownership change."
+  },
+  {
+   "source": "Leverage",
+   "target": "BookToMarket",
+   "justification": "Leverage, defined as debt divided by market equity, directly reduces book equity (assets minus liabilities). An increase in leverage thus raises the book-to-market ratio, making leverage a causal driver of BTM."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "Past performance can influence current market valuation through investor expectations. Historical returns affect market equity, which is the denominator in BTM, so past five-year return causally influences BTM."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "The book-to-market ratio is the core metric used to classify a firm as a value stock. Therefore the ratio at the start determines whether the firm is a value index member, making BTM the causal factor."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "EarningsSurprise",
+   "justification": "The fiscal year end month determines when earnings are reported. Earlier reporting can affect the timing and magnitude of the earnings surprise calculation, so the month causally influences the surprise."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "An earnings surprise can alter investor sentiment and affect the attractiveness of a stock to institutional investors. Consequently, the surprise drives changes in institutional ownership after the year."
+  },
+  {
+   "source": "Leverage",
+   "target": "EarningsSurprise",
+   "justification": "Leverage affects the firm\u2019s financial risk and earnings volatility. Higher leverage can lead to larger earnings swings relative to forecasts, making leverage a causal factor for the surprise."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "A significant earnings surprise signals improved profitability and growth, components of the quality score. Thus the surprise causally contributes to the quality score measured at year\u2011end."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "InstOwnershipChange",
+   "justification": "The month of fiscal year end affects the timing of earnings releases and related news, which can influence institutional investors\u2019 trading in the period following the year. Therefore, the fiscal year end month causally affects ownership change."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "QualityScore",
+   "justification": "The timing of the fiscal year end influences when key performance metrics are reported and can affect the calculation of the quality score. Thus the month causally impacts the score."
+  },
+  {
+   "source": "Leverage",
+   "target": "InstOwnershipChange",
+   "justification": "Higher leverage makes a firm more risky and may discourage institutional ownership. Consequently, a firm\u2019s leverage at the start influences the institutional ownership change measured after the year."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "InstOwnershipChange",
+   "justification": "The overall market return reflects investor sentiment and liquidity conditions, which affect institutional investors\u2019 ability and willingness to trade. Thus the market return causally influences ownership change."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Institutional investors consider a firm\u2019s historical performance when making allocation decisions. Therefore past five\u2011year returns influence subsequent ownership changes."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "A high quality score signals a robust firm, attracting institutional investors. Hence the quality score causally drives ownership change."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "InstOwnershipChange",
+   "justification": "Being classified as a value stock signals undervaluation and can attract institutional buying. Therefore membership causally influences ownership change."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "Leverage",
+   "justification": "Historical performance informs a firm\u2019s financing decisions and risk appetite. Thus past five\u2011year returns causally affect the leverage measured at the start of the year."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "Leverage is a component of the quality score (low leverage is desirable). Therefore the leverage level causally influences the quality score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "QualityScore",
+   "justification": "Historical profitability and performance help determine the components of the quality score. Hence past returns causally influence the quality score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "ValueIndexMember",
+   "justification": "Past performance, particularly return, is used to assess value status. Therefore past five\u2011year return causally influences value index membership."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "QualityScore",
+   "justification": "QualityScore is calculated at the end of the year from profitability, growth, safety, low leverage, and low stock beta estimated from the stock's returns. The annual return over the year influences the beta and profitability components that feed into the QualityScore, so the causal direction should flow from AnnualReturn to QualityScore, not the reverse."
+  }
+ ]
+}

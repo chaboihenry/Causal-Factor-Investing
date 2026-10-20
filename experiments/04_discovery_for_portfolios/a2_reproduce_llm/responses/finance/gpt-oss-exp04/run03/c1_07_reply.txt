@@ -1,0 +1,91 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at the start of the year reflects firm valuation; a higher (or lower) ratio influences expected stock performance over the following 12 months, thus causing variation in AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year affects the firm’s risk and financing costs, which in turn impact its 12‑month total return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the contemporaneous value‑weighted return of other US stocks; market-wide movements causally affect the firm’s return over the same period."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past five‑year cumulative return, calculated before the current year, informs expectations and may influence investment activity, thereby affecting the forthcoming AnnualReturn."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Membership in a value style index, determined at the start of the year, signals investor expectations that shape the firm’s 12‑month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise represents the magnitude of earnings deviations during the year; unexpected earnings directly drive price movements and thus the stock’s total return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Higher or lower 12‑month return attracts or deters institutional investors, so the stock’s performance causally affects changes in institutional ownership over the next 12 months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprising earnings alter investors’ perception of the firm’s prospects, leading institutional owners to adjust their holdings."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "QualityScore, computed at year‑end, captures profitability, growth and safety; a higher score signals stronger fundamentals, prompting institutional investors to increase ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The firm’s 12‑month performance feeds into the profitability component of the end‑of‑year QualityScore, so return causally influences the score."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes safety (low leverage) as a criterion; therefore, the firm’s leverage measured at the start of the year directly contributes to the score."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "Book‑to‑market is a valuation proxy used in the safety component of QualityScore; thus, the ratio measured at year‑start causally affects the score."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "Analysts incorporate book‑to‑market into their earnings forecasts; consequently, a firm’s valuation metric influences the magnitude of the eventual earnings surprise."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Leverage affects expected earnings through debt servicing costs; higher leverage typically tightens earnings expectations, making any deviation (surprise) more pronounced."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The calendar month when the fiscal year ends determines the timing of earnings releases; this timing can affect the observed surprise relative to analysts’ forecasts."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "EarningsSurprise",
+      "justification": "Historical cumulative return influences analysts’ expectations for future earnings, thereby affecting the degree of surprise when actual earnings are announced."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Long‑term cumulative return reflects the firm’s historical performance and stability, contributing to the quality assessment at year‑end."
+    }
+  ]
+}
+```

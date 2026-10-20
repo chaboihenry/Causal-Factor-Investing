@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is typically assigned based on the firm's book‑to‑market ratio; therefore the ratio directly determines index membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "A higher book‑to‑market ratio signals a value style that historically influences future stock performance, so it causally affects the stock’s annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The QualityScore composite explicitly includes a low leverage component; higher leverage directly lowers the score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Greater leverage increases a firm’s risk profile and expected return, thereby directly influencing its annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings beats or misses alter intraperiod stock prices, and the resulting price changes are reflected in the total return over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises, adjusting their holdings in the twelve months after the fiscal year end; thus earnings surprise causes ownership change."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise is a direct measure of profitability, one of the dimensions that compose the QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide return exerts a systemic effect on individual stocks, so the MarketReturn causally drives the stock’s annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical five‑year performance often predicts current performance, thus past returns influence the forthcoming annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index biases the stock’s expected return relative to the market, affecting its annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value index membership attracts institutional investors, thereby influencing their post‑year ownership decisions."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is calculated over the twelve months after the fiscal year end; thus the end month determines the window, causing the change."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "The fiscal year end month affects the calculation of stock beta (used in QualityScore), so it causally impacts the score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The stock’s performance during the year informs institutional investors’ post‑year allocation decisions; therefore AnnualReturn causes InstOwnershipChange."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Annual returns contribute to the beta estimate used in QualityScore; thus the return causes the score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High quality scores are attractive to institutional investors, prompting adjustments in holdings after the year; thus QualityScore causes InstOwnershipChange."
+    }
+  ]
+}
+```

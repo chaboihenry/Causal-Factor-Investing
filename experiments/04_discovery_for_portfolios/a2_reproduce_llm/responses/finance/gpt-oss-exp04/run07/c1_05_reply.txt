@@ -1,0 +1,41 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember is assigned to a value style index at the start of the year, typically based on a firm’s book‑to‑market ratio. Therefore, the value of BookToMarket determines whether the firm is selected for the index."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is defined as the change in institutional holdings over the twelve months following the end of the fiscal year. The month in which the fiscal year ends (FiscalYearEndMonth) sets the start date of this twelve‑month window, directly affecting the calculation of InstOwnershipChange."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "EarningsSurprise measures how a firm’s reported earnings during the year deviate from analysts’ forecasts. Such a surprise can influence institutional investors’ decisions after the year ends, thereby causing a change in their holdings as captured in InstOwnershipChange."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn is the stock’s total return over the twelve months following the start of the year, while MarketReturn is the value‑weighted average return of all other US stocks over the same period. The performance of the broader market (MarketReturn) exerts a direct influence on an individual stock’s return (AnnualReturn)."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "PastFiveYearReturn represents the stock’s return over the five years preceding the start of the year. Historical performance often informs market expectations and can affect the firm’s subsequent annual return, providing a causal path from PastFiveYearReturn to AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore is a composite measure that includes low leverage as one of its components. Therefore, changes in a firm’s Leverage (total debt / market value of equity) directly affect its QualityScore."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "QualityScore is calculated at the end of the fiscal year. The month in which the fiscal year ends determines the exact timing of the data used in the score’s computation, thus influencing the resulting QualityScore."
+    }
+  ]
+}
+```

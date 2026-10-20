@@ -1,0 +1,43 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "missing",
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Annual return is strongly influenced by a firm’s quality characteristics (profitability, growth, safety), yet the current DAG lacks a directed edge from QualityScore to AnnualReturn."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "Fiscal year end month is a structural feature describing when the firm’s fiscal year closes; it does not causally determine the stock’s subsequent annual return."
+    },
+    {
+      "type": "nonexistent",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Annual return is an outcome of the year’s performance, whereas the QualityScore is computed independently from profitability, growth, and safety metrics and is not causally driven by the return itself."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is measured at the start of the year and is determined by the firm’s debt and equity levels, not by the timing of the fiscal year end."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "QualityScore is calculated at year‑end based on profitability, growth, and safety; the month in which the fiscal year ends merely dictates the calendar date of calculation and does not causally affect the score."
+    },
+    {
+      "type": "direction",
+      "source": "BookToMarket",
+      "target": "Leverage",
+      "justification": "Leverage influences the book‑to‑market ratio through its effect on book equity; the causal direction should be Leverage → BookToMarket rather than BookToMarket → Leverage."
+    }
+  ]
+}
+```

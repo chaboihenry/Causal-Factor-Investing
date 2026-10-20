@@ -1,0 +1,106 @@
+```json
+{
+  "edges": [
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "BookToMarket is measured at the start of the year; the fiscal year end month defines that start date, so a change in fiscal year end month causes a change in the BookToMarket measurement."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is measured at the start of the year; the fiscal year end month sets the start date, so changes in fiscal year end month influence the Leverage measurement."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember assignment occurs at the start of the year based on book‑to‑market and other criteria; the fiscal year end month determines that start date, thus it causally influences membership."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn covers the twelve months following the start of the year; the fiscal year end month defines that period, so it directly influences the calculated AnnualReturn."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "MarketReturn is calculated over the same twelve‑month period as AnnualReturn; therefore the fiscal year end month determines that period and influences MarketReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical five‑year performance is a predictor of future performance; investors incorporate past returns into expectations, which affect the actual AnnualReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore includes profitability stability; past five‑year return is a proxy for long‑run profitability and thus feeds into the quality score."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value‑effect: higher book‑to‑market ratios are associated with higher future returns, so BookToMarket causally influences AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "ValueIndexMember membership is defined by book‑to‑market thresholds; therefore BookToMarket causes membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and expected return; thus Leverage causally influences AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes low leverage as a component; hence Leverage directly contributes to the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprise changes firm valuation and expectations, which drives the stock’s return during the following year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise is a direct indicator of profitability; QualityScore uses profitability, so the surprise influences the score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprises prompt institutional investors to adjust holdings; thus EarningsSurprise causes changes in institutional ownership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market return is an exogenous factor that drives individual stock returns over the same period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors respond to overall market performance, adjusting their holdings; thus MarketReturn influences InstOwnershipChange."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality firms tend to generate higher returns due to better fundamentals; therefore QualityScore causally influences AnnualReturn."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "High‑quality firms attract institutional investors; thus QualityScore causes increases in institutional ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Positive performance signals strong prospects, leading institutional investors to increase holdings; hence AnnualReturn causes InstOwnershipChange."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Being classified as a value stock attracts value‑focused institutional investors, causing changes in institutional ownership."
+    }
+  ]
+}
+```

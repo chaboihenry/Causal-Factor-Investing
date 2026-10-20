@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past five‑year total return influences the market value of equity at the start of the year, which is a component of BookToMarket. Historical performance affects price level and thus valuation at year‑start."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Valuation at the start of the year (BookToMarket) shapes investor expectations and demand, influencing the firm’s price path over the following twelve months and therefore its AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The ValueIndexMember flag is assigned at the start of the year based on whether the firm’s BookToMarket ratio falls within the value style threshold."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and cost of capital, affecting the firm’s equity return during the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates a safety component that rewards lower leverage; therefore, a change in leverage directly affects the score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Profitability, a key part of QualityScore, is derived from the firm’s performance over the year, so the realized AnnualReturn influences the end‑of‑year score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise during the year changes investor expectations and typically lifts the stock price within that period, affecting AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "EarningsSurprise directly reflects earnings performance, which feeds into the profitability component of QualityScore at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Good earnings surprises attract institutional investors, leading to an increase in their ownership share in the twelve months after year‑end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The return a firm delivers in a year influences institutional investors’ subsequent allocation decisions, causing changes in ownership in the following year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements drive the stock’s price over the year; thus the market average return directly affects the firm’s AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust portfolios in response to market performance; a higher market return encourages buying, increasing their share of stocks in the following year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value style stock influences investor demand and pricing, leading to differential AnnualReturn compared to non‑value stocks."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance shapes investor expectations and risk premiums, which in turn affect the firm’s return over the next twelve months."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher end‑of‑year QualityScore signals better profitability, growth, and safety, encouraging institutional investors to increase ownership in the following year."
+    }
+  ]
+}
+```

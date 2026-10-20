@@ -1,0 +1,25 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "BookToMarket",
+      "target": "FiscalYearEndMonth",
+      "justification": "The fiscal year end month is a corporate reporting calendar decision and is not causally influenced by the firm’s book‑to‑market ratio."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The fiscal year end month determines when earnings are reported but does not cause the magnitude of the earnings surprise, which depends on the actual earnings versus forecasts."
+    },
+    {
+      "type": "nonexistent",
+      "source": "Leverage",
+      "target": "FiscalYearEndMonth",
+      "justification": "Leverage influences a firm’s financial risk but is not a determinant of the fiscal year end month; the month is chosen for operational or tax reasons."
+    }
+  ]
+}
+```

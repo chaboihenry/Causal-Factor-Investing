@@ -1,0 +1,50 @@
+Evaluate the causal Directed Acyclic Graph (DAG) generated from the provided undirected graph. Examine each edge against guiding principles, feature definitions, thought process examples, and user-provided justifications.
+
+Types of errors to scrutinize:
+
+1. **Overlooking Valid Causal Relationships:**
+- Confirm all plausible causal relationships between features. Refer to feature definitions and provided examples for comprehensive coverage.
+2. **Directional Errors in Causal Relationships:**
+- Review the directionality of each causal relationship (e.g., edge) in the DAG. Align justifications with examples and reasoning in the user's prompt. Verify consistency with feature definitions, excluding scaling relationships.
+- Apply finance and accounting domain knowledge to determine causal direction. - Confirm and verify the direction of the edge is coherent with the chronological ordering in feature definitions. - Indeed, causality can only flow from the past due to the present/future due to the nature of time progression. An element constructed using values from the period starting 15 years ago and ending 12 years ago could not be affected by an element happening after it such as an element constructed using values from the period starting 12 years ago and ending 9 years ago.- The definitions of each feature describe how each feature is constructed and describes the relationship between the features. Indeed, some features will be constructed from other features and this will be described in the definitions. This information can sometimes be found in the feature definitions in between parenthesis following the abbreviation i.e. for that is.
+3. **Inclusion of Nonexistent Causal Relationships:**
+- Verify each edge for genuine causal connections. Cross-reference with prompts, feature definitions, and examples to ensure accuracy.
+Consider the following examples for thought processes and justifications:
+1. Consider Feature A as the average returns of a stock over the previous year (as1y) and Feature B as the average returns over the previous 2 years (as2y). Both features are constructed using the return values from the previous year, suggesting a potential causal relationship. Applying domain knowledge about finance and stock returns, we recognize that past stock returns can influence future returns.
+Missing Causal Relationship: the edge was missed in the initial generation of the DAG.
+Nonexistent Causal Relationship: the edge included represents a causal relationship that doesn't exist.
+Directional Errors in Causal Relationships: the direction of the edge is incorrect. The causal relationship flows in the opposite direction than the current direction of the edge.
+
+The current DAG is (Feature Name A, Feature Name B, Justification for causal relationship flowing from feature A to feature B):
+(BookToMarket, AnnualReturn, BookToMarket is measured at the start of the year and reflects a firm’s valuation. Value‐style firms typically exhibit different return patterns, so the BM ratio can influence the subsequent annual return.)
+(EarningsSurprise, AnnualReturn, Earnings surprise occurs during the fiscal year and directly affects the stock’s performance for the remainder of the twelve‑month period that defines AnnualReturn.)
+(AnnualReturn, InstOwnershipChange, The magnitude of a firm’s annual return can alter investor sentiment; superior returns often attract institutional investors, leading to changes in ownership.)
+(Leverage, AnnualReturn, Leverage influences a firm’s risk profile and can affect the volatility and level of its return over the year.)
+(MarketReturn, AnnualReturn, The overall market performance during the same twelve‑month window affects the individual stock’s return, as stocks generally move in tandem with the market.)
+(PastFiveYearReturn, AnnualReturn, Historical performance is often used as a predictor of future returns; a strong five‑year track record can lead to higher expected annual return.)
+(AnnualReturn, QualityScore, AnnualReturn contributes to the profitability component of the composite QualityScore calculated at year‑end.)
+(ValueIndexMember, AnnualReturn, Being a member of a value index signals a valuation strategy that has historically been associated with higher returns, influencing the firm’s own AnnualReturn.)
+(BookToMarket, EarningsSurprise, Low book‑to‑market firms often exhibit different earnings dynamics, making them more likely to generate earnings surprises.)
+(BookToMarket, InstOwnershipChange, Value firms attract institutional investors, which can lead to greater ownership changes after the year.)
+(PastFiveYearReturn, BookToMarket, Historical performance affects retained earnings and book value, thereby influencing the book‑to‑market ratio measured at the start of the year.)
+(BookToMarket, QualityScore, The book‑to‑market ratio is a component of the safety factor in the QualityScore calculation.)
+(BookToMarket, ValueIndexMember, A low book‑to‑market ratio is one of the criteria for inclusion in a value index, creating a causal link.)
+(FiscalYearEndMonth, EarningsSurprise, The month in which the fiscal year ends determines when earnings are reported, which is critical for computing earnings surprise.)
+(EarningsSurprise, InstOwnershipChange, A positive earnings surprise can attract institutional investors, leading to subsequent changes in ownership.)
+(FiscalYearEndMonth, InstOwnershipChange, The timing of the fiscal year end affects when institutional ownership changes are recorded in the annual cycle.)
+(FiscalYearEndMonth, QualityScore, The fiscal year end month determines the period over which the quality components are measured, influencing the final score.)
+(Leverage, InstOwnershipChange, High leverage signals financial distress risk, prompting institutional investors to alter their holdings.)
+(Leverage, QualityScore, Leverage is a safety indicator within the QualityScore calculation.)
+(Leverage, EarningsSurprise, Firms with high leverage may experience greater earnings volatility, affecting the magnitude of earnings surprise.)
+(MarketReturn, InstOwnershipChange, Broad market movements influence investor behavior, leading to changes in institutional ownership.)
+(MarketReturn, QualityScore, Market conditions can impact profitability components of the QualityScore.)
+(MarketReturn, EarningsSurprise, Market sentiment often informs analysts’ forecasts, which in turn affect the size of earnings surprise.)
+(PastFiveYearReturn, ValueIndexMember, A firm’s historical performance can influence its valuation relative to peers, affecting whether it qualifies for a value index.)
+(QualityScore, InstOwnershipChange, Higher quality firms are more attractive to institutional investors, leading to ownership changes.)
+(ValueIndexMember, InstOwnershipChange, Being a member of a value index signals investment quality, which attracts institutional ownership changes.)
+(PastFiveYearReturn, InstOwnershipChange, Past performance signals future prospects, influencing institutional investor decisions to buy or sell.)
+(PastFiveYearReturn, QualityScore, Historical returns reflect profitability and growth, contributing to the QualityScore.)
+(PastFiveYearReturn, Leverage, Historical performance affects retained earnings and book value, which are used to compute leverage at the start of the year.)
+(EarningsSurprise, QualityScore, Earnings surprise impacts the profitability component of the QualityScore and therefore is a causal driver.)
+
+Return your answer as JSON only, inside a ```json code block, with exactly this structure: {"valid": true or false, "corrections": [{"type": "missing" or "nonexistent" or "direction", "source": "feature name", "target": "feature name", "justification": "text"}]}. For "missing", give the edge to add. For "nonexistent" and "direction", give the edge exactly as it currently appears in the DAG. If the DAG is valid, return {"valid": true, "corrections": []}.

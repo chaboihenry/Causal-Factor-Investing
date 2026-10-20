@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market measured at the start of the year is a strong predictor of future equity performance; value stocks (high BTM) tend to yield higher annual returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index membership is determined by ranking firms on book‑to‑market at the start of the year, so BTM directly determines membership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being assigned to a value index influences investor expectations and portfolio flows, which in turn affect the stock’s future return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage level at the beginning of the year affects the firm’s risk profile and cost of capital, thereby influencing its subsequent stock return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component explicitly includes low leverage; thus the leverage ratio directly impacts the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the five years preceding the start of the year is a common momentum indicator that predicts future returns."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide return drives the systematic component of individual stock returns, so a higher market return leads to higher annual returns."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A significant earnings surprise during the year moves the stock price, directly altering the total return over that period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise reflects a firm’s profitability; higher surprise increases the profitability component of the quality score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms are more attractive to institutional investors, leading to greater ownership changes after the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A positive annual return makes the stock more attractive to institutional investors, driving post‑year ownership adjustments."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Overall market conditions influence institutional portfolio rebalancing, thereby affecting ownership changes."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Significant earnings surprises can prompt institutional investors to buy or sell, affecting their holdings after the year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which a firm’s fiscal year ends determines the timing of earnings releases relative to analysts’ forecasts, which shapes the magnitude of earnings surprise."
+    }
+  ]
+}
+```

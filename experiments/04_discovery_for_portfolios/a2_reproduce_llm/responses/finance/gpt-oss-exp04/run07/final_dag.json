@@ -1,0 +1,168 @@
+{
+ "graph": "finance",
+ "backend": "gpt-oss-exp04",
+ "run": 7,
+ "date": "2026-10-20T18:11:25",
+ "n_undirected_c1": 30,
+ "validation_rounds": 5,
+ "validated": true,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "BookToMarket is measured at the start of the year and reflects a firm\u2019s valuation. Value\u2010style firms typically exhibit different return patterns, so the BM ratio can influence the subsequent annual return."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "Earnings surprise occurs during the fiscal year and directly affects the stock\u2019s performance for the remainder of the twelve\u2011month period that defines AnnualReturn."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "The magnitude of a firm\u2019s annual return can alter investor sentiment; superior returns often attract institutional investors, leading to changes in ownership."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Leverage influences a firm\u2019s risk profile and can affect the volatility and level of its return over the year."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "The overall market performance during the same twelve\u2011month window affects the individual stock\u2019s return, as stocks generally move in tandem with the market."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "Historical performance is often used as a predictor of future returns; a strong five\u2011year track record can lead to higher expected annual return."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "QualityScore",
+   "justification": "AnnualReturn contributes to the profitability component of the composite QualityScore calculated at year\u2011end."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "AnnualReturn",
+   "justification": "Being a member of a value index signals a valuation strategy that has historically been associated with higher returns, influencing the firm\u2019s own AnnualReturn."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "EarningsSurprise",
+   "justification": "Low book\u2011to\u2011market firms often exhibit different earnings dynamics, making them more likely to generate earnings surprises."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "InstOwnershipChange",
+   "justification": "Value firms attract institutional investors, which can lead to greater ownership changes after the year."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "Historical performance affects retained earnings and book value, thereby influencing the book\u2011to\u2011market ratio measured at the start of the year."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "QualityScore",
+   "justification": "The book\u2011to\u2011market ratio is a component of the safety factor in the QualityScore calculation."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "A low book\u2011to\u2011market ratio is one of the criteria for inclusion in a value index, creating a causal link."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "EarningsSurprise",
+   "justification": "The month in which the fiscal year ends determines when earnings are reported, which is critical for computing earnings surprise."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "A positive earnings surprise can attract institutional investors, leading to subsequent changes in ownership."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "InstOwnershipChange",
+   "justification": "The timing of the fiscal year end affects when institutional ownership changes are recorded in the annual cycle."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "QualityScore",
+   "justification": "The fiscal year end month determines the period over which the quality components are measured, influencing the final score."
+  },
+  {
+   "source": "Leverage",
+   "target": "InstOwnershipChange",
+   "justification": "High leverage signals financial distress risk, prompting institutional investors to alter their holdings."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "Leverage is a safety indicator within the QualityScore calculation."
+  },
+  {
+   "source": "Leverage",
+   "target": "EarningsSurprise",
+   "justification": "Firms with high leverage may experience greater earnings volatility, affecting the magnitude of earnings surprise."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Broad market movements influence investor behavior, leading to changes in institutional ownership."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "QualityScore",
+   "justification": "Market conditions can impact profitability components of the QualityScore."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "ValueIndexMember",
+   "justification": "A firm\u2019s historical performance can influence its valuation relative to peers, affecting whether it qualifies for a value index."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "Higher quality firms are more attractive to institutional investors, leading to ownership changes."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "InstOwnershipChange",
+   "justification": "Being a member of a value index signals investment quality, which attracts institutional ownership changes."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Past performance signals future prospects, influencing institutional investor decisions to buy or sell."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "QualityScore",
+   "justification": "Historical returns reflect profitability and growth, contributing to the QualityScore."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "Leverage",
+   "justification": "Historical performance affects retained earnings and book value, which are used to compute leverage at the start of the year."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "Earnings surprise impacts the profitability component of the QualityScore and therefore is a causal driver."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "MarketReturn",
+   "justification": "Earnings surprise occurs during the year and can influence overall market sentiment, thereby affecting the market return. The market return cannot causally affect a firm\u2019s earnings surprise. The correct direction is EarningsSurprise -> MarketReturn."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "Leverage",
+   "justification": "Book\u2011to\u2011market is measured at the start of the year and reflects the firm\u2019s valuation relative to its book value. A low BM ratio often signals a higher perceived risk and can influence the firm\u2019s capital structure decisions, thereby affecting its leverage (debt to market value). This causal direction aligns with the temporal ordering: BM is known before leverage is calculated."
+  }
+ ]
+}

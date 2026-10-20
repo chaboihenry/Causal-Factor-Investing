@@ -1,0 +1,106 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the year based on the firm's book‑to‑market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Higher book‑to‑market indicates a value stock, which historically tends to yield lower annual returns, influencing the expected annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "Book‑to‑market is correlated with profitability and safety components that feed into the composite quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is a component of the quality score; higher leverage directly reduces the quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Debt level affects a firm’s risk profile and expected return, thereby influencing its annual stock return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance is a common predictor of future returns; past five‑year return informs the expected annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Stable past returns signal consistent profitability and growth, contributing to the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Investors use past performance to gauge a firm’s attractiveness, influencing institutional ownership adjustments."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Higher quality firms tend to achieve better stock performance, raising their annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors favor high‑quality firms, increasing their ownership stakes over time."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive earnings surprise raises the stock price during the year, contributing to a higher annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprises prompt institutional trading decisions after year‑end, altering ownership levels."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Surprises reflect underlying profitability and growth, which are part of the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The overall market performance influences individual stock returns."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Market trends affect institutional investor activity and portfolio rebalancing."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock affects its future return profile."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value style stocks are often favored by institutional investors, influencing ownership changes."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "Fiscal year end month determines when the end‑of‑year measurement of quality score is taken."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The ownership‑change period starts after the fiscal year end, so the month determines the timing of the change."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The firm’s performance over the year influences institutional investors’ decisions on holding levels after year‑end."
+    }
+  ]
+}
+```

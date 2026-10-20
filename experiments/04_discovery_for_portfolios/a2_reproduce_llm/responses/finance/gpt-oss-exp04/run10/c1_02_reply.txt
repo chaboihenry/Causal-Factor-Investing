@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "High book-to-market ratios signal undervaluation that historically leads to higher future returns over the 12‑month period following the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is typically determined by a firm’s book‑to‑market ratio; therefore, book‑to‑market influences whether a stock is assigned to the index at the start of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and tends to suppress future returns over the following year, making leverage a driver of annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is a component of the quality score; thus a higher leverage level reduces the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance over the five years preceding the start of the year is predictive of future performance, so past five‑year return influences the upcoming annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Stable profitability, a key element of the quality score, is reflected in consistent past returns; therefore past five‑year return contributes to the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise (difference between reported earnings and forecasts) typically causes a price reaction within the year, boosting the stock’s annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑wide systematic return component influences an individual firm’s return over the same 12‑month period, making market return a driver of annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "High‑quality firms (low leverage, low beta, stable profitability) generally achieve better returns, so the quality score drives the annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "A firm’s positive annual return attracts institutional investors, leading to changes in institutional ownership over the 12 months following the end of the year."
+    }
+  ]
+}
+```

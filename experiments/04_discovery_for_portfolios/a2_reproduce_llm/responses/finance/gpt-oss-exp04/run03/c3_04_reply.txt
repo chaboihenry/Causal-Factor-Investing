@@ -1,0 +1,13 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "The composite QualityScore does not use book‑to‑market as an input; BTM is calculated at the start of the year while QualityScore is computed at the end. Empirical evidence suggests that a firm’s quality influences subsequent market valuation (and thus BTM) rather than the reverse. Therefore the edge BookToMarket → QualityScore is unsupported and should be removed."
+    }
+  ]
+}
+```

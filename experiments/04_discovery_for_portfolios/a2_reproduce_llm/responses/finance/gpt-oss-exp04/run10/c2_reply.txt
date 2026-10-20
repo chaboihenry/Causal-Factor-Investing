@@ -1,0 +1,181 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is measured at the start of the year and reflects the firm’s valuation; a higher ratio often signals constrained growth and thus influences the firm’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprise occurs during the year and directly impacts the stock’s performance, thereby driving the annual return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The month in which the fiscal year ends determines the period over which the 12‑month return is calculated; the timing can affect the return outcome."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Firm performance influences institutional investor appetite; better or worse returns can trigger changes in institutional ownership."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can depress future returns, so leverage at the start of the year influences the annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market’s aggregate return is a key driver of systematic risk and therefore influences the individual firm’s return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance often predicts future returns through momentum; past five‑year return therefore informs the current annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality score, reflecting better fundamentals, tends to lead to higher future returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "Valuation ratios influence analysts’ forecasts and expectations, thereby affecting the magnitude of earnings surprise."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "FiscalYearEndMonth",
+      "justification": "Firms may choose a fiscal year‑end that aligns with valuation objectives, so the book‑to‑market ratio can influence the fiscal year‑end month."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Valuation signals impact institutional investors’ decisions; a higher book‑to‑market ratio can attract or deter institutional ownership."
+    },
+    {
+      "source": "Leverage",
+      "target": "BookToMarket",
+      "justification": "Higher debt relative to equity reduces market value, increasing the book‑to‑market ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past performance influences market valuation, which in turn affects the book‑to‑market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "The book‑to‑market ratio contributes to the safety component of the quality score."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value index is largely determined by the book‑to‑market ratio."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The timing of the fiscal year end can affect earnings reporting and thus the calculation of earnings surprise."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings can alter institutional investor sentiment and ownership decisions."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Leverage can influence earnings volatility, which affects the magnitude of the earnings surprise."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "MarketReturn",
+      "justification": "Significant earnings surprises can shift market sentiment, thereby influencing the market return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "EarningsSurprise",
+      "justification": "Historical performance informs forecasts; better past performance can lead to smaller surprises."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise contributes to the profitability component of the quality score."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "EarningsSurprise",
+      "justification": "Value‑style firms often exhibit distinct earnings patterns, influencing the surprise magnitude."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The ownership change window is measured over the 12 months following the fiscal year end."
+    },
+    {
+      "source": "Leverage",
+      "target": "FiscalYearEndMonth",
+      "justification": "A firm’s debt structure may affect the timing of fiscal year‑end decisions."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "The period over which the market return is calculated aligns with the fiscal year‑end timing."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "FiscalYearEndMonth",
+      "justification": "Value‑style firms may select fiscal year‑ends that align with their valuation strategy."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Leverage affects the firm’s risk profile, which can influence institutional ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Market performance drives institutional investor allocation decisions."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Past performance informs investor confidence and thus ownership changes."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality attracts institutional investors, leading to ownership changes."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value index membership attracts certain institutional investors, affecting ownership."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Higher leverage reduces the safety component of the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Market conditions influence profitability, which is part of the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Historical performance informs the quality assessment."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a value‑index member is associated with higher future returns."
+    }
+  ]
+}
+```

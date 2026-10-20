@@ -1,0 +1,71 @@
+We need to produce edges with justification. Let's analyze each pair.
+
+We need all causal relationships between features.
+
+Define each feature:
+
+BookToMarket: ratio at start of year.
+
+AnnualReturn: stock return over twelve months following start.
+
+Leverage: total debt/market value of equity at start.
+
+EarningsSurprise: difference between reported earnings during year and analysts forecasts. This occurs during the year; depends on forecast and actual earnings. So actual earnings cause surprise; forecast is from analysts.
+
+QualityScore: composite measured at end of year. Depends on profitability, growth, safety. Low leverage, low stock beta, stable profitability. So Leverage influences QualityScore (through safety). Also past earnings influence profitability. But not necessarily captured in features list. So Leverage -> QualityScore. Also BookToMarket may influence profitability? Not directly.
+
+PastFiveYearReturn: return over five years before start of year. This is prior, not influenced by current features.
+
+ValueIndexMember: whether stock is assigned to a value style index at start of year. It depends on book-to-market ratio (value investing). So BookToMarket -> ValueIndexMember.
+
+MarketReturn: value-weighted average return of all other US stocks over same 12 months. This is market level. It may be influenced by the stock's performance? No, it's independent of individual stock; but could be influenced by other stocks and macro. But we don't have features for macro.
+
+InstOwnershipChange: change in share held by institutional investors over 12 months after end of year. This depends on AnnualReturn, MarketReturn, EarningsSurprise? Likely if stock does well, institutions may buy. So AnnualReturn, MarketReturn, EarningsSurprise, maybe ValueIndexMember. Also Leverage? Possibly. We'll include AnnualReturn -> InstOwnershipChange. Also MarketReturn -> InstOwnershipChange. Also EarningsSurprise -> InstOwnershipChange.
+
+FiscalYearEndMonth: calendar month when fiscal year ends. This can affect timing of EarningsSurprise and QualityScore (end-of-year measurement). But not vice versa.
+
+Also AnnualReturn depends on MarketReturn? Actually AnnualReturn is stock's return; market return influences it but not vice versa.
+
+BookToMarket may affect AnnualReturn? Value stocks may underperform. But we can include BookToMarket -> AnnualReturn.
+
+Leverage may affect AnnualReturn? High debt increases risk. So Leverage -> AnnualReturn.
+
+QualityScore measured at end; can influence InstOwnershipChange (quality attracts investors). So QualityScore -> InstOwnershipChange.
+
+Also BookToMarket -> ValueIndexMember; ValueIndexMember may influence AnnualReturn? Value index stocks may have different returns. So ValueIndexMember -> AnnualReturn.
+
+PastFiveYearReturn is prior; it may influence AnnualReturn via momentum. So PastFiveYearReturn -> AnnualReturn.
+
+EarningsSurprise occurs during year, may influence AnnualReturn? Surprise can affect price. So EarningsSurprise -> AnnualReturn.
+
+AnnualReturn -> InstOwnershipChange (already). MarketReturn -> AnnualReturn? Not.
+
+Also FiscalYearEndMonth -> EarningsSurprise? Because earnings release timing changes? But the definition says "the calendar month in which the firm's fiscal year ends." That can affect when earnings are reported relative to analysts. But does that cause EarningsSurprise? Maybe, but we will not include.
+
+We also need to ensure DAG is acyclic. Let's list edges:
+
+BookToMarket -> ValueIndexMember
+BookToMarket -> AnnualReturn
+Leverage -> QualityScore
+Leverage -> AnnualReturn
+QualityScore -> InstOwnershipChange
+AnnualReturn -> InstOwnershipChange
+MarketReturn -> InstOwnershipChange
+EarningsSurprise -> InstOwnershipChange
+EarningsSurprise -> AnnualReturn
+PastFiveYearReturn -> AnnualReturn
+ValueIndexMember -> AnnualReturn
+FiscalYearEndMonth -> AnnualReturn? maybe not.
+
+Also FiscalYearEndMonth -> EarningsSurprise? Possibly; but to keep simple.
+
+We need justification text for each.
+
+Let's craft justification based on definitions: "BookToMarket measured at start; ValueIndexMember assigned at start; value ratio influences assignment." etc.
+
+We need JSON list.
+
+Let's ensure no duplicate edges.
+
+Let's write.
+

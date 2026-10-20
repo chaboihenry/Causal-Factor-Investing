@@ -1,0 +1,138 @@
+{
+ "graph": "finance",
+ "backend": "gpt-oss-exp04",
+ "run": 8,
+ "date": "2026-10-20T18:21:35",
+ "n_undirected_c1": 25,
+ "validation_rounds": 1,
+ "validated": true,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "Book-to-market ratio, measured at the start of the year, reflects the firm\u2019s valuation and influences the stock\u2019s subsequent performance over the following twelve months."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "Earnings surprise, calculated during the year, signals the firm\u2019s earnings performance relative to expectations and shapes investor expectations, thereby driving the stock\u2019s return for that period."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "The firm\u2019s twelve\u2011month return informs institutional investors\u2019 buy\u2011sell decisions, leading to a change in institutional ownership over the following twelve months."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Leverage level, measured at the start of the year, constrains the firm\u2019s ability to generate growth and thus impacts its realized return for that year."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "The aggregate market return over the same twelve\u2011month window affects the firm\u2019s return through market\u2011wide systematic risk factors."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "Historical performance over the five years before the current year carries over into the current period and can influence the current return."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "QualityScore",
+   "justification": "Annual return is a profitability component of the quality score calculated at the end of the year."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "AnnualReturn",
+   "justification": "Assignment to a value index at the start of the year is based on valuation metrics that influence expected performance, thereby affecting the subsequent return."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "InstOwnershipChange",
+   "justification": "A firm\u2019s valuation at the start of the year shapes institutional investors\u2019 perception and influences ownership changes over the following twelve months."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "Historical performance affects the market value of equity at the start of the year, thereby influencing the book\u2011to\u2011market ratio."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "Value index membership is determined by the book\u2011to\u2011market ratio calculated at the start of the year."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "EarningsSurprise",
+   "justification": "The month in which a firm\u2019s fiscal year ends determines the timing of earnings reports and thus influences the calculation of earnings surprise."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "An earnings surprise provides new information that can alter institutional investors\u2019 positions, leading to a change in ownership."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "Earnings performance is a key component of the quality score; a surprise relative to forecasts directly impacts the score."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "InstOwnershipChange",
+   "justification": "The measurement period for ownership change begins immediately after the fiscal year ends, making the end month a driver of the subsequent ownership shift."
+  },
+  {
+   "source": "FiscalYearEndMonth",
+   "target": "QualityScore",
+   "justification": "Quality score is evaluated at the end of the fiscal year, so the month of fiscal year end determines the timing of that evaluation."
+  },
+  {
+   "source": "Leverage",
+   "target": "InstOwnershipChange",
+   "justification": "Leverage levels affect institutional investors\u2019 risk appetite and therefore influence their ownership decisions."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Institutional investors respond to overall market performance, which drives their buy\u2011sell activity and changes in ownership."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "InstOwnershipChange",
+   "justification": "Historical performance informs institutional investors\u2019 confidence, affecting their future ownership positions."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "A higher quality score signals lower risk and higher profitability, attracting institutional ownership."
+  },
+  {
+   "source": "ValueIndexMember",
+   "target": "InstOwnershipChange",
+   "justification": "Being a member of a value index influences the investment flow of institutional investors, leading to ownership changes."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "Low leverage is a safety component of the quality score, so leverage directly influences the score."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "QualityScore",
+   "justification": "The market return component of the quality score reflects the firm\u2019s exposure to systematic risk, thus the market return directly informs the score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "QualityScore",
+   "justification": "Past performance is used to assess historical profitability and growth, key inputs to the quality score."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "ValueIndexMember",
+   "justification": "Historical performance can influence the firm\u2019s valuation and thereby affect its assignment to a value index."
+  }
+ ]
+}

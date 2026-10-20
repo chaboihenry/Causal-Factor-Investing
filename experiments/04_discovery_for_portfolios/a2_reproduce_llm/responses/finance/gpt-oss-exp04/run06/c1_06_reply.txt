@@ -1,0 +1,81 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book‑to‑market ratio measured at the start of the year reflects the firm’s valuation and influences its performance over the following twelve months; value stocks (high book‑to‑market) tend to generate higher returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage, measured at the start of the year, affects the firm’s risk profile and earnings quality, which in turn influence its total return over the next year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted market return over the same twelve‑month period drives individual stock returns through the market factor."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that differ from analysts’ forecasts occur during the year; a positive surprise typically raises the stock price and increases total return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Membership in a value style index is associated with a historical value premium, so being a member tends to lead to higher future returns."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "A firm’s value index membership is assigned based on its book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score’s profitability component rewards low leverage; thus lower leverage directly raises the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprises affect the profitability part of the quality score, so a better surprise increases the overall score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores attract institutional investors, who tend to increase their holdings, resulting in a positive change in institutional ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their portfolios based on the firm’s recent performance; better returns usually trigger buying and ownership increases."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value investors favor high book‑to‑market stocks; a higher ratio signals greater attractiveness to institutions, leading to ownership changes."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Index‑tracking institutional investors hold all members of the value index, so membership drives changes in institutional ownership."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The month in which the fiscal year ends determines reporting schedules; institutions often adjust holdings around reporting dates, causing ownership changes."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum theory suggests that a firm’s recent past performance influences its future returns; a strong five‑year return tends to predict a higher next‑year return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors track historical performance; a strong past return often leads them to increase holdings, resulting in a change in institutional ownership."
+    }
+  ]
+}
+```

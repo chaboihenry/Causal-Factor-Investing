@@ -1,0 +1,25 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "missing",
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors use a firm’s 5‑year performance to decide whether to increase or decrease holdings. Thus past five‑year return causally influences institutional ownership changes."
+    },
+    {
+      "type": "missing",
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Leverage reflects a firm’s financial risk; high leverage can deter institutional investors or prompt portfolio rebalancing, so leverage causally affects institutional ownership changes."
+    },
+    {
+      "type": "missing",
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "The book‑to‑market ratio signals firm valuation; value investors (many of whom are institutional) are attracted to high‑BTM stocks, so BTM causally influences institutional ownership changes."
+    }
+  ]
+}
+```

@@ -1,0 +1,96 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is measured at the start of the year and historically predicts higher future returns; thus the ratio causes the subsequent annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is typically assigned based on the book‑to‑market ratio; hence the ratio causes the membership designation."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value stock influences its future performance through the well‑known value style effect, so membership causes the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score explicitly penalizes high leverage as part of its safety component; therefore leverage causes a lower quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage affects the firm’s risk‑return profile—higher leverage can amplify gains or losses—so it causes changes in the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Debt service costs influence actual earnings relative to analyst forecasts; thus leverage causes an earnings surprise."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A positive or negative earnings surprise drives stock price movements during the year, directly influencing the annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "Quality components such as profitability and growth are predictive of higher returns; hence a higher quality score causes a higher annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects link past performance to future returns; the five‑year return therefore causes the current annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Historical profitability and cash flow influence a firm’s borrowing capacity; past returns therefore cause the current leverage level."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past performance reflects stability and profitability, core components of the quality score; thus past returns cause the score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors base their allocation decisions on past performance; therefore past returns cause changes in institutional ownership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market factor exerts a common‑factor influence on individual stock returns, so the market return causes the firm’s annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong annual performance attracts institutional investors in the following year; thus the return causes the ownership change."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "The month in which the fiscal year ends determines the timing of book value relative to market value measurement, thereby influencing the book‑to‑market ratio."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Fiscal year timing affects the valuation of debt and equity used in the leverage calculation, so the month causes the leverage ratio."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The release date of earnings relative to analyst forecasts (which are made earlier in the year) determines the magnitude of the surprise; thus the fiscal year end month causes the surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Reporting schedules linked to fiscal year end influence the timing of institutional investment decisions, so the month causes changes in institutional ownership."
+    }
+  ]
+}
+```

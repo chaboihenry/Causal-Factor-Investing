@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "High book‑to‑market ratios (value stocks) historically predict higher subsequent total returns; thus the 12‑month return measured in AnnualReturn is influenced by the starting book‑to‑market ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Assignment to a value style index is based on the book‑to‑market ratio at the start of the year, so the ratio causally determines membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year affects risk and expected return; higher leverage typically leads to lower realized returns over the following 12 months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a low‑leverage component; therefore a higher leverage value reduces the composite quality score calculated at year end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprises occurring during the year influence the stock price trajectory and thus the total return observed in AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Positive earnings surprises attract institutional investors, leading to changes in institutional ownership measured after the year ends."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprises are a proxy for profitability, which is one of the components of QualityScore; thus surprise earnings affect the end‑of‑year quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum effects imply that a stock’s performance over the five years preceding the current year influences its subsequent 12‑month return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Stocks in a value index are historically associated with higher expected returns, affecting the AnnualReturn of those stocks."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted market return drives systematic risk; individual stock returns (AnnualReturn) are partially determined by overall market performance."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Broad market movements influence institutional portfolio decisions, thereby affecting the 12‑month change in institutional ownership after year end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal better risk‑adjusted prospects, attracting institutional investors and causing ownership changes measured after the fiscal year."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month in which the fiscal year ends determines the timing of earnings announcements; thus it causally influences when and potentially how earnings surprises materialize."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "The fiscal year end month sets the 12‑month window for calculating institutional ownership change; changing this window shifts the measured ownership dynamics."
+    }
+  ]
+}
+```

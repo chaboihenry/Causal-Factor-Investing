@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is determined by the firm's book‑to‑market ratio."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the QualityScore explicitly includes low leverage."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "A stock’s return over the year is driven by the overall market performance."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore’s beta component is derived from the relationship between the stock’s returns and the market return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "The growth component of the QualityScore relies on long‑term historical returns."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past performance can influence future returns through momentum expectations."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index can affect expected future returns."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings announcements can move the stock price, affecting its total return over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions adjust holdings in response to earnings surprises."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors consider the previous year’s return when altering ownership stakes."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions use the QualityScore as an indicator of firm quality when rebalancing portfolios."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The timing of the fiscal year end determines when earnings are reported, affecting the calculation of the surprise."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often track value indices, so membership can influence ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions adjust holdings in response to overall market performance."
+    }
+  ]
+}
+```

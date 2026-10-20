@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value investors expect higher returns from firms with high book‑to‑market ratios; thus a firm’s book‑to‑market at year start causally influences its subsequent annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being assigned to a value style index reflects investors’ expectations of higher future returns; membership causally affects the firm’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings announcements affect stock prices during the year, directly influencing the firm’s total return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The overall market performance drives firm‑specific returns through systematic market risk."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher debt relative to equity increases financial risk and can affect the firm’s return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher quality score (profitability, growth, low leverage, stable returns) is associated with stronger future performance, thus causally influencing the annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical five‑year performance predicts momentum; past returns causally affect the next year’s return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month a firm reports earnings determines the timing of the earnings announcement, which can alter the magnitude of the surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust portfolios at fiscal year‑end; the month of the year‑end influences the timing and magnitude of ownership changes."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The quality score incorporates low leverage as a component; higher leverage directly reduces the score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings results drive institutional buying or selling, changing ownership levels."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms attract institutional investors, leading to greater ownership."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Firm performance during the year influences institutional investor decisions after the year end."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is determined by book‑to‑market ratio, so a higher ratio causally leads to membership."
+    }
+  ]
+}
+```

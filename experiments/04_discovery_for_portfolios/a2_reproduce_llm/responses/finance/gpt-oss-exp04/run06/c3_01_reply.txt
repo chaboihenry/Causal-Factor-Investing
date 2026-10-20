@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "QualityScore is calculated at the end of the year from profitability, growth, safety, low leverage, and low stock beta estimated from the stock's returns. The annual return over the year influences the beta and profitability components that feed into the QualityScore, so the causal direction should flow from AnnualReturn to QualityScore, not the reverse."
+    },
+    {
+      "type": "missing",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Because the annual return over a twelve‑month period directly impacts the components of the end‑of‑year QualityScore (particularly the return‑based beta and profitability), there should be a directed edge from AnnualReturn to QualityScore in the DAG."
+    }
+  ]
+}
+```

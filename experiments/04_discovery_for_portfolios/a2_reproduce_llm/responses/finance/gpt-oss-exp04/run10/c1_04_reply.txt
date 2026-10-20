@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past five‑year return reflects historical price performance, which affects the firm’s market value and thereby its book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is determined largely by book‑to‑market ratio; a higher book‑to‑market increases likelihood of being a value stock."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "A firm’s valuation at the start of the year influences its subsequent price dynamics; high book‑to‑market often signals undervaluation, which can lead to higher returns over the following 12 months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and can depress stock price performance, directly affecting the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates low leverage as one of its safety components; higher leverage reduces the score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise changes market perception of the firm during the year, affecting its stock price and therefore the total return over the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Unexpected earnings information often triggers institutional investors to adjust their holdings shortly after the fiscal year end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The magnitude of a firm’s annual return influences institutional ownership decisions in the 12 months after the year’s end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Market‑wide performance drives idiosyncratic returns; a positive market return typically lifts most stocks’ annual returns."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to overall market conditions; a favorable market return can prompt increased buying or holding of the firm’s stock."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Historical evidence shows value stocks tend to outperform, so being a value index member boosts expected annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions often target value stocks, so membership raises the likelihood of institutional ownership changes."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance is a strong predictor of future returns; past five‑year return informs expected annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score signals financial health and stability, attracting institutional investors and prompting ownership changes."
+    }
+  ]
+}
+```

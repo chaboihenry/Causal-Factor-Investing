@@ -1,0 +1,126 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio measured at start influences the 12‑month stock return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "QualityScore",
+      "justification": "Book‑to‑market is part of the profitability component of QualityScore."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Higher book‑to‑market signals value characteristics that attract institutional investors, affecting ownership changes."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk, affecting subsequent returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Leverage is a safety component in QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions adjust holdings based on leverage risk."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Value index membership signals high book‑to‑market, associated with a value premium influencing return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Being in a value index attracts institutional investors, affecting post‑year ownership."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum from prior five‑year performance can drive current returns."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions track momentum; prior performance influences post‑year ownership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Market performance exerts causal influence on individual stock return over the same period."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Market return is part of the beta estimate used in QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions respond to market performance, prompting ownership adjustments."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "Annual return contributes to beta estimate, affecting QualityScore."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Strong annual performance prompts institutions to adjust holdings."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Positive earnings surprise lifts price, affecting the 12‑month total return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Significant earnings surprise influences institutional trading decisions."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise reflects profitability improvement, impacting QualityScore."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores attract institutional investors, leading to ownership changes."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "EarningsSurprise",
+      "justification": "Book‑to‑market influences analyst expectations, affecting the magnitude of earnings surprise."
+    },
+    {
+      "source": "Leverage",
+      "target": "EarningsSurprise",
+      "justification": "Leverage affects earnings quality and can alter the difference between reported earnings and forecasts."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "EarningsSurprise",
+      "justification": "Momentum may influence analyst forecasts, impacting earnings surprise."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "EarningsSurprise",
+      "justification": "Value index membership affects analyst coverage and expectations, influencing earnings surprise."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "EarningsSurprise",
+      "justification": "Overall market conditions shape analyst forecasts, affecting earnings surprise."
+    }
+  ]
+}
+```

@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market ratio is measured at the start of the year and is a well-established predictor of future stock performance. A higher BookToMarket typically signals undervaluation, which often translates into higher subsequent returns over the twelve months following the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Membership in a value style index is determined at the start of the year based on book-to-market thresholds. Therefore, the book-to-market ratio directly causes the assignment to the value index."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The composite QualityScore includes a safety component defined as low leverage. Since Leverage is measured at the start of the year, its magnitude directly influences the safety part of the QualityScore calculated at year‑end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures the deviation between reported earnings during the year and analysts' forecasts. A positive surprise drives the stock price upward, thereby increasing the stock’s total return over the twelve months following the start of the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises by adjusting their holdings. Since InstOwnershipChange measures the share of the stock held by institutions over the twelve months after year‑end, a surprise during the year can cause subsequent changes in ownership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn represents the value‑weighted average return of all other US stocks over the same twelve‑month period as AnnualReturn. As the market benchmark influences individual stock performance, the overall market return causally affects the firm’s own return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their portfolios in response to market performance. Therefore, the contemporaneous market return can influence the change in institutional ownership measured after the year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past five‑year performance, measured before the start of the year, informs investor expectations and sentiment, thereby shaping the firm’s expected and actual return over the following twelve months."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past five‑year return is a component of the growth and profitability aspects of the QualityScore, which is computed at year‑end. Thus historical performance causally contributes to the quality assessment."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being classified as a value index member at the start of the year aligns the firm with a style that historically exhibits distinct return patterns, thereby influencing its future annual return."
+    }
+  ]
+}
+```

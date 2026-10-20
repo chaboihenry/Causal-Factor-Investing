@@ -1,0 +1,56 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index membership is assigned at the start of the year based on the firm's book‑to‑market ratio; thus the ratio determines the index membership."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore incorporates a low leverage component, so a firm’s debt‑to‑market‑value ratio measured at the start of the year causally influences the quality score calculated at year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore’s stable profitability component reflects historical performance, which is derived from the five‑year return measured before the start of the current year; therefore past performance causally affects the quality score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "AnnualReturn is the stock’s total return over the twelve months following the start of the year, and MarketReturn is the value‑weighted average return of all other US stocks over the same period; the overall market performance directly influences a firm’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise captures how far the firm’s earnings during the year differ from analysts’ forecasts; unexpected earnings can drive stock price movements, thereby affecting the annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical return patterns can inform expectations and investor sentiment, so the five‑year return measured before the current year can causally influence the firm’s return over the next twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is measured over the twelve months after the end of the year, and better stock performance (higher annual return) attracts institutional investors, thus causing changes in institutional ownership."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to overall market conditions; the value‑weighted market return during the same period can influence the change in institutional ownership of the firm."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The fiscal year end month determines the timing of earnings releases; the schedule of earnings relative to analyst forecasts can affect the magnitude of the earnings surprise."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "QualityScore is computed at the end of the fiscal year, so the month in which the fiscal year ends determines when the score is measured and thus influences the quality score indirectly through the timing of performance assessment."
+    }
+  ]
+}
+```

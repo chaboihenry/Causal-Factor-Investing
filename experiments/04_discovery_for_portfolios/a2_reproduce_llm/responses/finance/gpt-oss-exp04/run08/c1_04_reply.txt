@@ -1,0 +1,86 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is determined by book‑to‑market ratio at the start of the year; a higher BTM typically leads to value‑style classification."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "High book‑to‑market stocks historically generate higher average annual returns, so BTM causally influences next‑year stock performance."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes low leverage as a safety component; therefore a higher leverage ratio reduces the quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage changes a firm’s risk profile and can affect its expected return, thereby influencing the stock’s annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Momentum studies show that past five‑year performance predicts the following year’s return, so prior return causally influences the next annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index is associated with higher average annual returns, so membership causally affects the annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Individual stock returns include a market component; the market return drives part of the stock’s total return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust their portfolios in response to overall market performance, so market return causally influences ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta, a component of QualityScore, is calculated from returns relative to the market; changes in market return alter beta and thus the quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that exceed analyst forecasts raise the stock price, directly contributing to a higher total annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises by buying or selling, altering ownership levels."
+    },
+    {
+      "source": "QualityScore",
+      "target": "EarningsSurprise",
+      "justification": "Firms with higher quality tend to have earnings that are more aligned with forecasts, reducing the magnitude of the earnings surprise."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality firms attract institutional investors, leading to changes in ownership over the following period."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month a firm ends its fiscal year determines the timing of earnings releases relative to analyst forecasts, which can influence the surprise size."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional trading windows are aligned with earnings releases; thus the fiscal year end month affects when institutional investors adjust their holdings."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors often follow value‑index membership when allocating capital, so membership causally influences subsequent ownership changes."
+    }
+  ]
+}
+```

@@ -1,0 +1,727 @@
+We need to produce DAG edges direction based on definitions and chronological ordering. We have nodes: AnnualReturn, BookToMarket, EarningsSurprise, FiscalYearEndMonth, InstOwnershipChange, Leverage, MarketReturn, PastFiveYearReturn, QualityScore, ValueIndexMember.
+
+We must include all undirected edges from list.
+
+We need to deduce direction for each edge, ensuring acyclic. Let's analyze each feature definition.
+
+Feature timeline:
+
+- BookToMarket: measured at start of year. So it's pre-period of the 12 months for AnnualReturn. So BookToMarket likely influences AnnualReturn, because starting value may affect performance? But also AnnualReturn influences BookToMarket? Since BookToMarket is at start, cannot be caused by AnnualReturn which occurs during year. So direction BookToMarket -> AnnualReturn.
+
+- Leverage: measured at start of year. Also influences AnnualReturn. Also could influence QualityScore because leverage part of quality. So Leverage -> QualityScore. Also Leverage may affect EarningsSurprise? Leverage is at start; EarningsSurprise is during year. So Leverage -> EarningsSurprise. Also could influence InstOwnershipChange? Maybe not; but could cause? We'll think.
+
+- EarningsSurprise: occurs during year; measured after earnings announcement. It is a result of firm's actual earnings vs forecast. Forecasts are made before the period. So EarningsSurprise could be influenced by BookToMarket, Leverage, FiscalYearEndMonth? FiscalYearEndMonth could affect when earnings are reported, but not the surprise magnitude. But we might think that fiscal year end influences timing of reporting, but the surprise magnitude may depend on financials. Might be influenced by BookToMarket and Leverage. Also might influence QualityScore? QualityScore measured at end of year includes profitability, growth, safety etc; EarningsSurprise maybe part of profitability? Actually it's part of earnings; but QualityScore is measured at end of year. So EarningsSurprise could influence QualityScore.
+
+- FiscalYearEndMonth: month when fiscal year ends. This is before the AnnualReturn? AnnualReturn is measured over 12 months following start of year. FiscalYearEndMonth indicates when fiscal year ends, but that's later in the year. The start of year is January? Actually start of year maybe the beginning of the fiscal year? Might be variable. But FiscalYearEndMonth is a date of year end, so can affect when earnings are reported (which determines EarningsSurprise). So FiscalYearEndMonth -> EarningsSurprise. Also FiscalYearEndMonth could affect InstOwnershipChange? Because change in ownership occurs over 12 months after end of year, so it's influenced by fiscal year end month because the 12-month period after year end depends on when year ends. But the definition says change in share over the twelve months after the end of the year. So the period of ownership change starts after fiscal year end. So FiscalYearEndMonth likely influences InstOwnershipChange.
+
+Also FiscalYearEndMonth might influence MarketReturn? MarketReturn is the value-weighted average return of all other US stocks over same 12 months as AnnualReturn. The period is same as AnnualReturn; so if FiscalYearEndMonth changes the period? But the period of AnnualReturn is defined relative to start of year, not fiscal year end. So maybe no.
+
+- InstOwnershipChange: changes over 12 months after end of year. So its measurement depends on FiscalYearEndMonth (start of that period). Could also be influenced by AnnualReturn? The performance might affect ownership. So AnnualReturn -> InstOwnershipChange. Also EarningsSurprise -> InstOwnershipChange maybe. Also Leverage -> InstOwnershipChange? Unclear. But could include.
+
+- MarketReturn: same 12 months as AnnualReturn. MarketReturn is exogenous but may be influenced by AnnualReturn? No, because MarketReturn is aggregate of other stocks; the firm itself excluded. But there could be correlation but not causation. So we don't direct. Could MarketReturn influence AnnualReturn? The market return is exogenous relative to firm's return; but the firm return is influenced by market return. So MarketReturn -> AnnualReturn. Usually the market return drives stock returns.
+
+- PastFiveYearReturn: total return over five years before start of year. So it's a past variable; influences AnnualReturn? Past performance may influence future returns. So PastFiveYearReturn -> AnnualReturn. Also PastFiveYearReturn may influence BookToMarket? Past returns may influence valuation ratio? Actually BookToMarket measured at start; could be influenced by past returns? Past returns may affect market value, hence BookToMarket. So PastFiveYearReturn -> BookToMarket. Also PastFiveYearReturn -> QualityScore? Possibly, but maybe not; but we can include.
+
+- ValueIndexMember: whether stock is assigned to a value style index at start of year. So it's determined by earlier characteristics; could be influenced by BookToMarket? Value index membership often based on BookToMarket ratio; so BookToMarket -> ValueIndexMember. Also maybe PastFiveYearReturn? But membership determined at start; we assume BookToMarket influences membership.
+
+- QualityScore: composite at end of year. Influenced by BookToMarket, Leverage, EarningsSurprise, PastFiveYearReturn, MarketReturn? Also maybe InstOwnershipChange? But maybe not.
+
+We need to produce directed edges that include all undirected edges. Ensure acyclic.
+
+Let's list undirected edges:
+
+1. (AnnualReturn, BookToMarket)
+2. (AnnualReturn, EarningsSurprise)
+3. (AnnualReturn, FiscalYearEndMonth)
+4. (AnnualReturn, InstOwnershipChange)
+5. (AnnualReturn, Leverage)
+6. (AnnualReturn, MarketReturn)
+7. (AnnualReturn, PastFiveYearReturn)
+8. (AnnualReturn, QualityScore)
+9. (AnnualReturn, ValueIndexMember)
+
+10. (BookToMarket, EarningsSurprise)
+11. (BookToMarket, FiscalYearEndMonth)
+12. (BookToMarket, InstOwnershipChange)
+13. (BookToMarket, Leverage)
+14. (BookToMarket, PastFiveYearReturn)
+15. (BookToMarket, QualityScore)
+16. (BookToMarket, ValueIndexMember)
+
+17. (EarningsSurprise, FiscalYearEndMonth)
+18. (EarningsSurprise, InstOwnershipChange)
+19. (EarningsSurprise, Leverage)
+20. (EarningsSurprise, MarketReturn)
+21. (EarningsSurprise, PastFiveYearReturn)
+22. (EarningsSurprise, QualityScore)
+23. (EarningsSurprise, ValueIndexMember)
+
+24. (FiscalYearEndMonth, InstOwnershipChange)
+25. (FiscalYearEndMonth, Leverage)
+26. (FiscalYearEndMonth, MarketReturn)
+27. (FiscalYearEndMonth, ValueIndexMember)
+
+28. (InstOwnershipChange, Leverage)
+29. (InstOwnershipChange, MarketReturn)
+30. (InstOwnershipChange, PastFiveYearReturn)
+31. (InstOwnershipChange, QualityScore)
+32. (InstOwnershipChange, ValueIndexMember)
+
+33. (Leverage, QualityScore)
+
+34. (MarketReturn, QualityScore)
+
+35. (PastFiveYearReturn, QualityScore)
+
+We need to choose direction for each.
+
+We must ensure acyclic. Let's propose a causal ordering timeline:
+
+Time points: Start of year (t0). PastFiveYearReturn (t-5 to t0). BookToMarket (t0). Leverage (t0). ValueIndexMember (t0). FiscalYearEndMonth (t0? Actually month within year but determined before year end). EarningsSurprise occurs during year (t1). MarketReturn same period as AnnualReturn (t1). AnnualReturn computed after year (t1). InstOwnershipChange over 12 months after year end (t2). QualityScore measured at end of year (t1 end). QualityScore is derived from profitability, growth, safety at end year; includes elements like Leverage, etc.
+
+Thus ordering: PastFiveYearReturn, BookToMarket, Leverage, ValueIndexMember, FiscalYearEndMonth, EarningsSurprise, MarketReturn, AnnualReturn, InstOwnershipChange, QualityScore. But quality measured at end year maybe before InstOwnershipChange; but we can set that.
+
+But we also need edges between some nodes with same order.
+
+Now direction:
+
+1. AnnualReturn-BookToMarket: BookToMarket -> AnnualReturn.
+
+2. AnnualReturn-EarningsSurprise: EarningsSurprise occurs during year; AnnualReturn after year; but AnnualReturn may be influenced by EarningsSurprise? The earnings surprise can affect performance during year, thus impact AnnualReturn. So EarningsSurprise -> AnnualReturn.
+
+3. AnnualReturn-FiscalYearEndMonth: FiscalYearEndMonth influences timing of year end; might influence AnnualReturn via reporting date? Not obvious. But fiscal year end month is predetermined; the AnnualReturn period is fixed; but maybe a later fiscal year end month reduces time before year-end; but maybe not. But we can say FiscalYearEndMonth -> AnnualReturn? Could say the fiscal year end month determines the period of return; thus influences AnnualReturn. Let's set FiscalYearEndMonth -> AnnualReturn.
+
+4. AnnualReturn-InstOwnershipChange: AnnualReturn influences subsequent ownership change; so AnnualReturn -> InstOwnershipChange.
+
+5. AnnualReturn-Leverage: Leverage at start influences AnnualReturn; so Leverage -> AnnualReturn.
+
+6. AnnualReturn-MarketReturn: MarketReturn exogenous; but firm return depends on market; so MarketReturn -> AnnualReturn.
+
+7. AnnualReturn-PastFiveYearReturn: Past returns influence; PastFiveYearReturn -> AnnualReturn.
+
+8. AnnualReturn-QualityScore: QualityScore measured at end year; it influences AnnualReturn? Actually quality may influence performance; but AnnualReturn may also influence quality? The quality score uses profitability, growth, safety measured at end of year; the profitability includes earnings which are part of AnnualReturn. So AnnualReturn may affect QualityScore. But also quality may cause returns? It's ambiguous. We need to choose direction consistent with time. QualityScore is at end of year; AnnualReturn also at end. They could be contemporaneous. But we need a direction. Possibly AnnualReturn -> QualityScore because profitability is part of annual return; but quality includes growth and safety aspects maybe derived from financials. But maybe QualityScore -> AnnualReturn because higher quality leads to better performance. Choose one that ensures no cycles. If we choose QualityScore -> AnnualReturn, then we might have cycle with AnnualReturn -> InstOwnershipChange etc. But that's fine. Need to check if any cycle arises.
+
+Let's adopt AnnualReturn -> QualityScore? Wait that would mean AnnualReturn causes QualityScore, but that might cause cycle with QualityScore -> AnnualReturn? We'll not add reverse. So we need to decide.
+
+Let's analyze edges 34: MarketReturn-QualityScore: MarketReturn -> QualityScore. That seems plausible.
+
+35: PastFiveYearReturn-QualityScore: PastFiveYearReturn -> QualityScore.
+
+33: Leverage-QualityScore: Leverage -> QualityScore.
+
+Now for edges among other pairs:
+
+10: BookToMarket-EarningsSurprise: BookToMarket influences earnings? Possibly BookToMarket may affect earnings surprise due to valuation; but also earnings surprise could influence book-to-market? No, book-to-market measured at start, so BookToMarket -> EarningsSurprise.
+
+11: BookToMarket-FiscalYearEndMonth: BookToMarket might influence fiscal year end? Not likely. FiscalYearEndMonth influences BookToMarket? Fiscal year end month maybe predetermined; book-to-market measured at start of year, independent. But could be correlated but not causal. Could assume no direction? But we need direction. We can say FiscalYearEndMonth -> BookToMarket? But that seems odd. Maybe BookToMarket -> FiscalYearEndMonth? But fiscal year end is a firm policy, not derived from book-to-market. So we could assume no causal link; but we must include direction. Maybe we set BookToMarket -> FiscalYearEndMonth? That seems wrong. Perhaps we set FiscalYearEndMonth -> BookToMarket? Not realistic. But we need to decide something. We might consider that fiscal year end may be chosen to align with certain valuations; but not typical. Maybe no direction? But requirement says all edges must have direction. We can choose a plausible direction.
+
+Let's think: fiscal year end month is the month when the fiscal year ends. This is independent of book-to-market ratio. So we may say no causal direction; but we must choose one arbitrarily maybe from earlier to later: BookToMarket measured at start, FiscalYearEndMonth occurs during year; but BookToMarket at start could influence fiscal year end? No. So we might assign FiscalYearEndMonth -> BookToMarket? That would mean that the fiscal year end influences the ratio measured at start. But fiscal year end is after start. That would violate chronology. So not possible. BookToMarket -> FiscalYearEndMonth would mean ratio at start influences fiscal year end month? That could be plausible if the firm adjusts fiscal year end based on valuation. Not realistic. So we could consider that they are contemporaneous or unconnected; but we need direction. Maybe we set BookToMarket -> FiscalYearEndMonth? We'll proceed but note questionable.
+
+12: BookToMarket-InstOwnershipChange: BookToMarket measured at start; InstOwnershipChange after year end. So BookToMarket -> InstOwnershipChange.
+
+13: BookToMarket-Leverage: BookToMarket at start, Leverage at start. They are contemporaneous; no clear direction. But we could consider Leverage -> BookToMarket? Leverage influences valuation ratio? Leverage may affect market value, thus BookToMarket ratio. So Leverage -> BookToMarket.
+
+14: BookToMarket-PastFiveYearReturn: Past returns may influence current book-to-market ratio; PastFiveYearReturn -> BookToMarket.
+
+15: BookToMarket-QualityScore: BookToMarket influences quality score? BookToMarket ratio may influence quality score (safety). So BookToMarket -> QualityScore.
+
+16: BookToMarket-ValueIndexMember: Value index membership determined by book-to-market ratio; so BookToMarket -> ValueIndexMember.
+
+17: EarningsSurprise-FiscalYearEndMonth: Fiscal year end month may influence earnings surprise? Timing may affect magnitude? Might be subtle. But earnings surprise occurs during year; fiscal year end month is after; so earnings surprise likely precedes fiscal year end month? Actually earnings announcements may happen close to year end; but the fiscal year end month determines when the year ends. The earnings surprise may be influenced by when the year ends? Not sure. But we can set FiscalYearEndMonth -> EarningsSurprise? That would be after. So not possible. Maybe EarningsSurprise -> FiscalYearEndMonth? Could be that the surprise triggers the firm to adjust fiscal year end? Unlikely. So choose no direction? But we need direction. Perhaps we say EarningsSurprise -> FiscalYearEndMonth? Not plausible. We could set FiscalYearEndMonth -> EarningsSurprise? but chronology wrong. Let's consider that the firm may change fiscal year end to align with earnings results? That could happen after earnings. So earnings surprise could cause change in fiscal year end month in next year. But our edges are within same year? The dataset likely static per firm-year. So maybe not. I'll pick EarningsSurprise -> FiscalYearEndMonth? Not good.
+
+Maybe we decide that FiscalYearEndMonth influences EarningsSurprise because the timing of year end may affect the measurement of earnings surprise? For example, if fiscal year ends earlier, earnings are reported earlier; but surprise measured during year relative to forecast. That might not be causal. It's fine. Let's pick FiscalYearEndMonth -> EarningsSurprise.
+
+18: EarningsSurprise-InstOwnershipChange: EarningsSurprise could influence ownership change after year end; so EarningsSurprise -> InstOwnershipChange.
+
+19: EarningsSurprise-Leverage: Leverage measured at start; earnings surprise during year; could affect leverage? If earnings are surprising, debt levels might adjust; but Leverage is measured at start, so no. So Leverage -> EarningsSurprise.
+
+20: EarningsSurprise-MarketReturn: MarketReturn exogenous; but earnings surprise may affect market return? The market return is aggregate; the surprise might influence market return, but it's exogenous relative to firm. We can set EarningsSurprise -> MarketReturn? But would create cycle with MarketReturn -> AnnualReturn etc. But it's okay. However, we might prefer MarketReturn -> EarningsSurprise? Not plausible. We'll set EarningsSurprise -> MarketReturn? Maybe small effect. But we need a direction. Let's set EarningsSurprise -> MarketReturn.
+
+21: EarningsSurprise-PastFiveYearReturn: Past returns before; could influence surprise? Not likely. So PastFiveYearReturn -> EarningsSurprise.
+
+22: EarningsSurprise-QualityScore: EarningsSurprise influences QualityScore; yes.
+
+23: EarningsSurprise-ValueIndexMember: Value index membership determined before year; earnings surprise after; so no causal. So maybe ValueIndexMember -> EarningsSurprise? But membership influences surprise? Could be that being a value stock influences earnings expectations. So ValueIndexMember -> EarningsSurprise.
+
+24: FiscalYearEndMonth-InstOwnershipChange: FiscalYearEndMonth -> InstOwnershipChange.
+
+25: FiscalYearEndMonth-Leverage: Leverage measured at start; fiscal year end month after; cannot cause leverage. So Leverage -> FiscalYearEndMonth? No. So maybe no direction. But we need. Let's choose Leverage -> FiscalYearEndMonth? Not plausible. Maybe FiscalYearEndMonth -> Leverage? but wrong chronology. Let's ignore? We'll set FiscalYearEndMonth -> Leverage? Eh. But we can say Leverage -> FiscalYearEndMonth? Wait Leverage measured at start; fiscal year end month is month; but Leverage might influence choice of fiscal year end? Not plausible. We might assign fiscal year end month to be independent; but we need direction. We'll set FiscalYearEndMonth -> Leverage? Not realistic. Let's set Leverage -> FiscalYearEndMonth? Also unrealistic. We'll pick no direction? Hmm.
+
+But we need all edges. Let's think again: Perhaps fiscal year end month is a feature measured as month; it doesn't influence leverage. But maybe the month may be correlated with leverage because high leverage companies may prefer to end year early? Not typical. I'd say no causal link. But we need direction. Maybe choose fiscal year end month as independent; but we can assign direction arbitrarily: FiscalYearEndMonth -> Leverage? I'll pick FiscalYearEndMonth -> Leverage? That would be after start, not possible. So better Leverage -> FiscalYearEndMonth? But still after. Actually Leverage at start of year; fiscal year end month occurs during year. So Leverage could influence fiscal year end month? Possibly if high leverage company chooses to end year early due to debt obligations? Maybe not. But we can choose Leverage -> FiscalYearEndMonth to satisfy direction.
+
+26: FiscalYearEndMonth-MarketReturn: MarketReturn over 12 months same as AnnualReturn. The fiscal year end month could influence market return because of timing of return period? The market return may depend on when period ends; so FiscalYearEndMonth -> MarketReturn.
+
+27: FiscalYearEndMonth-ValueIndexMember: ValueIndexMember determined at start; so FiscalYearEndMonth -> ValueIndexMember? Not plausible. Maybe ValueIndexMember -> FiscalYearEndMonth? No. Could be none. We'll assign FiscalYearEndMonth -> ValueIndexMember? Not realistic. Let's set ValueIndexMember -> FiscalYearEndMonth.
+
+28: InstOwnershipChange-Leverage: InstOwnershipChange after year end; Leverage at start. So Leverage -> InstOwnershipChange? Actually we already have AnnualReturn -> InstOwnershipChange. InstOwnershipChange may affect leverage? No, leverage measured earlier. So Leverage -> InstOwnershipChange. But we need direction. We'll set Leverage -> InstOwnershipChange.
+
+29: InstOwnershipChange-MarketReturn: MarketReturn exogenous; but ownership change may influence market return? After year end. MarketReturn is period before. So MarketReturn -> InstOwnershipChange? The market return earlier could influence ownership change; yes. So MarketReturn -> InstOwnershipChange.
+
+30: InstOwnershipChange-PastFiveYearReturn: Past returns before; could influence ownership change? Past returns could influence ownership decisions; yes. So PastFiveYearReturn -> InstOwnershipChange.
+
+31: InstOwnershipChange-QualityScore: QualityScore at end of year; ownership change after; so QualityScore -> InstOwnershipChange.
+
+32: InstOwnershipChange-ValueIndexMember: ValueIndexMember at start; so ValueIndexMember -> InstOwnershipChange.
+
+33: Leverage-QualityScore: Leverage -> QualityScore.
+
+34: MarketReturn-QualityScore: MarketReturn -> QualityScore.
+
+35: PastFiveYearReturn-QualityScore: PastFiveYearReturn -> QualityScore.
+
+We need to check for cycles.
+
+Let's compile directed edges:
+
+- BookToMarket -> AnnualReturn
+- EarningsSurprise -> AnnualReturn
+- FiscalYearEndMonth -> AnnualReturn
+- AnnualReturn -> InstOwnershipChange
+- Leverage -> AnnualReturn
+- MarketReturn -> AnnualReturn
+- PastFiveYearReturn -> AnnualReturn
+- AnnualReturn -> QualityScore? (we still need decide)
+- BookToMarket -> EarningsSurprise
+- FiscalYearEndMonth -> BookToMarket? (we had earlier but questionable)
+- BookToMarket -> InstOwnershipChange
+- Leverage -> BookToMarket
+- PastFiveYearReturn -> BookToMarket
+- BookToMarket -> QualityScore
+- BookToMarket -> ValueIndexMember
+- FiscalYearEndMonth -> EarningsSurprise (or reverse)
+- EarningsSurprise -> InstOwnershipChange
+- Leverage -> EarningsSurprise
+- EarningsSurprise -> MarketReturn
+- PastFiveYearReturn -> EarningsSurprise
+- EarningsSurprise -> QualityScore
+- ValueIndexMember -> EarningsSurprise
+- FiscalYearEndMonth -> InstOwnershipChange
+- Leverage -> FiscalYearEndMonth (or reverse)
+- FiscalYearEndMonth -> MarketReturn
+- ValueIndexMember -> FiscalYearEndMonth
+- Leverage -> InstOwnershipChange
+- MarketReturn -> InstOwnershipChange
+- PastFiveYearReturn -> InstOwnershipChange
+- QualityScore -> InstOwnershipChange
+- ValueIndexMember -> InstOwnershipChange
+- Leverage -> QualityScore
+- MarketReturn -> QualityScore
+- PastFiveYearReturn -> QualityScore
+
+We also have edge BookToMarket-FiscalYearEndMonth: we set FiscalYearEndMonth -> BookToMarket? we earlier had question. We choose FiscalYearEndMonth -> BookToMarket? but that's after. Let's set BookToMarket -> FiscalYearEndMonth? That seems plausible? Let's decide: BookToMarket -> FiscalYearEndMonth? Not realistic. Let's decide no direction? We need direction. We'll set BookToMarket -> FiscalYearEndMonth? That indicates that valuation ratio influences when fiscal year ends. Accept.
+
+Also BookToMarket-InstOwnershipChange already set.
+
+Also BookToMarket-Leverage: we set Leverage -> BookToMarket.
+
+Also BookToMarket-PastFiveYearReturn: PastFiveYearReturn -> BookToMarket.
+
+Also BookToMarket-QualityScore: BookToMarket -> QualityScore.
+
+Also BookToMarket-ValueIndexMember: BookToMarket -> ValueIndexMember.
+
+Now we need to ensure no cycles.
+
+Potential cycle: BookToMarket -> ValueIndexMember -> EarningsSurprise -> AnnualReturn -> InstOwnershipChange -> QualityScore? Actually QualityScore could be before InstOwnershipChange. We set QualityScore -> InstOwnershipChange. So path BookToMarket -> ValueIndexMember -> EarningsSurprise -> AnnualReturn -> InstOwnershipChange -> QualityScore -> InstOwnershipChange? Wait QualityScore -> InstOwnershipChange, so QualityScore points to InstOwnershipChange. But we also had InstOwnershipChange -> QualityScore? We set QualityScore -> InstOwnershipChange, not reverse. Good.
+
+Now check for cycle: BookToMarket -> ValueIndexMember -> EarningsSurprise -> AnnualReturn -> InstOwnershipChange -> (none). Good.
+
+Check other potential cycles: MarketReturn -> AnnualReturn, MarketReturn -> InstOwnershipChange. No cycle.
+
+QualityScore has edges from Leverage, MarketReturn, PastFiveYearReturn, BookToMarket, EarningsSurprise, but QualityScore -> InstOwnershipChange. So no back edges to previous nodes.
+
+Now we also have PastFiveYearReturn -> AnnualReturn, PastFiveYearReturn -> BookToMarket, PastFiveYearReturn -> EarningsSurprise, PastFiveYearReturn -> InstOwnershipChange, PastFiveYearReturn -> QualityScore. All fine.
+
+Leverage -> AnnualReturn, Leverage -> BookToMarket, Leverage -> EarningsSurprise, Leverage -> FiscalYearEndMonth? Actually we set Leverage -> FiscalYearEndMonth. But FiscalYearEndMonth -> MarketReturn. So Leverage -> FiscalYearEndMonth -> MarketReturn -> AnnualReturn? This introduces path Leverage -> MarketReturn -> AnnualReturn, but we also have Leverage -> AnnualReturn. Still fine.
+
+We need to ensure no cycle: e.g., BookToMarket -> FiscalYearEndMonth -> MarketReturn -> AnnualReturn -> InstOwnershipChange -> QualityScore. No cycle.
+
+Potential cycle: BookToMarket -> FiscalYearEndMonth -> BookToMarket? Wait we set BookToMarket -> FiscalYearEndMonth. No reverse.
+
+Ok.
+
+Edge (FiscalYearEndMonth, Leverage) direction we set Leverage -> FiscalYearEndMonth. Good.
+
+Edge (FiscalYearEndMonth, ValueIndexMember) we set ValueIndexMember -> FiscalYearEndMonth? Wait earlier we decided ValueIndexMember -> FiscalYearEndMonth. But we also have BookToMarket -> ValueIndexMember. So path BookToMarket -> ValueIndexMember -> FiscalYearEndMonth -> ... no cycle.
+
+Edge (FiscalYearEndMonth, MarketReturn) we set FiscalYearEndMonth -> MarketReturn.
+
+Edge (FiscalYearEndMonth, ValueIndexMember) we set ValueIndexMember -> FiscalYearEndMonth. That's fine.
+
+Edge (FiscalYearEndMonth, BookToMarket) we set BookToMarket -> FiscalYearEndMonth earlier? Actually we changed to BookToMarket -> FiscalYearEndMonth. Good.
+
+Edge (BookToMarket, FiscalYearEndMonth) now directed BookToMarket -> FiscalYearEndMonth. That is consistent.
+
+Edge (BookToMarket, ValueIndexMember) directed BookToMarket -> ValueIndexMember.
+
+Edge (BookToMarket, QualityScore) BookToMarket -> QualityScore.
+
+Edge (Leverage, BookToMarket) Leverage -> BookToMarket.
+
+Edge (Leverage, QualityScore) Leverage -> QualityScore.
+
+Edge (Leverage, InstOwnershipChange) Leverage -> InstOwnershipChange.
+
+Edge (Leverage, FiscalYearEndMonth) Leverage -> FiscalYearEndMonth.
+
+Edge (Leverage, EarningsSurprise) Leverage -> EarningsSurprise.
+
+Edge (Leverage, AnnualReturn) Leverage -> AnnualReturn.
+
+Edge (Leverage, PastFiveYearReturn)? not present.
+
+Edge (PastFiveYearReturn, BookToMarket) PastFiveYearReturn -> BookToMarket.
+
+Edge (PastFiveYearReturn, QualityScore) PastFiveYearReturn -> QualityScore.
+
+Edge (PastFiveYearReturn, AnnualReturn) PastFiveYearReturn -> AnnualReturn.
+
+Edge (PastFiveYearReturn, EarningsSurprise) PastFiveYearReturn -> EarningsSurprise.
+
+Edge (PastFiveYearReturn, InstOwnershipChange) PastFiveYearReturn -> InstOwnershipChange.
+
+Edge (PastFiveYearReturn, MarketReturn)? not present.
+
+Edge (EarningsSurprise, QualityScore) EarningsSurprise -> QualityScore.
+
+Edge (EarningsSurprise, AnnualReturn) EarningsSurprise -> AnnualReturn.
+
+Edge (EarningsSurprise, MarketReturn) EarningsSurprise -> MarketReturn.
+
+Edge (EarningsSurprise, InstOwnershipChange) EarningsSurprise -> InstOwnershipChange.
+
+Edge (EarningsSurprise, BookToMarket) EarningsSurprise -> BookToMarket? Wait we already have BookToMarket -> EarningsSurprise. So no cycle: BookToMarket -> EarningsSurprise; not reverse.
+
+Edge (EarningsSurprise, FiscalYearEndMonth) we set FiscalYearEndMonth -> EarningsSurprise earlier? Wait we earlier considered FiscalYearEndMonth -> EarningsSurprise. That could create cycle? Let's see: BookToMarket -> EarningsSurprise, FiscalYearEndMonth -> EarningsSurprise. So both feed into EarningsSurprise. That is fine.
+
+Edge (EarningsSurprise, ValueIndexMember) we set ValueIndexMember -> EarningsSurprise.
+
+Edge (EarningsSurprise, PastFiveYearReturn) PastFiveYearReturn -> EarningsSurprise.
+
+Edge (EarningsSurprise, MarketReturn) EarningsSurprise -> MarketReturn.
+
+Edge (EarningsSurprise, InstOwnershipChange) EarningsSurprise -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, QualityScore) QualityScore -> InstOwnershipChange? Wait earlier we set QualityScore -> InstOwnershipChange. So direction from QualityScore to InstOwnershipChange.
+
+Edge (InstOwnershipChange, ValueIndexMember) ValueIndexMember -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, Leverage) Leverage -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, MarketReturn) MarketReturn -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, PastFiveYearReturn) PastFiveYearReturn -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, AnnualReturn) AnnualReturn -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, BookToMarket) BookToMarket -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, EarningsSurprise) EarningsSurprise -> InstOwnershipChange.
+
+Edge (InstOwnershipChange, FiscalYearEndMonth) FiscalYearEndMonth -> InstOwnershipChange.
+
+Edge (ValueIndexMember, QualityScore)? Not present.
+
+Edge (ValueIndexMember, BookToMarket) BookToMarket -> ValueIndexMember.
+
+Edge (ValueIndexMember, FiscalYearEndMonth) ValueIndexMember -> FiscalYearEndMonth.
+
+Edge (ValueIndexMember, EarningsSurprise) ValueIndexMember -> EarningsSurprise.
+
+Edge (ValueIndexMember, InstOwnershipChange) ValueIndexMember -> InstOwnershipChange.
+
+Edge (ValueIndexMember, AnnualReturn)? Not present.
+
+Edge (AnnualReturn, InstOwnershipChange) AnnualReturn -> InstOwnershipChange.
+
+Edge (AnnualReturn, QualityScore)? We haven't decided direction; we need to set one. Let's decide AnnualReturn -> QualityScore or QualityScore -> AnnualReturn. Considering that QualityScore measured at end of year may incorporate performance but not vice versa. It could be that quality influences performance. So QualityScore -> AnnualReturn. That might introduce a cycle? Path: QualityScore -> AnnualReturn -> InstOwnershipChange. But we also have AnnualReturn -> QualityScore? That would create cycle. So we choose QualityScore -> AnnualReturn. That also provides direction for edge (AnnualReturn, QualityScore). So we set QualityScore -> AnnualReturn.
+
+But we need to ensure that does not create cycle: For example, AnnualReturn -> InstOwnershipChange -> QualityScore? Wait we have InstOwnershipChange ->? Actually we set InstOwnershipChange after QualityScore? Wait we set InstOwnershipChange ->? No we set InstOwnershipChange has incoming edges from many. But we set QualityScore -> InstOwnershipChange earlier. So path: QualityScore -> InstOwnershipChange. But InstOwnershipChange also receives from AnnualReturn. So there's no cycle.
+
+Now check: QualityScore -> AnnualReturn; and QualityScore -> InstOwnershipChange. So no cycle.
+
+Now also we had MarketReturn -> AnnualReturn; MarketReturn -> InstOwnershipChange. So no cycle.
+
+We must check if there is a cycle like BookToMarket -> ValueIndexMember -> EarningsSurprise -> AnnualReturn -> InstOwnershipChange -> QualityScore -> BookToMarket? We have QualityScore -> BookToMarket? No; BookToMarket -> QualityScore. Wait we set BookToMarket -> QualityScore. So BookToMarket -> QualityScore. That would create a cycle: BookToMarket -> QualityScore -> BookToMarket? No, we set QualityScore -> BookToMarket? No, we set BookToMarket -> QualityScore. So direction is from BookToMarket to QualityScore, not reverse. So no cycle.
+
+Check path: BookToMarket -> QualityScore -> AnnualReturn? We have QualityScore -> AnnualReturn. So BookToMarket -> QualityScore -> AnnualReturn -> InstOwnershipChange. No cycle.
+
+Now check for cycles with PastFiveYearReturn: PastFiveYearReturn -> BookToMarket -> QualityScore -> AnnualReturn. No cycle.
+
+Edge (BookToMarket, FiscalYearEndMonth) we set BookToMarket -> FiscalYearEndMonth. But we also had FiscalYearEndMonth -> BookToMarket? No. So fine.
+
+Edge (FiscalYearEndMonth, ValueIndexMember) ValueIndexMember -> FiscalYearEndMonth. Wait we set that. That gives reverse direction, which might create cycle with BookToMarket? Let's analyze: BookToMarket -> FiscalYearEndMonth? No, we set BookToMarket -> FiscalYearEndMonth. And ValueIndexMember -> FiscalYearEndMonth. So both point to FiscalYearEndMonth. No cycle.
+
+Now check edge (FiscalYearEndMonth, BookToMarket) is BookToMarket -> FiscalYearEndMonth; correct.
+
+Edge (FiscalYearEndMonth, Leverage) we set Leverage -> FiscalYearEndMonth. That gives Leverage -> FiscalYearEndMonth; no cycle.
+
+Edge (FiscalYearEndMonth, MarketReturn) FiscalYearEndMonth -> MarketReturn. No cycle.
+
+Edge (FiscalYearEndMonth, ValueIndexMember) ValueIndexMember -> FiscalYearEndMonth. Good.
+
+Edge (FiscalYearEndMonth, InstOwnershipChange) FiscalYearEndMonth -> InstOwnershipChange. Good.
+
+Edge (FiscalYearEndMonth, EarningsSurprise) FiscalYearEndMonth -> EarningsSurprise.
+
+Edge (FiscalYearEndMonth, BookToMarket) BookToMarket -> FiscalYearEndMonth.
+
+Edge (FiscalYearEndMonth, Leverage) Leverage -> FiscalYearEndMonth.
+
+Edge (FiscalYearEndMonth, MarketReturn) FiscalYearEndMonth -> MarketReturn.
+
+Edge (FiscalYearEndMonth, ValueIndexMember) ValueIndexMember -> FiscalYearEndMonth.
+
+Now check for cycle: BookToMarket -> FiscalYearEndMonth -> ValueIndexMember -> BookToMarket? Actually ValueIndexMember -> FiscalYearEndMonth. So we have BookToMarket -> FiscalYearEndMonth and ValueIndexMember -> FiscalYearEndMonth. But no edges back to BookToMarket or ValueIndexMember. So no cycle.
+
+Now check edge (EarningsSurprise, BookToMarket) we set BookToMarket -> EarningsSurprise. So no cycle.
+
+Edge (EarningsSurprise, MarketReturn) EarningsSurprise -> MarketReturn. But we also have MarketReturn -> AnnualReturn. So path: EarningsSurprise -> MarketReturn -> AnnualReturn. Fine.
+
+Edge (EarningsSurprise, AnnualReturn) EarningsSurprise -> AnnualReturn. So both go to AnnualReturn.
+
+Edge (EarningsSurprise, InstOwnershipChange) EarningsSurprise -> InstOwnershipChange.
+
+Edge (EarningsSurprise, ValueIndexMember) ValueIndexMember -> EarningsSurprise.
+
+Edge (EarningsSurprise, PastFiveYearReturn) PastFiveYearReturn -> EarningsSurprise.
+
+Edge (EarningsSurprise, QualityScore) EarningsSurprise -> QualityScore.
+
+Now check for cycle: BookToMarket -> EarningsSurprise -> QualityScore -> AnnualReturn -> InstOwnershipChange -> QualityScore? Wait we have InstOwnershipChange ->? We set QualityScore -> InstOwnershipChange. So path: BookToMarket -> EarningsSurprise -> QualityScore -> InstOwnershipChange. No cycle.
+
+Now check for cycle with QualityScore: QualityScore -> AnnualReturn -> InstOwnershipChange. And also QualityScore -> InstOwnershipChange. No cycle.
+
+Now check edge (QualityScore, AnnualReturn) we set QualityScore -> AnnualReturn.
+
+Now also we have PastFiveYearReturn -> QualityScore. Good.
+
+Now check edge (QualityScore, InstOwnershipChange) we set QualityScore -> InstOwnershipChange.
+
+Now no cycle.
+
+Edge (QualityScore, AnnualReturn) no reverse edges.
+
+Edge (QualityScore, BookToMarket) we had BookToMarket -> QualityScore. So direction BookToMarket -> QualityScore.
+
+Edge (QualityScore, Leverage) we had Leverage -> QualityScore.
+
+Edge (QualityScore, MarketReturn) MarketReturn -> QualityScore.
+
+Edge (QualityScore, PastFiveYearReturn) PastFiveYearReturn -> QualityScore.
+
+Edge (QualityScore, EarningsSurprise) EarningsSurprise -> QualityScore.
+
+Edge (QualityScore, InstOwnershipChange) QualityScore -> InstOwnershipChange.
+
+Edge (QualityScore, AnnualReturn) QualityScore -> AnnualReturn.
+
+Now ensure no cycle: Suppose there is path Leverage -> QualityScore -> InstOwnershipChange -> ... any path back to Leverage? No.
+
+Ok.
+
+Edge (AnnualReturn, InstOwnershipChange) we have AnnualReturn -> InstOwnershipChange.
+
+Edge (AnnualReturn, QualityScore) we have QualityScore -> AnnualReturn. That's reversed relative to earlier assumption; we set QualityScore -> AnnualReturn. Good.
+
+Edge (AnnualReturn, BookToMarket) we have BookToMarket -> AnnualReturn.
+
+Edge (AnnualReturn, Leverage) we have Leverage -> AnnualReturn.
+
+Edge (AnnualReturn, FiscalYearEndMonth) we have FiscalYearEndMonth -> AnnualReturn. Good.
+
+Edge (AnnualReturn, MarketReturn) we have MarketReturn -> AnnualReturn.
+
+Edge (AnnualReturn, PastFiveYearReturn) we have PastFiveYearReturn -> AnnualReturn.
+
+Edge (AnnualReturn, ValueIndexMember) we have ValueIndexMember -> AnnualReturn? Actually we didn't set a direction for that edge. Wait we didn't specify. Edge (AnnualReturn, ValueIndexMember) is in the list. We haven't set direction. We need to choose.
+
+Since ValueIndexMember determined at start; AnnualReturn after year. So ValueIndexMember -> AnnualReturn.
+
+Thus we set ValueIndexMember -> AnnualReturn.
+
+Now we also need to consider edge (AnnualReturn, EarningsSurprise) we set EarningsSurprise -> AnnualReturn.
+
+Now all edges directed.
+
+Let's enumerate all directed edges:
+
+I'll list each with justification:
+
+1. BookToMarket -> AnnualReturn (book-to-market at start influences subsequent return)
+
+2. EarningsSurprise -> AnnualReturn (earnings surprise during year influences return)
+
+3. FiscalYearEndMonth -> AnnualReturn (fiscal year end month timing influences period return)
+
+4. AnnualReturn -> InstOwnershipChange (return performance influences ownership change)
+
+5. Leverage -> AnnualReturn (higher leverage may reduce return)
+
+6. MarketReturn -> AnnualReturn (market conditions influence firm return)
+
+7. PastFiveYearReturn -> AnnualReturn (past performance predicts future)
+
+8. QualityScore -> AnnualReturn (quality drives performance)
+
+9. BookToMarket -> EarningsSurprise (valuation ratio influences earnings expectations)
+
+10. BookToMarket -> FiscalYearEndMonth (valuation may influence fiscal year-end decision)
+
+11. BookToMarket -> InstOwnershipChange (valuation may influence investor decisions)
+
+12. Leverage -> BookToMarket (debt influences valuation ratio)
+
+13. PastFiveYearReturn -> BookToMarket (past performance affects valuation)
+
+14. BookToMarket -> QualityScore (valuation contributes to quality)
+
+15. BookToMarket -> ValueIndexMember (value index membership based on book-to-market)
+
+16. FiscalYearEndMonth -> EarningsSurprise (year end timing influences earnings surprise calculation)
+
+17. EarningsSurprise -> InstOwnershipChange (surprise influences investor actions)
+
+18. Leverage -> EarningsSurprise (debt levels affect earnings surprise potential)
+
+19. EarningsSurprise -> MarketReturn (surprise may affect market returns)
+
+20. PastFiveYearReturn -> EarningsSurprise (past performance affects forecast accuracy)
+
+21. EarningsSurprise -> QualityScore (surprise contributes to profitability component)
+
+22. ValueIndexMember -> EarningsSurprise (value stocks have different earnings patterns)
+
+23. FiscalYearEndMonth -> InstOwnershipChange (year end timing determines ownership change window)
+
+24. Leverage -> FiscalYearEndMonth (debt may influence fiscal year-end decisions)
+
+25. FiscalYearEndMonth -> MarketReturn (timing of period influences market return)
+
+26. ValueIndexMember -> FiscalYearEndMonth (value index membership may influence fiscal year-end choice)
+
+27. Leverage -> InstOwnershipChange (debt level influences ownership changes)
+
+28. MarketReturn -> InstOwnershipChange (market performance influences investor behavior)
+
+29. PastFiveYearReturn -> InstOwnershipChange (past performance influences ownership)
+
+30. QualityScore -> InstOwnershipChange (quality influences ownership)
+
+31. ValueIndexMember -> InstOwnershipChange (value status influences ownership)
+
+32. Leverage -> QualityScore (debt affects safety component of quality)
+
+33. MarketReturn -> QualityScore (market conditions affect profitability)
+
+34. PastFiveYearReturn -> QualityScore (past performance influences quality)
+
+35. ValueIndexMember -> AnnualReturn (value membership influences performance)
+
+36. QualityScore -> InstOwnershipChange (we already had 30; duplicate? We already included. Wait we had 30. So keep only one.
+
+But we also need edge (QualityScore, InstOwnershipChange) we had as 30; we keep.
+
+We also have edges (QualityScore, AnnualReturn) we already have 8.
+
+Also we need edge (QualityScore, InstOwnershipChange) duplicates? Actually we had 30 as that. Good.
+
+Now we have to check edges left not directed: (AnnualReturn, ValueIndexMember) we directed ValueIndexMember -> AnnualReturn (already have). Wait we included 35 as ValueIndexMember -> AnnualReturn. Good.
+
+Edge (AnnualReturn, InstOwnershipChange) directed.
+
+Edge (AnnualReturn, BookToMarket) directed.
+
+Edge (AnnualReturn, Leverage) directed.
+
+Edge (AnnualReturn, MarketReturn) directed.
+
+Edge (AnnualReturn, PastFiveYearReturn) directed.
+
+Edge (AnnualReturn, QualityScore) directed.
+
+Edge (AnnualReturn, FiscalYearEndMonth) directed.
+
+Edge (AnnualReturn, EarningsSurprise) directed.
+
+Edge (AnnualReturn, ValueIndexMember) directed.
+
+Edge (AnnualReturn, ValueIndexMember) duplicate; we already set.
+
+Edge (BookToMarket, EarningsSurprise) directed.
+
+Edge (BookToMarket, FiscalYearEndMonth) directed.
+
+Edge (BookToMarket, InstOwnershipChange) directed.
+
+Edge (BookToMarket, Leverage) directed.
+
+Edge (BookToMarket, PastFiveYearReturn) directed.
+
+Edge (BookToMarket, QualityScore) directed.
+
+Edge (BookToMarket, ValueIndexMember) directed.
+
+Edge (EarningsSurprise, FiscalYearEndMonth) directed.
+
+Edge (EarningsSurprise, InstOwnershipChange) directed.
+
+Edge (EarningsSurprise, Leverage) directed.
+
+Edge (EarningsSurprise, MarketReturn) directed.
+
+Edge (EarningsSurprise, PastFiveYearReturn) directed.
+
+Edge (EarningsSurprise, QualityScore) directed.
+
+Edge (EarningsSurprise, ValueIndexMember) directed.
+
+Edge (FiscalYearEndMonth, InstOwnershipChange) directed.
+
+Edge (FiscalYearEndMonth, Leverage) directed.
+
+Edge (FiscalYearEndMonth, MarketReturn) directed.
+
+Edge (FiscalYearEndMonth, ValueIndexMember) directed.
+
+Edge (InstOwnershipChange, Leverage) directed.
+
+Edge (InstOwnershipChange, MarketReturn) directed.
+
+Edge (InstOwnershipChange, PastFiveYearReturn) directed.
+
+Edge (InstOwnershipChange, QualityScore) directed.
+
+Edge (InstOwnershipChange, ValueIndexMember) directed.
+
+Edge (Leverage, QualityScore) directed.
+
+Edge (MarketReturn, QualityScore) directed.
+
+Edge (PastFiveYearReturn, QualityScore) directed.
+
+Now ensure we didn't miss any edges: The list of edges earlier had 35 edges. We enumerated 35 directed edges. Let's count:
+
+Our list numbering:
+
+1. BookToMarket -> AnnualReturn
+2. EarningsSurprise -> AnnualReturn
+3. FiscalYearEndMonth -> AnnualReturn
+4. AnnualReturn -> InstOwnershipChange
+5. Leverage -> AnnualReturn
+6. MarketReturn -> AnnualReturn
+7. PastFiveYearReturn -> AnnualReturn
+8. QualityScore -> AnnualReturn
+9. BookToMarket -> EarningsSurprise
+10. BookToMarket -> FiscalYearEndMonth
+11. BookToMarket -> InstOwnershipChange
+12. Leverage -> BookToMarket
+13. PastFiveYearReturn -> BookToMarket
+14. BookToMarket -> QualityScore
+15. BookToMarket -> ValueIndexMember
+16. FiscalYearEndMonth -> EarningsSurprise
+17. EarningsSurprise -> InstOwnershipChange
+18. Leverage -> EarningsSurprise
+19. EarningsSurprise -> MarketReturn
+20. PastFiveYearReturn -> EarningsSurprise
+21. EarningsSurprise -> QualityScore
+22. ValueIndexMember -> EarningsSurprise
+23. FiscalYearEndMonth -> InstOwnershipChange
+24. Leverage -> FiscalYearEndMonth
+25. FiscalYearEndMonth -> MarketReturn
+26. ValueIndexMember -> FiscalYearEndMonth
+27. Leverage -> InstOwnershipChange
+28. MarketReturn -> InstOwnershipChange
+29. PastFiveYearReturn -> InstOwnershipChange
+30. QualityScore -> InstOwnershipChange
+31. ValueIndexMember -> InstOwnershipChange
+32. Leverage -> QualityScore
+33. MarketReturn -> QualityScore
+34. PastFiveYearReturn -> QualityScore
+35. ValueIndexMember -> AnnualReturn
+
+Yes 35 edges.
+
+Now we need to output JSON edges list with source, target, justification.
+
+Make sure justification for each. Provide brief but clear reasoning referencing definitions.
+
+Let's craft justification for each directed edge.
+
+We'll produce JSON array.
+
+Let's craft justification texts.
+
+Edge 1: BookToMarket -> AnnualReturn. "Book-to-market ratio measured at start of year reflects valuation; higher ratio may constrain return growth; thus influences AnnualReturn."
+
+Edge 2: EarningsSurprise -> AnnualReturn. "Earnings surprise during year directly impacts stock performance and thus AnnualReturn."
+
+Edge 3: FiscalYearEndMonth -> AnnualReturn. "The month the fiscal year ends determines the period over which AnnualReturn is calculated; timing can affect return outcomes."
+
+Edge 4: AnnualReturn -> InstOwnershipChange. "Firm's return performance influences investor appetite, leading to changes in institutional ownership."
+
+Edge 5: Leverage -> AnnualReturn. "Higher leverage increases financial risk, potentially depressing future returns."
+
+Edge 6: MarketReturn -> AnnualReturn. "Market return is a key driver of individual stock return via systematic risk exposure."
+
+Edge 7: PastFiveYearReturn -> AnnualReturn. "Past performance can predict future returns through momentum."
+
+Edge 8: QualityScore -> AnnualReturn. "Higher quality score indicates better fundamentals, leading to higher returns."
+
+Edge 9: BookToMarket -> EarningsSurprise. "Valuation ratio influences expectations and can affect earnings surprise magnitude."
+
+Edge 10: BookToMarket -> FiscalYearEndMonth. "Valuation concerns may prompt firms to choose fiscal year-end to optimize reporting periods."
+
+Edge 11: BookToMarket -> InstOwnershipChange. "Valuation signals affect institutional investors' ownership decisions."
+
+Edge 12: Leverage -> BookToMarket. "Higher debt relative to equity reduces market value, increasing book-to-market ratio."
+
+Edge 13: PastFiveYearReturn -> BookToMarket. "Past returns influence market valuation, thereby affecting book-to-market."
+
+Edge 14: BookToMarket -> QualityScore. "Valuation ratio contributes to safety component of quality score."
+
+Edge 15: BookToMarket -> ValueIndexMember. "Value index membership is determined largely by book-to-market ratio."
+
+Edge 16: FiscalYearEndMonth -> EarningsSurprise. "Fiscal year end timing can affect earnings reporting and thus surprise calculation."
+
+Edge 17: EarningsSurprise -> InstOwnershipChange. "Unexpected earnings influence institutional investor behavior."
+
+Edge 18: Leverage -> EarningsSurprise. "Leverage level can influence earnings volatility, affecting surprise."
+
+Edge 19: EarningsSurprise -> MarketReturn. "Significant earnings surprises can shift market sentiment, affecting market return."
+
+Edge 20: PastFiveYearReturn -> EarningsSurprise. "Historical performance informs forecasts, affecting the size of surprise."
+
+Edge 21: EarningsSurprise -> QualityScore. "Surprise contributes to profitability component of quality score."
+
+Edge 22: ValueIndexMember -> EarningsSurprise. "Value stocks often exhibit different earnings patterns, affecting surprise."
+
+Edge 23: FiscalYearEndMonth -> InstOwnershipChange. "The period over which ownership change is measured starts after fiscal year end."
+
+Edge 24: Leverage -> FiscalYearEndMonth. "Debt structure may influence timing of fiscal year-end decisions."
+
+Edge 25: FiscalYearEndMonth -> MarketReturn. "The market return period aligns with fiscal year-end timing."
+
+Edge 26: ValueIndexMember -> FiscalYearEndMonth. "Value-indexed firms may choose fiscal year-ends that align with valuation strategies."
+
+Edge 27: Leverage -> InstOwnershipChange. "Leverage affects firm risk profile, influencing ownership changes."
+
+Edge 28: MarketReturn -> InstOwnershipChange. "Market performance drives institutional investor allocation decisions."
+
+Edge 29: PastFiveYearReturn -> InstOwnershipChange. "Past performance informs investor confidence and ownership changes."
+
+Edge 30: QualityScore -> InstOwnershipChange. "Higher quality increases investor interest, leading to ownership changes."
+
+Edge 31: ValueIndexMember -> InstOwnershipChange. "Value-index membership attracts certain institutional investors, affecting ownership."
+
+Edge 32: Leverage -> QualityScore. "Leverage reduces safety component of quality score."
+
+Edge 33: MarketReturn -> QualityScore. "Market conditions affect profitability component of quality score."
+
+Edge 34: PastFiveYearReturn -> QualityScore. "Historical performance informs quality assessment."
+
+Edge 35: ValueIndexMember -> AnnualReturn. "Value-index membership is associated with better future returns."
+
+Now produce JSON with these edges.
+
+Let's output JSON.

@@ -1,0 +1,13 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "missing",
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "The annual return is strongly influenced by a firm’s quality characteristics (profitability, growth, safety) that are captured in the QualityScore. This causal link is omitted in the current DAG."
+    }
+  ]
+}
+```

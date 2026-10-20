@@ -1,0 +1,49 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "QualityScore is calculated at the end of the year using the firm's annual return and other fundamentals, so the annual return influences the quality score, not the other way around."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The fiscal year end month defines when the firm reports its fiscal year; it does not causally influence the 12‑month return that starts at the calendar year start."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "Market return is computed over the same 12‑month period as AnnualReturn and is independent of the fiscal year end month."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional ownership change is measured over the 12 months following the fiscal year end, but the fiscal year end month itself does not drive ownership decisions."
+    },
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is determined by valuation metrics at the start of the year, not by when the fiscal year ends."
+    },
+    {
+      "type": "nonexistent",
+      "source": "ValueIndexMember",
+      "target": "FiscalYearEndMonth",
+      "justification": "Being a value index member does not influence the timing of the firm's fiscal year end."
+    },
+    {
+      "type": "missing",
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The annual return is an input to the profitability, growth, and beta components of the quality score, so it should causally affect the quality score."
+    }
+  ]
+}
+```

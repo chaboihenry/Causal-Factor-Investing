@@ -1,0 +1,66 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is assigned based on the firm's book‑to‑market ratio at the start of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "BookToMarket",
+      "justification": "Higher debt (leverage) reduces book equity (assets – debt), lowering the numerator of the book‑to‑market ratio, thus affecting the ratio."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component rewards low leverage; therefore higher leverage negatively impacts the score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The beta part of QualityScore is estimated from the firm's 12‑month return; the realized return directly influences the score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "An individual stock’s return is partially driven by overall market movements; thus market return influences the stock’s annual return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings based on recent performance; the 12‑month return informs their decisions over the following year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A positive earnings surprise attracts institutional buying, affecting subsequent ownership change."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical performance influences investor expectations and current‑period returns."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The month of fiscal year end determines the timing of earnings reports relative to forecasts, affecting the calculation of the surprise."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Empirical evidence shows that value stocks (higher book‑to‑market) tend to generate higher returns; thus the ratio influences expected return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk, which can affect the stock’s return over the year."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index signals investors’ expectations of higher returns, influencing the firm’s actual return."
+    }
+  ]
+}
+```

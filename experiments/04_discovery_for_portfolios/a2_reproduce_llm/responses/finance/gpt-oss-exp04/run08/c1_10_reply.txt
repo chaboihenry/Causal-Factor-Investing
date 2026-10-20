@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The book‑to‑market ratio measured at the start of the year reflects a firm’s valuation. Value stocks (high book‑to‑market) are empirically associated with higher subsequent returns, so this metric causally influences the annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Assignment to a value style index is based on a book‑to‑market threshold applied at the start of the year; thus the ratio directly determines index membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to buy value stocks; consequently a higher book‑to‑market ratio at year‑start leads to greater institutional ownership changes after the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and typically reduces expected stock returns, so the debt‑to‑market ratio at year‑start causally affects the following annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of the quality score penalizes high leverage; therefore leverage at year‑start directly lowers the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Historical returns influence current market price, altering the market‑value component of book‑to‑market calculated at the start of the year; thus past returns causally affect the ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership criteria often include historical performance; therefore past five‑year return directly determines whether a firm is classified as a value stock."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors monitor historical performance; a better past five‑year return typically leads to increased institutional ownership after the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Unexpected earnings during the year affect the firm’s stock price trajectory, thereby influencing the total return over that twelve‑month period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Surprises in earnings prompt institutional buying or selling after year‑end, causing observable changes in ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "A higher composite quality score signals stronger profitability, growth, and safety, which are associated with superior future stock performance; thus the score drives the annual return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions favor high‑quality firms; consequently a higher quality score increases the likelihood of institutional ownership adjustments."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market’s value‑weighted return affects individual stock performance through systematic risk (beta); therefore the overall market return causally influences a firm’s annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors rebalance portfolios in response to broad market movements, so the market return directly affects institutional ownership changes."
+    }
+  ]
+}
+```

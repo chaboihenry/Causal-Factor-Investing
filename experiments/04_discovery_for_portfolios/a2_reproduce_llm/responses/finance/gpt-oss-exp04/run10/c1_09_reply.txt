@@ -1,0 +1,46 @@
+```json
+{
+  "edges": [
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "EarningsSurprise is defined as the deviation of the firm's reported earnings during the year from analysts' forecasts. A positive earnings surprise typically leads to a price increase during the same twelve‑month period, thereby directly affecting the stock's total return over that period."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "QualityScore is a composite of profitability, growth and safety. An earnings surprise modifies the firm's profitability trajectory during the year, which is a component of the QualityScore calculated at the end of the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes low leverage as a safety metric. Leverage, measured at the start of the year, determines this component of the QualityScore computed at year‑end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other US stocks over the same twelve‑month period as AnnualReturn. The overall market movement influences an individual firm's return during that period."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore’s beta component is estimated from the stock’s returns during the year. Thus the annual return, calculated over the same period, directly affects the beta used in computing the QualityScore at year‑end."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "ValueIndexMember indicates whether the stock is classified as a value style at the start of the year. Value stocks exhibit systematic return patterns over the following twelve months, influencing the firm’s AnnualReturn."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange captures the change in institutional ownership over the twelve months after year‑end. Institutional investors typically adjust holdings in response to a firm’s perceived quality, as measured by QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A significant earnings surprise can trigger institutional buying or selling decisions in the period following year‑end, directly affecting the InstOwnershipChange metric."
+    }
+  ]
+}
+```

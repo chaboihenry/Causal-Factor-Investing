@@ -1,0 +1,101 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market ratio is measured at the start of the year; a higher ratio signals undervaluation, which tends to lead to higher future returns over the following 12 months, so causality flows from BTM to AnnualReturn."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index membership is typically defined by a threshold on book‑to‑market ratio; therefore the measured BTM at the start of the year determines whether a stock is classified as a value member."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage measured at the start of the year affects the firm’s risk profile and financing costs, influencing its performance over the next 12 months and thereby affecting AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes low leverage as one of its components; thus the start‑of‑year leverage level directly influences the end‑of‑year quality score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "A surprise in earnings during the year alters the firm’s stock price trajectory over that period, which in turn determines the total return realized over the 12 months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings surprise reflects how actual earnings deviate from expectations, which informs the profitability component of the QualityScore measured at year‑end."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Historical momentum is a well‑known driver of future returns; the stock’s past five‑year return therefore causally influences its subsequent 12‑month return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "QualityScore",
+      "justification": "Past performance informs perceptions of stability and growth, feeding into the QualityScore’s profitability and growth components evaluated at year‑end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The value‑weighted market return is a broad economic driver that directly influences an individual stock’s return over the same period."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "AnnualReturn",
+      "justification": "The calendar month in which the fiscal year ends determines the reporting period and can create seasonality effects that shape the measured 12‑month return."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "Fiscal year end timing affects when earnings are reported relative to analyst forecasts; thus the end month can cause the magnitude of earnings surprise."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "After the year ends, institutional investors often adjust holdings in response to the firm’s realized return; hence the return causally influences ownership change."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional allocation decisions are sensitive to overall market performance; a higher market return can lead to greater institutional ownership adjustments."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks are attractive to institutions; being a value index member at year‑start predisposes a firm to subsequent institutional ownership changes."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions consider long‑term track records when allocating capital; past five‑year return therefore affects future ownership adjustments."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Higher quality scores signal stronger fundamentals, making the stock more appealing to institutional investors and influencing ownership change."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "High leverage can deter institutions due to increased risk; thus leverage measured at the start influences institutional ownership changes."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "A positive earnings surprise signals unexpected performance, prompting institutions to adjust their holdings; hence surprise causally affects ownership change."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "The book‑to‑market ratio is a key factor in institutional screening; lower BTM (value) often attracts institutional capital, influencing subsequent ownership changes."
+    }
+  ]
+}
+```

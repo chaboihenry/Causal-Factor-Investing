@@ -1,0 +1,76 @@
+```json
+{
+  "edges": [
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "BookToMarket",
+      "justification": "BookToMarket is measured at the start of the fiscal year; the start date is determined by FiscalYearEndMonth."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "Leverage",
+      "justification": "Leverage is measured at the start of the fiscal year; the start date is determined by FiscalYearEndMonth."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "ValueIndexMember",
+      "justification": "Value index membership is assigned at the start of the fiscal year, so it depends on FiscalYearEndMonth."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "EarningsSurprise is computed from the firm's earnings reported during the fiscal year, which ends at FiscalYearEndMonth."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "QualityScore",
+      "justification": "QualityScore is calculated at the end of the fiscal year; the end month is specified by FiscalYearEndMonth."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange is measured over the twelve months following the fiscal year end, so its timing is set by FiscalYearEndMonth."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "The value style index uses the book‑to‑market ratio to classify firms."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Historical evidence shows a value effect: higher book‑to‑market ratios predict higher future annual returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Higher leverage increases financial risk and influences the expected return on the firm’s equity."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore rewards low leverage; thus lower leverage raises the quality score."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Past returns affect the firm’s market value (price), thereby altering the book‑to‑market ratio measured at the start of the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market risk premium captured by MarketReturn influences the individual stock’s annual return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "An earnings surprise drives price movements during the year, directly affecting the stock’s total return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors react to earnings surprises by adjusting their holdings in the twelve months following year‑end."
+    }
+  ]
+}
+```

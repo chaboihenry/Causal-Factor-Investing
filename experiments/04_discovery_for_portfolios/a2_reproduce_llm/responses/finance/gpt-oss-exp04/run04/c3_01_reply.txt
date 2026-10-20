@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "nonexistent",
+      "source": "FiscalYearEndMonth",
+      "target": "MarketReturn",
+      "justification": "MarketReturn is the value‑weighted average return of all other US stocks over the 12‑month period following the start of the year; it is independent of the firm's fiscal year end month, so no causal relationship exists."
+    },
+    {
+      "type": "nonexistent",
+      "source": "PastFiveYearReturn",
+      "target": "FiscalYearEndMonth",
+      "justification": "The month in which a firm’s fiscal year ends is a planning decision and does not depend on the firm's past five‑year return, so a causal link should not be included."
+    }
+  ]
+}
+```

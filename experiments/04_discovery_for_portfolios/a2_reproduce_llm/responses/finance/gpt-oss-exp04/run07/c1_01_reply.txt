@@ -1,0 +1,91 @@
+```json
+{
+  "edges": [
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book‑to‑market is measured at the start of the year.  A higher book‑to‑market ratio indicates a stock is undervalued and historically influences its subsequent returns, so the valuation ratio causally affects the 12‑month annual return."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks (high book‑to‑market) attract institutional investors.  Therefore, the book‑to‑market ratio at year‑start causally influences the change in institutional ownership over the following year."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage (total debt / market equity) is measured at the start of the year.  Higher leverage increases financial risk and can alter a firm’s equity return, so leverage causally impacts the annual return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore’s safety component includes low leverage.  Thus the leverage ratio directly influences the computed quality score."
+    },
+    {
+      "source": "Leverage",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors evaluate leverage when adjusting their holdings; higher leverage reduces a firm’s attractiveness, so leverage causally affects institutional ownership changes."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings surprise is the difference between reported earnings and analyst forecasts.  A positive surprise often drives the stock price upward during the year, causing higher annual returns."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Investors react to earnings surprises by buying or selling shares, leading to changes in institutional ownership."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "A higher quality score signals stronger profitability, growth, and safety, making the firm more attractive to institutional investors, which causes institutional ownership to rise."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Past five‑year performance provides a momentum or mean‑reversion signal that influences the subsequent 12‑month return, so it causally affects the annual return."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors often use long‑term performance to inform their portfolio decisions, so past five‑year returns causally influence changes in institutional ownership."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "AnnualReturn",
+      "justification": "Being a member of a value style index indicates a valuation style that historically yields distinct return patterns, thus causally influencing the annual return."
+    },
+    {
+      "source": "ValueIndexMember",
+      "target": "InstOwnershipChange",
+      "justification": "Value stocks attract institutional attention, so membership in a value index causally impacts institutional ownership changes."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The market‑weighted average return of all other US stocks drives the overall market environment; individual stock returns are influenced by the market return, so it causally affects the annual return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional trading strategies respond to market-wide movements; a higher market return can lead to adjustments in institutional holdings, causally affecting ownership change."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore’s beta component is derived from the regression of stock returns on the market return; thus market return causally influences the quality score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The performance of the stock over the year informs institutional investors’ decisions to buy or sell, so the annual return causally influences the change in institutional ownership."
+    },
+    {
+      "source": "FiscalYearEndMonth",
+      "target": "EarningsSurprise",
+      "justification": "The fiscal year‑end month determines the timing of earnings reports; the definition of earnings surprise is tied to the earnings reported during the year, so the fiscal year‑end month causally affects the measurement of earnings surprise."
+    }
+  ]
+}
+```

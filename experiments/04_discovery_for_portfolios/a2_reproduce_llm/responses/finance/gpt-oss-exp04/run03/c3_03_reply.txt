@@ -1,0 +1,19 @@
+```json
+{
+  "valid": false,
+  "corrections": [
+    {
+      "type": "direction",
+      "source": "QualityScore",
+      "target": "AnnualReturn",
+      "justification": "QualityScore is calculated at the end of the year from firm fundamentals; the 12‑month AnnualReturn is measured before that, so the return influences quality, not vice versa. The correct direction is AnnualReturn → QualityScore."
+    },
+    {
+      "type": "nonexistent",
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "MarketReturn represents the aggregate performance of all other US stocks and is independent of a single firm’s quality score. Thus there is no causal relationship MarketReturn → QualityScore."
+    }
+  ]
+}
+```
