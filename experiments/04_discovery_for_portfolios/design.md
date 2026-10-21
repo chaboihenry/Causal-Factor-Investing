@@ -174,7 +174,7 @@ All predictions, with numbers, are in [`predictions.md`](predictions.md), commit
 - [X] `predictions.md`: a number (or range) for every prediction
 - [X] The hybrid's combination rule (A3), exactly; τ from `choose_tau.py`
 - [X] The number of LLM runs per model (gpt-oss 10, Claude 3)
-- [X] **Gate:** committed before any Phase 5 run
+- [ ] **Gate:** committed before any Phase 5 run
 
 **Phase 5 — Run every arm**
 
@@ -204,7 +204,7 @@ experiments/04_discovery_for_portfolios/
   design.md  predictions.md
   common/              paths.py, scoring.py
   graphs/              sprinkler, asia, finance (_variables.json = what the LLM sees, _truth.json = answer key)
-  prompts/             Sokolov's prompts: verbatim transcription (prompts.md), templates C1–C3 (sokolov_prompts.py)
+  prompts/             Sokolov's prompts (sokolov_prompts.py), shared by every LLM run
   responses/           every LLM prompt and reply, by graph / model / run
   a1_reproduce_adia/   data check, PC baseline, 3rd-place reproduction, requirements_third_place.txt
   a2_reproduce_llm/    Modelfile, run_llm.py, refute.py
