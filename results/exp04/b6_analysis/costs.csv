@@ -1,0 +1,7 @@
+arm,runs,calls,calls per run,median call (s),"cost per run (min, median x calls)",total wall clock (min),longest call (s),dollars,human work,one-off cost,test-set cost,source
+A1 gpt-oss:20b (local),10.0,147.0,14.7,44.0,10.78,140.68333333333334,850.0,$0 (local GPU),none,,,
+A1 Claude Opus 5.5 (claude.ai),3.0,36.0,12.0,33.0,6.6,83.93333333333334,1982.0,$0 beyond the Pro plan,paste each prompt by hand,,,
+B1 3rd-place ADIA,,,,,,,,,,"training: 22.6 h wall clock (23,500 datasets, augment x3)",~2-12 min per set to predict,design.md Phase 1; predict_third_place.py logs
+A2 refutation (per LLM run),,,,,,,,,,none beyond A1,~71 min for 12 runs on 16 cores (~6 min per run),run_refute.py log
+C1 PC,,,,,,,,,,none,a few minutes on 16 cores,run_pc.py log
+A3 hybrid,,,,,,,,,,A1 + B1,seconds (combines saved outputs),collect_roles.py

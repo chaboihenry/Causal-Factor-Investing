@@ -1,0 +1,209 @@
+(causal-factor) PS C:\Users\henry\Desktop\Programming and Networking\Personal Projects\Not Finished\Causal Factor Investing> foreach ($r in 1..10) { python $E/a2_reproduce_llm/run_llm.py finance --backend ollama --model gpt-oss-exp04 --run $r }
+    c1_01: 588s, parsed=True
+    c1_02: 180s, parsed=True
+    c1_03: 67s, parsed=True
+    c1_04: 32s, parsed=True
+    c1_05: 74s, parsed=True
+    c1_06: 39s, parsed=True
+    c1_07: 50s, parsed=True
+    c1_08: 37s, parsed=True
+    c1_09: 27s, parsed=True
+    c1_10: 44s, parsed=True
+C1: 31 undirected edges after 10 runs
+    c2: 181s, parsed=True
+    c3_01: 44s, parsed=True
+C3 round 1: valid=False, 6 corrections, 27 edges
+    c3_02: 20s, parsed=True
+C3 round 2: valid=False, 1 corrections, 28 edges
+    c3_03: 44s, parsed=True
+C3 round 3: valid=False, 2 corrections, 28 edges
+    c3_04: 38s, parsed=True
+C3 round 4: valid=True, 0 corrections, 28 edges
+final: 28 edges, acyclic=True, validated=True, failed calls=none
+    c1_01: 37s, parsed=True
+    c1_02: 25s, parsed=True
+    c1_03: 53s, parsed=True
+    c1_04: 50s, parsed=True
+    c1_05: 39s, parsed=True
+    c1_06: 34s, parsed=True
+    c1_07: 47s, parsed=True
+    c1_08: 34s, parsed=True
+    c1_09: 40s, parsed=True
+    c1_10: 28s, parsed=True
+C1: 31 undirected edges after 10 runs
+    c2: 142s, parsed=True
+    c3_01: 56s, parsed=True
+C3 round 1: valid=True, 0 corrections, 31 edges
+final: 31 edges, acyclic=True, validated=True, failed calls=none
+    c1_01: 43s, parsed=True
+    c1_02: 35s, parsed=True
+    c1_03: 31s, parsed=True
+    c1_04: 49s, parsed=True
+    c1_05: 35s, parsed=True
+    c1_06: 26s, parsed=True
+    c1_07: 42s, parsed=True
+    c1_08: 45s, parsed=True
+    c1_09: 32s, parsed=True
+    c1_10: 30s, parsed=True
+C1: 32 undirected edges after 10 runs
+    c2: 113s, parsed=True
+    c3_01: 50s, parsed=True
+C3 round 1: valid=False, 2 corrections, 31 edges
+    c3_02: 30s, parsed=True
+C3 round 2: valid=False, 2 corrections, 31 edges
+    c3_03: 44s, parsed=True
+C3 round 3: valid=False, 2 corrections, 31 edges
+    c3_04: 21s, parsed=True
+C3 round 4: valid=False, 1 corrections, 30 edges
+    c3_05: 57s, parsed=True
+C3 round 5: valid=False, 2 corrections, 30 edges
+final: 30 edges, acyclic=True, validated=False, failed calls=none
+    c1_01: 20s, parsed=True
+    c1_02: 31s, parsed=True
+    c1_03: 41s, parsed=True
+    c1_04: 49s, parsed=True
+    c1_05: 32s, parsed=True
+    c1_06: 34s, parsed=True
+    c1_07: 53s, parsed=True
+    c1_08: 23s, parsed=True
+    c1_09: 49s, parsed=True
+    c1_10: 21s, parsed=True
+C1: 35 undirected edges after 10 runs
+    c2: 132s, parsed=True
+    c3_01: 62s, parsed=True
+C3 round 1: valid=False, 2 corrections, 32 edges
+    c3_02: 49s, parsed=True
+C3 round 2: valid=False, 1 corrections, 32 edges
+    c3_03: 21s, parsed=True
+C3 round 3: valid=False, 1 corrections, 32 edges
+    c3_04: 17s, parsed=True
+C3 round 4: valid=False, 1 corrections, 32 edges
+    c3_05: 17s, parsed=True
+C3 round 5: valid=False, 1 corrections, 32 edges
+final: 32 edges, acyclic=True, validated=False, failed calls=none
+    c1_01: 26s, parsed=True
+    c1_02: 27s, parsed=True
+    c1_03: 38s, parsed=True
+    c1_04: 44s, parsed=True
+    c1_05: 19s, parsed=True
+    c1_06: 47s, parsed=True
+    c1_07: 28s, parsed=True
+    c1_08: 19s, parsed=True
+    c1_09: 32s, parsed=True
+    c1_10: 46s, parsed=True
+C1: 29 undirected edges after 10 runs
+    c2: 66s, parsed=True
+    c3_01: 87s, parsed=True
+C3 round 1: valid=False, 2 corrections, 29 edges
+    c3_02: 21s, parsed=True
+C3 round 2: valid=False, 2 corrections, 28 edges
+    c3_03: 62s, parsed=True
+C3 round 3: valid=False, 1 corrections, 28 edges
+    c3_04: 24s, parsed=True
+C3 round 4: valid=False, 2 corrections, 28 edges
+    c3_05: 26s, parsed=True
+C3 round 5: valid=False, 2 corrections, 27 edges
+final: 27 edges, acyclic=True, validated=False, failed calls=none
+    c1_01: 40s, parsed=True
+    c1_02: 50s, parsed=True
+    c1_03: 34s, parsed=True
+    c1_04: 26s, parsed=True
+    c1_05: 46s, parsed=True
+    c1_06: 33s, parsed=True
+    c1_07: 50s, parsed=True
+    c1_08: 32s, parsed=True
+    c1_09: 35s, parsed=True
+    c1_10: 28s, parsed=True
+C1: 28 undirected edges after 10 runs
+    c2: 95s, parsed=True
+    c3_01: 15s, parsed=True
+C3 round 1: valid=False, 2 corrections, 28 edges
+    c3_02: 41s, parsed=True
+C3 round 2: valid=False, 1 corrections, 28 edges
+    c3_03: 56s, parsed=True
+C3 round 3: valid=True, 0 corrections, 28 edges
+final: 28 edges, acyclic=True, validated=True, failed calls=none
+    c1_01: 49s, parsed=True
+    c1_02: 39s, parsed=True
+    c1_03: 29s, parsed=True
+    c1_04: 25s, parsed=True
+    c1_05: 33s, parsed=True
+    c1_06: 40s, parsed=True
+    c1_07: 70s, parsed=True
+    c1_08: 50s, parsed=True
+    c1_09: 46s, parsed=True
+    c1_10: 56s, parsed=True
+C1: 30 undirected edges after 10 runs
+    c2: 149s, parsed=True
+    c3_01: 78s, parsed=True
+C3 round 1: valid=False, 1 corrections, 30 edges
+    c3_02: 112s, parsed=True
+C3 round 2: valid=False, 3 corrections, 33 edges
+    c3_03: 69s, parsed=True
+C3 round 3: valid=False, 2 corrections, 31 edges
+    c3_04: 20s, parsed=True
+C3 round 4: valid=False, 2 corrections, 31 edges
+    c3_05: reply was not valid JSON (attempt 1)
+    c3_05: 52s, parsed=True
+C3 round 5: valid=True, 0 corrections, 31 edges
+final: 31 edges, acyclic=True, validated=True, failed calls=none
+    c1_01: 64s, parsed=True
+    c1_02: 43s, parsed=True
+    c1_03: 46s, parsed=True
+    c1_04: 65s, parsed=True
+    c1_05: 19s, parsed=True
+    c1_06: 51s, parsed=True
+    c1_07: 40s, parsed=True
+    c1_08: 33s, parsed=True
+    c1_09: 44s, parsed=True
+    c1_10: 42s, parsed=True
+C1: 25 undirected edges after 10 runs
+    c2: 72s, parsed=True
+    c3_01: 90s, parsed=True
+C3 round 1: valid=True, 0 corrections, 25 edges
+final: 25 edges, acyclic=True, validated=True, failed calls=none
+    c1_01: 49s, parsed=True
+    c1_02: 48s, parsed=True
+    c1_03: 68s, parsed=True
+    c1_04: 51s, parsed=True
+    c1_05: 35s, parsed=True
+    c1_06: 44s, parsed=True
+    c1_07: 45s, parsed=True
+    c1_08: 53s, parsed=True
+    c1_09: 51s, parsed=True
+    c1_10: 33s, parsed=True
+C1: 29 undirected edges after 10 runs
+    c2: 850s, parsed=True
+    c3_01: reply was not valid JSON (attempt 1)
+    c3_01: 162s, parsed=True
+C3 round 1: valid=False, 2 corrections, 29 edges
+    c3_02: 52s, parsed=True
+C3 round 2: valid=False, 2 corrections, 29 edges
+    c3_03: 67s, parsed=True
+C3 round 3: valid=False, 2 corrections, 28 edges
+    c3_04: reply was not valid JSON (attempt 1)
+    c3_04: 31s, parsed=True
+C3 round 4: valid=False, 1 corrections, 28 edges
+    c3_05: 51s, parsed=True
+C3 round 5: valid=False, 3 corrections, 31 edges
+final: 31 edges, acyclic=True, validated=False, failed calls=none
+    c1_01: 60s, parsed=True
+    c1_02: 37s, parsed=True
+    c1_03: 30s, parsed=True
+    c1_04: 60s, parsed=True
+    c1_05: 56s, parsed=True
+    c1_06: 25s, parsed=True
+    c1_07: 36s, parsed=True
+    c1_08: 51s, parsed=True
+    c1_09: 22s, parsed=True
+    c1_10: 34s, parsed=True
+C1: 35 undirected edges after 10 runs
+    c2: 117s, parsed=True
+    c3_01: 45s, parsed=True
+C3 round 1: valid=False, 7 corrections, 31 edges
+    c3_02: 50s, parsed=True
+C3 round 2: valid=False, 3 corrections, 28 edges
+    c3_03: 25s, parsed=True
+C3 round 3: valid=True, 0 corrections, 28 edges
+final: 28 edges, acyclic=True, validated=True, failed calls=none
+(causal-factor) PS C:\Users\henry\Desktop\Programming and Networking\Personal Projects\Not Finished\Causal Factor Investing> 
