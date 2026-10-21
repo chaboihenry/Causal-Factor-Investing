@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year build up the market value of equity measured at the start of the year. That market value is the denominator of BookToMarket, so strong past returns lower the ratio and weak past returns raise it. The past window comes first, so the direction runs from past returns to the ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by the start-of-year market value of equity. The prior five-year return determines that market value, so it mechanically moves leverage. The five-year window comes before the measurement date."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indexes assign stocks mainly on book-to-market. A high ratio makes it more likely the stock is classified into the value index at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value premium: start-of-year book-to-market reflects risk and mispricing that predict, and partly drive, the stock's return over the following twelve months. The ratio is measured first, so causality flows forward in time."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage at the start of the year amplifies the equity's exposure to firm and market shocks. That changes the risk and the realized return over the next twelve months."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Long-term return reversal (De Bondt and Thaler): stocks with extreme returns over the prior three to five years tend to partially reverse over the following year. The past window comes first."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic risk exposure: market-wide movements over the same twelve months drive the individual stock's return through its beta. MarketReturn excludes this firm, so there is no reverse mechanical link."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "News in reported earnings relative to analyst forecasts during the year triggers price reactions, including the post-earnings-announcement drift. This directly affects the stock's twelve-month return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore includes stock beta estimated from the stock's returns. The year's realized returns therefore feed into the end-of-year score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Estimating stock beta, part of the safety component, requires market returns over the same period. Market returns during the year therefore enter the end-of-year score."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is an explicit input to the safety component. Capital structure is persistent, so start-of-year leverage strongly determines the leverage used in the end-of-year score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tilt toward high-quality (profitable, safe, growing) firms. A higher quality score at year end leads to increases in institutional ownership over the following twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions show momentum and window-dressing behavior: strong returns during the year attract institutional buying in the twelve months after year end. The return comes before the ownership change."
+    }
+  ]
+}

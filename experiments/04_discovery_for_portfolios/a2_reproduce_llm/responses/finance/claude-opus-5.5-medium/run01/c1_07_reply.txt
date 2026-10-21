@@ -1,0 +1,54 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year determine the market value of equity at the start of the year, which is the denominator of BookToMarket. Strong past returns raise market equity and lower BookToMarket. The return period comes before the measurement date, so the edge runs from past returns to BookToMarket."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Market equity at that date is the result of the stock's price path over the preceding five years. Past returns therefore mechanically shift Leverage, and they come first in time."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks mainly on book-to-market ratios. A high BookToMarket at the start of the year causes the stock to be classified into the value index at that same point in time."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings reported during the year that differ from analysts' forecasts move the stock price when they are announced. Positive surprises raise returns and negative surprises lower them. The announcements fall inside the twelve-month return window."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements over the same twelve months drive individual stock returns through the stock's market exposure. MarketReturn excludes this firm, so the firm's own return cannot mechanically cause the market return. The causal direction is therefore from the market to the stock."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore is constructed partly from a safety component that rewards low leverage. Higher leverage at the start of the year carries through to a lower safety and quality score measured at the end of the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore includes a stock beta estimated from the stock's returns, which include the returns earned during the year. QualityScore is measured at the end of the year, after those returns are realized, so it is mechanically derived in part from AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta, part of QualityScore's safety component, is estimated by regressing the stock's returns on market returns. The market returns over the year therefore enter the beta estimate that feeds the end-of-year QualityScore."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to buy profitable, growing, safe firms. A high QualityScore at year end leads institutions to raise their holdings over the following twelve months, which come after the score is measured."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions trade on recent performance through momentum buying and window dressing. The stock's return during the year therefore affects how institutional ownership changes over the twelve months after year end. The return comes before the ownership change."
+    }
+  ]
+}

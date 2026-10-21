@@ -1,0 +1,79 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "The stock's return over the five years before the start of the year determines its market value of equity at the start of the year. That market value is the denominator of BookToMarket, so strong past returns mechanically lower the ratio. The past period comes before the measurement date, so causality runs from PastFiveYearReturn to BookToMarket."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Prior five-year returns drive that market value of equity, so past price appreciation lowers measured Leverage. The return period precedes the measurement date."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Long-term reversal: stocks with high returns over the prior three to five years tend to underperform in the following year, and past losers tend to outperform (De Bondt and Thaler). The past window strictly precedes the AnnualReturn window."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indexes assign stocks largely by their book-to-market ratio, so a high BookToMarket causes the stock to be assigned to a value index. Both are measured at the start of the year, and index assignment is constructed from the valuation ratio."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Value premium: high book-to-market stocks have higher expected subsequent returns, through risk compensation or the correction of mispricing. BookToMarket is measured at the start of the year and precedes the twelve months over which AnnualReturn is measured."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage amplifies equity risk and affects expected equity returns (Modigliani-Miller Proposition II, distress effects). Leverage is measured at the start of the year, before the return window."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component explicitly includes low leverage, so the firm's debt-to-equity position feeds into the score. Leverage is measured at the start of the year and QualityScore at the end, so the direction is Leverage to QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements drive individual stock returns through the market factor (CAPM). MarketReturn excludes the firm itself, so there is no reverse mechanical link. The firm's return responds to the market, not the other way around."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore uses the stock's beta. Beta is estimated by relating the stock's returns to market returns, so market returns during the year are an input to the end-of-year score."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings announcements that deviate from analyst forecasts cause price reactions and post-earnings-announcement drift. The surprise occurs during the year and drives the stock's return over that year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "A positive surprise means reported earnings during the year exceeded expectations. Those reported earnings feed the profitability and growth components of the end-of-year QualityScore. The surprise occurs before the score is measured at the end of the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component includes low stock beta estimated from the stock's returns. The stock's returns during the year are therefore an input to the score measured at the end of the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to buy recent winners and sell recent losers (momentum trading and window dressing). The year's return precedes the twelve-month window after the end of the year over which ownership change is measured."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions prefer high-quality firms: profitable, growing and safe stocks fit prudent-investor standards and quality mandates. The end-of-year score therefore influences institutional buying and selling over the following twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions revise their holdings in response to earnings news, buying after positive surprises and selling after negative ones. The surprise during the year precedes the ownership-change window after the end of the year."
+    }
+  ]
+}

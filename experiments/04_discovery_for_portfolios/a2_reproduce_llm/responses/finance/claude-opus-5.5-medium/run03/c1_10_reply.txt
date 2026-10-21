@@ -1,0 +1,64 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year shape the market value of equity at the start of the year. Market value is the denominator of BookToMarket, so strong past returns lower BookToMarket and poor past returns raise it. PastFiveYearReturn comes first in time."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by the start-of-year market value of equity. That market value reflects the price changes accumulated over the prior five years, so past returns mechanically change Leverage. PastFiveYearReturn comes first in time."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indexes assign stocks mainly on valuation ratios, chiefly book-to-market. A higher BookToMarket raises the chance that a stock is classified as value at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Under the value premium, a high book-to-market ratio at the start of the year signals higher risk or mispricing, which leads to higher expected returns over the following twelve months. BookToMarket comes before AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "The stock's return over the same twelve months is driven partly by market-wide movements through its exposure to systematic risk. MarketReturn excludes this firm, so the stock's return cannot mechanically drive MarketReturn, and the direction runs from the market to the stock."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "When reported earnings beat or miss analyst forecasts during the year, prices react at the announcement and drift afterward. This makes EarningsSurprise a driver of the stock's return over that year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The surprise reflects reported earnings that differ from forecasts. Those same reported earnings feed the profitability, growth and stability components of the end-of-year QualityScore. The earnings are realized during the year, before QualityScore is measured."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a safety component that rewards low leverage. Leverage at the start of the year largely persists to the end of the year, so it directly affects the leverage input to QualityScore. Leverage comes first in time."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore uses a beta estimated from the stock's returns, and end-of-year market leverage depends on the price change over the year. The stock's return during the year therefore feeds into the end-of-year QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "The stock beta in the safety component is estimated by regressing the stock's returns on market returns. Market returns over the year are therefore an input to the beta, and so to QualityScore at the end of the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to prefer profitable, stable, low-risk firms. A higher QualityScore at the end of the year leads to more institutional buying over the following twelve months, and QualityScore comes first in time."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions trade on momentum and rebalance in response to recent performance. The stock's return during the year therefore affects changes in institutional ownership over the twelve months after the year ends."
+    }
+  ]
+}

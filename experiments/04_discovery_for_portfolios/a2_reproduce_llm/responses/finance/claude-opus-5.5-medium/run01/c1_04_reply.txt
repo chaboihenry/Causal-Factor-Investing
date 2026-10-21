@@ -1,0 +1,59 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "The five-year return before the start of the year is a main driver of the market value of equity at the start of the year, which is the denominator of BookToMarket. It comes earlier in time, so the edge runs from PastFiveYearReturn to BookToMarket."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Past stock returns determine that market value, so they come first and drive Leverage."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Style index providers assign stocks to value indices mainly on book-to-market. ValueIndexMember is therefore built from BookToMarket."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "Book-to-market is measured at the start of the year and is a well-documented driver of expected returns (the value premium). It comes before the following twelve-month return, so it can influence it."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Both cover the same twelve months. Market-wide movements drive individual stock returns through systematic risk exposure. MarketReturn excludes this firm, so the firm's return cannot mechanically affect it, and the edge runs from MarketReturn to AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings reported during the year that differ from analyst forecasts are news that moves the stock price. They therefore drive the stock's return over the same year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes safety measured partly by low leverage. Leverage is measured at the start of the year and QualityScore at the end, so Leverage is an input to the score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component includes a stock beta estimated from the stock's returns. The returns over the year feed that estimate, and the score is measured at year end."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta measures how the stock's returns move with market returns, so market returns over the year enter the beta estimate inside the year-end QualityScore."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to screen for and favor high-quality firms. QualityScore at year end comes before the change in institutional ownership over the following twelve months, so it can drive that change."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions trade on recent performance (momentum, window dressing and performance chasing). The return during the year comes before the ownership change in the twelve months after year end."
+    }
+  ]
+}

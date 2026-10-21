@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "The stock's return over the five years before the start of the year determines the market value of equity at the start of the year. Market value is the denominator of BookToMarket, so strong past returns mechanically lower BookToMarket and weak past returns raise it. The return comes first in time."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Past returns set the market value of equity at the start of the year, which is the denominator of Leverage (total debt / market equity). High past returns lower measured Leverage. The five-year return comes before the start-of-year measurement."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indexes assign stocks largely by their book-to-market ratio, so high BookToMarket stocks are put in the value index. Index membership is built from BookToMarket, which is known at assignment."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket at the start of the year reflects the discount rate, or the risk and mispricing, priced into the stock. This affects expected returns over the next twelve months (the value premium). It is measured before the return period."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage at the start of the year raises equity risk and makes equity returns more sensitive to firm value changes (Modigliani-Miller Proposition II). This shapes the stock's return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component explicitly includes low leverage. Leverage at the start of the year persists through the year and feeds into the end-of-year composite score."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements drive individual stock returns through market beta. MarketReturn excludes this firm, so there is no mechanical reverse link. It covers the same twelve months, so the market-wide shock causes part of the stock's return."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component uses a stock beta estimated from the stock's returns. The year's returns, measured before the end-of-year score, are inputs to that beta and so to QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "The beta in QualityScore's safety component is estimated by regressing the stock's returns on market returns. Market returns during the year are therefore a construction input to the end-of-year QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Reported earnings that differ from analysts' forecasts during the year cause price reactions at the earnings announcement. This directly affects the stock's return over the same twelve-month window."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings reported during the year, and how far they beat or miss expectations, feed the profitability, growth and profit-stability components of the QualityScore measured at the end of the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer high-quality firms (profitable, growing, safe), partly because of prudent-investor constraints. The end-of-year QualityScore comes before, and influences, how institutional ownership changes over the next twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions trade on past performance through momentum, window dressing and benchmark rebalancing. The stock's return during the year affects how institutional holdings change over the twelve months after the year ends."
+    }
+  ]
+}

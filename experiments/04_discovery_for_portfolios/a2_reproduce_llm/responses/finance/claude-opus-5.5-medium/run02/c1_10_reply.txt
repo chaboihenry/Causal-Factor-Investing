@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year determine the market value of equity at the start of the year. Market value of equity is the denominator of BookToMarket, so strong past returns lower BookToMarket. PastFiveYearReturn comes first in time."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage uses market value of equity in its denominator. Past returns build that market value, so high past returns reduce Leverage measured at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks mainly by book-to-market. A higher BookToMarket raises the chance the stock is placed in a value index at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year and shapes the expected return over the following twelve months. This is the well-documented value premium, in which high book-to-market firms earn higher subsequent returns."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage at the start of the year raises the financial risk of equity and amplifies equity return sensitivity. This affects the stock's return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore has a safety component that rewards low leverage. Leverage at the start of the year is highly persistent into the end-of-year measurement, so higher leverage lowers QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Market-wide movements over the same twelve months drive individual stock returns through systematic exposure. MarketReturn excludes this firm, so causality runs from the market to the stock and not the reverse."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore includes stock beta. Beta is estimated from the stock's returns relative to market returns, so realized market returns during the year feed into the beta estimate in the end-of-year QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that deviate from analyst forecasts during the year trigger price reactions on announcement. This directly affects the stock's twelve-month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Reported earnings during the year feed the profitability, growth and profitability-stability components of the end-of-year QualityScore. An earnings surprise is the deviation of those reported earnings from forecasts."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore is measured at the end of the year and includes a beta estimated from the stock's returns. The year's returns also change market equity, which affects end-of-year leverage in the safety component."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors adjust holdings in response to recent performance, for example through momentum and window-dressing behaviour. The year's return comes before the ownership change measured over the twelve months after the end of the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions prefer profitable, stable, low-risk firms. QualityScore is measured at the end of the year, before the institutional ownership change in the following twelve months, so it influences that change."
+    }
+  ]
+}

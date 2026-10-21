@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year directly move the market value of equity, which is the denominator of BookToMarket measured at the start of the year. High past returns raise market equity and lower BookToMarket. PastFiveYearReturn comes first chronologically."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by the market value of equity at the start of the year. Past five-year returns set that market equity, so strong past returns mechanically reduce Leverage. PastFiveYearReturn comes first."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indexes assign stocks largely by book-to-market. A high BookToMarket ratio causes a stock to be classified into the value index at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value premium: start-of-year BookToMarket reflects risk and mispricing that affect the stock's return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage at the start of the year raises equity risk and amplifies the stock's return over the following twelve months (Modigliani-Miller leverage effect on equity returns)."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements over the same twelve months drive the individual stock's return through its market exposure. Because MarketReturn excludes this firm, the direction is from the aggregate market to the stock, not the reverse."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that differ from analyst forecasts during the year trigger price reactions (earnings announcement returns and post-earnings drift). These reactions form part of the stock's twelve-month return."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Reported earnings during the year, whose deviation from forecasts is the surprise, feed the profitability, growth and profitability-stability components of the end-of-year QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component is explicitly built from low leverage. Start-of-year leverage persists and shapes the end-of-year measure."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore includes a stock beta estimated from the stock's returns, so the year's returns are an input to it. The returns also change market equity, which affects the market-based leverage in the safety component measured at the end of the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "The stock beta in QualityScore's safety component is estimated by relating the stock's returns to market returns over the year. That makes MarketReturn a constructive input to the end-of-year score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to favor high-quality, profitable, safe firms (prudent-investor preferences). The end-of-year QualityScore therefore influences changes in institutional holdings over the following twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions engage in momentum trading and window dressing based on recent performance. The year's return therefore affects how institutional ownership changes in the twelve months after year end."
+    }
+  ]
+}

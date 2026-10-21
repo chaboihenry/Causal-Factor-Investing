@@ -1,0 +1,74 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "PastFiveYearReturn covers the five years before the start of the year, and BookToMarket is measured at the start of the year, so the return comes first. Strong past returns raise the market value of equity, the denominator of BookToMarket, which lowers the ratio. Weak past returns raise it."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Returns over the prior five years determine that market value, so past returns drive Leverage mechanically: high returns lower it and low returns raise it."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks largely on book-to-market. Both are measured at the start of the year, and BookToMarket is the input to the assignment rule, so the ratio determines index membership rather than the reverse."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year, and AnnualReturn covers the following twelve months. Under the value premium, a higher book-to-market ratio predicts higher subsequent returns, so causality runs from the earlier ratio to the later return."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Leverage is measured at the start of the year and AnnualReturn covers the twelve months that follow. Financial leverage amplifies equity risk and affects expected and realized returns, so the direction runs from Leverage to AnnualReturn."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "PastFiveYearReturn covers the five years before the year, and AnnualReturn covers the year itself. Long-term reversal means past performance predicts subsequent returns. A future return cannot affect a past return, so the direction runs from PastFiveYearReturn to AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn covers the same twelve months but excludes this firm, so it reflects economy-wide shocks. Systematic market movements drive an individual stock's return through its market exposure. One stock excluded from the index cannot drive the aggregate."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings reported during the year that differ from analysts' forecasts are news that investors price in. Positive surprises lift the stock's return during the year and negative ones depress it, so EarningsSurprise causes AnnualReturn."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "EarningsSurprise reflects earnings reported during the year, and QualityScore is measured at the end of the year. Reported earnings feed the profitability, growth and profit-stability components of QualityScore, so EarningsSurprise is an input to the composite."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component is built partly from low leverage, by definition. Leverage is measured at the start of the year and is a constructed input to QualityScore at the end of the year, so the direction runs from Leverage to QualityScore."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component includes the stock's beta estimated from its own returns. The returns over the year, captured by AnnualReturn, are inputs to that estimate, and QualityScore is measured at the end of the year, so AnnualReturn feeds into QualityScore."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta is estimated by relating the stock's returns to the market's returns, so the market return series over the year is an input to the beta in QualityScore's safety component. QualityScore is measured at the end of the year, after MarketReturn is realized."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange covers the twelve months after the end of the year, so it comes after AnnualReturn. Institutions rebalance toward recent winners and away from losers, so the year's return drives the later ownership change. A later change cannot affect an earlier return."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "QualityScore is measured at the end of the year, and InstOwnershipChange covers the following twelve months. Institutions screen for quality firms when building portfolios, so the earlier QualityScore drives the later ownership change."
+    }
+  ]
+}

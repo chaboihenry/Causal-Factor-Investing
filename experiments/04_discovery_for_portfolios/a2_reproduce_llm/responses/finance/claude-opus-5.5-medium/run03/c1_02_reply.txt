@@ -1,0 +1,74 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Strong returns over the five years before the start of the year raise the firm's market value of equity, the denominator of BookToMarket, which lowers the ratio measured at the start of the year. PastFiveYearReturn comes first in time, so the edge runs from it to BookToMarket."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Past returns build up the market value of equity, which mechanically lowers Leverage. The past return period comes before the measurement date."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks mainly on book-to-market. A higher BookToMarket raises the likelihood that the stock is classified into a value index at the start of the year."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value premium: a higher book-to-market at the start of the year predicts higher subsequent returns, through a risk premium or the correction of mispricing. The return is measured over the twelve months that follow."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage at the start of the year raises equity risk (Modigliani-Miller Proposition II). It amplifies and shifts the expected return over the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements drive individual stock returns through the firm's market exposure (CAPM beta). MarketReturn excludes this firm, so the influence flows from the market to the stock and not the reverse."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that deviate from analyst forecasts during the year are news that moves the stock price within the same return window. Positive surprises raise returns and negative surprises lower them."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore is constructed partly from safety, which explicitly includes low leverage. Leverage is measured at the start of the year and feeds into the score measured at the end of the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The safety component uses a stock beta estimated from the stock's returns. The returns realized during the year enter that estimate and therefore the QualityScore computed at the end of the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta is estimated by relating the stock's returns to market returns, so market returns over the year enter the beta estimate. That estimate feeds the safety component of QualityScore measured at the end of the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Reported earnings above or below expectations during the year directly shape the measured profitability, growth and profit stability that make up QualityScore at the end of the year."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to prefer high-quality firms (profitable, growing, safe). The end-of-year QualityScore therefore influences institutional buying or selling over the following twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions engage in momentum trading and window dressing. Strong returns during the year attract institutional buying in the subsequent twelve months, and poor returns lead to selling."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions trade on earnings news, including post-earnings-announcement drift. A surprise during the year leads to changes in institutional holdings over the period after year-end."
+    }
+  ]
+}

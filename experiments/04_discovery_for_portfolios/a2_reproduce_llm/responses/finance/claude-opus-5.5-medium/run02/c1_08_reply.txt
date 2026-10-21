@@ -1,0 +1,49 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "The market value of equity at the start of the year reflects the stock's price gains or losses over the previous five years. Strong past returns raise market equity and so lower book-to-market. PastFiveYearReturn comes before the start-of-year measurement, so the edge runs from it to BookToMarket."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage at the start of the year is total debt divided by market equity, and market equity is shaped by the prior five years of returns. Higher past returns increase the denominator and mechanically reduce leverage. The returns come first in time."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks mainly by book-to-market ratios. A high book-to-market ratio causes a stock to be classified into the value index at the start of the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Over the same twelve months, the return of all other US stocks captures systematic market-wide shocks such as macro news, discount-rate changes and risk appetite. These shocks move the individual stock's return. The market return excludes this firm, so it is not built from AnnualReturn, and the influence runs from the market to the stock."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings reported during the year that differ from analysts' forecasts are new information, and prices adjust to it within the same twelve-month window. Positive surprises push returns up and negative surprises push them down."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore is partly built from a safety component that includes low leverage. Start-of-year leverage is persistent and determines the leverage that feeds into the end-of-year score. The start-of-year measurement comes before the end-of-year score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component uses a stock beta estimated from the stock's returns. The returns realized during the year are inputs to that end-of-year beta estimate, so they come first and feed into the score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer, and often screen for, profitable, growing and safe firms. A high quality score measured at the end of the year leads institutions to increase their holdings over the following twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions are known to chase performance and trade on momentum, so a stock's return over the year affects their buying and selling over the next twelve months. Its weight in benchmark-tracking portfolios also changes. The return is realized before the ownership change window."
+    }
+  ]
+}

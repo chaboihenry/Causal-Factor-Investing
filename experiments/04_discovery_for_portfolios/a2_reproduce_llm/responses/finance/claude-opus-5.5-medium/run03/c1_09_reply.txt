@@ -1,0 +1,54 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "The stock's return over the five years before the start of the year directly drives the market value of equity at the start of the year. Market equity is the denominator of BookToMarket. High past returns raise market equity and lower BookToMarket, which is the well-documented long-term reversal and value link. Chronologically, PastFiveYearReturn ends exactly when BookToMarket is measured, so causality flows from past returns to the ratio."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. The cumulative stock return over the prior five years determines how large that market equity is. Strong past returns mechanically lower market leverage, and weak returns raise it. Past returns come before the start-of-year measurement."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks mainly by book-to-market ratios, so a higher BookToMarket causes a stock to be placed in a value index. Both are measured at the start of the year. Index assignment is built from the ratio, not the other way around."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value premium in finance holds that firms with high book-to-market ratios, which are often distressed or carry higher risk, earn higher expected returns afterward. BookToMarket is measured at the start of the year and AnnualReturn covers the following twelve months, so the direction runs from BookToMarket to AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Under the market model and CAPM, a stock's return is largely driven by systematic market movements through its beta. MarketReturn excludes this firm, so it is not built from the firm's own return. That rules out reverse causality, so the market return causes part of the stock's AnnualReturn over the same twelve months."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that differ from analysts' forecasts move prices on announcement and through post-earnings-announcement drift. The surprise happens during the year and is new information that investors price, so it causes changes in the stock's twelve-month return."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component explicitly includes low leverage, so leverage feeds into the composite by construction. Leverage at the start of the year persists and shapes the leverage reflected in the end-of-year score. The start-of-year measurement comes before the end-of-year score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component includes the stock's beta, which is estimated from the stock's returns. The stock's returns during the year therefore enter the end-of-year composite by construction. AnnualReturn covers the year before QualityScore is measured, so the direction runs from returns to the score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer profitable, growing, safe, high-quality firms, a 'prudent investor' preference. A firm's quality measured at the end of the year influences institutions' buying and selling over the following twelve months. The score comes before the ownership-change window."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions tend to chase past performance through momentum trading and window dressing, so the stock's return during the year affects the change in institutional ownership over the twelve months after year-end. The return comes before the ownership change, so the direction runs from AnnualReturn to InstOwnershipChange."
+    }
+  ]
+}

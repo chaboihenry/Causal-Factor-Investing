@@ -1,0 +1,64 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year drive the firm's market value of equity at the start of the year. Strong past returns raise market equity and lower book-to-market, and poor past returns raise it. The past-return window ends before BookToMarket is measured, so causality runs from PastFiveYearReturn to BookToMarket."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Prior five-year returns set that market equity denominator, so past price performance mechanically changes start-of-year leverage. The return window precedes the leverage measurement date."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style index providers assign stocks to the value index mainly on book-to-market (or closely related value metrics). A higher BookToMarket raises the likelihood of membership, so membership is derived from BookToMarket. Both are measured at the start of the year, and the index assignment is constructed from the valuation ratio, not the other way around."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "This is the value premium: book-to-market measured at the start of the year predicts and influences the stock's return over the following twelve months, through risk compensation or the correction of mispricing. BookToMarket comes before the return window."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Under Modigliani-Miller logic, higher financial leverage at the start of the year raises equity risk and expected equity returns, and it amplifies how much the stock's subsequent return responds to firm-value changes. Leverage is measured before the twelve-month return window."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Reported earnings that differ from analysts' forecasts during the year move the stock price when they are announced (the earnings announcement return), and prices keep drifting afterwards. The surprise happens within the return window, so it is a direct cause of AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic (beta) exposure means market-wide movements over the same twelve months drive the individual stock's return. MarketReturn excludes this firm, so the firm's return cannot mechanically feed back into it, and the direction is market to stock."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore is constructed partly from a safety component that rewards low leverage. Start-of-year leverage persists and determines the leverage used in the end-of-year score, so higher Leverage lowers QualityScore. Leverage is measured before QualityScore."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore includes stock beta estimated from the stock's returns. The returns realized during the year feed into that beta estimate at year end, so AnnualReturn is an input to the score. AnnualReturn ends at or before the year-end measurement date of QualityScore."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "EarningsSurprise reflects reported earnings during the year relative to expectations. Higher-than-expected reported earnings mean higher realized profitability and growth, which are components of the end-of-year QualityScore. The surprise occurs during the year, before QualityScore is measured."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer high-quality, profitable, low-risk firms because of prudent-investor standards and quality-tilted mandates. The end-of-year QualityScore therefore drives changes in institutional ownership over the following twelve months, and it precedes that ownership-change window."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions trade on past performance: they chase momentum and window-dress portfolios toward recent winners. The stock's return during the year therefore influences institutional buying and selling over the twelve months after year end, so AnnualReturn precedes and affects InstOwnershipChange."
+    }
+  ]
+}

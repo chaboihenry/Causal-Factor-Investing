@@ -1,0 +1,74 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "PastFiveYearReturn covers the five years before the start of the year, and BookToMarket is measured at the start of the year. Past price changes move the market value of equity, which is the denominator of BookToMarket. Strong past returns push BookToMarket down and weak past returns push it up."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity, measured at the start of the year. Returns over the prior five years change the market value of equity, so they mechanically change Leverage. The return period comes first."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "AnnualReturn",
+      "justification": "Long-horizon past returns predict future returns through the long-term reversal effect: stocks with past losses tend to outperform those with past gains. PastFiveYearReturn ends before the twelve months covered by AnnualReturn begin."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Style index providers assign stocks to value indices mainly on value metrics, chiefly book-to-market. Both are measured at the start of the year, and BookToMarket is the input to the assignment, so it determines membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is a well-documented driver of expected returns (the value premium). It is measured at the start of the year, before the twelve-month return period, so it can influence the subsequent AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn covers the same twelve months and excludes this firm. It captures the systematic market factor that drives a large share of an individual stock's return. Because the firm is excluded, the reverse direction does not hold."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that deviate from analyst forecasts during the year trigger price reactions within the same period. Earnings announcement returns and post-earnings-announcement drift are examples. The surprise is news that moves the stock's total return over the year."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore explicitly includes safety, defined partly as low leverage. Leverage at the start of the year largely persists to and shapes the leverage reflected in QualityScore at year end, so it feeds into the composite."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component includes a stock beta estimated from the stock's returns. The stock's returns over the year, measured before QualityScore at year end, are an input to that beta estimate."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta is estimated by relating the stock's returns to market returns. MarketReturn over the year is therefore an input to the beta in QualityScore's safety component, which is measured at year end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "QualityScore includes profitability, growth and stable profitability, all measured at year end. Earnings reported during the year, which differ from forecasts by the amount of the surprise, directly affect these profitability and growth measures."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tilt toward high-quality firms: profitable, growing and safe. QualityScore is measured at year end, before the twelve-month window of InstOwnershipChange, so it can drive later changes in institutional holdings."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions tend to buy recent winners and sell recent losers, through momentum trading and window dressing. The year's stock return comes before the ownership-change period, which starts after year end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors respond to earnings news by adjusting positions. Positive surprises attract institutional buying and negative surprises lead to selling. The surprise occurs during the year, before the ownership-change period."
+    }
+  ]
+}

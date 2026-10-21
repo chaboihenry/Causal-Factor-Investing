@@ -1,0 +1,44 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "PastFiveYearReturn covers the five years before the start of the year, so it comes before BookToMarket. Strong past returns raise the market value of equity, which is the denominator of BookToMarket, and so lower the ratio. Weak returns raise it."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by the market value of equity, measured at the start of the year. Past returns, which come earlier, set that market value. Higher past returns lower Leverage and lower past returns raise it."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks mainly on book-to-market. A higher BookToMarket at the start of the year makes the stock more likely to be classified as a value index member."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn covers the same twelve months and excludes this firm, so there is no mechanical feedback from the firm's own return. It captures systematic market-wide movements that drive the stock's return through its market exposure."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings are reported during the year, inside the return window. When reported earnings differ from analysts' forecasts, the price reacts to the new information, so positive surprises raise returns and negative surprises lower them."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "The safety component of QualityScore explicitly includes low leverage. Leverage at the start of the year is persistent and largely determines leverage at the end of the year, when QualityScore is measured."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore is measured at the end of the year and includes a stock beta estimated from the stock's returns, which include the year's returns. The year's return also changes end-of-year market equity, which affects the leverage part of the safety component."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "InstOwnershipChange covers the twelve months after the end of the year, so it comes after QualityScore. Institutional investors tend to prefer profitable, growing, safe firms, so a higher QualityScore attracts more institutional buying in the following year."
+    }
+  ]
+}

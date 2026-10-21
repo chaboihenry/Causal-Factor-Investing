@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Stock returns over the five years before the start of the year determine the firm's market value of equity at the start of the year, which is the denominator of BookToMarket. High past returns raise market value and lower BookToMarket. The return period comes before the measurement date."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Past returns change the market value of equity, so they directly change Leverage. The cause comes first in time."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Style index providers assign stocks to value indices mainly on book-to-market ratios. A higher BookToMarket raises the chance the stock is placed in a value index."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value premium: book-to-market measured at the start of the year reflects risk and mispricing, and it predicts and drives returns over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage at the start of the year amplifies equity risk and the sensitivity of equity value to firm performance. This affects the stock's return over the following twelve months."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements over the same twelve months drive the individual stock's return through its market exposure. MarketReturn excludes this firm, so the firm's own return does not feed back into it."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Reported earnings that differ from analysts' forecasts during the year cause price reactions at the announcement and price drift afterward. These directly change the stock's return over the year."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "The safety part of QualityScore includes stock beta estimated from the stock's returns. The year's returns therefore feed into the end-of-year score, which is measured later."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta, part of the safety component, is estimated from how the stock's returns move with market returns. Market returns over the year are therefore an input to the end-of-year QualityScore."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "Low leverage is an explicit input to the safety part of QualityScore. Leverage at the start of the year persists into and shapes the leverage measured at year end."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The earnings reported during the year, which create the surprise, feed the profitability, growth and profit-stability parts of QualityScore measured at year end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tilt toward high-quality, profitable and safe firms. The end-of-year quality profile drives how institutional holdings change in the twelve months after year end."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions trade on past performance through momentum chasing and window dressing. The year's stock return therefore affects how their holdings change over the following twelve months."
+    }
+  ]
+}

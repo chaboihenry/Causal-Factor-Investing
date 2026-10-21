@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year build up the market value of equity, which is the denominator of BookToMarket measured at the start of the year. Strong past returns lower BookToMarket, and the timing runs from past to present."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Prior five-year returns set that market value, so higher past returns mechanically lower market leverage."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Style index providers assign stocks to value indices mainly on book-to-market. A higher BookToMarket at the start of the year causes value index membership."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "The value premium is well documented: BookToMarket, measured at the start of the year, proxies for distress risk and expected return. It therefore influences the stock's return over the following twelve months."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage amplifies equity risk and the stock's sensitivity to shocks. Leverage at the start of the year therefore affects the subsequent twelve-month return."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "Systematic market movements over the same twelve months drive individual stock returns through market exposure. MarketReturn excludes this firm, so the firm's return does not feed back into it."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings reported during the year that differ from analyst forecasts are news that moves the stock price within the same twelve-month window, as in the earnings announcement return and post-earnings drift."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component explicitly includes low leverage. Leverage at the start of the year is highly persistent and determines the leverage measured at year end, so it directly affects the composite score."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component includes a beta estimated from the stock's returns. The stock's returns during the year are an input to QualityScore, which is measured at the end of the year."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "QualityScore",
+      "justification": "Beta is estimated by relating the stock's returns to market returns, so market returns during the year enter the beta calculation directly. That beta is part of QualityScore's safety component."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "Earnings reported during the year, which EarningsSurprise measures against forecasts, feed the profitability, growth and profitability-stability components of QualityScore measured at year end."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors tend to prefer high-quality, profitable, safe firms. QualityScore at the end of the year influences how institutions rebalance their holdings over the following twelve months."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "Institutions engage in momentum trading and window dressing based on recent performance. The stock's return during the year therefore affects the change in institutional ownership over the twelve months after year end."
+    }
+  ]
+}

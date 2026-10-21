@@ -1,0 +1,64 @@
+{
+  "edges": [
+    {
+      "source": "PastFiveYearReturn",
+      "target": "BookToMarket",
+      "justification": "Returns over the five years before the start of the year build up the firm's market value of equity at the start of the year. That market value is the denominator of BookToMarket, so strong past returns lower BookToMarket. The return period comes before the measurement date, so causality runs from PastFiveYearReturn to BookToMarket."
+    },
+    {
+      "source": "PastFiveYearReturn",
+      "target": "Leverage",
+      "justification": "Leverage is total debt divided by market value of equity at the start of the year. Prior five-year returns set that market value, so higher past returns mechanically lower Leverage. The returns come first, so the edge runs from PastFiveYearReturn to Leverage."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "ValueIndexMember",
+      "justification": "Value style indices assign stocks mainly by book-to-market ratios. A high BookToMarket at the start of the year leads to the stock being assigned to a value index at the start of the year. BookToMarket is an input to the assignment rule."
+    },
+    {
+      "source": "BookToMarket",
+      "target": "AnnualReturn",
+      "justification": "BookToMarket is measured at the start of the year and AnnualReturn covers the following twelve months. Under the well-documented value premium, the start-of-year ratio affects subsequent returns, so the edge runs from BookToMarket to AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "AnnualReturn",
+      "justification": "Financial leverage at the start of the year raises equity risk and amplifies how strongly the stock responds to shocks. That affects the stock's return over the following twelve months, and the timing runs from Leverage to AnnualReturn."
+    },
+    {
+      "source": "MarketReturn",
+      "target": "AnnualReturn",
+      "justification": "MarketReturn covers the same twelve months and excludes the firm, so it is not built from the firm's own return. Systematic market movements drive individual stock returns through market beta, so changes in MarketReturn cause changes in AnnualReturn and not the reverse."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "AnnualReturn",
+      "justification": "Earnings that differ from analysts' forecasts during the year trigger price reactions within the same twelve-month window. Positive surprises raise the stock's return and negative ones lower it, so the edge runs from EarningsSurprise to AnnualReturn."
+    },
+    {
+      "source": "Leverage",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component includes low leverage. The firm's leverage at the start of the year largely persists to the end of the year, when QualityScore is measured, so it directly shapes that component. Leverage comes first in time."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "QualityScore",
+      "justification": "QualityScore's safety component uses a stock beta estimated from the stock's returns, which include the returns over the year. The year's return also changes end-of-year market equity, which affects measured leverage. Both happen before QualityScore is measured at the end of the year."
+    },
+    {
+      "source": "EarningsSurprise",
+      "target": "QualityScore",
+      "justification": "The earnings reported during the year, which determine the surprise, feed into the profitability, growth and profit-stability parts of the end-of-year QualityScore. Positive surprises reflect stronger realized profitability, which raises the score."
+    },
+    {
+      "source": "QualityScore",
+      "target": "InstOwnershipChange",
+      "justification": "Institutional investors prefer high-quality firms: profitable, growing and safe ones. QualityScore is measured at the end of the year and InstOwnershipChange covers the twelve months after it, so quality influences subsequent institutional buying and selling."
+    },
+    {
+      "source": "AnnualReturn",
+      "target": "InstOwnershipChange",
+      "justification": "The stock's return over the year happens before the twelve months after year-end over which InstOwnershipChange is measured. Institutions respond to recent price performance (momentum trading and window dressing), and price changes alter the stock's weight in benchmarks they track. So the prior return affects the later change in institutional ownership."
+    }
+  ]
+}

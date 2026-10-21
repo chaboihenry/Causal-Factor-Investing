@@ -1,0 +1,88 @@
+{
+ "graph": "finance",
+ "backend": "claude-opus-5.5-medium",
+ "run": 1,
+ "date": "2026-10-20T19:47:45",
+ "n_undirected_c1": 15,
+ "validation_rounds": 1,
+ "validated": true,
+ "is_dag": true,
+ "failed_calls": [],
+ "edges": [
+  {
+   "source": "PastFiveYearReturn",
+   "target": "BookToMarket",
+   "justification": "PastFiveYearReturn covers the five years before the start of the year, so it comes before BookToMarket, which is measured at the start of the year. Past returns build up the market value of equity, the denominator of BookToMarket. Strong past returns raise market equity and lower BookToMarket."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "Leverage",
+   "justification": "PastFiveYearReturn comes before Leverage, which is measured at the start of the year. Leverage is total debt divided by market value of equity, and past returns determine that market value. High past returns increase market equity and reduce Leverage."
+  },
+  {
+   "source": "PastFiveYearReturn",
+   "target": "AnnualReturn",
+   "justification": "PastFiveYearReturn covers the five years before the start of the year, and AnnualReturn covers the twelve months after it. Causality runs forward in time, so past returns can affect future returns through long-term reversal, but not the reverse."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "ValueIndexMember",
+   "justification": "Assignment to a value style index is based on valuation ratios such as book-to-market. Membership is therefore built from BookToMarket. Both are set at the start of the year, and BookToMarket is the input to the classification."
+  },
+  {
+   "source": "BookToMarket",
+   "target": "AnnualReturn",
+   "justification": "BookToMarket is measured at the start of the year, before the return period that AnnualReturn covers. Book-to-market is a well-known predictor of later returns (the value premium), so it leads to AnnualReturn."
+  },
+  {
+   "source": "Leverage",
+   "target": "AnnualReturn",
+   "justification": "Leverage is measured at the start of the year, before AnnualReturn is realized. Financial leverage affects equity risk and so affects later stock returns. A return earned later cannot change leverage measured earlier."
+  },
+  {
+   "source": "Leverage",
+   "target": "QualityScore",
+   "justification": "QualityScore is a composite whose safety part explicitly includes low leverage. Leverage is therefore an input used to build QualityScore. It is also measured earlier, at the start of the year versus the end of the year."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "AnnualReturn",
+   "justification": "MarketReturn excludes this firm, so it is a market-wide factor that the single stock does not drive. Market-wide movements affect each stock's return through systematic risk exposure, so MarketReturn affects AnnualReturn."
+  },
+  {
+   "source": "MarketReturn",
+   "target": "QualityScore",
+   "justification": "QualityScore includes a low stock beta estimated from the stock's returns, and beta is estimated against market returns. MarketReturn during the year is therefore an input to that component. QualityScore is measured at the end of the year, after MarketReturn is realized."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "AnnualReturn",
+   "justification": "Earnings reported during the year that differ from analysts' forecasts are news that moves the stock price. EarningsSurprise therefore drives the stock's return over the same twelve months. A firm's reported earnings are fundamentals and are not caused by its stock return."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "QualityScore",
+   "justification": "QualityScore is measured at the end of the year and includes profitability, growth and stability of profitability. These are all affected by the earnings reported during the year. The reported earnings, and how far they miss forecasts, feed into the composite score."
+  },
+  {
+   "source": "EarningsSurprise",
+   "target": "InstOwnershipChange",
+   "justification": "EarningsSurprise happens during the year, while InstOwnershipChange covers the twelve months after the end of the year. Institutional investors adjust their holdings in response to earnings news, so the surprise comes first and causes the ownership change."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "QualityScore",
+   "justification": "QualityScore, measured at the end of the year, includes a stock beta estimated from the stock's returns. The stock's return over the year is therefore an input to the score, which makes AnnualReturn the cause."
+  },
+  {
+   "source": "AnnualReturn",
+   "target": "InstOwnershipChange",
+   "justification": "AnnualReturn covers the year, and InstOwnershipChange covers the twelve months after the end of the year. Institutions respond to past performance (momentum and window-dressing), so the earlier return drives the later ownership change."
+  },
+  {
+   "source": "QualityScore",
+   "target": "InstOwnershipChange",
+   "justification": "QualityScore is measured at the end of the year, before the following twelve months over which InstOwnershipChange is measured. Institutional investors tend to favor high-quality firms (profitable, growing, safe), so QualityScore leads to later changes in institutional ownership."
+  }
+ ]
+}
