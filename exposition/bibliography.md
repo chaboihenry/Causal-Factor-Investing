@@ -18,6 +18,10 @@ De Bondt, Werner F. M., and Richard Thaler. "Does the Stock Market Overreact?" _
 
 Fama, Eugene F., and Kenneth R. French. "The Cross-Section of Expected Stock Returns." _Journal of Finance_ 47, no. 2 (1992): 427–65. https://doi.org/10.1111/j.1540-6261.1992.tb04398.x.
 
+Fama, Eugene F., and Kenneth R. French. "Common Risk Factors in the Returns on Stocks and Bonds." _Journal of Financial Economics_ 33, no. 1 (1993): 3–56.
+
+Fama, Eugene F., and Kenneth R. French. "Size and Book-to-Market Factors in Earnings and Returns." _Journal of Finance_ 50, no. 1 (1995): 131–55.
+
 Fama, Eugene F., and Kenneth R. French. "Multifactor Explanations of Asset Pricing Anomalies." _Journal of Finance_ 51, no. 1 (1996): 55–84. https://doi.org/10.1111/j.1540-6261.1996.tb05202.x.
 
 Fama, Eugene F., and Kenneth R. French. "A Five-Factor Asset Pricing Model." _Journal of Financial Economics_ 116, no. 1 (2015): 1–22. https://doi.org/10.1016/j.jfineco.2014.10.010.
@@ -38,14 +42,20 @@ López de Prado, Marcos. _Causal Factor Investing: Can Factor Investing Become S
 
 López de Prado, Marcos, and Vincent Zoonekynd. _Causality and Factor Investing: A Primer_. Charlottesville, VA: CFA Institute Research Foundation, 2025. https://doi.org/10.56227/25.1.30.
 
+Nofsinger, John R., and Richard W. Sias. "Herding and Feedback Trading by Institutional and Individual Investors." _Journal of Finance_ 54, no. 6 (1999): 2263–95.
+
 Olivetti, Emanuele, Vincent Zoonekynd, Patrick Yam, Marcos López de Prado, Guido W. Imbens, and Miguel A. Hernán. "Can AI Learn Causal Structure? Evidence from ADIA Lab's Causal Discovery Challenge." Working paper, January 24, 2026. SSRN. https://doi.org/10.2139/ssrn.6125566.
 
 Reisach, Alexander, Christof Seiler, and Sebastian Weichwald. "Beware of the Simulated DAG! Causal Discovery Benchmarks May Be Easy to Game." In _Advances in Neural Information Processing Systems 34_, 27772–84. Red Hook, NY: Curran Associates, 2021.
 
 Sharma, Amit, and Emre Kiciman. "DoWhy: An End-to-End Library for Causal Inference." Preprint, arXiv, 2020. https://arxiv.org/abs/2011.04216.
 
+Sharpe, William F. "Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk." _Journal of Finance_ 19, no. 3 (1964): 425–42.
+
 Sokolov, Alik, Fabrizzio Sabelli, Behzad Azadie Faraz, Wuding Li, and Luis Seco. "Toward Automating Causal Discovery in Financial Markets and Beyond." In _Transactions of ADIA Lab: Interdisciplinary Advances in Data and Computational Science_, edited by Horst Simon, 359–92. Singapore: World Scientific, 2025. https://doi.org/10.1142/9789819813049_0014.
 
 Spirtes, Peter, Clark Glymour, and Richard Scheines. _Causation, Prediction, and Search_. 2nd ed. Cambridge, MA: MIT Press, 2000.
+
+Welch, Ivo. "Capital Structure and Stock Returns." _Journal of Political Economy_ 112, no. 1 (2004): 106–31.
 
 Zheng, Yujia, Biwei Huang, Wei Chen, Joseph Ramsey, Mingming Gong, Ruichu Cai, Shohei Shimizu, Peter Spirtes, and Kun Zhang. "Causal-learn: Causal Discovery in Python." _Journal of Machine Learning Research_ 25, no. 60 (2024): 1–8. https://www.jmlr.org/papers/v25/23-0970.html.
