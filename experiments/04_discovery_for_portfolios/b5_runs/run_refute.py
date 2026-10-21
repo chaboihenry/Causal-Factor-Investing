@@ -30,12 +30,14 @@ META = RESULTS / 'b3_worlds' / 'datasets_meta.csv'
 
 
 def ols(X, y):
-    """Coefficient and two-sided p-value of column 1 (after the constant), as statsmodels OLS reports them."""
-    coef, *_ = np.linalg.lstsq(X, y, rcond=None)
-    dof = len(y) - X.shape[1]
+    """Coefficient and two-sided p-value of column 1 (after the constant), as statsmodels OLS reports them. Uses the
+    pseudo-inverse like statsmodels, so two identical columns (2 of 1,300 datasets) don't crash; a perfect fit gives p = 0."""
+    coef = np.linalg.pinv(X) @ y
+    dof = len(y) - np.linalg.matrix_rank(X)
     sigma2 = np.sum((y - X @ coef) ** 2) / dof
-    se = np.sqrt(sigma2 * np.linalg.inv(X.T @ X)[1, 1])
-    return coef[1], 2 * stats.t.sf(abs(coef[1] / se), dof)
+    se = np.sqrt(max(sigma2 * np.linalg.pinv(X.T @ X)[1, 1], 0.0))
+    with np.errstate(divide='ignore', invalid='ignore'):
+        return coef[1], 2 * stats.t.sf(abs(coef[1] / se), dof) if se > 0 else 0.0
 
 
 def test_edges(key, data, edges):

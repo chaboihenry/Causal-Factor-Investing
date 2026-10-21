@@ -1,5 +1,7 @@
 # Experiment 04 — Causal Discovery for Portfolios: LLM vs. Supervised ML vs. Both
 
+*Nothing in Phase 5 runs until this file and `predictions.md` are committed. Later changes go in the Change log.*
+
 ## 1. Question
 
 > **Factor models built without a causal graph can report the wrong exposure: leaving out a common cause, or controlling for a common effect, biases a factor's beta, so a hedge built on that beta leaves behind risk the manager believes is gone. This experiment measures how large that error is, then asks which way of drawing the causal graph gets the beta closest to the truth: an LLM reading the literature, a supervised model reading the data, or the two combined. It tests each under clean and realistic data conditions and records its cost, against synthetic worlds where the true graph and true effect are known.**
@@ -172,13 +174,13 @@ All predictions, with numbers, are in [`predictions.md`](predictions.md), commit
 - [X] `predictions.md`: a number (or range) for every prediction
 - [X] The hybrid's combination rule (A3), exactly; τ from `choose_tau.py`
 - [X] The number of LLM runs per model (gpt-oss 10, Claude 3)
-- [ ] **Gate:** committed before any Phase 5 run
+- [X] **Gate:** committed before any Phase 5 run
 
 **Phase 5 — Run every arm**
 
-- [ ] A1: both LLMs on the finance variables (every prompt and reply saved)
-- [ ] A2: refute each LLM graph on every dataset
-- [ ] B1: the Phase 1 model predicts on every dataset (no retraining)
+- [X] A1: both LLMs on the finance variables (every prompt and reply saved): gpt-oss 10 runs (25–32 edges; 6/10 validated within 5 rounds), Claude 3 runs (14–15 edges; all validated in round 1)
+- [ ] A2: refute each LLM graph on every dataset (`b5_runs/run_refute.py`; adjustment sets computed once per graph; in S1 leverage is dropped from the LLM graph, since the analyst doesn't have it)
+- [X] B1: the Phase 1 model predicts on every dataset (no retraining; `predict_third_place.py`, `--rank` for S3): main, S1, S2, S2b, S3
 - [ ] A3: combine A1 and B1 with the committed rule
 - [ ] C1 PC and the naive regressions on every dataset
 - [ ] S1, S2, S2b and S3 for every arm
@@ -202,9 +204,10 @@ experiments/04_discovery_for_portfolios/
   design.md  predictions.md
   common/              paths.py, scoring.py
   graphs/              sprinkler, asia, finance (_variables.json = what the LLM sees, _truth.json = answer key)
+  prompts/             Sokolov's prompts: verbatim transcription (prompts.md), templates C1–C3 (sokolov_prompts.py)
   responses/           every LLM prompt and reply, by graph / model / run
   a1_reproduce_adia/   data check, PC baseline, 3rd-place reproduction, requirements_third_place.txt
-  a2_reproduce_llm/    Modelfile, prompts/, run_llm.py, refute.py
+  a2_reproduce_llm/    Modelfile, run_llm.py, refute.py
   b3_worlds/           data generator, dial, stress-test data
   b5_runs/             run every arm
   b6_analysis/         scoring, figures, cost table
@@ -224,6 +227,7 @@ results/exp04/<phase folder>/                same names as the code folders
 - Hedge leak is measured in a synthetic world, in relative terms, not in dollars of a real portfolio.
 - LLM results depend on the model, the date and the prompts; claude.ai doesn't let me set temperature.
 - B1 is 3rd place, not the winner, and was reproduced on the public test set (the private one was never released).
+- 2 of the 1,300 test datasets (`a25_05_001`, `s2b_019`) contain two identical columns: a child with near-zero noise and a monotone function of one parent is identical to it after ranking. Kept as generated (like an engineered variable); regressions use the pseudo-inverse, as statsmodels does.
 - S3 ranks B1's input over all rows at once; practitioners rank within each period, so S3's two regimes are mixed in B1's ranks.
 
 ## Change log (methodology only)

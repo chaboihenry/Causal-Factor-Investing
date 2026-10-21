@@ -20,11 +20,11 @@ Full plan, rules and predictions: [`design.md`](design.md) · Predictions commit
 | -------------------------------- | --------------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | PC baseline on ADIA public test  | 38.30%                                        | ~40% (5th-place report: 37.79%) | [`results/exp04/a1_reproduce_adia/pc_baseline_score.csv`](../../results/exp04/a1_reproduce_adia/pc_baseline_score.csv)           | [`a1_reproduce_adia/pc_baseline.py`](a1_reproduce_adia/pc_baseline.py)                                   |
 | ADIA 3rd-place solution          | 71.64%                                        | 74.06% (private test)           | [`results/exp04/a1_reproduce_adia/third_place_full_score.csv`](../../results/exp04/a1_reproduce_adia/third_place_full_score.csv) | [`a1_reproduce_adia/run_third_place.py`](a1_reproduce_adia/run_third_place.py)                           |
-| LLM pipeline on Asia / Sprinkler | Claude 8/8 (memorized), gpt-oss 7/8 + 8 extra | —                              | [`a2_reproduce_llm/responses/`](a2_reproduce_llm/responses/), [`results/exp04/a2_reproduce_llm/refute/`](../../results/exp04/a2_reproduce_llm/refute/)            | [`a2_reproduce_llm/run_llm.py`](a2_reproduce_llm/run_llm.py), [`refute.py`](a2_reproduce_llm/refute.py) |
+| LLM pipeline on Asia / Sprinkler | Claude 8/8 (memorized), gpt-oss 7/8 + 8 extra | —                              | [`responses/`](responses/), [`results/exp04/a2_reproduce_llm/refute/`](../../results/exp04/a2_reproduce_llm/refute/)            | [`a2_reproduce_llm/run_llm.py`](a2_reproduce_llm/run_llm.py), [`refute.py`](a2_reproduce_llm/refute.py) |
 
 ## Inputs
 
 - The finance graph, with a source for every edge: [`graphs/finance_truth.json`](graphs/finance_truth.json)
 - Exactly what the LLM sees: [`graphs/finance_variables.json`](graphs/finance_variables.json)
-- Every LLM prompt and reply: [`a2_reproduce_llm/responses/`](a2_reproduce_llm/responses/)
+- Every LLM prompt and reply: [`responses/`](responses/)
 - ADIA data: download from the challenge (not redistributed); expected under `data/adia/`.
