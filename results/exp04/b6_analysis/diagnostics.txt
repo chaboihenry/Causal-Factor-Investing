@@ -1,0 +1,37 @@
+(1) A1 roles in the literature worlds (role x number of dataset-runs)
+model                                claude-opus-5.5-medium                                          gpt-oss-exp04
+variable            true                                                                                          
+EarningsSurprise    Mediator                Cause of Y x300                         Mediator x600, Cause of Y x400
+FiscalYearEndMonth  Independent            Independent x300     Confounder x500, Independent x300, Cause of Y x200
+InstOwnershipChange Consequence of Y  Consequence of Y x300                                         Collider x1000
+Leverage            Confounder              Cause of Y x300        Cause of Y x500, Confounder x300, Mediator x200
+MarketReturn        Cause of Y              Cause of Y x300                                       Cause of Y x1000
+PastFiveYearReturn  Cause of X              Confounder x300                                       Confounder x1000
+QualityScore        Collider          Consequence of Y x300  Collider x400, Cause of Y x300, Consequence of Y x300
+ValueIndexMember    Consequence of X  Consequence of X x300                                         Mediator x1000
+
+(2) Median hedge leak (%) in literature worlds: main vs S1, and the most common control set in main
+                                      main    s1                                                                                       usual controls (main)
+arm           model                                                                                                                                         
+A1            claude-opus-5.5-medium  38.0  38.0                                                                                          PastFiveYearReturn
+              gpt-oss-exp04           32.5  38.0                                                                       FiscalYearEndMonth PastFiveYearReturn
+A2            claude-opus-5.5-medium  39.5  39.5                                                                                          PastFiveYearReturn
+              gpt-oss-exp04           36.1  39.5                                                                                          PastFiveYearReturn
+A3            claude-opus-5.5-medium  37.7  40.9                                                                                          PastFiveYearReturn
+              gpt-oss-exp04           34.9  40.8                                                                                          PastFiveYearReturn
+A3_tau0.5     claude-opus-5.5-medium  39.0  41.3                                                                                                      (none)
+              gpt-oss-exp04           37.5  41.3                                                                                                      (none)
+A3_tau0.9     claude-opus-5.5-medium  38.0  39.3                                                                                          PastFiveYearReturn
+              gpt-oss-exp04           32.7  39.3                                                                       FiscalYearEndMonth PastFiveYearReturn
+B1                                    38.0  43.8                                                                                                      (none)
+C1                                    46.0  46.3                                                                                                      (none)
+Everything                            84.4  94.0  EarningsSurprise FiscalYearEndMonth Leverage MarketReturn PastFiveYearReturn QualityScore ValueIndexMember
+Oracle                                17.1  45.9                                                                                                    Leverage
+Start of year                         29.6  46.2                                             FiscalYearEndMonth Leverage PastFiveYearReturn ValueIndexMember
+X alone                               45.9  45.9                                                                                                      (none)
+
+(3) A3 in the main test: share of variables where B1 disagrees with the LLM / overrules it, and who is right
+                        disagree  overruled  overrule right  LLM right where overruled  B1 right where not overruled but disagreeing
+model                                                                                                                               
+claude-opus-5.5-medium     0.689      0.393           0.878                      0.025                                         0.511
+gpt-oss-exp04              0.851      0.519           0.904                      0.030                                         0.573

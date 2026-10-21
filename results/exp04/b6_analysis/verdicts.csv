@@ -1,0 +1,19 @@
+prediction,claim,rule,measured,verdict
+P1,1,"""Everything"": wrong sign >= 20%, median hedge leak >= 50%","wrong sign 25%, leak 84%",PASS
+P2,1,"""X alone"": wrong sign >= 10%, median hedge leak >= 30%","wrong sign 14%, leak 46%",PASS
+P1b,1,"""Start of year"": median hedge leak <= 35%",leak 30%,PASS
+P3,1,Oracle: median hedge leak <= 25%,leak 17%,PASS
+P3b,1,S2b false effect: X alone and Everything >= 50%; Oracle <= 20%,"X alone 81%, Everything 60%, Oracle 17%",PASS
+P4,2,"B1 65-78% at every level, spread <= 6 pts",72.9 / 71.0 / 67.8 / 68.8 / 75.4,FAIL
+P5,2,"A1 Claude >= 75% at 100, <= 25% at 0, falls at every step",50.0 / 37.8 / 29.0 / 34.4 / 1.6,FAIL
+P6,2,A1 gpt-oss at 100% below Claude by >= 10 pts,gpt-oss 32.5 vs Claude 50.0,PASS
+P7,2,A1 Claude and B1 cross between 75% and 100%,"Claude - B1: -22.9 at 100, -33.2 at 75",FAIL
+P8 (Claude),2,"A2 - A1 >= 3 pts at 50, 25, 0; < 1 pt at 100",-0.1 / +1.3 / +4.3 / +9.3 / +12.6,PASS
+P8 (gpt-oss),2,"A2 - A1 >= 3 pts at 50, 25, 0; < 1 pt at 100",+13.6 / +13.3 / +12.8 / +13.4 / +23.0,FAIL
+P9,2,"PC 33-45% at every level, below B1 everywhere",38.2 / 40.9 / 39.9 / 48.8 / 41.0,FAIL
+P10 (Claude),4,"A3 >= best of A1, B1 - 1 pt at every level; strictly above both at 75%",-10.0 / -5.5 / -6.3 / -2.2 / -19.7 (A3 minus best),FAIL
+P10 (gpt-oss),4,"A3 >= best of A1, B1 - 1 pt at every level; strictly above both at 75%",-11.4 / -7.9 / -6.3 / +0.8 / -20.1 (A3 minus best),FAIL
+P11,3,S1: every arm's median hedge leak at least doubles vs. the same worlds in main,"B1 x1.2, C1 x1.0, A1 claude x1.0, A1 gpt x1.2, A2 claude x1.0, A2 gpt x1.1, A3 claude x1.1, A3 gpt x1.2",FAIL
+P12,3,S2: B1 and A1 keep X->Y in >= 90%; only A2 ever removes it,"A1 keeps 100%, B1 100% (by design), PC 100%, A2 removes 10%",PASS
+P13,3,S3: A1 unchanged; B1 falls >= 5 pts; PC falls; oracle leak rises,A1 unchanged: True; B1 -19.3 pts; PC -6.9 pts; oracle leak 17% -> 30%,PASS
+P14,5,A1 $0 and minutes per run; B1 ~23 h training + ~10 min per 500 datasets; A3 both,"A1 gpt-oss:20b (local): 10.8 min/run; A1 Claude Opus 5.5 (claude.ai): 6.6 min/run; B1 22.6 h training, ~12 min per 500 to predict",PASS
